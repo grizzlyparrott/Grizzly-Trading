@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES vs MES vs NQ – Grizzly Parrott Trading</title>
+    <meta name="description" content="Straight comparison of ES, MES, and NQ futures contracts: tick size, dollar value, volatility, and what actually changes between them.">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+
+        <h1>ES vs MES vs NQ</h1>
+        <p class="section-intro">
+            ES, MES, and NQ are all index futures. They move differently and have different dollar values, 
+            but the underlying idea is the same: one contract tracks one index.
+        </p>
+
+        <h2>The Underlyings</h2>
+        <ul>
+            <li><strong>ES:</strong> E-mini S&amp;P 500 futures (tracks the S&amp;P 500 index)</li>
+            <li><strong>MES:</strong> Micro E-mini S&amp;P 500 futures (same index, 1/10th the size of ES)</li>
+            <li><strong>NQ:</strong> E-mini Nasdaq-100 futures (tracks the Nasdaq-100 index)</li>
+        </ul>
+
+        <p>
+            ES and MES follow the same index.  
+            NQ is a different index with more tech-heavy names, which usually means faster moves.
+        </p>
+
+        <h2>Tick Size And Dollar Value</h2>
+
+        <p>All three contracts use the same tick size: <strong>0.25 index points per tick</strong>.</p>
+
+        <ul>
+            <li><strong>ES:</strong> $12.50 per tick, $50 per point (4 ticks per point)</li>
+            <li><strong>MES:</strong> $1.25 per tick, $5 per point</li>
+            <li><strong>NQ:</strong> $5.00 per tick, $20 per point</li>
+        </ul>
+
+        <p>
+            MES is exactly 1/10th of ES.  
+            NQ has its own value structure but follows the same tick/point logic.
+        </p>
+
+        <h2>Contract Size Relationship</h2>
+        <ul>
+            <li>1 ES ≈ 10 MES</li>
+            <li>1 NQ ≈ 10 MNQ (if you also look at the micro version)</li>
+        </ul>
+        <p>
+            This is useful when you see people compare “1 ES vs 10 MES” or “1 NQ vs 10 MNQ” — 
+            they’re talking about matching approximate dollar exposure.
+        </p>
+
+        <h2>Volatility Differences</h2>
+
+        <p>
+            ES and MES usually move slower and with tighter range compared to NQ.  
+            NQ often has larger intraday swings (in points) because the Nasdaq-100 is more concentrated in big tech and growth stocks.
+        </p>
+
+        <p>In simple terms:</p>
+        <ul>
+            <li><strong>ES / MES:</strong> Smoother, more “index-like” movement</li>
+            <li><strong>NQ:</strong> Sharper spikes and drops, bigger point swings</li>
+        </ul>
+
+        <h2>Margin (High Level)</h2>
+        <p>
+            Margin numbers change by broker and over time, but the pattern is consistent:
+        </p>
+        <ul>
+            <li>Day-trade margin on ES is much higher than on MES</li>
+            <li>Day-trade margin on NQ is similar or slightly higher than ES for many brokers</li>
+            <li>Micro contracts (MES, MNQ) are designed to require less capital per contract</li>
+        </ul>
+        <p>
+            Exact margin is published by each broker and prop firm in their documentation.
+        </p>
+
+        <h2>What Stays The Same Between Them</h2>
+        <ul>
+            <li>They all trade nearly 23 hours a day during the week</li>
+            <li>They all have quarterly expiration cycles (H, M, U, Z months)</li>
+            <li>They all use the same tick size of 0.25</li>
+            <li>They all follow their respective index closely</li>
+        </ul>
+
+        <h2>The Core Difference In One Line</h2>
+        <p>
+            ES vs MES is mainly <strong>contract size</strong>.  
+            ES/MES vs NQ is mainly <strong>which index you’re tracking and how violently it moves</strong>.
+        </p>
+
+        <div style="margin-top: 2rem;">
+            <a href="../index.html" class="card-link">← Back to Home</a>
+        </div>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Grizzly Parrott Trading. All rights reserved.</p>
+        <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    </div>
+</footer>
+
+</body>
+</html>
