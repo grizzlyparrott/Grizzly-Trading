@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Slippage Actually Works In Futures – Grizzly Parrott Trading</title>
+    <meta name="description" content="A clear breakdown of what slippage is, why it happens, how to calculate it, and how to avoid getting hammered by it when trading futures.">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="site-header"></header>
+
+<main class="section">
+    <div class="container">
+
+        <h1>How Slippage Actually Works In Futures</h1>
+        <p class="section-intro">
+            Most beginners think slippage is random. It isn’t.  
+            Slippage happens because you are hitting a moving market with an order that demands immediate execution.
+        </p>
+
+        <h2>1. Slippage = The Difference Between Your Intended Price And Your Fill</h2>
+        <p>If you wanted to buy at 5000.00 but got filled at 5000.50, you slipped 2 ticks.</p>
+
+        <p>Formula:</p>
+        <pre><code>slippage = fill price - intended price</code></pre>
+
+        <h3>Example (NQ):</h3>
+        <ul>
+            <li>You click “Buy Market” at 18,000.00</li>
+            <li>Your fill is 18,000.25</li>
+        </ul>
+
+        <p>You slipped 1 tick ($5).</p>
+
+        <hr>
+
+        <h2>2. Why Slippage Happens</h2>
+
+        <h3>Reason 1: Fast Market</h3>
+        <p>
+            If NQ is ripping 10–20 ticks per second, your order can’t fill at the price you clicked.  
+            It fills wherever the next available liquidity is.
+        </p>
+
+        <h3>Reason 2: Low Liquidity / Low Volume</h3>
+        <p>
+            If there aren't enough contracts at your level, your order fills at the next best level.
+        </p>
+
+        <h3>Reason 3: Market Orders Must Be Filled Immediately</h3>
+        <p>
+            They skip empty levels entirely.  
+            If the book is thin, you jump multiple ticks instantly.
+        </p>
+
+        <h3>Reason 4: News Volatility</h3>
+        <p>
+            CPI, FOMC, NFP — spreads widen, liquidity vanishes, and slippage can explode to 5–20 ticks easily.
+        </p>
+
+        <hr>
+
+        <h2>3. Products With High and Low Slippage</h2>
+
+        <h3>High Slippage Risk:</h3>
+        <ul>
+            <li>NQ</li>
+            <li>MNQ</li>
+            <li>RTY</li>
+            <li>NQM (micro)</li>
+        </ul>
+
+        <h3>Lower Slippage Risk:</h3>
+        <ul>
+            <li>ES</li>
+            <li>MES</li>
+            <li>CL during RTH</li>
+            <li>ZB, ZN (bonds)</li>
+        </ul>
+
+        <p>The faster the product moves, the more slippage you’ll see.</p>
+
+        <hr>
+
+        <h2>4. How To Reduce Slippage</h2>
+
+        <h3>1. Trade During High Liquidity Times</h3>
+        <p>
+            - 6:30am–8:30am PST (NY session open)  
+            - First hour of RTH  
+        </p>
+
+        <h3>2. Use Limit Orders For Entries</h3>
+        <p>
+            Limits reduce slippage by forcing price to come to you.  
+            You’ll miss some fills, but the fills you get are cleaner.
+        </p>
+
+        <h3>3. Avoid Market Orders on NQ Size</h3>
+        <p>
+            1 ES market order = fine  
+            1 NQ market order = usually fine  
+            3+ MNQ or multiple NQ = you’re asking for slippage  
+        </p>
+
+        <h3>4. Don’t Trade News Spikes</h3>
+        <p>
+            Every prop firm blows people out during CPI because of slippage alone.
+        </p>
+
+        <h3>5. Use Stop-LIMIT Instead Of Stop-MARKET</h3>
+        <p>
+            This keeps stops from blowing through your level during fast moves.
+        </p>
+
+        <hr>
+
+        <h2>5. The Real Reason Slippage Matters</h2>
+        <p>
+            Slippage destroys your expectancy.  
+            A system with:
+        </p>
+        <ul>
+            <li>10-tick wins</li>
+            <li>10-tick stops</li>
+        </ul>
+
+        <p>…dies instantly if every stop slips 2 ticks and every entry slips 1.</p>
+
+        <p>
+            That’s –3 ticks of slippage *per trade* → your system no longer has edge.
+        </p>
+
+        <h2>Bottom Line</h2>
+        <p>
+            Slippage isn’t random.  
+            It’s math.  
+            And if you don’t respect it, the market will take money from you even when your ideas are right.
+        </p>
+
+    </div>
+</main>
+
+<footer class="site-footer"></footer>
+
+</body>
+</html>
