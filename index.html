@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grizzly Parrott Trading – Futures & Prop Firm Basics</title>
-    <meta name="description" content="Plain-English futures and prop firm trading explanations for beginners. No hype, no signals, just straight answers.">
-    <!-- IMPORTANT: style.css is in the ROOT of the repo -->
+    <title>Grizzly Parrott Trading | Futures & Prop Firm Basics</title>
+    <meta name="description" content="Plain-English futures and prop firm trading explanations. No get-rich-quick bullshit, just real talk about contracts, margin, drawdown, and risk.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Site header -->
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">
                 <span class="logo-mark">GP</span>
                 <span class="logo-text">Grizzly Parrott Trading</span>
             </div>
+
             <nav class="main-nav">
                 <a href="#articles">Articles</a>
-                <a href="#futures">Futures Basics</a>
-                <a href="#props">Prop Firms</a>
-                <a href="#platforms">Platforms</a>
-                <a href="#market">Market Basics</a>
+                <a href="futures-basics/index.html">Futures Basics</a>
+                <a href="prop-firm-trading/index.html">Prop Firms</a>
+                <a href="platforms-tutorials/index.html">Platforms</a>
+                <a href="market-basics/index.html">Market Basics</a>
             </nav>
         </div>
     </header>
@@ -33,133 +34,73 @@
                     <h1>Futures And Prop Firm Trading, Explained Like A Human</h1>
                     <p>
                         Straightforward answers about contracts, ticks, drawdown, and prop firm rules.
-                        No get-rich promises, no guru bullshit.
+                        No guru promises, no get-rich garbage, just what you actually need to know.
                     </p>
                     <a href="#articles" class="btn-primary">Jump To Articles</a>
-                </div>
-                <div class="hero-card">
-                    <h2>What You’ll Find Here</h2>
-                    <ul>
-                        <li><a href="#futures">What futures contracts actually are</a></li>
-                        <li><a href="#props">How prop firm evaluations really work</a></li>
-                        <li><a href="#platforms">Basic platform setup (Tradovate, NinjaTrader)</a></li>
-                        <li><a href="#market">Risk, margin, and why accounts blow up</a></li>
-                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Articles list: you’ll grow this as we write posts -->
+        <!-- Category overview -->
+        <section class="section">
+            <div class="container">
+                <h2>Pick Your Topic</h2>
+                <div class="grid grid-4">
+                    <article class="card">
+                        <h3>Futures Basics</h3>
+                        <p>Contracts, ticks, margin, and how this junk really works.</p>
+                        <a href="futures-basics/index.html">View Futures Basics</a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Prop Firm Trading</h3>
+                        <p>Evaluations, trailing drawdown, rules, and common failure points.</p>
+                        <a href="prop-firm-trading/index.html">View Prop Firm Guides</a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Platform Tutorials</h3>
+                        <p>Tradovate, NinjaTrader, DOM trading, and clean chart layouts.</p>
+                        <a href="platforms-tutorials/index.html">View Platform Tutorials</a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Market Basics</h3>
+                        <p>Risk, drawdown, execution, and why most traders bleed out.</p>
+                        <a href="market-basics/index.html">View Market Basics</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured articles (you can change these anytime) -->
         <section id="articles" class="section">
             <div class="container">
-                <h2>Articles</h2>
-                <p class="section-intro">
-                    Real posts only. When a new article exists, it gets added here with a link.
-                </p>
+                <h2>Featured Articles</h2>
                 <div class="grid grid-3">
-
-                    <!-- EXAMPLE ARTICLE CARD 1 -->
+                    <!-- Futures -->
                     <article class="card">
-                        <h3><a href="futures-basics/what-is-a-futures-contract.html" class="card-link">What Is A Futures Contract?</a></h3>
-                        <p>What you are actually trading when you click buy or sell on ES, NQ, or MES.</p>
+                        <h3><a href="futures-basics/ticks-points-dollar-value.html">Ticks, Points, And Dollar Value</a></h3>
+                        <p>How many ticks are in a point, how much each tick is worth, and what that means in real money.</p>
                     </article>
 
-                    <!-- EXAMPLE ARTICLE CARD 2 -->
+                    <!-- Prop firms -->
                     <article class="card">
-                        <h3><a href="futures-basics/ticks-points-dollar-value.html" class="card-link">Ticks, Points, And Dollar Value</a></h3>
-                        <p>How many ticks are in a point, how much each tick is worth, and why it matters before you size up.</p>
+                        <h3><a href="prop-firm-trading/trailing-drawdown-explained.html">Trailing Drawdown Explained</a></h3>
+                        <p>The real mechanics of trailing drawdown and why it silently kills most evaluation accounts.</p>
                     </article>
 
-                    <!-- EXAMPLE ARTICLE CARD 3 -->
+                    <!-- Market basics -->
                     <article class="card">
-                        <h3><a href="prop-firm-trading/trailing-drawdown-explained.html" class="card-link">What Is Trailing Drawdown In Prop Firms?</a></h3>
-                        <p>The real reason people fail prop evaluations even when they are technically profitable.</p>
+                        <h3><a href="market-basics/what-is-drawdown-really.html">What Is Drawdown, Really?</a></h3>
+                        <p>What drawdown actually is on your equity curve, with plain-numbers examples.</p>
                     </article>
-                    <!-- ARTICLE 4 – Common Evaluation Mistakes -->
-                    <article class="card">
-                       <h3><a href="prop-firm-trading/common-evaluation-mistakes.html" class="card-link">Common Evaluation Mistakes</a></h3>
-                       <p>Scaling too fast, revenge trading, and not understanding the daily loss limit.</p>
-                    </article>
-                    <article class="card">
-                       <h3><a href="prop-firm-trading/how-prop-firm-evaluations-work.html" class="card-link">How Evaluations Work</a></h3>
-                       <p>Profit targets, trailing drawdown, minimum days, and what prop firms actually care about.</p>
-                    </article>
-                    <article class="card">
-                       <h3><a href="prop-firm-trading/apex-style-rules-by-the-numbers.html" class="card-link">Apex-Style Rules By The Numbers</a></h3>
-                       <p>Realistic risk, limits, drawdown mechanics, and a clean numerical breakdown of how Apex-style evaluations function.</p>
-                    </article>
-                    <article class="card">
-                       <h3></h3><a href="futures-basics/es-vs-mes-vs-nq.html" class="card-link">ES vs MES vs NQ</a></h3>
-                       <p>Contract size, tick value, and how these index futures actually differ in movement.</p>
-                    </article>
-                    <article class="card">
-                       <h3><a href="futures-basics/day-margin-vs-overnight-margin.html" class="card-link">Day Margin vs Overnight Margin</a></h3>
-                       <p>What changes between intraday margin and overnight margin for futures contracts.</p>
-                    </article>
-                    <article class="card">
-                       <h3><a href="futures-basics/contract-expiration-and-roll.html" class="card-link">Contract Expiration And Roll</a></h3>
-                       <p>What expiration is, how rollover works, and why charts and volume change around roll dates.</p>
-                    </article>
-                    <article class="card">
-                       <h3><a href="platforms-tutorials/tradovate-for-beginners.html" class="card-link">Tradovate For Beginners</a></h3>
-                       <p>Basic layout, charts, DOM, and simple orders for new Tradovate users.</p>
-                    </article>
-                    <article class="card">
-                       <h3><a href="market-basics/why-good-ideas-still-lose-money.html" class="card-link">Why Good Ideas Still Lose Money</a></h3>
-                       <p>Execution, sizing, slippage, and prop rules that turn a correct read into a losing trade.</p>
-                    </article>
-                    <article class="card">
-                       <h3><a href="market-basics/risk-per-trade-small-accounts.html" class="card-link">Risk Per Trade For Small Accounts</a></h3>
-                       <p>How to size futures trades so a small account or prop eval survives normal market movement.</p>
-                    </article>
-                    <article class="card">
-                       <h3><a href="platforms-tutorials/simple-readable-chart-layout.html" class="card-link">A Simple, Readable Chart Layout</a></h3>
-                       <p>A clean layout anyone can read in real time without clutter or indicator overload.</p>
-                    </article>
-                    <article class="card">
-                      <h3><a href="platforms-tutorials/ninjatrader-basics.html" class="card-link">NinjaTrader Basics</a></h3>
-                      <p>Connecting data, opening charts, placing orders, and keeping NinjaTrader clean and readable.</p>
-                    </article>
-                    <article class="card">
-                      <h3><a href="market-basics/what-is-drawdown-really.html" class="card-link">What Is Drawdown Really?</a></h3>
-                      <p>What drawdown actually measures and why it determines whether your account survives normal volatility.</p>
-                    </article>
-                    <article class="card">
-                      <h3><a href="futures-basics/limit-vs-market-orders.html" class="card-link">Limit vs Market Orders</a></h3>
-                      <p>What each order type actually does, and when you should use one over the other.</p>
-                    </article>
-                    <article class="card">
-                      <h3><a href="market-basics/execution-vs-idea.html" class="card-link">Execution vs Idea</a></h3>
-                      <p>Why traders lose money even when they correctly call market direction.</p>
-                    </article>
-                    <article class="card">
-                      <h3><a href="futures-basics/how-slippage-works.html" class="card-link">How Slippage Works</a></h3>
-                      <p>What slippage actually is, why it happens, and how to avoid getting hammered by it.</p>
-                    </article>
-                    <article class="card">
-                      <h3><a href="futures-basics/what-makes-futures-move.html" class="card-link">What Makes Futures Move?</a></h3>
-                      <p>The real catalysts behind ES, NQ, MES, MNQ movement. Not indicators — actual drivers.</p>
-                    </article>
-                    <article class="card">
-                      <h3><a href="futures-basics/what-is-liquidity.html" class="card-link">What Is Liquidity?</a></h3>
-                      <p>Why liquidity controls fills, slippage, volatility, and the speed of ES/NQ.</p>
-                    </article>
-                    <article class="card">
-                      <h3><a href="futures-basics/limit-vs-stop-orders.html" class="card-link">Limit vs Stop Orders</a></h3>
-                      <p>The difference between limit, stop-market, and stop-limit orders — and when to use each.</p>
-                    </article>
-                    <article class="card">
-                      <h3><a href="platforms-tutorials/dom-trading-basics.html" class="card-link">DOM Trading For Beginners</a></h3>
-                      <p>What the DOM shows, what it doesn't show, and how to use it without getting baited.</p>
-                    </article>   
-                    <article class="card">
-                      <h3><a href="market-basics/trade-management-holding-winners.html" class="card-link">Trade Management</a></h3>
-                      <p>How to hold winners, cut losers, and avoid blowing up through bad behavior.</p>
-                    </article>
-                    <article class="card">
-                      <h3><a href="futures-basics/market-structure-basics.html" class="card-link">Market Structure Basics</a></h3>
-                      <p>HH, HL, LH, LL — the simplest way to read real trend direction.</p>
-                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
 
 
 
