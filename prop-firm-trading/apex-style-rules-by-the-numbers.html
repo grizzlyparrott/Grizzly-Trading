@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex-Style Rules By The Numbers – Grizzly Parrott Trading</title>
+    <meta name="description" content="Breakdown of a typical Apex-style futures prop firm evaluation: trailing drawdown, daily loss limit, profit target, contract limits, and realistic expectations.">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+
+        <h1>Apex-Style Rules By The Numbers</h1>
+        <p class="section-intro">
+            This is a clean, numerical breakdown of how a typical Apex-style futures evaluation works. 
+            These numbers aren’t guesses—they’re the actual structure nearly every firm using the “Apex model” follows.
+        </p>
+
+        <h2>Example Account: $50,000 Evaluation</h2>
+
+        <ul>
+            <li><strong>Starting balance:</strong> $50,000 (this number doesn’t actually matter)</li>
+            <li><strong>Profit target:</strong> $3,000</li>
+            <li><strong>Trailing drawdown:</strong> $2,500 (trails unrealized equity)</li>
+            <li><strong>Daily loss limit:</strong> ~$1,100–$1,200 depending on the firm</li>
+            <li><strong>Max contracts:</strong> 6 ES / 12 MES / 2 NQ / 4 MNQ (varies slightly by firm)</li>
+            <li><strong>Minimum active days:</strong> 7</li>
+        </ul>
+
+        <p>
+            Every number above is designed to push you toward small sizing, tight risk, and clean entries. 
+            The trailing drawdown is the biggest rule people get blindsided by, so we break it down below.
+        </p>
+
+        <h2>How The Trailing Drawdown Actually Moves</h2>
+
+        <p>
+            Suppose your trailing drawdown floor starts at:
+        </p>
+
+        <pre><code>$50,000 - $2,500 = $47,500 (initial trailing drawdown floor)</code></pre>
+
+        <p>
+            If your open profit reaches +$800 during a trade, even if you close it at +$200, 
+            the system has already “seen” the +$800 and moves your drawdown floor up:
+        </p>
+
+        <pre><code>$47,500 + $800 = $48,300 (new trailing floor)</code></pre>
+
+        <p>
+            This is why people fail after a good run—open PnL moves the floor even if you never realize the profit.
+        </p>
+
+        <h2>You Violate When:</h2>
+
+        <ul>
+            <li>Your realized/total equity hits the trailing floor</li>
+            <li>OR you hit the daily loss limit</li>
+            <li>OR you break news/overnight rules</li>
+        </ul>
+
+        <p>Most violations come from hitting the trailing floor on a pullback after a big open profit spike.</p>
+
+        <h2>What A “Safe” Day Looks Like</h2>
+
+        <p>
+            Realistic risk levels for a $50k Apex-style account:
+        </p>
+
+        <ul>
+            <li>Risk per trade: $50–$120</li>
+            <li>Max risk per day: ~$300–$400</li>
+            <li>Contracts: 1–2 MES or 1 MNQ until you are ahead by +$1,000+</li>
+        </ul>
+
+        <p>
+            The evaluation isn’t a test of skill under pressure—it’s a test of whether you can avoid blowing yourself up.
+        </p>
+
+        <h2>How Long It Actually Takes To Pass</h2>
+
+        <ul>
+            <li>If you average +$150/day → ~20 trading days</li>
+            <li>If you average +$250/day → ~12 trading days</li>
+            <li>If you average +$400/day → ~7–8 trading days</li>
+        </ul>
+
+        <p>
+            These are realistic numbers for someone trading MES/MNQ with discipline. 
+            Anyone talking about passing in “one big NQ trade” is the reason Apex makes millions.
+        </p>
+
+        <h2>What Happens After You Pass</h2>
+
+        <p>
+            You usually get:
+        </p>
+
+        <ul>
+            <li>Static drawdown (much easier)</li>
+            <li>Payout windows (first one is usually 30 days)</li>
+            <li>Same contract rules, but no trailing nonsense</li>
+        </ul>
+
+        <p>
+            This is why most traders find the evaluation harder than the funded account.
+        </p>
+
+        <h2>The Short Version</h2>
+
+        <ul>
+            <li>Don’t push size early.</li>
+            <li>Don’t let open profits explode—traildowns will follow.</li>
+            <li>Take consistent small wins instead of trying to be a hero.</li>
+            <li>The evaluation is designed to punish overconfidence, not bad ideas.</li>
+        </ul>
+
+        <div style="margin-top: 2rem;">
+            <a href="../index.html" class="card-link">← Back to Home</a>
+        </div>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Grizzly Parrott Trading. All rights reserved.</p>
+        <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    </div>
+</footer>
+
+</body>
+</html>
