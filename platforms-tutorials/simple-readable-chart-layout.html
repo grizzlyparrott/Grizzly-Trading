@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple, Readable Chart Layout – Grizzly Parrott Trading</title>
+    <meta name="description" content="A clean futures chart layout you can actually read in real time without clutter, confusion, or a wall of indicators.">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+
+        <h1>A Simple, Readable Chart Layout</h1>
+        <p class="section-intro">
+            Most traders lose because they can’t see what price is actually doing.  
+            Their charts are full of indicators, colors, and lagging signals.  
+            This layout fixes that. Clean, simple, readable in real time.
+        </p>
+
+        <h2>1. Use A Dark Background (Not Pure Black)</h2>
+        <p>
+            Pure black hides details.  
+            Use a <strong>dark gray</strong> (like TradingView’s “Dark Theme” or NinjaTrader’s #1C1C1C).
+        </p>
+        <p>
+            Why?  
+            Your eyes can track candles better when there’s a tiny bit of contrast.
+        </p>
+
+        <h2>2. Use Only Two Candle Colors</h2>
+        <p>
+            Green for bullish.  
+            Red for bearish.  
+            No gradients. No outlines.  
+        </p>
+        <p>
+            Example:
+        </p>
+        <ul>
+            <li>Bullish: #4CAF50</li>
+            <li>Bearish: #F44336</li>
+        </ul>
+
+        <h2>3. Add Only One Moving Average</h2>
+        <p>
+            Not 5 moving averages layered on top of each other. Just <strong>one</strong>.
+        </p>
+        <p>
+            Recommended:
+        </p>
+        <ul>
+            <li><strong>20 EMA</strong> → short-term structure</li>
+        </ul>
+        <p>
+            The point isn't to trade off the line —  
+            it just helps you visually see the “lean” of the intraday trend.
+        </p>
+
+        <h2>4. Use A Single Volume Panel</h2>
+        <p>
+            One simple histogram at the bottom is enough.  
+            No colored zones, no weird TPO overlays, no “delta fingerprinting.”
+        </p>
+        <p>
+            What you want:
+        </p>
+        <ul>
+            <li>Is volume increasing or decreasing?</li>
+            <li>Does volume spike on breakouts?</li>
+            <li>Does volume disappear during pullbacks?</li>
+        </ul>
+
+        <h2>5. Mark ONLY Key Levels</h2>
+        <p>
+            Not 20 lines drawn across the chart.  
+            Only these levels matter:
+        </p>
+        <ul>
+            <li>Yesterday’s high</li>
+            <li>Yesterday’s low</li>
+            <li>Overnight high/low (RTH)</li>
+            <li>One key intraday level (your choice)</li>
+        </ul>
+        <p>
+            No more than 4–6 horizontal lines total.
+        </p>
+
+        <h2>6. Use A Clean DOM (Optional)</h2>
+        <p>
+            If you use DOM:
+        </p>
+        <ul>
+            <li>Turn off heatmaps</li>
+            <li>Turn off bid coloring</li>
+            <li>Turn off every visual except the columns</li>
+        </ul>
+        <p>
+            A clean DOM keeps you from overreacting to spoofing and noise.
+        </p>
+
+        <h2>7. No Indicators On The Chart Other Than The EMA</h2>
+        <p>
+            No RSI.  
+            No MACD.  
+            No VWAP bands.  
+            No market profile.  
+        </p>
+        <p>
+            This layout forces you to watch:
+        </p>
+        <ul>
+            <li>Structure</li>
+            <li>Pullbacks</li>
+            <li>Momentum</li>
+            <li>Volume shifts</li>
+        </ul>
+
+        <h2>8. Why This Layout Works</h2>
+        <p>
+            When you strip the chart down to raw price and volume,  
+            your brain stops looking for magical signals and starts seeing:
+        </p>
+        <ul>
+            <li>Higher highs / higher lows</li>
+            <li>Lower highs / lower lows</li>
+            <li>Breakouts and failed breakouts</li>
+            <li>Where volume confirms a move</li>
+        </ul>
+        <p>
+            This is what real traders look at — not a stack of indicators.
+        </p>
+
+        <div style="margin-top:2rem;">
+            <a href="../index.html" class="card-link">← Back to Home</a>
+        </div>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Grizzly Parrott Trading. All rights reserved.</p>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </div>
+</footer>
+
+</body>
+</html>
