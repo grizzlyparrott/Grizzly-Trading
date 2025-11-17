@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use Bracket Orders in Tradovate | Grizzly Parrott Trading</title>
+    <meta name="description" content="Step-by-step guide to setting up bracket orders in Tradovate so every trade has a stop and target automatically.">
+    <link rel="stylesheet" href="/Grizzly-Trading/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-mark">GP</span>
+                <span class="logo-text">Grizzly Parrott Trading</span>
+            </div>
+
+            <nav class="main-nav">
+                <a href="/Grizzly-Trading/index.html#articles">Articles</a>
+                <a href="/Grizzly-Trading/futures-basics/index.html">Futures Basics</a>
+                <a href="/Grizzly-Trading/prop-firm-trading/index.html">Prop Firms</a>
+                <a href="/Grizzly-Trading/platforms-tutorials/index.html">Platforms</a>
+                <a href="/Grizzly-Trading/market-basics/index.html">Market Basics</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>How to Use Bracket Orders in Tradovate</h1>
+                    <p>
+                        Set a target and stop automatically on every entry so you are not naked in the market
+                        clicking stops in after the fact.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container article">
+
+                <h2>What a Bracket Order Is</h2>
+                <p>
+                    A bracket order in Tradovate is an entry order that automatically drops in a take-profit
+                    and a stop-loss when you get filled. One entry, two exits:
+                </p>
+                <ul>
+                    <li>Target above (for longs) or below (for shorts).</li>
+                    <li>Stop on the other side, capping your loss.</li>
+                </ul>
+                <p>
+                    It is just a preset combo built on top of the basic order types you already saw in
+                    <a href="/Grizzly-Trading/platforms-tutorials/tradovate-order-entry.html">
+                        How to Place Orders in Tradovate
+                    </a>.
+                </p>
+
+                <h2>Why You Should Use Them</h2>
+                <p>
+                    Brackets solve three problems at once:
+                </p>
+                <ul>
+                    <li>You always have a stop in the market.</li>
+                    <li>You do not have to drag a target in after the trade is live.</li>
+                    <li>You remove a lot of panic clicking when price moves fast.</li>
+                </ul>
+                <p>
+                    If you trade prop firm evaluations with tight trailing drawdown like the ones in
+                    <a href="/Grizzly-Trading/prop-firm-trading/trailing-drawdown-explained.html">
+                        Trailing Drawdown Explained
+                    </a>,
+                    brackets help keep your size and exits under control.
+                </p>
+
+                <h2>Setting Up a Bracket Template in Tradovate</h2>
+                <ol>
+                    <li>Open Tradovate and go to the chart or DOM you actually use.</li>
+                    <li>Find the order presets or bracket settings panel (Order Templates).</li>
+                    <li>Choose a basic entry type: market, limit, or stop.</li>
+                    <li>Set a default stop distance (for example, 5 or 10 ticks).</li>
+                    <li>Set a default target distance (for example, 10 or 20 ticks).</li>
+                    <li>Save this as a named template so you can re-use it.</li>
+                </ol>
+                <p>
+                    The exact clicks depend on your layout, but the logic is simple: entry order plus a
+                    linked stop and target that move with it. Combine that with a clean workspace like in
+                    <a href="/Grizzly-Trading/platforms-tutorials/simple-readable-chart-layout.html">
+                        Simple, Readable Chart Layout
+                    </a>
+                    so you can see everything at a glance.
+                </p>
+
+                <h2>Using Brackets From the Chart</h2>
+                <p>
+                    Once the template is saved:
+                </p>
+                <ul>
+                    <li>Select your bracket template in the chart’s order panel.</li>
+                    <li>Click to place your entry as you normally would (limit, market, or stop).</li>
+                    <li>When the entry fills, your stop and target appear automatically on the chart.</li>
+                    <li>Drag the stop or target lines if you want to fine tune them.</li>
+                </ul>
+                <p>
+                    This lines up directly with how you manage entries in
+                    <a href="/Grizzly-Trading/platforms-tutorials/dom-trading-basics.html">
+                        DOM Trading Basics
+                    </a>
+                    if you prefer the ladder instead of the chart.
+                </p>
+
+                <h2>Basic Bracket Sizing for Small Accounts</h2>
+                <p>
+                    Brackets do not magically fix bad risk, they just enforce it. You still have to pick
+                    the right size. A simple approach:
+                </p>
+                <ul>
+                    <li>Decide how much you are willing to lose per trade (in dollars).</li>
+                    <li>Divide that by your stop size in ticks and the tick value.</li>
+                    <li>Round down to a contract size that fits.</li>
+                </ul>
+                <p>
+                    That is the same logic you should already be using from
+                    <a href="/Grizzly-Trading/market-basics/risk-per-trade-small-accounts.html">
+                        Risk Per Trade for Small Accounts
+                    </a>.
+                </p>
+
+                <h2>Bracket Orders and Evaluation Rules</h2>
+                <p>
+                    For prop firm challenges, brackets can keep you from accidentally running trades
+                    without stops, but they do not override the rules. You can still:
+                </p>
+                <ul>
+                    <li>Hit trailing drawdown if your stop is too wide.</li>
+                    <li>Break daily loss limits with too much size.</li>
+                    <li>Scale too fast and get clipped by rules.</li>
+                </ul>
+                <p>
+                    Use brackets alongside a basic understanding of the evaluation structure in
+                    <a href="/Grizzly-Trading/prop-firm-trading/how-prop-firm-evaluations-work.html">
+                        How Prop Firm Evaluations Work
+                    </a>.
+                </p>
+
+                <h2>Related Guides</h2>
+                <ul>
+                    <li><a href="/Grizzly-Trading/platforms-tutorials/tradovate-for-beginners.html">Tradovate For Beginners</a></li>
+                    <li><a href="/Grizzly-Trading/platforms-tutorials/tradovate-order-entry.html">How to Place Orders in Tradovate</a></li>
+                    <li><a href="/Grizzly-Trading/platforms-tutorials/simple-readable-chart-layout.html">Simple, Readable Chart Layout</a></li>
+                    <li><a href="/Grizzly-Trading/platforms-tutorials/dom-trading-basics.html">DOM Trading Basics</a></li>
+                    <li><a href="/Grizzly-Trading/market-basics/risk-per-trade-small-accounts.html">Risk Per Trade for Small Accounts</a></li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+</body>
+</html>
