@@ -285,3 +285,15 @@ body {
         align-items: flex-start;
     }
 }
+/* Neon green link styling */
+a {
+    color: #48ff9c; /* neon green */
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+a:hover {
+    color: #2cff80;
+    text-shadow: 0 0 8px #2cff80;
+}
+
