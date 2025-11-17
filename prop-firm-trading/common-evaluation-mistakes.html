@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Evaluation Mistakes – Grizzly Parrott Trading</title>
+    <meta name="description" content="Plain-English breakdown of common mistakes traders make during futures prop firm evaluations, including rule violations, oversizing, and misunderstanding drawdown.">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+        <h1>Common Evaluation Mistakes</h1>
+        <p class="section-intro">
+            Most failed prop firm evaluations don’t fail because the trader “can’t win.” 
+            They fail because of repeated rule violations and basic risk errors that are built into the structure of the test.
+        </p>
+
+        <h2>1. Not Reading The Rules Carefully</h2>
+        <p>
+            Every firm has its own rules for:
+        </p>
+        <ul>
+            <li>Maximum daily loss</li>
+            <li>Overall drawdown (trailing or static)</li>
+            <li>News restrictions</li>
+            <li>Overnight holds</li>
+            <li>Allowed products and position size</li>
+        </ul>
+        <p>
+            A large chunk of failed evaluations happen because traders assume the rules are “standard” across firms and never check the firm’s official documentation.
+        </p>
+
+        <h2>2. Ignoring The Daily Loss Limit</h2>
+        <p>
+            The daily loss limit is a hard stop for the account. Once it’s hit, the evaluation is usually over.
+        </p>
+        <p>
+            A common pattern:
+        </p>
+        <ul>
+            <li>Trader takes several small losses early in the session</li>
+            <li>Tries to “make it back” with larger size</li>
+            <li>One bad move pushes the account past the daily limit</li>
+        </ul>
+
+        <h2>3. Oversizing After A Good Start</h2>
+        <p>
+            Traders often increase contract size as soon as they get ahead of the starting balance. 
+            In a trailing drawdown structure, this can push the account into violation quickly.
+        </p>
+        <p>
+            One or two larger losing trades can erase multiple days of progress and trigger both the daily and overall drawdown limits.
+        </p>
+
+        <h2>4. Misunderstanding Trailing Drawdown</h2>
+        <p>
+            Trailing drawdown moves up as new highs are made. 
+            Many traders assume it behaves like a static cushion and keep trading as if the floor never changes.
+        </p>
+        <p>
+            Typical issues:</p>
+        <ul>
+            <li>Letting open profits run very high, which moves the drawdown floor up</li>
+            <li>Holding through a reversal that brings equity down close to the new floor</li>
+            <li>Not realizing that a “normal” pullback can now violate the account</li>
+        </ul>
+
+        <h2>5. Holding Through Restricted News Events</h2>
+        <p>
+            Some firms restrict trading during major economic releases. 
+            If a trader opens or holds positions through restricted news, it can count as a rule violation even if the trade wins.
+        </p>
+        <p>
+            The firm’s news calendar and restricted events list are usually published on their site or in their documentation.
+        </p>
+
+        <h2>6. Trading Too Many Products At Once</h2>
+        <p>
+            Evaluations are often built around a few liquid markets (ES, MES, NQ, MNQ, CL, GC). 
+            Traders who bounce between thin markets or trade multiple symbols at once can:
+        </p>
+        <ul>
+            <li>Increase slippage and spread cost</li>
+            <li>Lose track of overall exposure</li>
+            <li>Hit limits faster than expected</li>
+        </ul>
+
+        <h2>7. Not Flattening Before The Cutoff</h2>
+        <p>
+            Most futures prop firms require all positions to be closed before a certain time each day.
+        </p>
+        <p>
+            Common mistake:
+        </p>
+        <ul>
+            <li>Staying in a trade too close to the firm’s cutoff time</li>
+            <li>Forgetting about extended session rules</li>
+            <li>Assuming the platform will close all trades automatically when it may not</li>
+        </ul>
+
+        <h2>8. Treating The Evaluation Like A One-Time Lottery Ticket</h2>
+        <p>
+            Evaluations are structured as tests of consistency. 
+            Going all-in on a single large trade or taking outsized risk because “it’s just a evaluation” frequently leads to instant violation.
+        </p>
+
+        <h2>9. Not Tracking Progress Against The Rules</h2>
+        <p>
+            Some traders know the rules at the start but stop tracking:
+        </p>
+        <ul>
+            <li>Current balance relative to profit target</li>
+            <li>Distance to daily loss limit</li>
+            <li>Distance to trailing or static drawdown floor</li>
+        </ul>
+        <p>
+            Without a simple way to see those numbers, it’s easy to push one trade too far and cross a line without noticing.
+        </p>
+
+        <h2>The Core Pattern Behind Most Failures</h2>
+        <p>
+            The most common pattern is simple:
+        </p>
+        <ul>
+            <li>Underestimating how strict the risk rules really are</li>
+            <li>Oversizing or overtrading after a good run</li>
+            <li>Breaking a hard rule (daily loss, drawdown, news, or cutoff time)</li>
+        </ul>
+        <p>
+            The evaluation structure is designed to enforce discipline and risk limits. 
+            Once a rule is broken, the account is usually considered failed, regardless of how good earlier trades looked.
+        </p>
+
+        <div style="margin-top: 2rem;">
+            <a href="../index.html" class="card-link">← Back to Home</a>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Grizzly Parrott Trading. All rights reserved.</p>
+        <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    </div>
+</footer>
+
+</body>
+</html>
