@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grizzly Parrott Trading – Futures & Prop Firm Basics</title>
+    <meta name="description" content="Plain-English futures and prop firm trading explanations for beginners. No hype, no signals, just straight answers.">
+    <!-- IMPORTANT: style.css is in the ROOT of the repo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-mark">GP</span>
+                <span class="logo-text">Grizzly Parrott Trading</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#articles">Articles</a>
+                <a href="#futures">Futures Basics</a>
+                <a href="#props">Prop Firms</a>
+                <a href="#platforms">Platforms</a>
+                <a href="#market">Market Basics</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>Futures And Prop Firm Trading, Explained Like A Human</h1>
+                    <p>
+                        Straightforward answers about contracts, ticks, drawdown, and prop firm rules.
+                        No get-rich promises, no guru bullshit.
+                    </p>
+                    <a href="#articles" class="btn-primary">Jump To Articles</a>
+                </div>
+                <div class="hero-card">
+                    <h2>What You’ll Find Here</h2>
+                    <ul>
+                        <li><a href="#futures">What futures contracts actually are</a></li>
+                        <li><a href="#props">How prop firm evaluations really work</a></li>
+                        <li><a href="#platforms">Basic platform setup (Tradovate, NinjaTrader)</a></li>
+                        <li><a href="#market">Risk, margin, and why accounts blow up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles list: you’ll grow this as we write posts -->
+        <section id="articles" class="section">
+            <div class="container">
+                <h2>Articles</h2>
+                <p class="section-intro">
+                    Real posts only. When a new article exists, it gets added here with a link.
+                </p>
+                <div class="grid grid-3">
+
+                    <!-- EXAMPLE ARTICLE CARD 1 -->
+                    <article class="card">
+                        <h3><a href="futures-basics/what-is-a-futures-contract.html" class="card-link">What Is A Futures Contract?</a></h3>
+                        <p>What you are actually trading when you click buy or sell on ES, NQ, or MES.</p>
+                    </article>
+
+                    <!-- EXAMPLE ARTICLE CARD 2 -->
+                    <article class="card">
+                        <h3><a href="futures-basics/ticks-points-dollar-value.html" class="card-link">Ticks, Points, And Dollar Value</a></h3>
+                        <p>How many ticks are in a point, how much each tick is worth, and why it matters before you size up.</p>
+                    </article>
+
+                    <!-- EXAMPLE ARTICLE CARD 3 -->
+                    <article class="card">
+                        <h3><a href="prop-firm-trading/trailing-drawdown-explained.html" class="card-link">What Is Trailing Drawdown In Prop Firms?</a></h3>
+                        <p>The real reason people fail prop evaluations even when they are technically profitable.</p>
+                    </article>
+
+                    <!-- WHEN WE WRITE MORE POSTS, YOU JUST COPY ONE OF THESE
+                         <article class="card">
+                             <h3><a href="PATH/TO/ARTICLE.html" class="card-link">Article Title Here</a></h3>
+                             <p>One-sentence description of the article.</p>
+                         </article>
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Futures section (no fake links, just what the site covers) -->
+        <section id="futures" class="section section-alt">
+            <div class="container">
+                <h2>Futures Trading Basics</h2>
+                <p class="section-intro">
+                    Core concepts: contracts, leverage, margin, and how futures differ from stocks and crypto.
+                </p>
+                <div class="grid grid-3">
+                    <article class="card">
+                        <h3>ES vs MES vs NQ</h3>
+                        <p>Differences in size, tick value, and which one makes sense for smaller accounts.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Day Margin vs Overnight Margin</h3>
+                        <p>Why your broker lets you trade big size intraday and then slams on the brakes after hours.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Contract Expiration And Roll</h3>
+                        <p>What rollover means, why charts look weird on roll day, and how to not get blindsided.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prop firms -->
+        <section id="props" class="section">
+            <div class="container">
+                <h2>Prop Firm Trading</h2>
+                <p class="section-intro">
+                    Evaluations, rules, payouts, and the common ways people burn through accounts.
+                </p>
+                <div class="grid grid-3">
+                    <article class="card">
+                        <h3>How Evaluations Work</h3>
+                        <p>Profit targets, trailing drawdown, minimum days, and what the firm actually cares about.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Common Evaluation Mistakes</h3>
+                        <p>Scaling too fast, revenge trading, and not understanding the daily loss limit.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Apex-Style Rules By The Numbers</h3>
+                        <p>Example using a typical 50k futures evaluation: limits, risk, and realistic expectations.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platforms -->
+        <section id="platforms" class="section section-alt">
+            <div class="container">
+                <h2>Platforms And Tutorials</h2>
+                <p class="section-intro">
+                    Basic setup for charting, orders, and risk management on common futures platforms.
+                </p>
+                <div class="grid grid-3">
+                    <article class="card">
+                        <h3>Tradovate For Beginners</h3>
+                        <p>How to set up charts, DOM, and simple hotkeys without overcomplicating everything.</p>
+                    </article>
+                    <article class="card">
+                        <h3>NinjaTrader Basics</h3>
+                        <p>Connecting data, placing orders, and avoiding indicator overload.</p>
+                    </article>
+                    <article class="card">
+                        <h3>A Simple, Readable Chart Layout</h3>
+                        <p>One layout you can actually read in real time instead of a rainbow of nonsense.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market basics -->
+        <section id="market" class="section">
+            <div class="container">
+                <h2>Market And Risk Basics</h2>
+                <p class="section-intro">
+                    Risk, variance, and why being “right” on direction does not always mean you get paid.
+                </p>
+                <div class="grid grid-3">
+                    <article class="card">
+                        <h3>What Is Drawdown Really?</h3>
+                        <p>Not just a number on a dashboard, but what it means for your account staying alive.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Why Good Ideas Still Lose Money</h3>
+                        <p>Slippage, spreads, fills, and the gap between idea and execution.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Risk Per Trade For Small Accounts</h3>
+                        <p>How much is too much, and how people quietly blow up without noticing.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year"></span> Grizzly Parrott Trading. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Disclaimer</a>
+                <a href="#">Privacy</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+</html>
+
