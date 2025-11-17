@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Expiration And Roll – Grizzly Parrott Trading</title>
+    <meta name="description" content="What futures contract expiration is, how rollover works, and why charts and volume shift around roll dates.">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+
+        <h1>Contract Expiration And Roll</h1>
+        <p class="section-intro">
+            Every futures contract expires. Traders don’t hold the same symbol forever. 
+            They “roll” to the next contract when volume shifts and expiration gets close.
+        </p>
+
+        <h2>What Contract Expiration Is</h2>
+        <p>
+            A futures contract has a specific expiration month and last trading day. 
+            After that point, the contract is no longer tradable. 
+        </p>
+        <p>
+            For index futures like ES, MES, NQ, and MNQ:
+        </p>
+        <ul>
+            <li>Contracts are listed quarterly (March, June, September, December)</li>
+            <li>Each contract has a code combining the symbol + month code + year</li>
+        </ul>
+
+        <h2>Month Codes</h2>
+        <p>
+            Common month codes used in futures:
+        </p>
+        <ul>
+            <li><strong>H</strong> – March</li>
+            <li><strong>M</strong> – June</li>
+            <li><strong>U</strong> – September</li>
+            <li><strong>Z</strong> – December</li>
+        </ul>
+        <p>
+            Example: <strong>ESH4</strong> would be an S&amp;P 500 March contract for a given year.
+        </p>
+
+        <h2>Why Traders Roll Before Expiration</h2>
+        <p>
+            Most traders never trade all the way into the final days of a contract. 
+            As expiration approaches:
+        </p>
+        <ul>
+            <li>Volume starts to shift to the next contract month</li>
+            <li>Bid/ask spreads in the expiring contract can widen</li>
+            <li>Price behavior can get choppy as positions are closed or hedged</li>
+        </ul>
+        <p>
+            To avoid thin liquidity and odd price behavior, traders move to the next active contract early. 
+            This process is rollover.
+        </p>
+
+        <h2>When Roll Usually Happens For Index Futures</h2>
+        <p>
+            For major index futures, market participants typically start rolling to the next contract before the current one is very close to expiration. 
+            The exact timing can vary, but the pattern is:
+        </p>
+        <ul>
+            <li>Volume gradually increases in the new contract</li>
+            <li>At some point, the new contract has more volume than the old one</li>
+            <li>Most traders and charting platforms switch their “front month” symbol to the new contract</li>
+        </ul>
+        <p>
+            The detailed roll schedule is published by exchanges and also shown on many broker and data provider calendars.
+        </p>
+
+        <h2>What Roll Looks Like On A Chart</h2>
+        <p>
+            Around roll time, you may notice:
+        </p>
+        <ul>
+            <li>Sudden changes in volume on your usual contract symbol</li>
+            <li>A price gap between the old and new contracts</li>
+            <li>Indicators that look different when you switch symbols</li>
+        </ul>
+        <p>
+            The gap comes from small pricing differences between contract months. 
+            Charts that are built from a continuous contract may smooth or adjust these differences depending on the data provider.
+        </p>
+
+        <h2>Continuous vs Individual Contracts</h2>
+        <p>
+            Data providers often offer:
+        </p>
+        <ul>
+            <li><strong>Individual contract charts</strong> – one symbol per specific contract month</li>
+            <li><strong>Continuous charts</strong> – a stitched-together history of multiple contract months</li>
+        </ul>
+        <p>
+            Continuous symbols are convenient for long-term analysis, but exact roll rules and adjustments are defined by the data provider.
+        </p>
+
+        <h2>How Platforms Handle Roll</h2>
+        <p>
+            Many trading platforms:
+        </p>
+        <ul>
+            <li>Automatically switch the default contract symbol when the new one becomes front month</li>
+            <li>Provide a prompt or calendar showing recommended roll dates</li>
+            <li>Allow you to choose between different roll rules for continuous data</li>
+        </ul>
+        <p>
+            The platform’s documentation explains exactly how its continuous data and roll logic are handled.
+        </p>
+
+        <h2>Key Points To Remember</h2>
+        <ul>
+            <li>Every futures contract expires on a specific schedule</li>
+            <li>Traders roll out of expiring contracts into the next month before liquidity dries up</li>
+            <li>Exchange calendars and broker documentation show exact last trade and roll dates</li>
+            <li>Price gaps between contract months are normal and depend on how the market prices each month</li>
+        </ul>
+
+        <div style="margin-top: 2rem;">
+            <a href="../index.html" class="card-link">← Back to Home</a>
+        </div>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Grizzly Parrott Trading. All rights reserved.</p>
+        <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    </div>
+</footer>
+
+</body>
+</html>
