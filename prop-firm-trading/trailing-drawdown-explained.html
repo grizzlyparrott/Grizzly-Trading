@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is Trailing Drawdown In Prop Firms? – Grizzly Parrott Trading</title>
+    <meta name="description" content="Clear explanation of trailing drawdown in futures prop firm evaluations, how it is calculated, and why traders fail even when they are profitable.">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+        <h1>What Is Trailing Drawdown In Prop Firms?</h1>
+        <p class="section-intro">
+            Trailing drawdown is a moving “floor” on your account. 
+            If your balance or equity falls below that floor, you fail the evaluation, even if you were previously profitable.
+        </p>
+
+        <h2>Basic Idea</h2>
+        <p>
+            In most futures prop firm evaluations, your account has:
+        </p>
+        <ul>
+            <li>A <strong>starting balance</strong> (for example, $50,000)</li>
+            <li>A <strong>max trailing drawdown</strong> (for example, $2,500)</li>
+        </ul>
+        <p>
+            The prop firm tracks your **highest profit point** and moves the drawdown level up behind it.
+            If your balance or equity dips below that level, the account is violated.
+        </p>
+
+        <h2>Simple Example</h2>
+        <p>Assume:</p>
+        <ul>
+            <li>Starting balance: <strong>$50,000</strong></li>
+            <li>Max trailing drawdown: <strong>$2,500</strong></li>
+            <li>Initial drawdown floor: <strong>$47,500</strong> ($50,000 − $2,500)</li>
+        </ul>
+
+        <p>Now walk through a few steps:</p>
+        <ol>
+            <li>
+                You make $1,000.  
+                <br>Highest balance so far: <strong>$51,000</strong>  
+                <br>New drawdown floor: <strong>$48,500</strong> ($51,000 − $2,500)
+            </li>
+            <li>
+                You then lose $600.  
+                <br>Balance: <strong>$50,400</strong>  
+                <br>Floor stays at <strong>$48,500</strong> (it does not move down)
+            </li>
+            <li>
+                You make another $800.  
+                <br>Balance: <strong>$51,200</strong>  
+                <br>New drawdown floor: <strong>$48,700</strong> ($51,200 − $2,500)
+            </li>
+        </ol>
+
+        <p>
+            If at any point your balance or equity drops below the current floor, you fail the evaluation.
+        </p>
+
+        <h2>Balance-Based vs Equity-Based Trailing</h2>
+        <p>
+            Different firms use different tracking methods:
+        </p>
+        <ul>
+            <li>
+                <strong>Balance-based trailing:</strong>  
+                The drawdown only updates when trades are closed. Unrealized P&amp;L does not move the floor.
+            </li>
+            <li>
+                <strong>Equity-based trailing:</strong>  
+                The drawdown tracks open profit as well. If you spike up then reverse while still in the trade, the floor may have already moved.
+            </li>
+        </ul>
+        <p>
+            Equity-based trailing is stricter because big open profits can raise the floor, then a reversal can break the rule even if you end near breakeven.
+        </p>
+
+        <h2>End-of-Day Trailing vs Intraday Trailing</h2>
+        <p>
+            Some prop firms only move the drawdown at the **end of the trading day**.  
+            Others adjust it **in real time** as you trade.
+        </p>
+        <ul>
+            <li><strong>End-of-day trailing:</strong> floor updates once per day using the day’s closing balance.</li>
+            <li><strong>Intraday trailing:</strong> floor can move during the session as new highs are made.</li>
+        </ul>
+
+        <h2>Why Traders Fail Because Of Trailing Drawdown</h2>
+        <p>
+            Common reasons traders violate trailing drawdown:
+        </p>
+        <ul>
+            <li>Not knowing if the firm uses balance, equity, or intraday tracking</li>
+            <li>Letting open profit swing too high relative to their risk per trade</li>
+            <li>Scaling up size after a good run and hitting the floor in one bad move</li>
+            <li>Ignoring the fact that the floor keeps moving up as they make new highs</li>
+        </ul>
+
+        <h2>Trailing Drawdown vs Static Drawdown</h2>
+        <p>
+            Some evaluations use a <strong>static</strong> drawdown instead:
+        </p>
+        <ul>
+            <li><strong>Trailing drawdown:</strong> floor moves up as you make new highs.</li>
+            <li><strong>Static drawdown:</strong> floor stays in one place for the whole evaluation.</li>
+        </ul>
+        <p>
+            Static drawdown is simpler to track because it does not follow your equity curve.
+        </p>
+
+        <h2>Check The Exact Rules For Each Firm</h2>
+        <p>
+            The numbers above are examples only. Every prop firm publishes its own rules, including:
+        </p>
+        <ul>
+            <li>Drawdown amount</li>
+            <li>Whether it trails balance or equity</li>
+            <li>Whether it stops trailing at a certain point</li>
+            <li>When it resets or locks in</li>
+        </ul>
+        <p>
+            Always read the firm’s official documentation to see how their drawdown is defined and calculated.
+        </p>
+
+        <div style="margin-top: 2rem;">
+            <a href="../index.html" class="card-link">← Back to Home</a>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Grizzly Parrott Trading. All rights reserved.</p>
+        <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    </div>
+</footer>
+
+</body>
+</html>
