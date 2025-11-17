@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is Drawdown Really? – Grizzly Parrott Trading</title>
+    <meta name="description" content="A clear explanation of drawdown in trading: what it measures, why it happens, and how it affects futures accounts and prop firm evaluations.">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+
+        <h1>What Is Drawdown Really?</h1>
+        <p class="section-intro">
+            People treat drawdown like a number on a dashboard, but it’s actually the measurement
+            of whether your account can survive normal volatility. 
+        </p>
+
+        <h2>1. Drawdown = Distance Between a Peak and a Drop</h2>
+        <p>
+            Drawdown measures how far your account falls from its highest point 
+            before it recovers.  
+        </p>
+
+        <p>Example:</p>
+        <ul>
+            <li>Your account hits $5,000</li>
+            <li>It drops to $4,500</li>
+        </ul>
+
+        <p>You are in a <strong>$500 drawdown</strong>.</p>
+
+        <h2>2. There Are Only Two Types</h2>
+
+        <h3>**Closed Trade Drawdown**</h3>
+        <p>
+            Measures loss based on <strong>finished trades</strong>.  
+            This is the true “risk” of your system.
+        </p>
+
+        <h3>**Intra-Trade (Open) Drawdown**</h3>
+        <p>
+            How far a trade goes against you before it finishes.  
+            This is the one that blows people up — especially in futures.
+        </p>
+
+        <h2>3. Why Drawdown Happens Even If Your Idea Was Right</h2>
+        <ul>
+            <li>Volatility spikes</li>
+            <li>Entry timing is off by a few seconds</li>
+            <li>Your stop is too tight</li>
+            <li>Your size is too big for normal movement</li>
+        </ul>
+
+        <p>
+            Drawdown doesn’t mean you were wrong.  
+            It means your account couldn’t handle the wiggle.
+        </p>
+
+        <h2>4. In Futures, Drawdown Is Mostly About Tick Size</h2>
+        <p>
+            ES: $12.50 per tick  
+            NQ: $5 per tick  
+            MES/MNQ: smaller but still adds up fast  
+        </p>
+
+        <p>
+            If your stop is 10 ticks on NQ, that’s $50 per contract.  
+            On ES it’s $125.  
+            On a small account, that’s enough to create meaningful drawdown instantly.
+        </p>
+
+        <h2>5. Prop Firms Treat Drawdown Like a Tripwire</h2>
+        <p>
+            Whether it's trailing drawdown or static, the firm does not care about "your idea" 
+            or “your system.”  
+        </p>
+
+        <p>
+            They only care whether your account ever touches the wrong number.
+        </p>
+
+        <h2>6. Good Trading Survives Drawdown</h2>
+        <p>
+            The point isn’t avoiding drawdown — that’s impossible.  
+            The point is keeping it <strong>small enough</strong> that it never takes you out 
+            of the game.
+        </p>
+
+        <ul>
+            <li>Small size</li>
+            <li>Reasonable stop distance</li>
+            <li>No doubling down</li>
+            <li>No revenge trades</li>
+        </ul>
+
+        <p>
+            You don’t control whether price wiggles.  
+            You control whether it kills you.
+        </p>
+
+        <div style="margin-top:2rem;">
+            <a href="../index.html" class="card-link">← Back to Home</a>
+        </div>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Grizzly Parrott Trading. All rights reserved.</p>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </div>
+</footer>
+
+</body>
+</html>
