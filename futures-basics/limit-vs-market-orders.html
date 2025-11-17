@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limit vs Market Orders – When To Use Which</title>
+    <meta name="description" content="Clear explanation of the difference between limit orders and market orders, when to use each, and the actual trade-offs for futures traders.">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header"></header>
+
+<main class="section">
+    <div class="container">
+        <h1>Limit vs Market Orders – When To Use Which</h1>
+        <p class="section-intro">
+            Every futures trader uses these two order types, but most don’t actually understand the trade-offs.
+            Here’s the real difference and when you should use each one.
+        </p>
+
+        <h2>What a Market Order Actually Does</h2>
+        <p>
+            A <strong>market order</strong> says: “Fill me right now at the best available price.”  
+            Execution is guaranteed. Price is not.
+        </p>
+        <p>
+            When you hit market buy, you take whatever sell orders are sitting on the ask.
+            When you market sell, you hit the bids.
+        </p>
+
+        <h3>Market Orders Are Best For:</h3>
+        <ul>
+            <li>Getting into a fast-moving setup immediately</li>
+            <li>Exiting a losing trade right away</li>
+            <li>Small size (1–4 lots) where slippage is minor</li>
+            <li>When spread = 1 tick (most of ES/NQ/MES during RTH)</li>
+        </ul>
+
+        <h3>Market Order Downsides</h3>
+        <ul>
+            <li>You can get slipped multiple ticks in low liquidity</li>
+            <li>News spikes can blow straight past your intended level</li>
+            <li>Larger size = more slippage</li>
+        </ul>
+
+        <hr>
+
+        <h2>What a Limit Order Actually Does</h2>
+        <p>
+            A <strong>limit order</strong> says: “Fill me, but only at this price or better.”  
+            Price is guaranteed. Execution is not.
+        </p>
+        <p>
+            If price tags your limit order but size doesn’t trade through it,
+            you won’t be filled. That’s the “queue.”
+        </p>
+
+        <h3>Limit Orders Are Best For:</h3>
+        <ul>
+            <li>Entries where exact price matters</li>
+            <li>High volatility markets with big spread or fast candles</li>
+            <li>Scaling into positions</li>
+            <li>Trading levels (FVGs, liquidity zones, VWAP re-tests)</li>
+        </ul>
+
+        <h3>Limit Order Downsides</h3>
+        <ul>
+            <li>Not guaranteed to fill even if price hits your level</li>
+            <li>You can miss an entire move waiting for the “perfect” price</li>
+            <li>You may get partial fills on certain platforms</li>
+        </ul>
+
+        <hr>
+
+        <h2>So Which Should You Use?</h2>
+
+        <h3>Use Market When:</h3>
+        <ul>
+            <li>You need to get in or out **now**</li>
+            <li>You’re trading small size</li>
+            <li>Spread is 1 tick and liquidity is strong</li>
+            <li>You’re stopping out of a losing position</li>
+        </ul>
+
+        <h3>Use Limit When:</h3>
+        <ul>
+            <li>You want price precision</li>
+            <li>You’re entering a level and expecting a reaction</li>
+            <li>Liquidity is thin or volatile</li>
+            <li>You’re scaling into a swing or scalp</li>
+        </ul>
+
+        <hr>
+
+        <h2>The Real Rule Traders Use</h2>
+        <p>
+            <strong>Market to exit. Limit to enter.</strong>  
+            Not always, but it’s the cleanest rule of thumb for beginners.
+        </p>
+
+    </div>
+</main>
+
+<footer class="site-footer"></footer>
+
+</body>
+</html>
