@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Trading For Beginners – Grizzly Parrott Trading</title>
+    <meta name="description" content="A simple, honest explanation of the Depth of Market (DOM), what it shows, what it doesn't show, and how beginners should actually use it.">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="site-header"></header>
+
+<main class="section">
+    <div class="container">
+
+        <h1>DOM Trading For Beginners</h1>
+        <p class="section-intro">
+            The DOM (Depth of Market) shows active buyers and sellers at every price level.  
+            It’s powerful — but most beginners stare at it like a slot machine and get destroyed.  
+            Here’s what it actually means and how to use it correctly.
+        </p>
+
+        <h2>1. What the DOM Actually Shows</h2>
+        <p>
+            The DOM displays three things:
+        </p>
+        <ul>
+            <li><strong>Bids</strong> (buyers waiting below the current price)</li>
+            <li><strong>Asks</strong> (sellers waiting above the current price)</li>
+            <li><strong>Last traded price</strong></li>
+        </ul>
+
+        <p>
+            Each row represents a price.  
+            Each number shows how many contracts are sitting there waiting to be executed.
+        </p>
+
+        <h2>2. What the DOM Does NOT Show</h2>
+        <ul>
+            <li>True intent (people spoof orders all day long)</li>
+            <li>Who is placing the orders</li>
+            <li>Whether an order will cancel before it hits</li>
+            <li>Future price direction</li>
+        </ul>
+
+        <p>
+            The DOM shows <strong>resting liquidity</strong> — not guaranteed trades.
+        </p>
+
+        <hr>
+
+        <h2>3. Why the DOM Moves Fast</h2>
+        <p>
+            The numbers update constantly because:
+        </p>
+        <ul>
+            <li>Algorithms add and cancel orders rapidly</li>
+            <li>Market orders are hitting the book</li>
+            <li>HFTs adjust quotes every few milliseconds</li>
+        </ul>
+
+        <p>
+            This is why beginners get hypnotized by the flashing numbers.
+        </p>
+
+        <hr>
+
+        <h2>4. How Fills Happen On the DOM</h2>
+
+        <h3>Market Buy Order:</h3>
+        <p>Hits the SELL side (the asks).</p>
+
+        <h3>Market Sell Order:</h3>
+        <p>Hits the BUY side (the bids).</p>
+
+        <h3>Limit Orders:</h3>
+        <p>
+            Sit in the queue until price trades THROUGH your level.
+        </p>
+
+        <h3>Stop Orders:</h3>
+        <p>
+            Don’t sit on the DOM — they trigger only when price touches them.
+        </p>
+
+        <hr>
+
+        <h2>5. How To Use the DOM As a Beginner</h2>
+
+        <h3>1. Use it to Get Cleaner Fills</h3>
+        <p>
+            If spread is 1 tick and liquidity is strong, DOM fills are smooth.  
+            If spread widens or liquidity thins, size smaller or avoid market orders.
+        </p>
+
+        <h3>2. Watch Liquidity Pools</h3>
+        <p>
+            Big resting orders at a price level often act as magnets.  
+            Price tends to move toward size, then remove it.
+        </p>
+
+        <h3>3. Watch Where Orders Disappear</h3>
+        <p>
+            If size vanishes before price hits it, the liquidity was fake (spoofing).
+        </p>
+
+        <h3>4. Don’t Stare at Every Tick</h3>
+        <p>
+            DOM scalping requires years of experience.  
+            You’re using it for fills and liquidity only — not prediction.
+        </p>
+
+        <hr>
+
+        <h2>6. A Clean DOM Setup (No Clutter)</h2>
+        <ul>
+            <li>Bid size column</li>
+            <li>Ask size column</li>
+            <li>Last traded price highlighted</li>
+            <li>NO heatmaps</li>
+            <li>NO volume shading</li>
+            <li>NO ladder colors except basic blue/red</li>
+        </ul>
+
+        <p>
+            Clean DOM = clean decisions.
+        </p>
+
+        <hr>
+
+        <h2>Bottom Line</h2>
+        <p>
+            The DOM is not a crystal ball.  
+            It’s a tool for seeing where liquidity sits and how clean your fill will be.  
+            If you use it like a pro — not a degenerate clicking every tick — it becomes one of the most useful tools in futures trading.
+        </p>
+
+    </div>
+</main>
+
+<footer class="site-footer"></footer>
+
+</body>
+</html>
