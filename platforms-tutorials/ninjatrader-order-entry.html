@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Place Orders in NinjaTrader | Grizzly Parrott Trading</title>
+    <meta name="description" content="Beginner-friendly guide showing how to place market, limit, and stop orders in NinjaTrader from the chart and the DOM.">
+    <link rel="stylesheet" href="/Grizzly-Trading/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-mark">GP</span>
+                <span class="logo-text">Grizzly Parrott Trading</span>
+            </div>
+
+            <nav class="main-nav">
+                <a href="/Grizzly-Trading/index.html#articles">Articles</a>
+                <a href="/Grizzly-Trading/futures-basics/index.html">Futures Basics</a>
+                <a href="/Grizzly-Trading/prop-firm-trading/index.html">Prop Firms</a>
+                <a href="/Grizzly-Trading/platforms-tutorials/index.html">Platforms</a>
+                <a href="/Grizzly-Trading/market-basics/index.html">Market Basics</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>How to Place Orders in NinjaTrader</h1>
+                    <p>
+                        Quick walkthrough of placing market, limit, and stop orders in NinjaTrader
+                        from the chart and the DOM, without clicking random crap by accident.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container article">
+
+                <h2>Pre-Req: Have a Simple Chart Layout</h2>
+                <p>
+                    Before you worry about order entry, make sure your chart is not a cluttered mess.
+                    A basic layout like the one in
+                    <a href="/Grizzly-Trading/platforms-tutorials/simple-readable-chart-layout.html">
+                        Simple, Readable Chart Layout
+                    </a>
+                    is enough. One or two charts, DOM if you use it, and a clean workspace.
+                </p>
+
+                <h2>Market Orders From the Chart</h2>
+                <p>
+                    Market orders in NinjaTrader are the fastest way to get in. You are paying for
+                    speed, not precision. From the chart:
+                </p>
+                <ul>
+                    <li>Right-click the chart and choose <strong>Buy Market</strong> or <strong>Sell Market</strong>.</li>
+                    <li>Or use the Chart Trader panel buttons if you have it enabled.</li>
+                    <li>The order fills at the current bid/ask, depending on direction.</li>
+                </ul>
+                <p>
+                    This matches the same basic idea as the market orders you saw in
+                    <a href="/Grizzly-Trading/platforms-tutorials/tradovate-order-entry.html">
+                        How to Place Orders in Tradovate
+                    </a>.
+                </p>
+
+                <h2>Limit Orders From the Chart</h2>
+                <p>
+                    Limit orders give you control over price. On a chart with Chart Trader turned on:
+                </p>
+                <ul>
+                    <li>To place a <strong>Buy Limit</strong>, click below current price on the price axis.</li>
+                    <li>To place a <strong>Sell Limit</strong>, click above current price on the price axis.</li>
+                    <li>You will see a working order line on the chart that you can drag up or down.</li>
+                </ul>
+                <p>
+                    Limit orders tie in directly with what you learned in
+                    <a href="/Grizzly-Trading/futures-basics/limit-vs-market-orders.html">
+                        Limit vs Market Orders
+                    </a>.
+                </p>
+
+                <h2>Stop Orders From the Chart</h2>
+                <p>
+                    Stop orders trigger when price trades through your stop level:
+                </p>
+                <ul>
+                    <li>Buy Stop → above current price, used to enter on breakouts.</li>
+                    <li>Sell Stop → below current price, used to enter on breakdowns.</li>
+                </ul>
+                <p>
+                    In NinjaTrader:
+                </p>
+                <ul>
+                    <li>Right-click at the price level and choose the appropriate stop order.</li>
+                    <li>Or use Chart Trader and click at the exact price on the ladder panel.</li>
+                    <li>Drag to adjust price before it triggers.</li>
+                </ul>
+
+                <h2>Using the DOM for Order Entry</h2>
+                <p>
+                    If you trade from the DOM instead of the chart, NinjaTrader lets you click
+                    directly in the price ladder:
+                </p>
+                <ul>
+                    <li>Left-click in the bid column to place a Buy Limit.</li>
+                    <li>Left-click in the ask column to place a Sell Limit.</li>
+                    <li>Use the middle or right mouse button (depending on your setup) for stop orders.</li>
+                </ul>
+                <p>
+                    If DOM still feels like a blur of numbers, go back and read
+                    <a href="/Grizzly-Trading/platforms-tutorials/dom-trading-basics.html">
+                        DOM Trading Basics
+                    </a>
+                    so you actually know what that ladder is showing you.
+                </p>
+
+                <h2>Canceling and Modifying Orders</h2>
+                <p>
+                    NinjaTrader gives you a few simple controls:
+                </p>
+                <ul>
+                    <li>Click and drag an order line on the chart to move it to a new price.</li>
+                    <li>Click the small <strong>X</strong> on the order line to cancel it.</li>
+                    <li>Use the <strong>Close</strong> or <strong>Flatten</strong> button in the Chart Trader or DOM to nuke the position and all working orders.</li>
+                </ul>
+
+                <h2>Order Entry and Risk</h2>
+                <p>
+                    None of this matters if you size like an idiot. The mechanics of getting in and out
+                    should be boring and repeatable. Take what you are doing here and connect it with
+                    the risk concepts in
+                    <a href="/Grizzly-Trading/market-basics/risk-per-trade-small-accounts.html">
+                        Risk Per Trade for Small Accounts
+                    </a>
+                    and the execution focus from
+                    <a href="/Grizzly-Trading/market-basics/execution-vs-idea.html">
+                        Execution vs Idea
+                    </a>.
+                </p>
+                <p>
+                    For prop firm challenges, over-clicking or fat-fingering orders is a fast way to
+                    break rules. That ties into the evaluation rules you already saw in
+                    <a href="/Grizzly-Trading/prop-firm-trading/how-prop-firm-evaluations-work.html">
+                        How Prop Firm Evaluations Work
+                    </a>.
+                </p>
+
+                <h2>Related Guides</h2>
+                <ul>
+                    <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-basics.html">NinjaTrader Basics</a></li>
+                    <li><a href="/Grizzly-Trading/platforms-tutorials/tradovate-for-beginners.html">Tradovate For Beginners</a></li>
+                    <li><a href="/Grizzly-Trading/platforms-tutorials/tradovate-order-entry.html">How to Place Orders in Tradovate</a></li>
+                    <li><a href="/Grizzly-Trading/platforms-tutorials/simple-readable-chart-layout.html">Simple, Readable Chart Layout</a></li>
+                    <li><a href="/Grizzly-Trading/platforms-tutorials/dom-trading-basics.html">DOM Trading Basics</a></li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+</body>
+</html>
