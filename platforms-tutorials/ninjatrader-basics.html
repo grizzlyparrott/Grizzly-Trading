@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NinjaTrader Basics – Grizzly Parrott Trading</title>
+    <meta name="description" content="A simple walkthrough of NinjaTrader basics: connecting data, chart setup, orders, stops, and avoiding indicator overload.">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+
+        <h1>NinjaTrader Basics</h1>
+        <p class="section-intro">
+            NinjaTrader looks complicated as hell the first time you open it,  
+            but once you understand the layout, it’s clean, fast, and extremely good for futures trading.
+        </p>
+
+        <h2>1. Connecting Data</h2>
+        <p>
+            Go to <strong>Connections → Configure</strong>.  
+            You will see your data options:
+        </p>
+        <ul>
+            <li><strong>NinjaTrader Continuum</strong> (prop firms use this)</li>
+            <li><strong>Demo feed</strong> (only for sim)</li>
+            <li><strong>External brokers</strong> if you have them</li>
+        </ul>
+        <p>
+            Click your preferred data source → <strong>Connect</strong>.  
+            The bottom-left connection light should turn green.
+        </p>
+
+        <h2>2. Opening A Chart</h2>
+        <ul>
+            <li>Go to <strong>New → Chart</strong></li>
+            <li>Select instrument: ES, MES, NQ, MNQ, etc.</li>
+            <li>Pick timeframe: 1-minute, 5-minute, or 1-range/2-range</li>
+        </ul>
+        <p>
+            Hit <strong>Create</strong> to open the chart.
+        </p>
+
+        <h2>3. Make Your Chart Readable</h2>
+        <p>
+            Right-click → <strong>Properties</strong>:
+        </p>
+        <ul>
+            <li>Background: <strong>#1C1C1C</strong></li>
+            <li>Candle up: <strong>#4CAF50</strong></li>
+            <li>Candle down: <strong>#F44336</strong></li>
+            <li>Remove grid lines</li>
+            <li>Increase candle width to 4</li>
+        </ul>
+
+        <h2>4. Add The Only Indicator You Need (20 EMA)</h2>
+        <p>
+            Press <strong>Ctrl+I</strong> → search <strong>EMA</strong> → add  
+            Set:
+        </p>
+        <ul>
+            <li>Period: <strong>20</strong></li>
+            <li>Color: yellow or cyan</li>
+        </ul>
+
+        <h2>5. Setting Up The DOM (Optional)</h2>
+        <p>
+            Go to <strong>New → SuperDOM</strong>.
+        </p>
+        <p>
+            Turn off:
+        </p>
+        <ul>
+            <li>Heatmap shading</li>
+            <li>Bid/ask coloring</li>
+            <li>Any advanced columns you don’t understand</li>
+        </ul>
+        <p>
+            You want a clean DOM that shows:
+        </p>
+        <ul>
+            <li>Price ladder</li>
+            <li>Bid size</li>
+            <li>Ask size</li>
+        </ul>
+
+        <h2>6. Placing Orders On The Chart</h2>
+        <p>
+            The easiest way for beginners:
+        </p>
+        <ul>
+            <li><strong>Right-click → Buy Limit</strong> or <strong>Sell Limit</strong></li>
+            <li><strong>Right-click → Buy Market</strong> or <strong>Sell Market</strong></li>
+        </ul>
+        <p>
+            After entry, NinjaTrader will show:
+        </p>
+        <ul>
+            <li>Your stop (red line)</li>
+            <li>Your target (green line)</li>
+            <li>Your entry (blue line)</li>
+        </ul>
+
+        <h2>7. Basic Hotkeys</h2>
+        <p>
+            These are optional but speed you up:
+        </p>
+        <ul>
+            <li><strong>F1</strong> – Buy Market</li>
+            <li><strong>F2</strong> – Sell Market</li>
+            <li><strong>F3</strong> – Close Position</li>
+        </ul>
+
+        <h2>8. Avoid The Common Beginner Chart Mistakes</h2>
+        <ul>
+            <li>Don’t run 10 indicators</li>
+            <li>Don’t add clouds, ribbons, heatmaps</li>
+            <li>Don’t use 5 different moving averages</li>
+            <li>Don’t scalp using DOM unless you know what you’re doing</li>
+        </ul>
+        <p>
+            The goal is clarity — not confusion disguised as information.
+        </p>
+
+        <div style="margin-top:2rem;">
+            <a href="../index.html" class="card-link">← Back to Home</a>
+        </div>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Grizzly Parrott Trading. All rights reserved.</p>
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+    </div>
+</footer>
+
+</body>
+</html>
