@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Set Up Hotkeys in NinjaTrader | Grizzly Parrott Trading</title>
+    <meta name="description" content="Step-by-step guide for setting up hotkeys in NinjaTrader so you can enter, exit, and manage orders without hunting for buttons.">
+    <link rel="stylesheet" href="/Grizzly-Trading/style.css">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+
+        <nav class="main-nav">
+            <a href="/Grizzly-Trading/index.html#articles">Articles</a>
+            <a href="/Grizzly-Trading/futures-basics/index.html">Futures Basics</a>
+            <a href="/Grizzly-Trading/prop-firm-trading/index.html">Prop Firms</a>
+            <a href="/Grizzly-Trading/platforms-tutorials/index.html">Platforms</a>
+            <a href="/Grizzly-Trading/market-basics/index.html">Market Basics</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <h1>How to Set Up Hotkeys in NinjaTrader</h1>
+            <p>
+                Map keyboard shortcuts to entries, exits, and order actions so you can trade
+                without clicking around like an idiot when the market moves.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+<div class="container article">
+
+    <h2>Where Hotkeys Live in NinjaTrader</h2>
+    <p>
+        All keyboard shortcuts are managed from the main control center:
+    </p>
+    <ol>
+        <li>Open <strong>Control Center</strong>.</li>
+        <li>Click <strong>Tools</strong>.</li>
+        <li>Click <strong>Hot Keys</strong>.</li>
+    </ol>
+    <p>
+        You can define hotkeys for charts, DOM, SuperDOM, and other windows. Make sure your basic
+        layout is stable first using
+        <a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-workspaces.html">NinjaTrader Workspaces</a>.
+    </p>
+
+    <h2>Basic Order Entry Hotkeys</h2>
+    <p>
+        The most useful hotkeys are for order entry and exits. These should match the order types
+        you already know from
+        <a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-order-entry.html">NinjaTrader Order Entry</a>.
+    </p>
+    <p>Common mappings:</p>
+    <ul>
+        <li><strong>Buy Market</strong> (Chart or DOM)</li>
+        <li><strong>Sell Market</strong> (Chart or DOM)</li>
+        <li><strong>Close / Flatten</strong> position</li>
+        <li><strong>Cancel All Orders</strong></li>
+    </ul>
+
+    <h2>Example Hotkey Layout</h2>
+    <p>Example mapping for chart trading:</p>
+    <ul>
+        <li><strong>Shift + B</strong> → Buy Market</li>
+        <li><strong>Shift + S</strong> → Sell Market</li>
+        <li><strong>Shift + X</strong> → Flatten (close position + cancel orders)</li>
+        <li><strong>Shift + C</strong> → Cancel all working orders</li>
+    </ul>
+    <p>
+        If you use ATM strategies like in
+        <a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-atm-strategies.html">NinjaTrader ATM Strategies</a>,
+        these hotkeys will drop your brackets in automatically when you hit Buy/Sell.
+    </p>
+
+    <h2>Setting a Hotkey Step-by-Step</h2>
+    <ol>
+        <li>Control Center → <strong>Tools → Hot Keys</strong>.</li>
+        <li>Select the window type: <strong>Chart</strong>, <strong>DOM</strong>, etc.</li>
+        <li>Find the command (e.g. <em>Buy market</em>).</li>
+        <li>Click in the hotkey box.</li>
+        <li>Press the key combo you want (for example, <strong>Shift + B</strong>).</li>
+        <li>Click <strong>OK</strong> or <strong>Apply</strong> to save.</li>
+    </ol>
+
+    <h2>Test Everything in SIM First</h2>
+    <p>
+        Do not test new hotkeys on a live or prop feed. Use SIM:
+    </p>
+    <ul>
+        <li>Connect a SIM or replay feed using
+            <a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-data-feed-setup.html">NinjaTrader Data Feed Setup</a>.
+        </li>
+        <li>Or use Market/Chart Replay from
+            <a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-chart-replay.html">NinjaTrader Chart Replay</a>.
+        </li>
+    </ul>
+    <p>
+        Confirm each hotkey does exactly what you think before touching real money.
+    </p>
+
+    <h2>Hotkeys and the DOM</h2>
+    <p>
+        If you trade from the DOM, you can map DOM-specific actions:
+    </p>
+    <ul>
+        <li>Buy at Ask</li>
+        <li>Sell at Bid</li>
+        <li>Join Bid / Join Ask</li>
+        <li>Cancel orders at price / all orders</li>
+    </ul>
+    <p>
+        Clean this up to work alongside your DOM layout from
+        <a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-dom-settings.html">NinjaTrader DOM Settings</a>
+        and the concepts in
+        <a href="/Grizzly-Trading/platforms-tutorials/dom-trading-basics.html">DOM Trading Basics</a>.
+    </p>
+
+    <h2>Hotkeys in Prop Firm Evaluations</h2>
+    <p>
+        Hotkeys amplify whatever discipline you already have. In prop evaluations:
+    </p>
+    <ul>
+        <li>A good flatten key saves you from blowing trailing drawdown.</li>
+        <li>A bad size or wrong key can double your position instantly.</li>
+    </ul>
+    <p>
+        Combine hotkeys with a strict rule set like you’d use in
+        <a href="/Grizzly-Trading/prop-firm-trading/common-evaluation-mistakes.html">Common Evaluation Mistakes</a>.
+    </p>
+
+    <h2>Related Guides</h2>
+    <ul>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-basics.html">NinjaTrader Basics</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-order-entry.html">NinjaTrader Order Entry</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-atm-strategies.html">NinjaTrader ATM Strategies</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-dom-settings.html">NinjaTrader DOM Settings</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-chart-replay.html">NinjaTrader Chart Replay</a></li>
+    </ul>
+
+</div>
+</section>
+</main>
+</body>
+</html>
