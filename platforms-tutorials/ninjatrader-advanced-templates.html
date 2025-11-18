@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NinjaTrader Advanced Chart Templates | Grizzly Parrott Trading</title>
+    <meta name="description" content="Advanced NinjaTrader chart template setup: global templates, local templates, duplicating templates, linking templates to workspaces, and exporting/importing layouts.">
+    <link rel="stylesheet" href="/Grizzly-Trading/style.css">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+
+        <nav class="main-nav">
+            <a href="/Grizzly-Trading/index.html#articles">Articles</a>
+            <a href="/Grizzly-Trading/futures-basics/index.html">Futures Basics</a>
+            <a href="/Grizzly-Trading/prop-firm-trading/index.html">Prop Firms</a>
+            <a href="/Grizzly-Trading/platforms-tutorials/index.html">Platforms</a>
+            <a href="/Grizzly-Trading/market-basics/index.html">Market Basics</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <h1>NinjaTrader Advanced Chart Templates</h1>
+            <p>Global templates, local templates, duplicate templates, and layout exports—everything NinjaTrader doesn’t explain clearly.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+<div class="container article">
+
+    <h2>Local Templates vs Global Templates</h2>
+    <p>NinjaTrader chart templates are stored in two different ways:</p>
+
+    <h3>Local Templates</h3>
+    <ul>
+        <li>Stored inside the specific workspace</li>
+        <li>Only load correctly in that workspace</li>
+        <li>Break when moving charts between workspaces</li>
+    </ul>
+
+    <h3>Global Templates</h3>
+    <ul>
+        <li>Stored globally on your system</li>
+        <li>Can be applied to any chart in any workspace</li>
+        <li>Safest for long-term layouts</li>
+    </ul>
+
+    <p>Check or uncheck “Save as Default” to control global behavior.</p>
+
+    <h2>How to Duplicate a Template</h2>
+    <ol>
+        <li>Open a chart using the base template.</li>
+        <li>Right-click the chart → <strong>Templates → Save As</strong>.</li>
+        <li>Name the duplicate something like <code>clean-template-2</code>.</li>
+    </ol>
+    <p>
+        Use this when modifying indicator stacks like in 
+        <a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-indicators.html">NinjaTrader Indicators</a>.
+    </p>
+
+    <h2>How to Apply a Template to a New Instrument</h2>
+    <p>Templates are NOT instrument-specific.</p>
+    <p>You can load a template for ES on NQ, YM, CL, whatever:</p>
+    <ol>
+        <li>Open the chart.</li>
+        <li>Right-click → <strong>Templates → Load</strong>.</li>
+        <li>Select the template.</li>
+    </ol>
+
+    <h2>Linking Templates to Workspaces</h2>
+    <p>Templates behave differently depending on workspace:</p>
+    <ul>
+        <li>If the template was created inside Workspace A, it may not load properly in Workspace B.</li>
+        <li>Global templates avoid this problem entirely.</li>
+    </ul>
+
+    <p>Use the structure from your
+        <a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-workspaces.html">NinjaTrader Workspaces</a>
+        guide for consistency.
+    </p>
+
+    <h2>Fixing “Template Won’t Load” Problems</h2>
+    <p>Common causes:</p>
+    <ul>
+        <li>Local template created in a different workspace</li>
+        <li>Indicators missing or not loaded</li>
+        <li>Chart type mismatch (Renko → Candles, etc.)</li>
+        <li>Corrupt workspace</li>
+    </ul>
+
+    <h2>Exporting Chart Templates</h2>
+    <ol>
+        <li>Control Center → <strong>Tools → Export → Backup File</strong>.</li>
+        <li>Select <strong>Templates</strong>.</li>
+        <li>Export the file to your desktop.</li>
+    </ol>
+
+    <h2>Importing Templates</h2>
+    <ol>
+        <li>Control Center → <strong>Tools → Import → Backup File</strong>.</li>
+        <li>Select the exported file.</li>
+        <li>Restart NinjaTrader.</li>
+    </ol>
+
+    <h2>Related Guides</h2>
+    <ul>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-workspaces.html">NinjaTrader Workspaces</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-drawing-tools.html">Drawing Tools</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-chart-replay.html">Chart Replay</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-order-entry.html">Order Entry</a></li>
+    </ul>
+
+</div>
+</section>
+</main>
+</body>
+</html>
