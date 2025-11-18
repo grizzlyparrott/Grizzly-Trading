@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradovate Data & Connection Setup | Grizzly Parrott Trading</title>
+    <meta name="description" content="How to set up Tradovate market data: SIM, live data, prop firm connections, Rithmic, CQG, and common connection issues.">
+    <link rel="stylesheet" href="/Grizzly-Trading/style.css">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+
+        <nav class="main-nav">
+            <a href="/Grizzly-Trading/index.html#articles">Articles</a>
+            <a href="/Grizzly-Trading/futures-basics/index.html">Futures Basics</a>
+            <a href="/Grizzly-Trading/prop-firm-trading/index.html">Prop Firms</a>
+            <a href="/Grizzly-Trading/platforms-tutorials/index.html">Platforms</a>
+            <a href="/Grizzly-Trading/market-basics/index.html">Market Basics</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <h1>Tradovate Data & Connection Setup</h1>
+            <p>
+                How to connect Tradovate to live data, SIM data, prop firm data, and how to fix 
+                the most common “price not moving” connection problems.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+<div class="container article">
+
+    <h2>Where Data Settings Are Located</h2>
+    <p>All data connections in Tradovate are controlled from:</p>
+    <ol>
+        <li>Sidebar → <strong>Application Settings</strong></li>
+        <li>Click <strong>Data</strong></li>
+    </ol>
+
+    <p>There’s also a connection status indicator in the top-right of the app.</p>
+
+    <h2>SIM Data (Free)</h2>
+    <p>
+        Tradovate provides free SIM data with a few limitations:
+    </p>
+    <ul>
+        <li>It’s delayed during overnight hours</li>
+        <li>It doesn’t include all historical tick data</li>
+        <li>You need to be connected to the <strong>Demo</strong> account</li>
+    </ul>
+    <h3>How to use it:</h3>
+    <ol>
+        <li>Open account dropdown.</li>
+        <li>Select <strong>Demo</strong>.</li>
+        <li>Make sure <strong>Simulation Server</strong> is connected.</li>
+    </ol>
+
+    <h2>Live Data (Ninja / Tradovate Brokerage)</h2>
+    <p>
+        If you have a live Tradovate or NinjaTrader brokerage account:
+    </p>
+    <ol>
+        <li>Go to Data → <strong>Market Data Subscriptions</strong>.</li>
+        <li>Enable CME / NQ / CL / whatever you trade.</li>
+        <li>Switch account dropdown to your live trading account.</li>
+        <li>Confirm green connection icon.</li>
+    </ol>
+
+    <h2>Prop Firm Connections (Apex, Leeloo, Topstep, etc.)</h2>
+    <p>
+        Tradovate can connect to most prop firms using <strong>Rithmic</strong>:
+    </p>
+    <ol>
+        <li>Sidebar → <strong>Application Settings</strong>.</li>
+        <li>Click <strong>Connections</strong>.</li>
+        <li>Add a <strong>Rithmic</strong> connection.</li>
+        <li>Enter your Rithmic username and password.</li>
+        <li>Select the correct gateway (often <strong>Rithmic 01</strong>).</li>
+    </ol>
+
+    <p>
+        This pairs perfectly with:
+        <a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-data-feed-setup.html">
+            NinjaTrader Data Feed Setup
+        </a>.
+    </p>
+
+    <h2>Why Price Might Not Be Moving</h2>
+    <p>Most common causes:</p>
+    <ul>
+        <li>No market hours (weekend, holiday, maintenance)</li>
+        <li>SIM data is delayed</li>
+        <li>Rithmic login error</li>
+        <li>You’re subscribed only to indices but trading CL or GC</li>
+        <li>Your prop account is inactive or expired</li>
+    </ul>
+
+    <h2>How to Check Connection Status</h2>
+    <p>
+        The top-right connection indicator:
+    </p>
+    <ul>
+        <li><strong>Green</strong> = fully connected</li>
+        <li><strong>Yellow</strong> = connecting</li>
+        <li><strong>Red</strong> = disconnected</li>
+    </ul>
+
+    <h2>Data Settings to Review</h2>
+    <ul>
+        <li><strong>Subscribe to Level 1</strong> (required for charts)</li>
+        <li><strong>Subscribe to Level 2</strong> (optional for DOM depth)</li>
+        <li><strong>Enable mobile data access</strong> if using the app</li>
+    </ul>
+
+    <h2>Related Guides</h2>
+    <ul>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/tradovate-order-entry.html">Tradovate Order Entry</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/tradovate-chart-tools.html">Tradovate Chart Tools</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/tradovate-dom-settings.html">Tradovate DOM Settings</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-data-feed-setup.html">NinjaTrader Data Feed Setup</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/simple-readable-chart-layout.html">Simple Chart Layout</a></li>
+    </ul>
+
+</div>
+</section>
+</main>
+</body>
+</html>
