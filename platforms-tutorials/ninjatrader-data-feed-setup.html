@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NinjaTrader Data Feed Setup | Grizzly Parrott Trading</title>
+    <meta name="description" content="How to connect NinjaTrader to live market data: Continuum, Rithmic, CQG, SIM accounts, and prop firm evaluation feeds.">
+    <link rel="stylesheet" href="/Grizzly-Trading/style.css">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+
+        <nav class="main-nav">
+            <a href="/Grizzly-Trading/index.html#articles">Articles</a>
+            <a href="/Grizzly-Trading/futures-basics/index.html">Futures Basics</a>
+            <a href="/Grizzly-Trading/prop-firm-trading/index.html">Prop Firms</a>
+            <a href="/Grizzly-Trading/platforms-tutorials/index.html">Platforms</a>
+            <a href="/Grizzly-Trading/market-basics/index.html">Market Basics</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <h1>NinjaTrader Data Feed Setup</h1>
+            <p>How to connect NinjaTrader to Continuum, Rithmic, CQG, SIM data, and prop firm evaluation feeds.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+<div class="container article">
+
+    <h2>Where Data Connections Are Located</h2>
+    <p>All feeds are managed from:</p>
+    <ol>
+        <li>Open <strong>Control Center</strong>.</li>
+        <li>Click <strong>Connections</strong>.</li>
+        <li>Click <strong>Configure...</strong>.</li>
+    </ol>
+    <p>You’ll add your broker or prop firm feed here.</p>
+
+    <h2>NinjaTrader Continuum (Most Common)</h2>
+    <p>
+        Continuum is NinjaTrader’s standard data feed for futures.
+    </p>
+    <h3>How to connect:</h3>
+    <ol>
+        <li>Connections → Configure</li>
+        <li>Find <strong>NinjaTrader Continuum</strong> in the left list.</li>
+        <li>Click <strong>Add</strong>.</li>
+        <li>Enter your username and password (from NinjaTrader brokerage).</li>
+        <li>Click <strong>OK</strong>.</li>
+    </ol>
+
+    <h2>Rithmic (Used by Prop Firms)</h2>
+    <p>
+        Apex, Topstep, Bulenox, Leeloo, etc. use Rithmic.
+    </p>
+    <h3>To connect:</h3>
+    <ol>
+        <li>Connections → Configure</li>
+        <li>Add <strong>Rithmic for NinjaTrader Brokerage</strong> or 
+            <strong>Rithmic for Futures</strong>
+        </li>
+        <li>Enter:
+            <ul>
+                <li>Rithmic username</li>
+                <li>Rithmic password</li>
+                <li>Gateway: <strong>Rithmic 01</strong> (most common)</li>
+            </ul>
+        </li>
+        <li>Enable <strong>Use Rithmic Market Data</strong> if required by your prop firm.</li>
+    </ol>
+
+    <p>
+        Works perfectly with your prop firm concepts from  
+        <a href="/Grizzly-Trading/prop-firm-trading/how-prop-firm-evaluations-work.html">How Prop Firm Evaluations Work</a>.
+    </p>
+
+    <h2>CQG (Some Brokers)</h2>
+    <ul>
+        <li>Some smaller futures brokers use CQG.</li>
+        <li>Setup is similar: add CQG → enter username/password → connect.</li>
+    </ul>
+
+    <h2>SIM Mode (Free)</h2>
+    <p>
+        NinjaTrader has free built-in SIM data.
+    </p>
+    <ol>
+        <li>Connections → <strong>Disconnect</strong> from any live feed.</li>
+        <li>Click <strong>Connections → Simulated Data Feed</strong>.</li>
+    </ol>
+
+    <h2>How to Tell If You’re Actually Connected</h2>
+    <ul>
+        <li>Control Center → bottom-left connection status icon</li>
+        <li>Green = connected</li>
+        <li>Yellow = connecting</li>
+        <li>Red = disconnected</li>
+    </ul>
+
+    <h2>Price Not Moving?</h2>
+    <p>Common causes:</p>
+    <ul>
+        <li>Wrong login for feed</li>
+        <li>Subscribed to SIM instead of live</li>
+        <li>Instrument not enabled for your data plan</li>
+        <li>Your prop firm paused market data</li>
+    </ul>
+
+    <h2>Related Guides</h2>
+    <ul>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-basics.html">NinjaTrader Basics</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-order-entry.html">NinjaTrader Order Entry</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-chart-replay.html">NinjaTrader Chart Replay</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/simple-readable-chart-layout.html">Simple Chart Layout</a></li>
+        <li><a href="/Grizzly-Trading/prop-firm-trading/common-evaluation-mistakes.html">Prop Firm Mistakes</a></li>
+    </ul>
+
+</div>
+</section>
+</main>
+</body>
+</html>
