@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradovate Order Presets & Auto Brackets | Grizzly Parrott Trading</title>
+    <meta name="description" content="How to set up Tradovate order presets and auto brackets: quantity, stop, target, break-even, trailing stops, and applying presets to DOM or chart.">
+    <link rel="stylesheet" href="/Grizzly-Trading/style.css">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+
+        <nav class="main-nav">
+            <a href="/Grizzly-Trading/index.html#articles">Articles</a>
+            <a href="/Grizzly-Trading/futures-basics/index.html">Futures Basics</a>
+            <a href="/Grizzly-Trading/prop-firm-trading/index.html">Prop Firms</a>
+            <a href="/Grizzly-Trading/platforms-tutorials/index.html">Platforms</a>
+            <a href="/Grizzly-Trading/market-basics/index.html">Market Basics</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <h1>Tradovate Order Presets & Auto Brackets</h1>
+            <p>Set default quantity, stops, targets, break-even behavior, trailing rules, and auto-brackets for every trade you place.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+<div class="container article">
+
+    <h2>Where Order Presets Are Located</h2>
+    <p>All presets live in this menu:</p>
+    <ol>
+        <li>Open the left sidebar.</li>
+        <li>Click <strong>Application Settings</strong>.</li>
+        <li>Select <strong>Orders</strong>.</li>
+    </ol>
+
+    <p>
+        This is different from general order entry covered in  
+        <a href="/Grizzly-Trading/platforms-tutorials/tradovate-order-entry.html">Tradovate Order Entry</a>.
+    </p>
+
+    <h2>Setting a Default Quantity</h2>
+    <p>The simplest preset is your auto-quantity:</p>
+    <ol>
+        <li>Under <strong>Orders</strong>, find <strong>Default Quantity</strong>.</li>
+        <li>Choose 1, 2, 3, etc.</li>
+    </ol>
+
+    <h2>Configure Auto Brackets</h2>
+    <p>Auto brackets are automatically placed take-profit and stop-loss orders.</p>
+
+    <h3>To enable brackets:</h3>
+    <ol>
+        <li><strong>Application Settings → Orders</strong></li>
+        <li>Turn on <strong>Use Default Bracket</strong></li>
+    </ol>
+
+    <h3>Set your offsets:</h3>
+    <ul>
+        <li><strong>Target Offset</strong> (profit distance)</li>
+        <li><strong>Stop Offset</strong> (stop distance)</li>
+    </ul>
+
+    <p>
+        These work perfectly with your simple layout from  
+        <a href="/Grizzly-Trading/platforms-tutorials/simple-readable-chart-layout.html">Simple Chart Layout</a>.
+    </p>
+
+    <h2>Break-Even Automation</h2>
+    <p>Tradovate lets you auto-move stops to break-even:</p>
+    <ul>
+        <li><strong>BreakEven Trigger</strong> — how many ticks in profit must price go</li>
+        <li><strong>BreakEven Offset</strong> — how many ticks above/below break-even to place the stop</li>
+    </ul>
+
+    <h2>Trailing Stop Rules</h2>
+    <p>You can automate trailing logic:</p>
+    <ul>
+        <li><strong>Trail Trigger</strong> — when the trailing behavior activates</li>
+        <li><strong>Trail Amount</strong> — distance price trails behind</li>
+        <li><strong>Trail Step</strong> — how often the stop updates</li>
+    </ul>
+
+    <h2>Saving Multiple Presets</h2>
+    <p>You can create multiple bracket configurations:</p>
+    <ol>
+        <li>Go to <strong>Orders → Saved Presets</strong>.</li>
+        <li>Click <strong>Create New</strong>.</li>
+        <li>Name them logically:
+            <ul>
+                <li><code>scalp-bracket</code></li>
+                <li><code>runner-bracket</code></li>
+                <li><code>big-stop-setup</code></li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Apply Presets to DOM or Chart</h2>
+    <p>You can force a specific preset to always load for a specific interface:</p>
+    <ul>
+        <li>Chart Trading</li>
+        <li>DOM</li>
+        <li>Order Ticket</li>
+    </ul>
+
+    <p>
+        Combine this with your DOM understanding from  
+        <a href="/Grizzly-Trading/platforms-tutorials/tradovate-dom-settings.html">Tradovate DOM Settings</a>.
+    </p>
+
+    <h2>Common Problems</h2>
+    <ul>
+        <li>Preset applies on chart but not DOM → fix in individual DOM settings</li>
+        <li>Preset doesn’t load → “Use Default Bracket” not turned on</li>
+        <li>Stops/targets don’t show → using SIM with incorrect offsets</li>
+        <li>Not enough margin → preset target/stop too large</li>
+    </ul>
+
+    <h2>Related Guides</h2>
+    <ul>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/tradovate-chart-tools.html">Tradovate Chart Tools</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/tradovate-workspaces.html">Tradovate Workspaces</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/tradovate-hotkeys.html">Tradovate Hotkeys</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/tradovate-bracket-orders.html">Bracket Orders Explanation</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/dom-trading-basics.html">DOM Trading Basics</a></li>
+    </ul>
+
+</div>
+</section>
+</main>
+</body>
+</html>
