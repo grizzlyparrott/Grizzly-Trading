@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NinjaTrader ATM Strategies | Grizzly Parrott Trading</title>
+    <meta name="description" content="Simple, beginner-friendly guide for setting up ATM strategies in NinjaTrader: auto stop-loss, auto take-profit, auto breakeven, and OCO brackets.">
+    <link rel="stylesheet" href="/Grizzly-Trading/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrott Trading</span>
+        </div>
+
+        <nav class="main-nav">
+            <a href="/Grizzly-Trading/index.html#articles">Articles</a>
+            <a href="/Grizzly-Trading/futures-basics/index.html">Futures Basics</a>
+            <a href="/Grizzly-Trading/prop-firm-trading/index.html">Prop Firms</a>
+            <a href="/Grizzly-Trading/platforms-tutorials/index.html">Platforms</a>
+            <a href="/Grizzly-Trading/market-basics/index.html">Market Basics</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <h1>How to Set Up ATM Strategies in NinjaTrader</h1>
+            <p>
+                Auto bracket orders that place your stop-loss and take-profit automatically the moment you enter a trade.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+<div class="container article">
+
+    <h2>What an ATM Strategy Is</h2>
+    <p>
+        ATM = <strong>Advanced Trade Management</strong>.  
+        It automatically places:
+    </p>
+    <ul>
+        <li>your stop-loss</li>
+        <li>your take-profit</li>
+        <li>breakeven triggers</li>
+        <li>auto trailing stops (optional)</li>
+    </ul>
+    <p>
+        It ties directly into proper execution from  
+        <a href="/Grizzly-Trading/market-basics/execution-vs-idea.html">Execution vs Idea</a>.
+    </p>
+
+    <h2>Step 1: Open the ATM Strategy Menu</h2>
+    <ol>
+        <li>Open a chart in NinjaTrader.</li>
+        <li>Enable <strong>Chart Trader</strong> (press <strong>Ctrl + T</strong>).</li>
+        <li>Look at the ATM dropdown (top-right of Chart Trader).</li>
+        <li>Select <strong>Custom...</strong></li>
+    </ol>
+
+    <h2>Step 2: Set Your Auto Bracket</h2>
+    <p>In the Custom ATM window, set:</p>
+    <ul>
+        <li><strong>Stop-Loss (ticks)</strong></li>
+        <li><strong>Profit Target (ticks)</strong></li>
+    </ul>
+
+    <h2>Step 3: Add a Breakeven Trigger</h2>
+    <ol>
+        <li>Under <strong>More</strong>, open <strong>Breakeven</strong> settings.</li>
+        <li>Example configuration:
+            <ul>
+                <li>At 8 ticks in profit → move stop to -2 ticks</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Step 4: Add Auto-Trail (optional)</h2>
+    <p>
+        Auto-trail lets your stop follow price automatically.
+    </p>
+    <ol>
+        <li>Open <strong>Auto Trail</strong>.</li>
+        <li>Set:
+            <ul>
+                <li>Trigger</li>
+                <li>Step size</li>
+                <li>Frequency</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Step 5: Save the ATM Strategy</h2>
+    <ol>
+        <li>At the top, name your strategy something like <code>12tickSL_20tickPT_BE8</code>.</li>
+        <li>Click <strong>Save</strong>.</li>
+    </ol>
+
+    <h2>Step 6: Use It When Trading</h2>
+    <ol>
+        <li>Open Chart Trader.</li>
+        <li>Select your strategy from the dropdown.</li>
+        <li>Place a market/limit/stop order.</li>
+        <li>Your stop-loss + take-profit auto-place instantly.</li>
+    </ol>
+
+    <h2>How ATM Helps Prop Firm Evaluations</h2>
+    <p>
+        Prop firms punish sloppiness, revenge trading, and huge stop-losses.  
+        ATMs enforce discipline automatically.  
+    </p>
+    <p>See also:</p>
+    <ul>
+        <li><a href="/Grizzly-Trading/prop-firm-trading/common-evaluation-mistakes.html">Common Evaluation Mistakes</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/dom-trading-basics.html">DOM Trading Basics</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-order-entry.html">NinjaTrader Order Entry</a></li>
+    </ul>
+
+    <h2>Related Guides</h2>
+    <ul>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-basics.html">NinjaTrader Basics</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-indicators.html">Adding Indicators</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-chart-replay.html">NinjaTrader Chart Replay</a></li>
+        <li><a href="/Grizzly-Trading/platforms-tutorials/ninjatrader-workspaces.html">Workspaces</a></li>
+    </ul>
+
+</div>
+</section>
+</main>
+</body>
+</html>
