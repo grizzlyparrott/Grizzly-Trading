@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/grizkqyp/public_html/
-    - /bin/cp -aT * $DEPLOYPATH
+    - /bin/cp -aT . $DEPLOYPATH
