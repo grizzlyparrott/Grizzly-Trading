@@ -73,120 +73,124 @@
 </head>
 <body>
 
-<header>
-    <h1>Break-Even Math for Futures Traders</h1>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="../index.html">Grizzly Parrott Trading</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../categories/futures-basics.html">Futures Basics</a></li>
+                <li><a href="../categories/prop-firm-trading.html">Prop Firm Trading</a></li>
+                <li><a href="../categories/platforms-tutorials.html">Platforms &amp; Tutorials</a></li>
+                <li><a href="../categories/market-basics.html">Market Basics</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <main>
+    <section class="section">
+        <div class="container article-content">
 
-    <section>
-        <p>
-            Break-even isn’t a vibe, a feeling, or a “pretty close” number. 
-            It’s the exact number of ticks you must make just to offset commissions. 
-            If you’re scalping without knowing this, you’re lighting money on fire.
-        </p>
+            <h1>Break-Even Math for Futures Traders</h1>
+
+            <p>
+                Break-even isn’t a vibe, a feeling, or a “pretty close” number.
+                It’s the exact number of ticks you must make just to offset commissions.
+                If you’re scalping without knowing this, you’re lighting money on fire.
+            </p>
+
+            <h2>What Break-Even Actually Means</h2>
+            <p>
+                Break-even ticks are the minimum number of ticks needed to cover your round-turn cost.
+                If your profit target is smaller than that number, your strategy is mathematically doomed,
+                no matter how good your entries feel.
+            </p>
+
+            <h2>The Formula (You Only Need One)</h2>
+            <p><strong>Break-even ticks = Commission ÷ Tick Value</strong></p>
+            <p>Always round up. You never get partial ticks in your P&amp;L.</p>
+
+            <h2>Contract Examples</h2>
+
+            <h3>MES (Micro S&amp;P 500)</h3>
+            <ul>
+                <li>Tick value: $1.25</li>
+                <li>Round-turn commission: $1.20</li>
+                <li>Break-even: 1.20 ÷ 1.25 = 0.96 → <strong>1 tick</strong></li>
+            </ul>
+
+            <h3>MNQ (Micro Nasdaq)</h3>
+            <ul>
+                <li>Tick value: $0.50</li>
+                <li>Round-turn commission: $1.20</li>
+                <li>Break-even: 1.20 ÷ 0.50 = 2.4 → <strong>3 ticks</strong></li>
+            </ul>
+
+            <h3>GC (Gold Futures)</h3>
+            <ul>
+                <li>Tick value: $10</li>
+                <li>Round-turn commission: $2.50</li>
+                <li>Break-even: 2.50 ÷ 10 = 0.25 → <strong>1 tick</strong></li>
+            </ul>
+
+            <h2>Quick Comparison Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contract</th>
+                        <th>Tick Value</th>
+                        <th>RT Commission</th>
+                        <th>Break-Even (Ticks)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MES</td>
+                        <td>$1.25</td>
+                        <td>$1.20</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>MNQ</td>
+                        <td>$0.50</td>
+                        <td>$1.20</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>GC</td>
+                        <td>$10</td>
+                        <td>$2.50</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Why This Matters</h2>
+            <p>
+                Most losing traders aren’t wrong about direction — they’re wrong about math.
+                If you scalp for 2 ticks on MNQ but your break-even is 3 ticks, you lose long-term
+                even if you “win” more trades than you lose.
+            </p>
+
+            <hr>
+
+            <h2>Internal Links</h2>
+            <ul>
+                <li><a href="../categories/futures-basics.html">Futures Basics</a></li>
+                <li><a href="../categories/prop-firm-trading.html">Prop Firm Trading</a></li>
+                <li><a href="../categories/platforms-tutorials.html">Platforms &amp; Tutorials</a></li>
+                <li><a href="../categories/market-basics.html">Market Basics</a></li>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+
+            <div class="back-home">
+                <a href="../index.html" class="button">Back to Home</a>
+            </div>
+
+        </div>
     </section>
-
-    <section>
-        <h2>What Break-Even Actually Means</h2>
-        <p>
-            Break-even ticks = the minimum number of ticks needed to cover your round-turn cost.
-        </p>
-        <p>
-            If your target is smaller than your break-even number, your strategy is mathematically dead on arrival.
-        </p>
-    </section>
-
-    <section>
-        <h2>The Formula (You Only Need One)</h2>
-        <p><strong>Break-even ticks = Commission ÷ Tick Value</strong></p>
-        <p>Round up. You don’t get partial ticks.</p>
-    </section>
-
-    <section>
-        <h2>Contract Examples</h2>
-
-        <h3>MES (Micro S&P 500)</h3>
-        <ul>
-            <li>Tick value: $1.25</li>
-            <li>Round-turn commission: $1.20</li>
-            <li>Break-even: 1.20 ÷ 1.25 = 0.96 → <strong>1 tick</strong></li>
-        </ul>
-
-        <h3>MNQ (Micro Nasdaq)</h3>
-        <ul>
-            <li>Tick value: $0.50</li>
-            <li>Round-turn commission: $1.20</li>
-            <li>Break-even: 1.20 ÷ 0.50 = 2.4 → <strong>3 ticks</strong></li>
-        </ul>
-
-        <h3>GC (Gold Futures)</h3>
-        <ul>
-            <li>Tick value: $10</li>
-            <li>Round-turn commission: $2.50</li>
-            <li>Break-even: 2.50 ÷ 10 = 0.25 → <strong>1 tick</strong></li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Quick Comparison Table</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Contract</th>
-                    <th>Tick Value</th>
-                    <th>RT Commission</th>
-                    <th>Break-Even (Ticks)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>MES</td>
-                    <td>$1.25</td>
-                    <td>$1.20</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>MNQ</td>
-                    <td>$0.50</td>
-                    <td>$1.20</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>GC</td>
-                    <td>$10</td>
-                    <td>$2.50</td>
-                    <td>1</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section>
-        <h2>Why This Matters</h2>
-        <p>
-            Most losing traders aren’t wrong about direction — they’re wrong about math.  
-            If you scalp for 2 ticks on MNQ but your break-even is 3 ticks, you lose long-term **even if you win more than you lose**.
-        </p>
-    </section>
-
-    <hr>
-
-    <section>
-        <h2>Internal Links</h2>
-        <ul>
-            <li><a href="../categories/futures-basics.html">Futures Basics</a></li>
-            <li><a href="../categories/prop-firm-trading.html">Prop Firm Trading</a></li>
-            <li><a href="../categories/platforms-tutorials.html">Platforms & Tutorials</a></li>
-            <li><a href="../categories/market-basics.html">Market Basics</a></li>
-            <li><a href="../index.html">Home</a></li>
-        </ul>
-    </section>
-
-    <div class="back-home">
-        <a href="../index.html" class="button">Back to Home</a>
-    </div>
-
 </main>
 
 </body>
