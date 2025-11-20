@@ -297,3 +297,27 @@ a:hover {
     text-shadow: 0 0 8px #2cff80;
 }
 
+.site-search {
+    margin-bottom: 1.5rem;
+}
+
+.site-search label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.site-search input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+#no-results-message {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
