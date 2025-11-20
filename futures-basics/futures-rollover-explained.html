@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Futures Rollover Explained: When and How to Roll Your Contracts</title>
+    <meta name="description" content="Learn what futures rollover is, when you should roll your contracts, and the key steps to avoid slippage, bad fills, and getting stuck near expiration.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/futures-rollover-explained.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Futures Rollover Explained: When and How to Roll Your Contracts">
+    <meta property="og:description" content="Straightforward guide to futures rollover so you know when to leave the front month and how to move into the next contract cleanly.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/futures-rollover-explained.html">
+    <meta property="og:site_name" content="Grizzly Parrott Trading">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Futures Rollover Explained: When and How to Roll Your Contracts">
+    <meta name="twitter:description" content="Understand futures rollover timing, volume and open interest shifts, and how to avoid expiration headaches.">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Futures Rollover Explained: When and How to Roll Your Contracts",
+      "description": "Learn what futures rollover is, when you should roll your contracts, and the key steps to avoid slippage, bad fills, and getting stuck near expiration.",
+      "author": {
+        "@type": "Person",
+        "name": "Grizzly Parrott"
+      },
+      "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/futures-rollover-explained.html",
+      "datePublished": "2025-11-20",
+      "dateModified": "2025-11-20"
+    }
+    </script>
+
+    <!-- JSON-LD: Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://grizzlyparrotttrading.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Futures Basics",
+          "item": "https://grizzlyparrotttrading.com/futures-basics/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3",
+          "name": "Futures Rollover Explained: When and How to Roll Your Contracts",
+          "item": "https://grizzlyparrotttrading.com/futures-basics/futures-rollover-explained.html"
+        }
+      ]
+    }
+    </script>
+
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="../index.html">Grizzly Parrott Trading</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+                <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+                <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+                <li><a href="../market-basics/index.html">Market Basics</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <div class="container article-content">
+
+            <!-- ARTICLE BODY START -->
+            <!-- YOU PUT ALL H1/H2/H3/P/UL/OL/TABLE CONTENT HERE -->
+
+            <h1>Futures Rollover Explained: When and How to Roll Your Contracts</h1>
+
+            <p>
+                Futures rollover is the process of closing your position in the expiring contract and opening it in the next month, and if you don’t understand futures rollover you’re asking to get stuck in thin liquidity, bad fills, and expiration risk you didn’t plan for.
+            </p>
+
+            <h2>What Futures Rollover Actually Is</h2>
+            <p>
+                A rollover is simple: you exit your current contract month and enter the next active month in the same market.  
+                Long ES March and want to stay in the trade? You sell ES March and buy ES June. Same market, different expiration.
+            </p>
+
+            <p>
+                Rollover is tied directly to how <a href="how-futures-settlement-works.html">futures settlement</a> and expiration work, and it’s heavily influenced by <a href="futures-open-interest-explained.html">open interest</a> shifting from one contract to the next.
+            </p>
+
+            <h2>Why You Need to Roll Before Expiration</h2>
+            <p>
+                Most traders are not trying to take physical delivery of crude oil or cattle, and they’re not trying to deal with messy last-trading-day rules either. You roll to:
+            </p>
+
+            <ul>
+                <li>Avoid physical delivery or cash-settlement quirks</li>
+                <li>Stay in the most liquid contract month</li>
+                <li>Keep tight spreads and clean fills</li>
+                <li>Prevent weird price behavior as contracts die off</li>
+            </ul>
+
+            <h2>How to Decide When to Roll Your Futures Contract</h2>
+            <p>
+                There’s no magic universal date, but there are clear signals that tell you it’s time to move.
+            </p>
+
+            <h3>1. Watch volume and open interest</h3>
+            <p>
+                As expiration approaches, volume and OI drain out of the front month and build in the next one. When the next month’s volume and open interest clearly overtake the front month, that’s your signal to roll.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Condition</th>
+                        <th>Front Month</th>
+                        <th>Next Month</th>
+                        <th>What You Do</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Normal trading</td>
+                        <td>Higher volume &amp; OI</td>
+                        <td>Lower volume &amp; OI</td>
+                        <td>Stay in front month</td>
+                    </tr>
+                    <tr>
+                        <td>Rollover phase</td>
+                        <td>Dropping volume &amp; OI</td>
+                        <td>Rising volume &amp; OI</td>
+                        <td>Prepare to roll</td>
+                    </tr>
+                    <tr>
+                        <td>Rollover complete</td>
+                        <td>Clearly lower volume &amp; OI</td>
+                        <td>Clearly higher volume &amp; OI</td>
+                        <td>Trade the next month only</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. Respect the exchange and broker cutoff dates</h3>
+            <p>
+                Each contract has a “last trade date” and detailed rules about when trading stops or delivery risk kicks in. Your broker may also force you out earlier than the exchange does, especially in physically delivered contracts.
+            </p>
+
+            <p>
+                You don’t need to memorize every rule, but you do need to know when your broker’s cutoff hits for the contracts you trade and line up your futures rollover before that point.
+            </p>
+
+            <h2>The Mechanics: How to Roll a Futures Position</h2>
+            <p>
+                The basic futures rollover sequence is:
+            </p>
+
+            <ol>
+                <li>Close your position in the expiring month.</li>
+                <li>Open the same position (long or short) in the next month.</li>
+            </ol>
+
+            <p>
+                If your platform supports spread orders, you can do it as a single calendar spread trade, which you already saw in <a href="futures-calendar-spreads-explained.html">futures calendar spreads</a>. That usually gives cleaner pricing and less slippage.
+            </p>
+
+            <h2>Price Differences and the Futures Curve</h2>
+            <p>
+                The rollover is never free. The next contract will almost always be at a different price because of <a href="contango-vs-backwardation.html">contango or backwardation</a> and fair value.
+            </p>
+
+            <h3>What this means in practice</h3>
+            <ul>
+                <li>If the next contract is higher, rolling a long position will often lock in a small loss from the price gap.</li>
+                <li>If the next contract is lower, rolling a long can lock in a small gain.</li>
+                <li>That gain or loss is part of your real P&amp;L, not a bug.</li>
+            </ul>
+
+            <h2>Common Rollover Mistakes</h2>
+            <p>
+                Most beginners screw up futures rollover in the same ways:
+            </p>
+
+            <ul>
+                <li>Waiting until the last minute and finding out the front month is dead.</li>
+                <li>Ignoring volume and open interest and trading in a ghost contract.</li>
+                <li>Not realizing the next month has a different tick value or trading hours in some contracts.</li>
+                <li>Not recalculating margin and risk after rolling—see <a href="futures-margin-requirements-explained.html">futures margin requirements</a>.</li>
+            </ul>
+
+            <h2>The Bottom Line</h2>
+            <p>
+                Futures rollover is just closing one contract month and opening the next, but the timing and execution matter. Watch volume and open interest, know your broker’s cutoff, and respect the futures curve when prices don’t match between months. If you handle futures rollover properly, you stay in the liquid part of the market and avoid getting blindsided by expiration mechanics.
+            </p>
+
+            <!-- ARTICLE BODY END -->
+
+            <hr>
+
+            <h2>Internal Links</h2>
+            <ul>
+                <!-- For Futures Basics articles -->
+                <!--   first link MUST be: <a href="index.html">Futures Basics</a> -->
+                <li><a href="index.html">Futures Basics</a></li>
+                <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+                <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+                <li><a href="../market-basics/index.html">Market Basics</a></li>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+
+            <div class="back-home">
+                <a href="index.html" class="button">Back to Futures Basics</a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
