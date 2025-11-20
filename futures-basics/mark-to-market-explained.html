@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mark-to-Market Explained for Futures Traders</title>
+    <meta name="description" content="Understand how mark-to-market works in futures, how daily settlement impacts your balance, and why it matters for margin and risk control.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/mark-to-market-explained.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mark-to-Market Explained for Futures Traders">
+    <meta property="og:description" content="Straightforward breakdown of mark-to-market, daily settlement, and how futures P&L is calculated every single trading day.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/mark-to-market-explained.html">
+    <meta property="og:site_name" content="Grizzly Parrott Trading">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mark-to-Market Explained for Futures Traders">
+    <meta name="twitter:description" content="Learn how futures mark-to-market works and how it directly affects your account balance and margin usage.">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Mark-to-Market Explained for Futures Traders",
+      "description": "Understand how mark-to-market works in futures, how daily settlement impacts your balance, and why it matters for margin and risk control.",
+      "author": {
+        "@type": "Person",
+        "name": "Grizzly Parrott"
+      },
+      "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/mark-to-market-explained.html",
+      "datePublished": "2025-11-20",
+      "dateModified": "2025-11-20"
+    }
+    </script>
+
+    <!-- JSON-LD: Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://grizzlyparrotttrading.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Futures Basics",
+          "item": "https://grizzlyparrotttrading.com/futures-basics/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mark-to-Market Explained for Futures Traders",
+          "item": "https://grizzlyparrotttrading.com/futures-basics/mark-to-market-explained.html"
+        }
+      ]
+    }
+    </script>
+
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="../index.html">Grizzly Parrott Trading</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+                <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+                <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+                <li><a href="../market-basics/index.html">Market Basics</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <div class="container article-content">
+
+            <!-- ARTICLE BODY START -->
+
+            <h1>Mark-to-Market Explained for Futures Traders</h1>
+
+            <p>
+                Mark-to-market is the daily process that updates your futures account balance based on settlement prices, and if you do not understand mark-to-market, you do not understand how your real P&amp;L is calculated.
+            </p>
+
+            <h2>What Mark-to-Market Actually Means</h2>
+            <p>
+                Futures are settled every single trading day. The exchange takes the settlement price, compares it to your entry or prior settlement, and adjusts your balance—credit if you made money, debit if you didn’t.  
+                This is how futures stay cash-settled day by day instead of at the end of the contract.
+            </p>
+
+            <p>
+                If this sounds similar to <a href="futures-margin-requirements-explained.html">margin requirements</a>, it’s because mark-to-market is one of the reasons margin exists at all.
+            </p>
+
+            <h2>Why Futures Use Mark-to-Market</h2>
+            <p>
+                The exchange wants zero credit risk. They do not want traders holding losing positions they cannot pay for. Daily settlement keeps the system clean and ensures losses are realized immediately.
+            </p>
+
+            <h3>Benefits (for the exchange, not you)</h3>
+            <ul>
+                <li>Losses are settled daily, not at expiration.</li>
+                <li>Everyone’s account equity is always up to date.</li>
+                <li>No one can “run away” from losses by holding to expiry.</li>
+                <li>Margin calls happen the moment your equity drops too far.</li>
+            </ul>
+
+            <h2>How Daily P&amp;L Is Calculated</h2>
+            <p>
+                The formula is simple, and you better know it cold:
+            </p>
+
+            <pre>Daily P&amp;L = (Settlement Price Today − Settlement Price Yesterday) × Contract Value per Point</pre>
+
+            <p>
+                That contract value comes from your tick/point structure. If you forgot that, go refresh with <a href="ticks-points-dollar-value.html">ticks, points, and dollar value</a>.
+            </p>
+
+            <h2>Example: Mark-to-Market in Action</h2>
+            <p>
+                Say you’re long one ES contract:
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Settlement Price</th>
+                        <th>Change</th>
+                        <th>Daily P&amp;L</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Day 1</td>
+                        <td>4800.00</td>
+                        <td>–</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <td>Day 2</td>
+                        <td>4806.00</td>
+                        <td>+6</td>
+                        <td>+ $300</td>
+                    </tr>
+                    <tr>
+                        <td>Day 3</td>
+                        <td>4799.50</td>
+                        <td>-6.5</td>
+                        <td>- $325</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Your account goes up $300 after Day 2, then down $325 after Day 3. You never closed the trade—mark-to-market handles the adjustments anyway.
+            </p>
+
+            <h2>How Mark-to-Market Impacts Your Margin</h2>
+            <p>
+                Daily losses reduce your account equity. If those losses drop you below maintenance margin, you get flagged. Keep pushing it and you’ll trigger a margin call and possibly get force-liquidated.
+            </p>
+
+            <h3>Key consequences</h3>
+            <ul>
+                <li>Your position can stay open, but your cash cannot dip below minimum requirements.</li>
+                <li>Even a strong long-term idea gets killed if daily swings crush your margin.</li>
+                <li>Your broker doesn’t care about your conviction—only your equity.</li>
+            </ul>
+
+            <h2>The Bottom Line</h2>
+            <p>
+                Mark-to-market is the backbone of futures accounting. It updates your balance daily, decides when margin calls hit, and keeps the entire system solvent. If you want to trade futures seriously, you track settlement prices and stay well above margin limits—because mark-to-market doesn’t care about your plans, it only cares about math.
+            </p>
+
+            <!-- ARTICLE BODY END -->
+
+            <hr>
+
+            <h2>Internal Links</h2>
+            <ul>
+                <li><a href="index.html">Futures Basics</a></li>
+                <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+                <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+                <li><a href="../market-basics/index.html">Market Basics</a></li>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+
+            <div class="back-home">
+                <a href="index.html" class="button">Back to Futures Basics</a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
