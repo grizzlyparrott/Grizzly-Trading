@@ -3,8 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Break-Even Math for Futures Traders</title>
-    <link rel="stylesheet" href="../styles.css">
+    <meta name="description" content="Learn the exact break-even tick math for MES, MNQ, GC, and more. A blunt guide showing how commissions affect your real profit targets.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrotttrading.com/categories/futures-basics/breakeven-futures.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Break-Even Math for Futures Traders">
+    <meta property="og:description" content="A straight-to-the-point guide showing the real break-even tick math for popular futures contracts.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grizzlyparrotttrading.com/categories/futures-basics/breakeven-futures.html">
+    <meta property="og:site_name" content="Grizzly Parrott Trading">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Break-Even Math for Futures Traders">
+    <meta name="twitter:description" content="A blunt guide to calculating break-even ticks across common futures contracts.">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Break-Even Math for Futures Traders",
+      "description": "Learn the exact break-even tick math for MES, MNQ, GC, and more, including how commissions affect your net profitability.",
+      "author": {
+        "@type": "Person",
+        "name": "Grizzly Parrott"
+      },
+      "mainEntityOfPage": "https://grizzlyparrotttrading.com/categories/futures-basics/breakeven-futures.html",
+      "datePublished": "2025-11-20",
+      "dateModified": "2025-11-20"
+    }
+    </script>
+
+    <!-- JSON-LD: Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://grizzlyparrotttrading.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Futures Basics",
+          "item": "https://grizzlyparrotttrading.com/categories/futures-basics.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Break-Even Math for Futures Traders",
+          "item": "https://grizzlyparrotttrading.com/categories/futures-basics/breakeven-futures.html"
+        }
+      ]
+    }
+    </script>
+
 </head>
 <body>
 
@@ -13,76 +78,64 @@
 </header>
 
 <main>
+
     <section>
-        <h2>What Break-Even Actually Means</h2>
         <p>
-            Break-even in futures isn’t theory. It’s a number: the exact tick distance you need
-            to cover your commissions and not lose money. Every contract has its own tick value,
-            so the math is simple—no guesswork.
+            Break-even isn’t a vibe, a feeling, or a “pretty close” number. 
+            It’s the exact number of ticks you must make just to offset commissions. 
+            If you’re scalping without knowing this, you’re lighting money on fire.
         </p>
     </section>
 
     <section>
-        <h2>The Three Inputs</h2>
+        <h2>What Break-Even Actually Means</h2>
+        <p>
+            Break-even ticks = the minimum number of ticks needed to cover your round-turn cost.
+        </p>
+        <p>
+            If your target is smaller than your break-even number, your strategy is mathematically dead on arrival.
+        </p>
+    </section>
+
+    <section>
+        <h2>The Formula (You Only Need One)</h2>
+        <p><strong>Break-even ticks = Commission ÷ Tick Value</strong></p>
+        <p>Round up. You don’t get partial ticks.</p>
+    </section>
+
+    <section>
+        <h2>Contract Examples</h2>
+
+        <h3>MES (Micro S&P 500)</h3>
         <ul>
-            <li><strong>Tick value:</strong> how much each tick is worth.</li>
-            <li><strong>Commission per round turn:</strong> what your broker takes.</li>
-            <li><strong>Your entry price vs exit:</strong> how many ticks you gained or lost.</li>
+            <li>Tick value: $1.25</li>
+            <li>Round-turn commission: $1.20</li>
+            <li>Break-even: 1.20 ÷ 1.25 = 0.96 → <strong>1 tick</strong></li>
+        </ul>
+
+        <h3>MNQ (Micro Nasdaq)</h3>
+        <ul>
+            <li>Tick value: $0.50</li>
+            <li>Round-turn commission: $1.20</li>
+            <li>Break-even: 1.20 ÷ 0.50 = 2.4 → <strong>3 ticks</strong></li>
+        </ul>
+
+        <h3>GC (Gold Futures)</h3>
+        <ul>
+            <li>Tick value: $10</li>
+            <li>Round-turn commission: $2.50</li>
+            <li>Break-even: 2.50 ÷ 10 = 0.25 → <strong>1 tick</strong></li>
         </ul>
     </section>
 
     <section>
-        <h2>Formula</h2>
-        <p>
-            <strong>Break-even ticks = Commission ÷ Tick Value</strong>
-        </p>
-        <p>
-            Round up. You can’t gain fractional ticks.
-        </p>
-    </section>
-
-    <section>
-        <h2>Examples (Real Numbers)</h2>
-
-        <h3>MES (Micro S&P 500)</h3>
-        <p>
-            Tick value: $1.25  
-            Commission: $1.20 per round turn  
-            Break-even: 1.20 ÷ 1.25 = 0.96 → <strong>1 tick</strong>
-        </p>
-
-        <h3>MNQ (Micro Nasdaq)</h3>
-        <p>
-            Tick value: $0.50  
-            Commission: $1.20  
-            Break-even: 1.20 ÷ 0.50 = 2.4 → <strong>3 ticks</strong>
-        </p>
-
-        <h3>GC (Gold Futures)</h3>
-        <p>
-            Tick value: $10  
-            Commission: $2.50  
-            Break-even: 2.50 ÷ 10 = 0.25 → <strong>1 tick</strong>
-        </p>
-    </section>
-
-    <section>
-        <h2>Why This Matters</h2>
-        <p>
-            If you scalp, this is life or death. If your strategy targets 2 ticks but your break-even
-            is 3 ticks, you lose long-term. If your target is bigger than your break-even number,
-            the math is on your side.
-        </p>
-    </section>
-
-    <section>
-        <h2>Quick Reference Table</h2>
+        <h2>Quick Comparison Table</h2>
         <table>
             <thead>
                 <tr>
                     <th>Contract</th>
                     <th>Tick Value</th>
-                    <th>Example Commission</th>
+                    <th>RT Commission</th>
                     <th>Break-Even (Ticks)</th>
                 </tr>
             </thead>
@@ -110,10 +163,10 @@
     </section>
 
     <section>
-        <h2>Bottom Line</h2>
+        <h2>Why This Matters</h2>
         <p>
-            Know your break-even number before you take the trade. If your target is smaller,
-            the math will eat you alive. No strategy beats basic arithmetic.
+            Most losing traders aren’t wrong about direction — they’re wrong about math.  
+            If you scalp for 2 ticks on MNQ but your break-even is 3 ticks, you lose long-term **even if you win more than you lose**.
         </p>
     </section>
 
