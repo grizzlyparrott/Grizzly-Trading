@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break-Even Math for Futures Traders</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Break-Even Math for Futures Traders</h1>
+</header>
+
+<main>
+    <section>
+        <h2>What Break-Even Actually Means</h2>
+        <p>
+            Break-even in futures isn’t theory. It’s a number: the exact tick distance you need
+            to cover your commissions and not lose money. Every contract has its own tick value,
+            so the math is simple—no guesswork.
+        </p>
+    </section>
+
+    <section>
+        <h2>The Three Inputs</h2>
+        <ul>
+            <li><strong>Tick value:</strong> how much each tick is worth.</li>
+            <li><strong>Commission per round turn:</strong> what your broker takes.</li>
+            <li><strong>Your entry price vs exit:</strong> how many ticks you gained or lost.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Formula</h2>
+        <p>
+            <strong>Break-even ticks = Commission ÷ Tick Value</strong>
+        </p>
+        <p>
+            Round up. You can’t gain fractional ticks.
+        </p>
+    </section>
+
+    <section>
+        <h2>Examples (Real Numbers)</h2>
+
+        <h3>MES (Micro S&P 500)</h3>
+        <p>
+            Tick value: $1.25  
+            Commission: $1.20 per round turn  
+            Break-even: 1.20 ÷ 1.25 = 0.96 → <strong>1 tick</strong>
+        </p>
+
+        <h3>MNQ (Micro Nasdaq)</h3>
+        <p>
+            Tick value: $0.50  
+            Commission: $1.20  
+            Break-even: 1.20 ÷ 0.50 = 2.4 → <strong>3 ticks</strong>
+        </p>
+
+        <h3>GC (Gold Futures)</h3>
+        <p>
+            Tick value: $10  
+            Commission: $2.50  
+            Break-even: 2.50 ÷ 10 = 0.25 → <strong>1 tick</strong>
+        </p>
+    </section>
+
+    <section>
+        <h2>Why This Matters</h2>
+        <p>
+            If you scalp, this is life or death. If your strategy targets 2 ticks but your break-even
+            is 3 ticks, you lose long-term. If your target is bigger than your break-even number,
+            the math is on your side.
+        </p>
+    </section>
+
+    <section>
+        <h2>Quick Reference Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Contract</th>
+                    <th>Tick Value</th>
+                    <th>Example Commission</th>
+                    <th>Break-Even (Ticks)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MES</td>
+                    <td>$1.25</td>
+                    <td>$1.20</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>MNQ</td>
+                    <td>$0.50</td>
+                    <td>$1.20</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>GC</td>
+                    <td>$10</td>
+                    <td>$2.50</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Bottom Line</h2>
+        <p>
+            Know your break-even number before you take the trade. If your target is smaller,
+            the math will eat you alive. No strategy beats basic arithmetic.
+        </p>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Internal Links</h2>
+        <ul>
+            <li><a href="../categories/futures-basics.html">Futures Basics</a></li>
+            <li><a href="../categories/prop-firm-trading.html">Prop Firm Trading</a></li>
+            <li><a href="../categories/platforms-tutorials.html">Platforms & Tutorials</a></li>
+            <li><a href="../categories/market-basics.html">Market Basics</a></li>
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+    </section>
+
+    <div class="back-home">
+        <a href="../index.html" class="button">Back to Home</a>
+    </div>
+
+</main>
+
+</body>
+</html>
