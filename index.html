@@ -42,6 +42,12 @@
                 </div>
             </div>
         </section>
+        <div class="site-search">
+          <label for="site-search-input">Search All Categories</label>
+          <input type="text" id="site-search-input" placeholder="Search articles on this site...">
+          <p id="no-results-message" style="display:none;">No pages match your search.</p>
+        </div>
+
 
         <!-- Category overview -->
         <section class="section">
@@ -244,5 +250,6 @@
             document.getElementById("year").textContent = new Date().getFullYear();
         </script>
     </footer>
+    <script src="search.js"></script>
 </body>
 </html>
