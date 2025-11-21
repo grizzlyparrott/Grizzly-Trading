@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Microstructure Basics: How Price Actually Forms</title>
+  <meta name="description" content="Learn market microstructure basics: how orders become trades, how liquidity forms, and what really drives short-term price movement.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://grizzlyparrotttrading.com/market-basics/market-microstructure-basics.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Market Microstructure Basics: How Price Actually Forms">
+  <meta property="og:description" content="A blunt breakdown of market microstructure basics: order types, liquidity, matching engines, and how price is created tick by tick.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://grizzlyparrotttrading.com/market-basics/market-microstructure-basics.html">
+  <meta property="og:site_name" content="Grizzly Parrott Trading">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Market Microstructure Basics: How Price Actually Forms">
+  <meta name="twitter:description" content="Understand how markets actually function under the hood: bids, asks, liquidity, matching, and microstructure forces.">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JMJVR3G5YN');
+  </script>
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Market Microstructure Basics: How Price Actually Forms",
+    "description": "Learn market microstructure basics: how orders become trades, how liquidity forms, and what really drives short-term price movement.",
+    "author": {
+      "@type": "Person",
+      "name": "Grizzly Parrott"
+    },
+    "mainEntityOfPage": "https://grizzlyparrotttrading.com/market-basics/market-microstructure-basics.html",
+    "datePublished": "2025-11-21",
+    "dateModified": "2025-11-21"
+  }
+  </script>
+
+  <!-- JSON-LD: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Market Basics", "item": "https://grizzlyparrotttrading.com/market-basics/index.html" },
+      { "@type": "ListItem", "position": 3, "name": "Market Microstructure Basics: How Price Actually Forms", "item": "https://grizzlyparrotttrading.com/market-basics/market-microstructure-basics.html" }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Market Microstructure Basics: How Price Actually Forms</h1>
+
+<p>If you want to understand price on a deep level, you need <strong>market microstructure basics</strong>. Microstructure is the plumbing under every chart: bids, asks, liquidity, executions, and the matching engine. If you ignore this stuff, you’re trading blind.</p>
+
+<h2>What Market Microstructure Actually Is</h2>
+<p>Market microstructure describes <strong>how orders become trades</strong>. Not opinions. Not indicators. Literal mechanics. This includes:</p>
+<ul>
+  <li>how bids and asks update</li>
+  <li>how liquidity forms and disappears</li>
+  <li>how matching engines pair buyers and sellers</li>
+  <li>how aggressive orders move the market</li>
+</ul>
+
+<p>If you read <a href="../market-basics/market-liquidity-basics.html">Market Liquidity Basics</a>, this goes one layer deeper into the mechanics behind that liquidity.</p>
+
+<h2>The Core Components of Market Microstructure</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Definition</th>
+      <th>Why It Matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bid</td>
+      <td>Highest price someone is willing to buy</td>
+      <td>Shows demand and where buyers will defend</td>
+    </tr>
+    <tr>
+      <td>Ask</td>
+      <td>Lowest price someone is willing to sell</td>
+      <td>Shows supply and where sellers lean</td>
+    </tr>
+    <tr>
+      <td>Order Book</td>
+      <td>Stack of resting buy and sell orders</td>
+      <td>Shows where liquidity sits before it’s executed</td>
+    </tr>
+    <tr>
+      <td>Aggressive Orders</td>
+      <td>Orders that cross the spread (market orders)</td>
+      <td>These move price by removing resting liquidity</td>
+    </tr>
+    <tr>
+      <td>Matching Engine</td>
+      <td>Exchange system pairing buyers/sellers</td>
+      <td>Controls execution speed and fairness</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Price Changes Only When Liquidity Gets Removed</h2>
+<p>Forget the fantasy that “price moves because someone decided it should.” No. Price moves because:</p>
+<p><strong>Someone aggressively buys or sells into resting orders and clears a level.</strong></p>
+
+<p>This is why microstructure is connected to topics like <a href="../market-basics/order-block-basics.html">Order Blocks</a> and <a href="../market-basics/liquidity-pools-basics.html">Liquidity Pools</a> — those concepts revolve around where liquidity rests and who removes it.</p>
+
+<h2>Two Types of Orders in Microstructure</h2>
+
+<h3>1. Passive Orders (Provide Liquidity)</h3>
+<ul>
+  <li>Limit buys sitting on the bid</li>
+  <li>Limit sells sitting on the ask</li>
+  <li>Goal: get filled at a good price</li>
+  <li>Effect: stabilize price temporarily</li>
+</ul>
+
+<h3>2. Aggressive Orders (Remove Liquidity)</h3>
+<ul>
+  <li>Market buys hitting the ask</li>
+  <li>Market sells hitting the bid</li>
+  <li>Goal: get in immediately</li>
+  <li>Effect: push the market up or down</li>
+</ul>
+
+<p>Price doesn’t move until aggressive orders show up. That’s the core of market microstructure basics.</p>
+
+<h2>Spread: The First Battle</h2>
+<p>The spread is the gap between the bid and ask. Tight spreads mean lots of competing orders. Wide spreads mean low liquidity, usually during:</p>
+<ul>
+  <li>overnight sessions</li>
+  <li>news releases</li>
+  <li>low-volume markets</li>
+</ul>
+
+<p>This ties directly into volatility behavior explained in <a href="../market-basics/market-volatility-basics.html">Market Volatility Basics</a>.</p>
+
+<h2>Liquidity Dynamics: Why Levels Break or Hold</h2>
+<p>At any price level, one of two things happens:</p>
+
+<ul>
+  <li><strong>Resting liquidity absorbs aggressive flow</strong> → level holds</li>
+  <li><strong>Aggressive flow overwhelms resting liquidity</strong> → level breaks</li>
+</ul>
+
+<p>That’s it. No magic.</p>
+
+<h2>Microstructure and Stop Runs</h2>
+<p>Stop runs happen because resting liquidity clusters around predictable levels. Microstructure explains it cleanly:</p>
+<ul>
+  <li>Stops = market orders waiting to trigger</li>
+  <li>They add aggressive flow the moment they activate</li>
+  <li>Big players anticipate it and push price into those pockets</li>
+</ul>
+
+<h2>Using Microstructure in Your Trading</h2>
+<p>Understanding <strong>market microstructure basics</strong> helps you:</p>
+<ul>
+  <li>avoid trading during thin liquidity</li>
+  <li>recognize when a breakout is real vs. forced</li>
+  <li>interpret the DOM and tape correctly</li>
+  <li>see why price is moving instead of guessing</li>
+</ul>
+
+<p>The more you combine microstructure knowledge with liquidity concepts and market behavior, the more the chart starts making sense instead of looking random.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Market Basics</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="../market-basics/index.html" class="button">Back to Market Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
