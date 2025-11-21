@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>What Is Slippage in Trading and Why It Hits Your P&amp;L</title>
+    <meta name="description" content="Learn what slippage in trading is, why your orders don’t always fill at the price you expect, and practical ways to reduce its impact on your P&amp;L.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrotttrading.com/market-basics/what-is-slippage-in-trading.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="What Is Slippage in Trading and Why It Hits Your P&amp;L">
+    <meta property="og:description" content="Understand slippage in trading, what causes it, and how to keep it from quietly eating your edge on every order you send.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grizzlyparrotttrading.com/market-basics/what-is-slippage-in-trading.html">
+    <meta property="og:site_name" content="Grizzly Parrott Trading">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="What Is Slippage in Trading and Why It Hits Your P&amp;L">
+    <meta name="twitter:description" content="A blunt breakdown of slippage in trading, how to measure it, and concrete steps to reduce it on your futures and prop firm accounts.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JMJVR3G5YN');
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "What Is Slippage in Trading and Why It Hits Your P&L",
+      "description": "Learn what slippage in trading is, why your orders don’t always fill at the price you expect, and practical ways to reduce its impact on your P&L.",
+      "author": {
+        "@type": "Person",
+        "name": "Grizzly Parrott"
+      },
+      "mainEntityOfPage": "https://grizzlyparrotttrading.com/market-basics/what-is-slippage-in-trading.html",
+      "datePublished": "2025-11-20",
+      "dateModified": "2025-11-20"
+    }
+    </script>
+    
+    <!-- JSON-LD: Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://grizzlyparrotttrading.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Market Basics",
+          "item": "https://grizzlyparrotttrading.com/market-basics/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Is Slippage in Trading and Why It Hits Your P&L",
+          "item": "https://grizzlyparrotttrading.com/market-basics/what-is-slippage-in-trading.html"
+        }
+      ]
+    }
+    </script>
+
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="../index.html">Grizzly Parrott Trading</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+                <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+                <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+                <li><a href="../market-basics/index.html">Market Basics</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <div class="container article-content">
+            
+            <!-- ARTICLE BODY START -->
+            <!-- YOU PUT ALL H1/H2/H3/P/UL/OL/TABLE CONTENT HERE -->
+
+            <h1>What Is Slippage in Trading and Why It Hits Your P&amp;L</h1>
+
+            <p>Slippage in trading is the difference between the price you expect on an order and the price you actually get filled at. You think you’re buying at 4200.00, the fill shows 4200.25 — that tiny gap is slippage and it quietly grinds down your edge.</p>
+
+            <h2>Quick Definition: Slippage in Trading</h2>
+            <p>When you send an order, you’re interacting with a live order book that’s constantly changing. <strong>Slippage in trading</strong> is simply the cost of that movement between the moment you click and the moment you get filled.</p>
+
+            <p>Formally, you can think of it like this:</p>
+
+            <ul>
+                <li><strong>Expected price</strong>: the price you see or target when you send the order.</li>
+                <li><strong>Fill price</strong>: the actual price your broker confirms.</li>
+                <li><strong>Slippage</strong> = Fill price − Expected price (for buys), or Expected price − Fill price (for sells).</li>
+            </ul>
+
+            <p>Slippage happens in every liquid market: futures, stocks, crypto, FX. It shows up more when size, volatility, and bad execution habits line up against you.</p>
+
+            <h2>Main Causes of Slippage in Trading</h2>
+            <p>Slippage isn’t random bad luck. It comes from a few basic mechanics:</p>
+
+            <ul>
+                <li><strong>Fast price movement</strong> – News hits, algo flows smash the tape, the price jumps while your order is traveling.</li>
+                <li><strong>Thin liquidity</strong> – Not enough resting orders at your price, so your order has to climb the book to get filled.</li>
+                <li><strong>Big order size</strong> – You’re too big for the current depth; you eat multiple levels of the book.</li>
+                <li><strong>Order type</strong> – Market and stop-market orders accept whatever price is there, which invites slippage.</li>
+                <li><strong>Slow routing or bad infrastructure</strong> – Latency between you, your platform, and the exchange adds delay.</li>
+            </ul>
+
+            <p>If you’re trading small size in a highly liquid futures contract, you’ll still see slippage, but it should be minor. In thin contracts, it can blow out quickly.</p>
+
+            <h2>How Different Order Types Handle Slippage</h2>
+            <p>Some orders are basically slippage magnets. Others trade off fill probability for price control. Here’s the quick breakdown:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order Type</th>
+                        <th>Price Control</th>
+                        <th>Slippage Risk</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Market</td>
+                        <td>None</td>
+                        <td>High</td>
+                        <td>You get filled fast but accept whatever the book offers.</td>
+                    </tr>
+                    <tr>
+                        <td>Limit</td>
+                        <td>Strong</td>
+                        <td>Low</td>
+                        <td>No worse than your limit price, but you might not get filled.</td>
+                    </tr>
+                    <tr>
+                        <td>Stop-Market</td>
+                        <td>Trigger only</td>
+                        <td>High</td>
+                        <td>Once triggered, behaves like a market order into momentum.</td>
+                    </tr>
+                    <tr>
+                        <td>Stop-Limit</td>
+                        <td>Medium</td>
+                        <td>Medium</td>
+                        <td>Protects price, but you can miss the exit in a spike.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>If you don’t understand how your order type interacts with the bid-ask spread and depth, go read more on order flow and spreads in the <a href="../futures-basics/what-is-the-bid-ask-spread.html">bid-ask spread basics</a> article after this.</p>
+
+            <h2>How to Measure Slippage in Trading</h2>
+            <p>You can’t improve what you don’t measure. Start logging every trade with the price you expected and the price you got.</p>
+
+            <h3>Step-by-step slippage calculation</h3>
+            <ul>
+                <li>Write down your <strong>intended entry</strong> (for example, 4200.00 long).</li>
+                <li>Check the <strong>actual fill</strong> (say, 4200.25).</li>
+                <li>Compute the difference in ticks or points.</li>
+            </ul>
+
+            <p>Example for an ES futures trade:</p>
+
+            <ul>
+                <li>Intended price: 4200.00</li>
+                <li>Fill: 4200.25</li>
+                <li>Tick size: 0.25</li>
+                <li>Slippage: 1 tick = $12.50 per contract</li>
+            </ul>
+
+            <p>Do this for every trade for a week. You’ll see patterns: maybe your entries are fine but your stop-market exits are regularly slipping 2–3 ticks. That’s a fixable leak.</p>
+
+            <h2>Practical Ways to Reduce Slippage in Trading</h2>
+            <p>You can’t eliminate slippage in trading, but you can keep it small and predictable.</p>
+
+            <h3>Trade liquid products and active sessions</h3>
+            <p>Focus on contracts with tight spreads and real depth. ES, NQ, CL, 6E in regular session hours will usually treat you better than thin micro contracts in the dead zone. Pair this with smart <a href="../market-basics/risk-per-trade-small-accounts.html">risk per trade sizing</a> so you’re not too big for the book.</p>
+
+            <h3>Avoid impulsive trades during news spikes</h3>
+            <p>Economic releases, FOMC, and major earnings blow spreads wide open. If you hit market buy in that chaos, slippage in trading will be brutal. Either stand aside or use pre-planned limit entries at prices you’re willing to accept.</p>
+
+            <h3>Use limit orders where it actually makes sense</h3>
+            <p>For entries, a well-placed limit order lets you control price and makes slippage rare. For exits, you have to balance price control versus the need to get flat. In a fast prop firm environment, you may still need stop-market orders to guarantee an exit and protect your account rules.</p>
+
+            <h3>Respect your platform and routing</h3>
+            <p>Test your platform’s order routing in sim during fast conditions. If you’re trading through a prop firm, know exactly how their risk servers and routing work. Read your firm’s documentation or check the <a href="../prop-firm-trading/prop-firm-rules-hidden-traps.html">hidden prop firm rules and traps</a> article so you’re not surprised by delayed or rejected orders.</p>
+
+            <h3>Size realistically for the depth you see</h3>
+            <p>If there are only 20 contracts on the best bid and you slam 50 market, you’re the problem. Watch the DOM, match your size to depth, and split big orders when necessary.</p>
+
+            <h2>When Slippage in Trading Is Normal vs a Red Flag</h2>
+            <p>A couple ticks of slippage in trading on a fast-moving futures contract is normal. What’s not normal is:</p>
+
+            <ul>
+                <li>Consistently worse fills than the spread would suggest.</li>
+                <li>Huge slippage around news you didn’t even know was on the calendar.</li>
+                <li>Repeated slippage on the same product and time of day.</li>
+            </ul>
+
+            <p>When you see that, tighten things up: trade smaller, switch to more liquid contracts, and stop hitting market into obvious volatility pockets.</p>
+
+            <h2>Slippage in Trading: Treat It Like a Real Cost</h2>
+            <p>Slippage in trading isn’t a glitch — it’s a cost, just like commissions and fees. Track it, understand when it shows up, and adjust your order types, size, and timing until it’s a small, stable line item. If you ignore it, slippage will quietly turn a decent strategy into a breakeven grind.</p>
+
+            <!-- ARTICLE BODY END -->
+            
+            <hr>
+            
+            <h2>Internal Links</h2>
+            <ul>
+                <!-- For Futures Basics articles -->
+                <!--   first link MUST be: <a href="index.html">Futures Basics</a> -->
+                <!-- For other categories, adjust text and href accordingly -->
+                <li><a href="index.html">Market Basics</a></li>
+                <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+                <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+                <li><a href="../market-basics/index.html">Market Basics</a></li>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+            
+            <div class="back-home">
+                <a href="../market-basics/index.html" class="button">Back to Market Basics</a>
+            </div>
+        
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
