@@ -1,15 +1,17 @@
-// Simple client-side search that filters <article class="card"> elements
-// Works on index.html and on each category index page
+// Simple client-side search that filters elements with class "card"
+// Works on homepage and on each category index page
 
 (function () {
     function initSearch() {
         var input = document.getElementById('site-search-input');
         if (!input) return; // no search box on this page
 
-        var cards = Array.prototype.slice.call(document.querySelectorAll('article.card'));
+        // Grab ALL cards (div.card, article.card, etc.)
+        var cards = Array.prototype.slice.call(
+            document.querySelectorAll('.card')
+        );
         if (!cards.length) return;
 
-        // optional "no results" message
         var noResults = document.getElementById('no-results-message');
 
         input.addEventListener('input', function () {

@@ -321,3 +321,51 @@ a:hover {
     opacity: 0.8;
 }
 
+/* ===== Site search styling ===== */
+
+.site-search {
+    max-width: 600px;
+    margin: 2rem auto 2.5rem; /* space under hero / before cards */
+    padding: 1.25rem 1.5rem;
+    background: rgba(8, 15, 32, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.site-search label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #cbd5f5; /* light enough to actually see */
+}
+
+.site-search input[type="text"] {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #3b415b;
+    background: #050816;
+    color: #f9fafb;
+    font-size: 0.95rem;
+}
+
+.site-search input[type="text"]::placeholder {
+    color: #6b7280;
+}
+
+.site-search input[type="text"]:focus {
+    outline: none;
+    border-color: #22c55e;
+    box-shadow: 0 0 0 1px #22c55e55;
+}
+
+#no-results-message {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #f97373;
+}
+
+
