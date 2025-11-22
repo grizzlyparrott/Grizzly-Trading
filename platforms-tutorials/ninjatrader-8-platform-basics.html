@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NinjaTrader 8 Platform Basics for Futures Traders</title>
+<meta name="description" content="A blunt walkthrough of NinjaTrader 8 platform basics. Learn how to install it, understand the layout, and build your first futures trading workspace.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-platform-basics.html">
+
+<meta property="og:title" content="NinjaTrader 8 Platform Basics for Futures Traders">
+<meta property="og:description" content="Learn the core pieces of NinjaTrader 8: Control Center, charts, DOM, and workspaces so you can actually use it to trade futures.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-platform-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NinjaTrader 8 Platform Basics for Futures Traders">
+<meta name="twitter:description" content="A no-BS introduction to NinjaTrader 8 layout and workflow for new futures traders.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "NinjaTrader 8 Platform Basics for Futures Traders",
+"description": "A blunt walkthrough of NinjaTrader 8 platform basics. Learn how to install it, understand the layout, and build your first futures trading workspace.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-platform-basics.html",
+"datePublished": "2025-11-22",
+"dateModified": "2025-11-22"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{
+"@type": "ListItem",
+"position": 1,
+"name": "Home",
+"item": "https://grizzlyparrotttrading.com/index.html"
+},
+{
+"@type": "ListItem",
+"position": 2,
+"name": "Platforms & Tutorials",
+"item": "https://grizzlyparrotttrading.com/platforms-tutorials/index.html"
+},
+{
+"@type": "ListItem",
+"position": 3,
+"name": "NinjaTrader 8 Platform Basics for Futures Traders",
+"item": "https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-platform-basics.html"
+}
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>NinjaTrader 8 Platform Basics for Futures Traders</h1>
+
+<p>NinjaTrader 8 is the version that actually matters. If you’re still debating between 7 and 8, read the <a href="ninjatrader-7-vs-8-differences.html">NinjaTrader 7 vs 8 comparison</a> and then come back. This guide assumes you’re done wasting time on 7 and want a straight, practical intro to NinjaTrader 8 so you can trade futures without getting lost in the UI.</p>
+
+<h2>What NinjaTrader 8 Is Built For</h2>
+
+<p>NinjaTrader 8 is a futures-first trading platform. It’s built for:</p>
+
+<ul>
+  <li>Manual futures trading with DOM and charts</li>
+  <li>Advanced charting and indicators</li>
+  <li>Strategy automation through NinjaScript</li>
+  <li>Market replay and backtesting</li>
+  <li>Multi-account, multi-instrument workflows</li>
+</ul>
+
+<p>It’s not a “cute” platform. It’s an execution and analysis tool. If you want a legacy museum piece, that’s what <a href="ninjatrader-7-overview-legacy.html">NinjaTrader 7</a> is for. Everything here is about NinjaTrader 8 only.</p>
+
+<h2>The Core Pieces of NinjaTrader 8</h2>
+
+<p>NinjaTrader 8 is built around a few core windows. If you understand these, the rest is just configuration:</p>
+
+<table>
+  <tr><th>Window</th><th>Purpose</th></tr>
+  <tr><td>Control Center</td><td>Main command hub; manages workspaces, connections, accounts, and global settings</td></tr>
+  <tr><td>Chart</td><td>Price display, indicators, drawing tools, Chart Trader for execution</td></tr>
+  <tr><td>SuperDOM</td><td>Price ladder for fast order entry and depth of market</td></tr>
+  <tr><td>Market Analyzer</td><td>Watchlist with custom columns for signals, volume, indicators</td></tr>
+  <tr><td>Orders / Positions</td><td>Execution and risk view across your account</td></tr>
+</table>
+
+<p>Your first job is not to “optimize” anything. It’s to not be confused about what you’re looking at.</p>
+
+<h2>Control Center: Your Home Base</h2>
+
+<p>When you launch NinjaTrader 8, the Control Center is the first window you see. Everything starts here:</p>
+
+<ul>
+  <li><strong>Connections:</strong> where you connect your data feed or broker</li>
+  <li><strong>Workspaces:</strong> saved window layouts</li>
+  <li><strong>New:</strong> where you open charts, DOMs, analyzers, and other tools</li>
+  <li><strong>Tools:</strong> settings, NinjaScript editor, options</li>
+</ul>
+
+<p>Think of it as your platform’s root menu. If the Control Center is closed, you’re basically dead; the platform is still running but you’ve cut off the head.</p>
+
+<h2>Connecting Data and Brokerage</h2>
+
+<p>To do anything useful, you need a data or broker connection:</p>
+
+<ul>
+  <li>Go to <strong>Connections</strong> in the Control Center</li>
+  <li>Choose your broker or data source from the list</li>
+  <li>Log in with the credentials they gave you</li>
+</ul>
+
+<p>Once connected, you’ll see instruments updating in real time. If nothing is moving, either you’re not connected or you’re staring at a dead contract.</p>
+
+<h2>Opening Your First NinjaTrader 8 Chart</h2>
+
+<p>From the Control Center:</p>
+
+<ol>
+  <li>Click <strong>New → Chart</strong></li>
+  <li>Pick an instrument (e.g., ES 12-25, MNQ 12-25)</li>
+  <li>Set the data series (e.g., 5-minute, 1-minute, 1500-tick)</li>
+  <li>Click <strong>OK</strong></li>
+</ol>
+
+<p>You now have a basic chart. It’s ugly by default, but functional. Chart styling and deeper settings belong in a separate NinjaTrader 8 chart settings guide—here, the focus is just knowing where things live.</p>
+
+<h2>Chart Trader Basics</h2>
+
+<p>On the chart window, click the <strong>Chart Trader</strong> button. This opens the order panel attached to the chart.</p>
+
+<p>From here you can:</p>
+
+<ul>
+  <li>Select account</li>
+  <li>Set order quantity</li>
+  <li>Pick order type (Market, Limit, Stop Market, etc.)</li>
+  <li>Attach ATM strategies</li>
+  <li>Place and manage orders directly on the chart</li>
+</ul>
+
+<p>Chart Trader in NT8 is your chart-based execution cockpit. If you’re a DOM-only trader, you’ll still want to understand it, but you may live mostly in the SuperDOM instead.</p>
+
+<h2>SuperDOM Basics</h2>
+
+<p>The SuperDOM is NinjaTrader’s price ladder:</p>
+
+<ul>
+  <li>Open it from <strong>New → SuperDOM (Dynamic)</strong></li>
+  <li>Choose your instrument</li>
+</ul>
+
+<p>The SuperDOM shows:</p>
+
+<ul>
+  <li>Bid and ask ladders</li>
+  <li>Depth of market by price</li>
+  <li>Click lines for limit and stop orders</li>
+  <li>Quick flatten and reverse buttons</li>
+</ul>
+
+<p>If you’re scalping, this is usually where you live. For higher-timeframe traders, the chart plus Chart Trader might be enough, but knowing the SuperDOM matters if you want faster entries/exits.</p>
+
+<h2>Workspaces: Saving Your Layout</h2>
+
+<p>A workspace is your saved platform layout—what windows are open, where they sit, and what instruments they’re tied to.</p>
+
+<p>To create a basic workspace:</p>
+
+<ol>
+  <li>Open the chart, SuperDOM, and any other tools you want</li>
+  <li>Arrange them across your monitor(s)</li>
+  <li>In the Control Center, go to <strong>Workspaces → Save Workspace As…</strong></li>
+  <li>Give it a name like <strong>“NT8–Futures-Basics”</strong></li>
+</ol>
+
+<p>From now on, you can load this workspace from the same menu. If you don’t save, NinjaTrader will still try to remember, but relying on autosave is lazy and asking for pain.</p>
+
+<h2>Basic NinjaTrader 8 Workflow for a New Trader</h2>
+
+<p>A simple, sane workflow looks like this:</p>
+
+<ol>
+  <li>Launch NinjaTrader 8</li>
+  <li>Open the Control Center and connect to your broker or data</li>
+  <li>Load your futures workspace (charts + SuperDOM)</li>
+  <li>Confirm the right account is selected (SIM, eval, or live)</li>
+  <li>Confirm instrument and contract month (no stale contracts)</li>
+  <li>Use Chart Trader or SuperDOM for entries and exits</li>
+  <li>Watch Orders/Positions to verify live trades</li>
+</ol>
+
+<p>Nothing fancy. The point is being deliberate instead of just clicking around.</p>
+
+<h2>What We’ll Cover Next in NinjaTrader 8</h2>
+
+<p>This article just gets you oriented. From here, NinjaTrader 8 tutorials can drill into:</p>
+
+<ul>
+  <li>Chart settings and templates</li>
+  <li>DOM configuration and scalping setups</li>
+  <li>ATM strategies in NinjaTrader 8</li>
+  <li>Market Replay for practice</li>
+  <li>Basic NinjaScript usage and automation</li>
+</ul>
+
+<p>All of that builds on the basics here: Control Center, charts, DOM, and workspaces.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>NinjaTrader 8 isn’t hard, it’s just dense. Once you know where the Control Center lives, how to open charts and the SuperDOM, and how to save a workspace, the platform stops feeling overwhelming and starts feeling like a tool instead of a puzzle. From here on out, every NinjaTrader article on this site is about NinjaTrader 8, not 7.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="../platforms-tutorials/index.html" class="button">Back to Platforms &amp; Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
