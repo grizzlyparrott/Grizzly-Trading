@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NinjaTrader Indicators Window Basics</title>
+<meta name="description" content="Learn how to add, remove, customize, and manage indicators in NinjaTrader using the Indicators window the correct way.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-indicators-window-basics.html">
+
+<meta property="og:title" content="NinjaTrader Indicators Window Basics">
+<meta property="og:description" content="A direct guide to NinjaTrader's Indicators window—adding, adjusting, organizing, and saving indicator setups.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-indicators-window-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NinjaTrader Indicators Window Basics">
+<meta name="twitter:description" content="Learn how to manage indicators in NinjaTrader with zero fluff.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Article",
+"headline":"NinjaTrader Indicators Window Basics",
+"description":"Learn how to add, remove, customize, and manage indicators in NinjaTrader using the Indicators window the correct way.",
+"author":{"@type":"Person","name":"Grizzly Parrott"},
+"mainEntityOfPage":"https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-indicators-window-basics.html",
+"datePublished":"2025-11-22",
+"dateModified":"2025-11-22"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"BreadcrumbList",
+"itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrotttrading.com/index.html"},
+  {"@type":"ListItem","position":2,"name":"Platforms & Tutorials","item":"https://grizzlyparrotttrading.com/platforms-tutorials/index.html"},
+  {"@type":"ListItem","position":3,"name":"NinjaTrader Indicators Window Basics","item":"https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-indicators-window-basics.html"}
+]}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo"><a href="../index.html">Grizzly Parrott Trading</a></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>NinjaTrader Indicators Window Basics</h1>
+
+<p>The Indicators window in NinjaTrader controls every technical study you apply to a chart. If you want clean, consistent charts and predictable behavior, you need to understand this window cold. Most beginners slap indicators on randomly and wonder why their charts look like a carnival. This is how to do it right.</p>
+
+<h2>How to Open the Indicators Window</h2>
+
+<p>Two ways:</p>
+
+<ul>
+  <li>Right-click on the chart → <strong>Indicators…</strong></li>
+  <li>Or click the Indicators icon on the top toolbar</li>
+</ul>
+
+<p>This brings up the full Indicators panel.</p>
+
+<h2>The Indicators Window Layout</h2>
+
+<p>The window has three sections:</p>
+
+<table>
+<tr><th>Section</th><th>Purpose</th></tr>
+<tr><td>Left panel</td><td>List of all installed indicators</td></tr>
+<tr><td>Middle panel</td><td>Your active indicators</td></tr>
+<tr><td>Right panel</td><td>Settings for the selected indicator</td></tr>
+</table>
+
+<p>This layout is simple once you know what you’re looking at.</p>
+
+<h2>How to Add an Indicator</h2>
+
+<ol>
+  <li>Open the Indicators window</li>
+  <li>Select any indicator from the left panel</li>
+  <li>Click <strong>add</strong> (or just double-click it)</li>
+  <li>The indicator appears in the middle panel</li>
+  <li>Customize settings in the right panel</li>
+</ol>
+
+<p>Once added, the indicator always appears immediately on the chart.</p>
+
+<h2>How to Remove an Indicator</h2>
+
+<ol>
+  <li>Open the Indicators window</li>
+  <li>Click the indicator in the middle panel</li>
+  <li>Click <strong>remove</strong></li>
+</ol>
+
+<p>This cleans your chart instantly.</p>
+
+<h2>How to Customize Indicator Settings</h2>
+
+<p>Each indicator has its own settings. Common options:</p>
+
+<ul>
+  <li>Period / length</li>
+  <li>Plot color</li>
+  <li>Line width / style</li>
+  <li>Panel assignment</li>
+  <li>Displacement</li>
+  <li>Alerts</li>
+</ul>
+
+<p>For example, setting an EMA to a different color or thickness happens here.</p>
+
+<h2>Assigning Indicators to Panels</h2>
+
+<p>Some indicators belong in the price panel while others belong in a separate one.</p>
+
+<ul>
+  <li><strong>PANEL 1</strong> → price chart (EMAs, VWAP, etc.)</li>
+  <li><strong>PANEL 2+</strong> → oscillators (RSI, MACD, CCI)</li>
+</ul>
+
+<p>To change panels:</p>
+
+<ol>
+  <li>Select the indicator</li>
+  <li>In the right panel, find <strong>Panel</strong></li>
+  <li>Choose panel number</li>
+</ol>
+
+<p>Clean panel management makes the chart readable instead of stacked chaos.</p>
+
+<h2>Indicator Templates</h2>
+
+<p>Templates save a customized indicator setup so you can reuse it.</p>
+
+<p>For example, if you run:</p>
+
+<ul>
+  <li>EMA 8</li>
+  <li>EMA 21</li>
+  <li>EMA 200</li>
+</ul>
+
+<p>with specific colors or widths, save it as a template.</p>
+
+<ol>
+  <li>Open Indicators</li>
+  <li>Select your indicator</li>
+  <li>Click <strong>template → save</strong></li>
+</ol>
+
+<p>Next time you load that indicator, pick your saved template instead of resetting everything manually.</p>
+
+<h2>Reordering Indicators</h2>
+
+<p>The order in the middle panel determines how indicators stack on the chart.</p>
+
+<ul>
+  <li>Top = drawn first</li>
+  <li>Bottom = drawn last</li>
+</ul>
+
+<p>Drag indicators up or down to change their layering.</p>
+
+<h2>Indicator Visibility</h2>
+
+<p>You can toggle indicator visibility without deleting them:</p>
+
+<ul>
+  <li>Open Indicators</li>
+  <li>Select indicator</li>
+  <li>Find <strong>Visible</strong> option</li>
+</ul>
+
+<p>This is useful for testing different chart looks.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>The Indicators window is one of the most important parts of NinjaTrader. If you understand how to add, customize, organize, and template indicators, your charting becomes cleaner and your workflow becomes faster. Master this window early and everything else builds on top of it.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="../platforms-tutorials/index.html" class="button">Back to Platforms &amp; Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
