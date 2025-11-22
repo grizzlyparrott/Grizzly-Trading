@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tradovate Orders Tab Overview</title>
+<meta name="description" content="A clean guide to the Tradovate Orders tab. Learn how to read fills, audit order history, check rejections, and track execution for futures trading.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-orders-tab-overview.html">
+
+<meta property="og:title" content="Tradovate Orders Tab Overview">
+<meta property="og:description" content="Learn how to read and manage your complete order history inside Tradovate's Orders tab.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-orders-tab-overview.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tradovate Orders Tab Overview">
+<meta name="twitter:description" content="A basic walkthrough of the Tradovate Orders tab for tracking fills and execution.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Tradovate Orders Tab Overview",
+"description": "A clean guide to the Tradovate Orders tab. Learn how to read fills, audit order history, check rejections, and track execution for futures trading.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-orders-tab-overview.html",
+"datePublished": "2025-11-21",
+"dateModified": "2025-11-21"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+{ "@type": "ListItem", "position": 2, "name": "Platforms & Tutorials", "item": "https://grizzlyparrotttrading.com/platforms-tutorials/index.html" },
+{ "@type": "ListItem", "position": 3, "name": "Tradovate Orders Tab Overview", "item": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-orders-tab-overview.html" }
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<div class="logo">
+<a href="../index.html">Grizzly Parrott Trading</a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Tradovate Orders Tab Overview</h1>
+
+<p>The Orders tab in Tradovate is your full execution audit trail. It shows every order you've placed—working, filled, canceled, rejected, or expired. If you want to understand what really happened during a trade, this is where you look. The DOM and chart show what's happening right now. The Orders tab shows everything.</p>
+
+<h2>Where to Find the Orders Tab</h2>
+
+<p>Left sidebar → <strong>Orders</strong> → <strong>All</strong>.  
+You’ll see a complete list of every order for the selected date range.</p>
+
+<p>This is where you confirm fills, check timestamps, and figure out why something didn’t behave the way you expected.</p>
+
+<h2>Breaking Down the Columns</h2>
+
+<p>Tradovate gives you a detailed readout for each order:</p>
+
+<table>
+<tr><th>Column</th><th>What It Means</th></tr>
+<tr><td>Time</td><td>Server timestamp of the order action</td></tr>
+<tr><td>Instrument</td><td>Contract traded (e.g., ESZ5, MNQH6)</td></tr>
+<tr><td>Side</td><td>Buy or sell</td></tr>
+<tr><td>Qty</td><td>Number of contracts</td></tr>
+<tr><td>Type</td><td>Limit, market, stop, stop-limit</td></tr>
+<tr><td>Status</td><td>Working, filled, canceled, rejected</td></tr>
+<tr><td>Price</td><td>Entry/stop/target level</td></tr>
+<tr><td>Account</td><td>The account it executed against (SIM, eval, live)</td></tr>
+</table>
+
+<p>If anything looks off during a trade, you’ll see it here long before you figure it out on the chart.</p>
+
+<h2>Filtering the List</h2>
+
+<p>You can filter by:</p>
+
+<ul>
+<li>Date</li>
+<li>Instrument</li>
+<li>Order type</li>
+<li>Status (filled, canceled, working, rejected)</li>
+<li>Account</li>
+</ul>
+
+<p>Filtering makes it easy to isolate a specific mistake. For example, if you want to diagnose a broken bracket, filter by the last 30 minutes and look for duplicated stops or targets.</p>
+
+<h2>Checking Fill Details</h2>
+
+<p>Click any filled order → you’ll see:</p>
+
+<ul>
+<li>Exact fill price</li>
+<li>Partial fills (if any)</li>
+<li>Execution timestamp</li>
+<li>Which bracket legs triggered</li>
+</ul>
+
+<p>If your stop or target didn't fill where you expected, this is where you confirm what actually happened, not what it “looked like” on the chart.</p>
+
+<h2>Spotting Rejected Orders</h2>
+
+<p>Rejected orders show in red. Common reasons:</p>
+
+<ul>
+<li>Wrong account selected</li>
+<li>Insufficient margin</li>
+<li>Order too close to current price</li>
+<li>Bad order type for the market state</li>
+<li>Trading halted or paused</li>
+</ul>
+
+<p>Tradovate will show a rejection reason in the details. If an order didn’t fire and you don’t know why, this is the fastest way to get the answer.</p>
+
+<h2>Seeing Bracket Behavior in the Orders Tab</h2>
+
+<p>ATM brackets create multiple orders:</p>
+
+<ul>
+<li>Entry</li>
+<li>Stop-loss</li>
+<li>Take-profit</li>
+</ul>
+
+<p>All three appear in the Orders tab. If you scale in, you’ll see multiple bracket sets. This makes it easy to verify:</p>
+
+<ul>
+<li>Your ATM attached correctly</li>
+<li>You didn’t accidentally remove OCO</li>
+<li>Your stops and targets match your strategy</li>
+</ul>
+
+<p>If anything looks wrong, reset the bracket immediately.</p>
+
+<h2>Using the Orders Tab to Audit Your Trading</h2>
+
+<p>This tab is your execution journal. You can quickly see:</p>
+
+<ul>
+<li>Whether you’re chasing entries</li>
+<li>Whether your stops are consistent</li>
+<li>How often you cancel and re-enter</li>
+<li>Whether you're using the right order types</li>
+</ul>
+
+<p>Every sloppy habit shows up clearly once you look at your order history.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>The Orders tab in Tradovate is your factual execution history. If you want to stop guessing about what happened during a trade—check this tab. It’s the cleanest source of truth for verifying fills, rejections, bracket behavior, and your overall discipline.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Platforms & Tutorials</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+<a href="../platforms-tutorials/index.html" class="button">Back to Platforms & Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
