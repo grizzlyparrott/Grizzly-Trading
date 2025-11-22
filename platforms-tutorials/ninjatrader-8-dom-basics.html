@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NinjaTrader 8 DOM Basics</title>
+<meta name="description" content="A blunt walkthrough of NinjaTrader 8 DOM basics. Learn how the SuperDOM works, how to place orders, read depth, flatten, and manage trades fast.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-dom-basics.html">
+
+<meta property="og:title" content="NinjaTrader 8 DOM Basics">
+<meta property="og:description" content="Learn how to use the SuperDOM in NinjaTrader 8 to place fast orders, read depth, and manage trades efficiently.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-dom-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NinjaTrader 8 DOM Basics">
+<meta name="twitter:description" content="A clean guide to understanding and using the NinjaTrader 8 SuperDOM for futures trading.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "NinjaTrader 8 DOM Basics",
+"description": "A blunt walkthrough of NinjaTrader 8 DOM basics. Learn how the SuperDOM works, how to place orders, read depth, flatten, and manage trades fast.",
+"author": {"@type": "Person","name": "Grizzly Parrott"},
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-dom-basics.html",
+"datePublished": "2025-11-22",
+"dateModified": "2025-11-22"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  {"@type": "ListItem","position": 1,"name": "Home","item": "https://grizzlyparrotttrading.com/index.html"},
+  {"@type": "ListItem","position": 2,"name": "Platforms & Tutorials","item": "https://grizzlyparrotttrading.com/platforms-tutorials/index.html"},
+  {"@type": "ListItem","position": 3,"name": "NinjaTrader 8 DOM Basics","item": "https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-dom-basics.html"}
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo"><a href="../index.html">Grizzly Parrott Trading</a></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>NinjaTrader 8 DOM Basics</h1>
+
+<p>The SuperDOM in NinjaTrader 8 is built for fast futures execution. If you scalp or if you care about speed, depth of market, or ladder-style entry, this is the tool you use. Chart Trader is fine for slower entries, but the DOM is the fastest way to get in and out without clicking across your chart like a tourist.</p>
+
+<h2>Opening the SuperDOM</h2>
+
+<p>From the Control Center:</p>
+
+<ol>
+  <li><strong>New → SuperDOM (Dynamic)</strong></li>
+  <li>Select your instrument (ES, MNQ, CL, etc.)</li>
+</ol>
+
+<p>The DOM loads instantly. If nothing is moving, you're either disconnected or staring at an expired contract.</p>
+
+<h2>Understanding the DOM Columns</h2>
+
+<p>The NT8 DOM has a simple structure:</p>
+
+<table>
+<tr><th>Column</th><th>Purpose</th></tr>
+<tr><td>Bid Column</td><td>Limit buy orders stacked by price</td></tr>
+<tr><td>Price Ladder</td><td>The price scale; each row is one tick</td></tr>
+<tr><td>Ask Column</td><td>Limit sell orders stacked by price</td></tr>
+<tr><td>Order Entry Columns</td><td>Click levels for limit, stop, and market orders</td></tr>
+</table>
+
+<p>The DOM shows liquidity and price action without distractions. This is why scalpers prefer it.</p>
+
+<h2>Placing Orders on the DOM</h2>
+
+<p>Order entry is simple:</p>
+
+<ul>
+  <li><strong>Left-click below price → Buy Limit</strong></li>
+  <li><strong>Left-click above price → Sell Limit</strong></li>
+  <li><strong>Right-click above price → Buy Stop</strong></li>
+  <li><strong>Right-click below price → Sell Stop</strong></li>
+</ul>
+
+<p>Market orders can be placed using the buttons on the left side panel.</p>
+
+<h2>Flatten, Reverse, and Close</h2>
+
+<p>The NT8 DOM gives you hard-stop controls:</p>
+
+<ul>
+  <li><strong>Flatten:</strong> closes the position and cancels all orders</li>
+  <li><strong>Reverse:</strong> flips your position instantly</li>
+  <li><strong>Close:</strong> closes position but leaves working orders (rarely used)</li>
+</ul>
+
+<p>If you're in trouble and need out now, <strong>Flatten</strong> is the button you hit.</p>
+
+<h2>Reading Depth of Market (DOM Depth)</h2>
+
+<p>Depth shows how many contracts sit at each price level:</p>
+
+<ul>
+  <li>Numbers on the bid = buyers stacked below price</li>
+  <li>Numbers on the ask = sellers stacked above price</li>
+</ul>
+
+<p>This is NOT future prediction. It's liquidity, not direction. But it helps you see:</p>
+
+<ul>
+  <li>Where liquidity might absorb price</li>
+  <li>Where thin spots could slip fast</li>
+  <li>Where large players might be stacking</li>
+</ul>
+
+<p>Don't worship DOM depth—just learn to read it.</p>
+
+<h2>Attaching ATM Strategies</h2>
+
+<p>At the top of the DOM, you select your ATM strategy:</p>
+
+<ul>
+  <li>Choose an existing ATM</li>
+  <li>Build a new ATM on the fly</li>
+  <li>Attach stops and targets automatically</li>
+</ul>
+
+<p>If you're trading a prop firm evaluation, this is mandatory. No manual stops unless you enjoy gambling.</p>
+
+<h2>Order Modifications on the DOM</h2>
+
+<p>Once your bracket is live:</p>
+
+<ul>
+  <li>Drag your stop up/down</li>
+  <li>Drag your target up/down</li>
+  <li>Shift-drag to modify size</li>
+</ul>
+
+<p>Everything updates instantly. The DOM is faster than chart modifications.</p>
+
+<h2>Common Beginner Mistakes on the DOM</h2>
+
+<ul>
+  <li>Placing a buy limit above price (that’s a market order)</li>
+  <li>Forgetting ATM is set to “None”</li>
+  <li>Wrong account selected at the top</li>
+  <li>Trading the wrong contract month</li>
+  <li>Flattening while orders are still pending—causing accidental reversals</li>
+</ul>
+
+<p>Check your account, ATM, and instrument every time before clicking anything.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>The NinjaTrader 8 DOM is the fastest way to execute futures trades. If you scalp, this is your main interface. If you swing or day trade slower moves, it’s still worth learning because of the speed and precision. Mastering the DOM will make your execution sharper and your mistakes fewer.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="../platforms-tutorials/index.html" class="button">Back to Platforms &amp; Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
