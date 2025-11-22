@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bookmap Heatmap Basics</title>
+<meta name="description" content="Learn how the Bookmap heatmap works, how to read liquidity levels, and how to interpret real-time changes in the order book.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/bookmap-heatmap-basics.html">
+
+<meta property="og:title" content="Bookmap Heatmap Basics">
+<meta property="og:description" content="A direct guide to understanding the Bookmap heatmap and what liquidity levels actually mean.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/bookmap-heatmap-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bookmap Heatmap Basics">
+<meta name="twitter:description" content="Learn the fundamentals of Bookmap's heatmap and liquidity visualization.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Article",
+"headline":"Bookmap Heatmap Basics",
+"description":"Learn how the Bookmap heatmap works, what the colors represent, and how changes in liquidity reveal order flow behavior.",
+"author":{"@type":"Person","name":"Grizzly Parrott"},
+"mainEntityOfPage":"https://grizzlyparrotttrading.com/platforms-tutorials/bookmap-heatmap-basics.html",
+"datePublished":"2025-11-22",
+"dateModified":"2025-11-22"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"BreadcrumbList",
+"itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrotttrading.com/index.html"},
+  {"@type":"ListItem","position":2,"name":"Platforms & Tutorials","item":"https://grizzlyparrotttrading.com/platforms-tutorials/index.html"},
+  {"@type":"ListItem","position":3,"name":"Bookmap Heatmap Basics","item":"https://grizzlyparrotttrading.com/platforms-tutorials/bookmap-heatmap-basics.html"}
+]}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo"><a href="../index.html">Grizzly Parrott Trading</a></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Bookmap Heatmap Basics</h1>
+
+<p>The Bookmap heatmap is the core of the entire platform. If you understand the heatmap, you understand Bookmap. It shows real-time liquidity—where resting limit orders sit in the order book—and how those orders change as the market reacts. This guide breaks down the heatmap so you can read it without guessing.</p>
+
+<h2>What the Heatmap Actually Shows</h2>
+
+<p>The heatmap represents <strong>resting limit orders</strong> at each price level. These orders are not trades—they’re intentions.</p>
+
+<p>Colors represent liquidity density:</p>
+
+<table>
+<tr><th>Color</th><th>Meaning</th></tr>
+<tr><td><strong>Bright yellow / white</strong></td><td>Heavy liquidity (large limit orders)</td></tr>
+<tr><td><strong>Orange / red</strong></td><td>Medium liquidity</td></tr>
+<tr><td><strong>Dark red / brown</strong></td><td>Light liquidity</td></tr>
+<tr><td><strong>Black</strong></td><td>No visible liquidity</td></tr>
+</table>
+
+<p>More liquidity = brighter color. Less liquidity = darker color.</p>
+
+<h2>Why Liquidity Matters</h2>
+
+<p>Liquidity acts like gravity. Price is attracted to large resting orders because that’s where big players transact.</p>
+
+<p>High-liquidity zones often become:</p>
+
+<ul>
+  <li>Support or resistance levels</li>
+  <li>Reversal zones</li>
+  <li>Absorption points</li>
+  <li>Targets for sweeps</li>
+</ul>
+
+<p>These levels matter more than anything on a normal candlestick chart.</p>
+
+<h2>Static vs Dynamic Liquidity</h2>
+
+<p>The most important thing you can track in Bookmap is whether liquidity:</p>
+
+<ul>
+  <li><strong>Stays</strong> (real and committed)</li>
+  <li><strong>Moves</strong> (pulled or repositioned)</li>
+  <li><strong>Appears</strong> (new interest)</li>
+  <li><strong>Disappears</strong> (fake/spoofed)</li>
+</ul>
+
+<p>Real liquidity behaves consistently. Spoofed liquidity disappears when price gets close.</p>
+
+<h2>Heatmap Behavior to Watch</h2>
+
+<h3>1. Liquidity Pulling</h3>
+
+<p>This is when large orders disappear right as price approaches. It usually signals:</p>
+
+<ul>
+  <li>Fake liquidity</li>
+  <li>A trap</li>
+  <li>A pending breakout</li>
+</ul>
+
+<h3>2. Liquidity Adding</h3>
+
+<p>This is when new orders appear suddenly. Often seen before:</p>
+
+<ul>
+  <li>Rejections</li>
+  <li>Absorption</li>
+  <li>Stop-hunts</li>
+</ul>
+
+<h3>3. Liquidity Shifting</h3>
+
+<p>Large orders move up or down as price approaches. This often means:</p>
+
+<ul>
+  <li>Larger players adjusting their expectations</li>
+  <li>Market makers moving their quotes</li>
+  <li>Potential continuation</li>
+</ul>
+
+<h2>Heatmap + Volume Bubbles = Context</h2>
+
+<p>The heatmap alone shows intentions.  
+Volume bubbles show the <strong>actual trades</strong>.</p>
+
+<p>When a large resting order meets large aggressive orders, you often get:</p>
+
+<ul>
+  <li>Absorption → reversal</li>
+  <li>Breakthrough → continuation</li>
+</ul>
+
+<p>This combination is the heart of Bookmap analysis.</p>
+
+<h2>Heatmap Settings You Should Know</h2>
+
+<ul>
+  <li><strong>Contrast</strong> – controls visibility of liquidity levels</li>
+  <li><strong>Heatmap smoothing</strong> – reduces noise</li>
+  <li><strong>Opacity</strong> – adjusts brightness</li>
+  <li><strong>Cutoff levels</strong> – limit max/min liquidity displayed</li>
+</ul>
+
+<p>Small changes in contrast often make the heatmap 10× easier to read.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>The heatmap is Bookmap’s foundation. It shows you where liquidity sits, how traders position themselves, and where major players want to do business. Once you understand how to read liquidity behavior—pulling, adding, and shifting—you have insight into the market that standard charts can’t provide.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="../platforms-tutorials/index.html" class="button">Back to Platforms & Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
