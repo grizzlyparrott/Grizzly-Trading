@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tradovate Working Orders Panel Basics</title>
+<meta name="description" content="A direct guide to using the Tradovate Working Orders panel. Learn how to view, modify, and manage active orders without touching the DOM or chart.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-working-orders-panel-basics.html">
+
+<meta property="og:title" content="Tradovate Working Orders Panel Basics">
+<meta property="og:description" content="Learn how to manage active orders inside the Tradovate Working Orders panel quickly and safely.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-working-orders-panel-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tradovate Working Orders Panel Basics">
+<meta name="twitter:description" content="A blunt walkthrough of the Tradovate Working Orders panel.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Tradovate Working Orders Panel Basics",
+"description": "A direct guide to using the Tradovate Working Orders panel. Learn how to view, modify, and manage active orders without touching the DOM or chart.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-working-orders-panel-basics.html",
+"datePublished": "2025-11-21",
+"dateModified": "2025-11-21"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+{ "@type": "ListItem", "position": 2, "name": "Platforms & Tutorials", "item": "https://grizzlyparrotttrading.com/platforms-tutorials/index.html" },
+{ "@type": "ListItem", "position": 3, "name": "Tradovate Working Orders Panel Basics", "item": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-working-orders-panel-basics.html" }
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<div class="logo">
+<a href="../index.html">Grizzly Parrott Trading</a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Tradovate Working Orders Panel Basics</h1>
+
+<p>The Working Orders panel in Tradovate shows every active order you have in the market. Most traders ignore it until something breaks, a bracket gets out of sync, or they don’t remember where their orders are. This panel gives you a clean list view so you can see exactly what’s working, what price it’s sitting at, and what needs to be adjusted or canceled.</p>
+
+<h2>Where to Find the Working Orders Panel</h2>
+
+<p>Open it from the left sidebar under <strong>Orders → Working</strong>.  
+You’ll see a table with entries, stops, targets, and any resting orders.</p>
+
+<p>This panel is especially useful if:</p>
+
+<ul>
+<li>You trade multiple contracts at once</li>
+<li>Your chart is cluttered</li>
+<li>You scaled in and now have several levels working</li>
+<li>You need to clean up orders fast</li>
+</ul>
+
+<h2>Understanding the Columns</h2>
+
+<p>The panel includes key details for each order:</p>
+
+<table>
+<tr><th>Column</th><th>Meaning</th></tr>
+<tr><td>Instrument</td><td>Market you're trading (ES, MNQ, CL, etc.) and contract month</td></tr>
+<tr><td>Qty</td><td>Number of contracts in that order</td></tr>
+<tr><td>Price</td><td>The price level the order is resting at</td></tr>
+<tr><td>Type</td><td>Limit, stop, stop-limit, etc.</td></tr>
+<tr><td>Side</td><td>Buy or sell</td></tr>
+<tr><td>ID</td><td>Order number used for tracking and logs</td></tr>
+<tr><td>Status</td><td>Working or pending</td></tr>
+</table>
+
+<p>If you’re not sure why an order exists, this panel answers it quickly.</p>
+
+<h2>Modifying Orders From the Panel</h2>
+
+<p>You don’t have to drag anything on the chart. Click any working order in the list and you can:</p>
+
+<ul>
+<li><strong>Modify Price</strong> – opens a pop-up to change the level</li>
+<li><strong>Convert to Market</strong> – sends it to fill immediately</li>
+<li><strong>Cancel</strong> – removes it instantly</li>
+</ul>
+
+<p>This is helpful when your chart is zoomed out and dragging is inaccurate. For deeper modification steps, see <a href="tradovate-order-modification-basics.html">order modification basics</a>.</p>
+
+<h2>Canceling Orders From the Panel</h2>
+
+<p>Click any order → <strong>Cancel</strong>.  
+This works for:</p>
+
+<ul>
+<li>Limit entries</li>
+<li>Stop entries</li>
+<li>Bracket targets</li>
+<li>Stop-loss levels</li>
+</ul>
+
+<p>If you cancel the entry, the entire bracket cancels with it. If you cancel only a stop or target, the OCO link breaks. Review your <a href="tradovate-order-cancellation-basics.html">order cancellation guide</a> if you need a deeper explanation.</p>
+
+<h2>Sorting & Filtering Your Orders</h2>
+
+<p>You can sort by instrument, side, or price. This matters if you:</p>
+
+<ul>
+<li>Trade two markets at the same time</li>
+<li>Have multiple scale-in levels</li>
+<li>Keep GTC orders open</li>
+</ul>
+
+<p>Sorting helps you avoid canceling the wrong level when working quickly.</p>
+
+<h2>When the Working Orders Panel Saves You</h2>
+
+<p>Situations where the panel is better than using the chart or DOM:</p>
+
+<ul>
+<li>You scaled in and forgot how many levels you left out there</li>
+<li>You switched chart tabs and lost track of open orders</li>
+<li>You need to confirm whether your ATM bracket is live or broken</li>
+<li>You’re flattening and want to verify everything actually canceled</li>
+</ul>
+
+<p>The list view gives you clarity the chart can’t.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>The Tradovate Working Orders panel is a clean, reliable way to see every order you have active. Use it to confirm brackets, manage scale-ins, adjust stops, or clean up orders quickly when charts get messy or markets move fast.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Platforms & Tutorials</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+<a href="../platforms-tutorials/index.html" class="button">Back to Platforms &amp; Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
