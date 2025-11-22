@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NinjaTrader Data Series Basics</title>
+<meta name="description" content="Learn how to configure NinjaTrader Data Series settings: bar types, values, trading hours, tick replay, colors, and performance options.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-data-series-basics.html">
+
+<meta property="og:title" content="NinjaTrader Data Series Basics">
+<meta property="og:description" content="A direct walkthrough of NinjaTrader Data Series settings for bar type, bar value, sessions, colors, and chart performance.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-data-series-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NinjaTrader Data Series Basics">
+<meta name="twitter:description" content="Learn how to configure Data Series settings correctly in NinjaTrader.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Article",
+"headline":"NinjaTrader Data Series Basics",
+"description":"Learn how to configure NinjaTrader Data Series settings for bar type, bar value, trading hours, colors, and chart performance.",
+"author":{"@type":"Person","name":"Grizzly Parrott"},
+"mainEntityOfPage":"https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-data-series-basics.html",
+"datePublished":"2025-11-22",
+"dateModified":"2025-11-22"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"BreadcrumbList",
+"itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrotttrading.com/index.html"},
+  {"@type":"ListItem","position":2,"name":"Platforms & Tutorials","item":"https://grizzlyparrotttrading.com/platforms-tutorials/index.html"},
+  {"@type":"ListItem","position":3,"name":"NinjaTrader Data Series Basics","item":"https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-data-series-basics.html"}
+]}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo"><a href="../index.html">Grizzly Parrott Trading</a></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>NinjaTrader Data Series Basics</h1>
+
+<p>The Data Series window controls the core behavior of every chart in NinjaTrader. Bar type, bar value, session template, candle colors, wick thickness, tick replay, days to load—it's all here. If you learn this window properly, your charts will load faster, look cleaner, and behave exactly how you want.</p>
+
+<h2>How to Open the Data Series Window</h2>
+
+<p>Right-click on any chart → <strong>Data Series…</strong></p>
+
+<p>This single window handles the majority of chart configuration.</p>
+
+<h2>Core Settings You Should Understand</h2>
+
+<table>
+<tr><th>Setting</th><th>Purpose</th></tr>
+<tr><td>Instrument</td><td>ES, MNQ, CL, etc.</td></tr>
+<tr><td>Type</td><td>Minute, Tick, Range, Volume, Renko, Heiken Ashi</td></tr>
+<tr><td>Value</td><td>5-minute, 1500-tick, 10-range, etc.</td></tr>
+<tr><td>Trading Hours</td><td>RTH, ETH, 24/7 templates</td></tr>
+<tr><td>Days to Load</td><td>Amount of history pulled</td></tr>
+<tr><td>Tick Replay</td><td>Required for some indicators</td></tr>
+<tr><td>Chart Color Options</td><td>Bar up/down, borders, wicks</td></tr>
+</table>
+
+<p>These settings control how the bars form and how the chart performs.</p>
+
+<h2>Selecting Bar Type</h2>
+
+<p>The “Type” dropdown is where you choose:</p>
+
+<ul>
+  <li><strong>Minute</strong> – time-based bars</li>
+  <li><strong>Tick</strong> – volume-based bars</li>
+  <li><strong>Range</strong> – movement-based bars</li>
+  <li><strong>Volume</strong> – contracts traded</li>
+  <li><strong>Renko</strong> – fixed-size brick charts</li>
+</ul>
+
+<p>Most futures traders stick to:</p>
+
+<ul>
+  <li>1-minute</li>
+  <li>5-minute</li>
+  <li>1500-tick</li>
+  <li>10-range</li>
+</ul>
+
+<p>Pick the bar type that matches your style. Don’t mix 20 different types in one workspace unless you like confusion.</p>
+
+<h2>Bar Value Explained</h2>
+
+<p>The “Value” field controls how big each bar is. Examples:</p>
+
+<ul>
+  <li>1-minute → value = 1</li>
+  <li>1500-tick → value = 1500</li>
+  <li>10-range → value = 10</li>
+</ul>
+
+<p>Small values = more bars, more detail.  
+Large values = slower bars, bigger swings.</p>
+
+<h2>Trading Hours Templates</h2>
+
+<p>This controls what session times the chart uses.</p>
+
+<ul>
+  <li><strong>Default 24/7</strong> – continuous chart</li>
+  <li><strong>US Equities RTH</strong> – 9:30–16:00 ET only</li>
+  <li><strong>CME ETH</strong> – regular futures extended hours</li>
+</ul>
+
+<p>Futures traders typically use <strong>CME ETH</strong> (the standard full session template).</p>
+
+<p>If your chart looks like it’s missing data, the trading hours template is usually the reason.</p>
+
+<h2>Days to Load</h2>
+
+<p>This is exactly what it sounds like: how much historical data the chart loads.</p>
+
+<ul>
+  <li>Too big = slow charts</li>
+  <li>Too small = missing context</li>
+</ul>
+
+<p>Good defaults:</p>
+
+<ul>
+  <li>Minute charts: <strong>30 days</strong></li>
+  <li>Tick charts: <strong>5–10 days</strong></li>
+  <li>Range charts: <strong>10–20 days</strong></li>
+</ul>
+
+<p>Tick charts load heavy data — don’t try to load 60 days of it unless you hate yourself.</p>
+
+<h2>Tick Replay</h2>
+
+<p>Tick Replay reconstructs bars tick-by-tick for indicators that depend on intrabar movement.</p>
+
+<p>Important notes:</p>
+
+<ul>
+  <li>Tick Replay slows down loading</li>
+  <li>Not all indicators need it</li>
+  <li>Only enable it if your indicator requires it</li>
+</ul>
+
+<p>You can toggle it at the bottom of the Data Series window.</p>
+
+<h2>Candle and Bar Colors</h2>
+
+<p>Inside Data Series you can change:</p>
+
+<ul>
+  <li>Bar Color Up</li>
+  <li>Bar Color Down</li>
+  <li>Candle Outline</li>
+  <li>Wick Color</li>
+  <li>Plot width and style</li>
+</ul>
+
+<p>Most traders save a default style and reuse it across workspaces.</p>
+
+<p>To learn chart templates, check out <a href="ninjatrader-chart-templates-basics.html">your chart templates article</a>.</p>
+
+<h2>Performance Settings</h2>
+
+<p>At the bottom of the Data Series window:</p>
+
+<ul>
+  <li><strong>Load data based on</strong> (bars or days)</li>
+  <li><strong>Show session break</strong></li>
+  <li><strong>Tick Replay</strong></li>
+</ul>
+
+<p>These impact chart speed more than anything else.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>The Data Series window is where your chart starts. If you understand bar types, session templates, bar values, and performance settings, you’ll avoid 90% of chart problems that beginners run into. Master this window early and everything else gets easier.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="../platforms-tutorials/index.html" class="button">Back to Platforms &amp; Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
