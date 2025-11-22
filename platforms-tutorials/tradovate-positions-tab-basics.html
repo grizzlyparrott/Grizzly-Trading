@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tradovate Positions Tab Basics</title>
+<meta name="description" content="Learn how to use the Tradovate Positions tab to track open trades, average price, real-time P/L, and bracket status with zero confusion.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-positions-tab-basics.html">
+
+<meta property="og:title" content="Tradovate Positions Tab Basics">
+<meta property="og:description" content="A direct guide to viewing and understanding open positions in the Tradovate Positions tab.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-positions-tab-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tradovate Positions Tab Basics">
+<meta name="twitter:description" content="A blunt explanation of the Tradovate Positions tab and how to read open trades.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Tradovate Positions Tab Basics",
+"description": "Learn how to use the Tradovate Positions tab to track open trades, average price, real-time P/L, and bracket status with zero confusion.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-positions-tab-basics.html",
+"datePublished": "2025-11-21",
+"dateModified": "2025-11-21"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{
+"@type": "ListItem",
+"position": 1,
+"name": "Home",
+"item": "https://grizzlyparrotttrading.com/index.html"
+},
+{
+"@type": "ListItem",
+"position": 2,
+"name": "Platforms & Tutorials",
+"item": "https://grizzlyparrotttrading.com/platforms-tutorials/index.html"
+},
+{
+"@type": "ListItem",
+"position": 3,
+"name": "Tradovate Positions Tab Basics",
+"item": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-positions-tab-basics.html"
+}
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<div class="logo">
+<a href="../index.html">Grizzly Parrott Trading</a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Tradovate Positions Tab Basics</h1>
+
+<p>The Positions tab shows every open trade you have by instrument. If you’ve ever lost track of your average price, wondered why your P/L looked wrong, or thought a bracket didn’t attach, this is the tab that gives you the truth. The chart and DOM show what’s happening—this tab shows exactly what you’re holding.</p>
+
+<h2>Where to Find the Positions Tab</h2>
+
+<p>Open it from the left sidebar → <strong>Positions</strong>.  
+You’ll see one line for every active position across all accounts.</p>
+
+<p>If you have multiple accounts (SIM, eval, live), make sure you’re viewing the correct one. Traders get burned all the time because they’re checking the wrong tab.</p>
+
+<h2>Understanding the Columns</h2>
+
+<p>The tab displays key details you must know while holding a trade:</p>
+
+<table>
+<tr><th>Column</th><th>Meaning</th></tr>
+<tr><td>Instrument</td><td>The market and contract you're in (e.g., ESZ5)</td></tr>
+<tr><td>Qty</td><td>Current position size (positive = long, negative = short)</td></tr>
+<tr><td>Avg Price</td><td>Your volume-weighted average entry price</td></tr>
+<tr><td>P/L Open</td><td>Real-time profit or loss based on current price</td></tr>
+<tr><td>P/L Day</td><td>Total daily P/L including closed trades</td></tr>
+<tr><td>Account</td><td>The account holding the position</td></tr>
+</table>
+
+<p>If the numbers here don’t match what you're expecting, something is wrong with your execution flow, not your chart.</p>
+
+<h2>How Average Price Works in Tradovate</h2>
+
+<p>If you scale into a position, Tradovate recalculates your average price automatically.  
+Example:</p>
+
+<ul>
+<li>Buy 1 ES at 5200</li>
+<li>Buy 1 ES at 5190</li>
+</ul>
+
+<p>Your new average = 5195, not 5200.  
+This is why the chart may show multiple entry markers, but the Positions tab shows one clean averaged line.</p>
+
+<p>Use the Positions tab—not the chart—to confirm your true average.</p>
+
+<h2>Understanding Position Size (Qty)</h2>
+
+<p>Qty tells you exactly how big your position is:</p>
+
+<ul>
+<li><strong>+1</strong> = long 1 contract</li>
+<li><strong>–1</strong> = short 1 contract</li>
+<li><strong>0</strong> = flat</li>
+</ul>
+
+<p>If this number looks wrong, you probably scaled in or accidentally reversed.  
+This tab tells you the truth immediately.</p>
+
+<h2>Tracking Open P/L</h2>
+
+<p>Open P/L updates tick by tick. It reflects:</p>
+
+<ul>
+<li>Your average price</li>
+<li>Current market price</li>
+<li>Tick value of the instrument</li>
+<li>Your position size</li>
+</ul>
+
+<p>If your P/L jumps more than expected, you likely increased size or entered a more volatile contract like NQ or CL.</p>
+
+<h2>Verifying Brackets and ATMs</h2>
+
+<p>If your bracket didn’t attach correctly, the Positions tab makes this obvious.  
+You’ll see:</p>
+
+<ul>
+<li>A live position</li>
+<li>No associated stop or target working</li>
+</ul>
+
+<p>If your stop or target is missing from the "Working Orders" panel, flatten immediately. Do not stay in a position with no protective stop.</p>
+
+<h2>Flattening From the Positions Tab</h2>
+
+<p>Click the position → <strong>Flatten</strong>.  
+This closes the trade and cancels all related orders.</p>
+
+<p>Flatten from here is safer than flattening from a chart tab you might’ve zoomed away from.</p>
+
+<h2>Closing Only Part of a Position</h2>
+
+<p>If you scaled in and want to scale out:</p>
+
+<ul>
+<li>Go to the DOM or chart</li>
+<li>Place an opposite limit order for the partial size</li>
+</ul>
+
+<p>The Positions tab updates automatically, showing your new size and recalculated average price.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>The Tradovate Positions tab is the most accurate snapshot of your open trades. If you want to know your true size, average price, real-time P/L, or whether your bracket attached, this tab is the source of truth. Check it often—especially during prop firm evaluations where one bad size mistake ends your account.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Platforms & Tutorials</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+<a href="../platforms-tutorials/index.html" class="button">Back to Platforms & Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
