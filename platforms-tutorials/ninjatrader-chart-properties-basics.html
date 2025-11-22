@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NinjaTrader Chart Properties Basics</title>
+<meta name="description" content="Learn how to configure NinjaTrader chart properties: colors, grid lines, crosshairs, autoscroll, axis settings, session breaks, and visual behavior.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-chart-properties-basics.html">
+
+<meta property="og:title" content="NinjaTrader Chart Properties Basics">
+<meta property="og:description" content="A blunt guide to NinjaTrader chart properties—how to control visuals, scaling, grid lines, crosshairs, and chart behavior.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-chart-properties-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NinjaTrader Chart Properties Basics">
+<meta name="twitter:description" content="Learn the essential chart property settings in NinjaTrader for clean, readable charts.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Article",
+"headline":"NinjaTrader Chart Properties Basics",
+"description":"Learn how to configure NinjaTrader chart properties: background color, grid lines, crosshairs, axis behavior, autoscroll, scaling, and visual settings.",
+"author":{"@type":"Person","name":"Grizzly Parrott"},
+"mainEntityOfPage":"https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-chart-properties-basics.html",
+"datePublished":"2025-11-22",
+"dateModified":"2025-11-22"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"BreadcrumbList",
+"itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrotttrading.com/index.html"},
+  {"@type":"ListItem","position":2,"name":"Platforms & Tutorials","item":"https://grizzlyparrotttrading.com/platforms-tutorials/index.html"},
+  {"@type":"ListItem","position":3,"name":"NinjaTrader Chart Properties Basics","item":"https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-chart-properties-basics.html"}
+]}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo"><a href="../index.html">Grizzly Parrott Trading</a></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>NinjaTrader Chart Properties Basics</h1>
+
+<p>The Chart Properties window controls every visual and behavioral setting on your NinjaTrader chart. If your chart looks messy, scrolls weird, or feels off, this is where you fix it. Most traders ignore these settings and live with sloppy charts. This guide shows you how to dial everything in cleanly.</p>
+
+<h2>How to Open Chart Properties</h2>
+
+<p>Right-click on the chart → <strong>Properties…</strong></p>
+
+<p>This opens the full Chart Properties panel.</p>
+
+<h2>Background and Color Settings</h2>
+
+<p>These settings control the visuals:</p>
+
+<ul>
+  <li><strong>Background</strong> – main chart color</li>
+  <li><strong>Grid lines</strong> – horizontal/vertical grid colors</li>
+  <li><strong>Axis text</strong> – price and time labels</li>
+  <li><strong>Crosshair</strong> – color and style</li>
+</ul>
+
+<p>If your chart ever becomes unreadable, it’s usually because these colors were changed unintentionally.</p>
+
+<h2>Grid Line Control</h2>
+
+<p>Grid lines help or hurt depending on your style:</p>
+
+<ul>
+  <li><strong>Show horizontal grid</strong></li>
+  <li><strong>Show vertical grid</strong></li>
+</ul>
+
+<p>Most futures traders turn off vertical grid lines to clean up the view.</p>
+
+<h2>Scale Settings (Important)</h2>
+
+<p>This controls how the Y-axis behaves:</p>
+
+<ul>
+  <li><strong>Right scale only</strong></li>
+  <li><strong>Left scale only</strong></li>
+  <li><strong>Both</strong></li>
+  <li><strong>Auto scale</strong> – chart always fits price action</li>
+  <li><strong>Fixed scale</strong> – manual zoom control</li>
+</ul>
+
+<p>If your chart keeps “jumping,” auto scale is usually turned on.</p>
+
+<h2>Session Break Lines</h2>
+
+<p>These add markers between trading sessions.</p>
+
+<p>Enable or disable with:</p>
+
+<ul>
+  <li><strong>Show session break line</strong></li>
+</ul>
+
+<p>Useful if you're studying overnight vs RTH behavior.</p>
+
+<h2>Crosshair Settings</h2>
+
+<ul>
+  <li><strong>Style:</strong> pointer, crosshair, global crosshair</li>
+  <li><strong>Color:</strong> customize for visibility</li>
+</ul>
+
+<p>Global crosshair lets you sync the crosshair across all charts.</p>
+
+<p>You cover crosshair behavior in depth here:  
+<a href="ninjatrader-crosshair-basics.html">NinjaTrader Crosshair Basics</a></p>
+
+<h2>Data Box Settings</h2>
+
+<p>The Data Box shows indicator values for the bar you're pointing at.</p>
+
+<ul>
+  <li><strong>Show Data Box</strong></li>
+  <li><strong>Data Box font/size</strong></li>
+</ul>
+
+<p>Most traders keep it off unless doing deep analysis.</p>
+
+<h2>Chart Behavior Settings</h2>
+
+<p>This section controls how the chart moves when you scroll:</p>
+
+<ul>
+  <li><strong>Auto scale</strong></li>
+  <li><strong>Scroll bars</strong></li>
+  <li><strong>Center price on scale</strong></li>
+  <li><strong>Always show last price marker</strong></li>
+</ul>
+
+<p>If your chart suddenly stops following the price, disable “Fixed scale” or re-enable “Auto scale.”</p>
+
+<h2>Trading Visuals</h2>
+
+<p>This affects how orders and executions appear:</p>
+
+<ul>
+  <li><strong>Plot executions</strong> – show fill markers</li>
+  <li><strong>Plot trade markers</strong> – show entry/exit tags</li>
+  <li><strong>Order markers</strong> – show working orders</li>
+</ul>
+
+<p>Scalpers often hide execution markers to reduce clutter.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>The Chart Properties window controls the readability of your entire workspace. If your chart looks chaotic or scrolls unpredictably, it's almost always because a Chart Properties option is set wrong. Learn this window once and you’ll avoid 90% of chart frustration going forward.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="../platforms-tutorials/index.html" class="button">Back to Platforms &amp; Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
