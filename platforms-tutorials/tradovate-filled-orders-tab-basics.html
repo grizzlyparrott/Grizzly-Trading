@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tradovate Filled Orders Tab Basics</title>
+<meta name="description" content="A blunt walkthrough of the Tradovate Filled Orders tab. Learn how to verify fills, partial fills, slippage, and execution timing with zero confusion.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-filled-orders-tab-basics.html">
+
+<meta property="og:title" content="Tradovate Filled Orders Tab Basics">
+<meta property="og:description" content="Learn how to read and understand the Filled Orders tab in Tradovate for accurate fill confirmation and execution analysis.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-filled-orders-tab-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tradovate Filled Orders Tab Basics">
+<meta name="twitter:description" content="A simple guide to reading filled orders, partial fills, and execution timestamps inside Tradovate.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Tradovate Filled Orders Tab Basics",
+"description": "A blunt walkthrough of the Tradovate Filled Orders tab. Learn how to verify fills, partial fills, slippage, and execution timing with zero confusion.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-filled-orders-tab-basics.html",
+"datePublished": "2025-11-21",
+"dateModified": "2025-11-21"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+{ "@type": "ListItem", "position": 2, "name": "Platforms & Tutorials", "item": "https://grizzlyparrotttrading.com/platforms-tutorials/index.html" },
+{ "@type": "ListItem", "position": 3, "name": "Tradovate Filled Orders Tab Basics", "item": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-filled-orders-tab-basics.html" }
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<div class="logo">
+<a href="../index.html">Grizzly Parrott Trading</a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Tradovate Filled Orders Tab Basics</h1>
+
+<p>The Filled Orders tab in Tradovate shows exactly where and when your orders filled. If something felt “off” during execution—late fill, weird price, partial fill—this is the first place you check. It’s the cleanest, most factual log of what actually happened, not what you think happened based on the DOM or chart.</p>
+
+<h2>Where to Find the Filled Orders Tab</h2>
+
+<p>Left sidebar → <strong>Orders</strong> → <strong>Fills</strong>.  
+This displays every fill for the selected date range.</p>
+
+<p>The Orders tab shows everything.  
+The Filled Orders tab shows <strong>only fills</strong>.  
+This makes it way easier to analyze execution.</p>
+
+<h2>Understanding the Filled Orders Columns</h2>
+
+<p>Tradovate gives you a straightforward breakdown of each fill:</p>
+
+<table>
+<tr><th>Column</th><th>Meaning</th></tr>
+<tr><td>Time</td><td>Exact timestamp the order filled</td></tr>
+<tr><td>Instrument</td><td>Contract symbol and month (ESZ5, MNQH6)</td></tr>
+<tr><td>Side</td><td>Buy or Sell</td></tr>
+<tr><td>Qty</td><td>Number of contracts filled</td></tr>
+<tr><td>Price</td><td>The price level you actually got filled at</td></tr>
+<tr><td>Type</td><td>Market, Limit, Stop, Stop-Market, etc.</td></tr>
+<tr><td>Account</td><td>SIM, evaluation, or live account</td></tr>
+</table>
+
+<p>If your fill doesn’t match your chart expectation, this is where you confirm what actually happened.</p>
+
+<h2>Spotting Partial Fills</h2>
+
+<p>Sometimes your entry or exit doesn’t fill all at once. Tradovate breaks partial fills into multiple rows:</p>
+
+<ul>
+<li>Each partial fill gets its own line</li>
+<li>The Qty column shows the contract size filled in each chunk</li>
+<li>Total size = sum of the partial lines</li>
+</ul>
+
+<p>Partial fills are common when:</p>
+
+<ul>
+<li>Depth is thin</li>
+<li>You’re using a Stop-Limit order</li>
+<li>You’re trading volatile products like NQ or CL</li>
+<li>You entered on a level the market blew through quickly</li>
+</ul>
+
+<p>Partial fills matter because your P/L and average price may look weird until the full position is filled.</p>
+
+<h2>Checking for Slippage</h2>
+
+<p>Slippage = the difference between your intended price and your fill price.</p>
+
+<p>You confirm slippage by looking at the Price column:</p>
+
+<ul>
+<li><strong>Market orders</strong>: slippage is normal</li>
+<li><strong>Stop-market orders</strong>: slippage is extremely common</li>
+<li><strong>Limit orders</strong>: zero slippage (unless partial and something fills worse)</li>
+</ul>
+
+<p>If you got filled “worse than you expected,” the Filled Orders tab proves whether it actually happened or you just didn’t see the move in real time.</p>
+
+<h2>Verifying Fast Moves and Delays</h2>
+
+<p>Execution timing is clear in the timestamp:</p>
+
+<ul>
+<li>If a stop triggers and fills instantly → normal</li>
+<li>If a limit order fills late → it probably wasn’t at the front of the queue</li>
+<li>If a market order took too long → internet or routing issue</li>
+</ul>
+
+<p>This tab shows exact timing down to the millisecond so you can see whether your fill was late or you just blinked.</p>
+
+<h2>Using the Filled Tab to Audit Mistakes</h2>
+
+<p>Common problems the tab helps diagnose:</p>
+
+<ul>
+<li>You thought you were long but actually flattened earlier</li>
+<li>Your target hit but didn’t fill (it probably wasn’t touched)</li>
+<li>A stop-limit failed to fill (price may never have traded through the limit)</li>
+<li>Your ATM bracket did attach, but your fill price shifted</li>
+</ul>
+
+<p>The Filled Orders tab removes every doubt—you see exactly what executed.</p>
+
+<h2>Comparing Filled Orders to the Orders Tab</h2>
+
+<p>The difference is simple:</p>
+
+<ul>
+<li><strong>Orders Tab:</strong> everything (filled, canceled, rejected)</li>
+<li><strong>Fills Tab:</strong> only orders that actually executed</li>
+</ul>
+
+<p>If you’re troubleshooting execution, start in the Filled Orders tab.  
+If you’re troubleshooting order logic, start in the Orders tab.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>The Tradovate Filled Orders tab is the most reliable way to verify execution. It shows your true fill price, timing, partials, and whether slippage happened or not. Check it every time something feels off—your memory and the chart can lie, but the Filled Orders log doesn’t.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Platforms & Tutorials</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+<a href="../platforms-tutorials/index.html" class="button">Back to Platforms &amp; Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
