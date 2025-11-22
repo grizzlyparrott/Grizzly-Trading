@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NinjaTrader 8 Chart Settings Basics</title>
+<meta name="description" content="A direct guide to NinjaTrader 8 chart settings. Learn how to control data series, bars, colors, templates, and performance settings with no fluff.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-chart-settings-basics.html">
+
+<meta property="og:title" content="NinjaTrader 8 Chart Settings Basics">
+<meta property="og:description" content="Learn the key NinjaTrader 8 chart settings: data series, bar types, scaling, colors, and templates.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-chart-settings-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NinjaTrader 8 Chart Settings Basics">
+<meta name="twitter:description" content="A blunt walkthrough of the most important NinjaTrader 8 chart settings.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "NinjaTrader 8 Chart Settings Basics",
+"description": "A direct guide to NinjaTrader 8 chart settings. Learn how to control data series, bars, colors, templates, and performance settings.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-chart-settings-basics.html",
+"datePublished": "2025-11-22",
+"dateModified": "2025-11-22"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{
+"@type": "ListItem",
+"position": 1,
+"name": "Home",
+"item": "https://grizzlyparrotttrading.com/index.html"
+},
+{
+"@type": "ListItem",
+"position": 2,
+"name": "Platforms & Tutorials",
+"item": "https://grizzlyparrotttrading.com/platforms-tutorials/index.html"
+},
+{
+"@type": "ListItem",
+"position": 3,
+"name": "NinjaTrader 8 Chart Settings Basics",
+"item": "https://grizzlyparrotttrading.com/platforms-tutorials/ninjatrader-8-chart-settings-basics.html"
+}
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>NinjaTrader 8 Chart Settings Basics</h1>
+
+<p>NinjaTrader 8 gives you extremely customizable charts. That’s good, but it also means beginners get lost in the menus. This guide strips out the noise and shows you the basic settings you actually need to control—data series, bar types, scaling, colors, trading display, and templates.</p>
+
+<h2>Opening Chart Settings</h2>
+
+<p>Right-click anywhere on a chart → <strong>Data Series…</strong> or <strong>Properties…</strong>.  
+These two menus control 90% of the chart behavior you care about.</p>
+
+<p>If you can’t find a setting, it’s almost always in one of these two windows.</p>
+
+<h2>Data Series: Where the Real Chart Settings Live</h2>
+
+<p>Data Series is the most important settings window in NinjaTrader 8. This is where you choose:</p>
+
+<ul>
+  <li>Bar type (minute, tick, volume, range, Heiken Ashi, etc.)</li>
+  <li>Bars value (5-minute, 1500-tick, 10-range, etc.)</li>
+  <li>Trading hours template</li>
+  <li>Candle colors</li>
+  <li>Borders, wicks, plot thickness</li>
+</ul>
+
+<table>
+  <tr><th>Setting</th><th>What It Does</th></tr>
+  <tr><td>Type</td><td>Chooses bar type (Minute, Tick, Range, Renko)</td></tr>
+  <tr><td>Value</td><td>The number tied to the bar type (e.g., 1500 ticks)</td></tr>
+  <tr><td>Trading Hours</td><td>RTH vs ETH templates</td></tr>
+  <tr><td>Candle Outline</td><td>Border color</td></tr>
+  <tr><td>Bar Color Up</td><td>Color for bullish bars</td></tr>
+  <tr><td>Bar Color Down</td><td>Color for bearish bars</td></tr>
+</table>
+
+<p>Most traders use:</p>
+
+<ul>
+  <li>5-Minute</li>
+  <li>1-Minute</li>
+  <li>Tick charts like 1500 or 1000</li>
+  <li>Range charts</li>
+</ul>
+
+<p>Minute charts update on time. Tick charts update on volume. Range charts update on movement.</p>
+
+<h2>Chart Properties: Layout and Behavior</h2>
+
+<p>Right-click → <strong>Properties…</strong></p>
+
+<p>This window controls:</p>
+
+<ul>
+  <li>Grid lines</li>
+  <li>Background color</li>
+  <li>Price scale</li>
+  <li>Candle spacing</li>
+  <li>Crosshair style</li>
+  <li>Session break lines</li>
+</ul>
+
+<p>If your chart looks “weird,” too zoomed, or too spaced out, Properties is the fix.</p>
+
+<h2>Scaling: How to Stop the Chart From Jumping</h2>
+
+<p>NinjaTrader 8 supports three major scale modes:</p>
+
+<ul>
+  <li><strong>Automatic</strong> – chart adjusts to show all price action</li>
+  <li><strong>Fixed</strong> – chart stays locked to set values</li>
+  <li><strong>Fixed + Auto</strong> – mix of the two</li>
+</ul>
+
+<p>If your chart keeps snapping up and down when price moves, switch to:  
+<strong>Right-click → Properties → Scale Justify = Right</strong></p>
+
+<p>Or scroll the price axis until NT8 offers a reset option.</p>
+
+<h2>How to Change Candle Colors</h2>
+
+<p>Right-click chart → <strong>Data Series…</strong></p>
+
+<ul>
+  <li><strong>Bar Color Up</strong></li>
+  <li><strong>Bar Color Down</strong></li>
+  <li><strong>Candle Outline</strong></li>
+  <li><strong>Wick Color</strong></li>
+</ul>
+
+<p>Many traders pick:</p>
+
+<ul>
+  <li>Green up / Red down (classic)</li>
+  <li>White up / Red down (dark mode)</li>
+</ul>
+
+<p>Whatever you choose, save it as a template.</p>
+
+<h2>Templates: Save Time and Stop Repeating Settings</h2>
+
+<p>Once your chart looks the way you want:</p>
+
+<ol>
+  <li>Right-click chart</li>
+  <li>Click <strong>Templates → Save</strong></li>
+  <li>Give it a name like <strong>“MyBasicChart”</strong></li>
+</ol>
+
+<p>Next time you open a chart:</p>
+
+<ol>
+  <li>Right-click</li>
+  <li><strong>Templates → Load</strong></li>
+</ol>
+
+<p>Done. No more repeating settings.</p>
+
+<h2>Performance Settings: Keep NT8 Fast</h2>
+
+<p>Some chart configurations slow down NinjaTrader:</p>
+
+<ul>
+  <li>Huge historical lookback</li>
+  <li>High-tick charts (e.g., 5000-tick)</li>
+  <li>Tons of indicators</li>
+  <li>Multiple charts all pulling deep data</li>
+</ul>
+
+<p>To avoid lag:</p>
+
+<ul>
+  <li>Limit days to load</li>
+  <li>Use ETH or RTH templates with fewer sessions</li>
+  <li>Only keep indicators you actually use</li>
+</ul>
+
+<p>NinjaTrader 8 is fast, but not magic. Don’t overload it with nonsense.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>NinjaTrader 8 chart settings are deep, but once you understand Data Series, Properties, scaling, and templates, the platform becomes predictable instead of chaotic. These are the core tools you’ll use every day—master them first before you worry about indicators or automation.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="../platforms-tutorials/index.html" class="button">Back to Platforms &amp; Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
