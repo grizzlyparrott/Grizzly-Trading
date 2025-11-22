@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tradovate Order Modification Basics</title>
+<meta name="description" content="A direct guide to modifying orders in Tradovate. Learn how to adjust entries, stops, and targets without canceling trades or breaking your ATM logic.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-order-modification-basics.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Tradovate Order Modification Basics">
+<meta property="og:description" content="Learn how to modify limit, stop, and bracket orders in Tradovate quickly and safely without breaking your trade setup.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-order-modification-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tradovate Order Modification Basics">
+<meta name="twitter:description" content="A no-fluff walkthrough on adjusting active orders inside Tradovate.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Tradovate Order Modification Basics",
+"description": "A direct guide to modifying orders in Tradovate. Learn how to adjust entries, stops, and targets without canceling trades or breaking your ATM logic.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-order-modification-basics.html",
+"datePublished": "2025-11-21",
+"dateModified": "2025-11-21"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+{ "@type": "ListItem", "position": 2, "name": "Platforms & Tutorials", "item": "https://grizzlyparrotttrading.com/platforms-tutorials/index.html" },
+{ "@type": "ListItem", "position": 3, "name": "Tradovate Order Modification Basics", "item": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-order-modification-basics.html" }
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<div class="logo">
+<a href="../index.html">Grizzly Parrott Trading</a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Tradovate Order Modification Basics</h1>
+
+<p>Order modification is a core part of trading. Markets move fast, and if you don’t know how to adjust your entries, stops, and targets in Tradovate without canceling the whole setup, you’re fighting your own platform. Here’s the no-BS guide to modifying orders cleanly and safely.</p>
+
+<h2>How to Modify Limit Orders</h2>
+
+<p>If you have a limit order waiting to fill, adjusting it is simple:</p>
+
+<ul>
+<li>Click the price line on the chart or DOM</li>
+<li>Drag it to the new price</li>
+<li>Release to confirm</li>
+</ul>
+
+<p>Tradovate automatically resubmits the order at the new level. You don’t need to cancel and replace—dragging is faster and cleaner.</p>
+
+<h2>Adjusting Stop-Loss Orders</h2>
+
+<p>If your ATM strategy placed a stop-loss:</p>
+
+<ul>
+<li>Grab the stop line on the chart</li>
+<li>Drag up or down</li>
+<li>Drop it where you want your new stop</li>
+</ul>
+
+<p>This keeps the ATM logic intact. You’re not creating a new order—you’re simply updating the existing one.</p>
+
+<h2>Moving Take-Profit Targets</h2>
+
+<p>Targets move exactly like stops:</p>
+
+<ul>
+<li>Click and drag the target line</li>
+<li>Place it at the new objective</li>
+</ul>
+
+<p>Don’t delete and re-add targets manually unless you actually want to disable the ATM bracket logic.</p>
+
+<h2>Changing Order Quantity</h2>
+
+<p>You cannot change the quantity of an already working order directly. You must:</p>
+
+<ul>
+<li>Cancel the order and re-place it with the new size</li>
+<li>OR scale in with a separate order</li>
+</ul>
+
+<p>For positions already filled, scaling in adds a separate entry at the new size. Each fill gets its own stop/target unless your ATM merges them (depends on template settings).</p>
+
+<h2>Converting Orders (Limit → Market)</h2>
+
+<p>Right-click any working order → <strong>Convert to Market</strong>.</p>
+
+<p>This sends the order to fill immediately. Useful when a limit is barely missing and the move is leaving without you.</p>
+
+<h2>Cancelling Single Legs vs Entire Brackets</h2>
+
+<p>If you cancel one leg of an ATM bracket, Tradovate’s OCO logic behaves like this:</p>
+
+<ul>
+<li>Canceling a target leaves the stop active</li>
+<li>Canceling the stop leaves the target active</li>
+<li>Canceling the entry cancels the whole bracket</li>
+</ul>
+
+<p>If you remove the stop manually, your target won’t cancel automatically when filled—you lose OCO protection.</p>
+
+<h2>Flattening While Orders Are Active</h2>
+
+<p>Click <strong>Flatten</strong> from the chart, DOM, or the order entry panel.  
+Flatten will:</p>
+
+<ul>
+<li>Close every open position</li>
+<li>Cancel every working order</li>
+<li>Remove your active bracket</li>
+</ul>
+
+<p>This is the safest way to reset everything fast during chaos.</p>
+
+<h2>Fixing Common Order Modification Problems</h2>
+
+<p>Most modification issues in Tradovate happen because of one of these:</p>
+
+<ul>
+<li>You tried dragging an order that already filled</li>
+<li>You deleted a bracket leg accidentally</li>
+<li>You’re modifying the wrong contract month</li>
+<li>Your ATM is set to create new orders instead of adjusting existing ones</li>
+</ul>
+
+<p>Before modifying anything, confirm the bracket lines match your expectation. If they don’t, delete everything and restart the trade—don’t try to salvage a broken bracket.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>Order modification in Tradovate is simple once you understand how dragging, converting, and canceling affect the bracket logic. Learn to adjust orders directly on the chart or DOM and you’ll manage trades faster with fewer mistakes.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Platforms & Tutorials</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+<a href="../platforms-tutorials/index.html" class="button">Back to Platforms & Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
