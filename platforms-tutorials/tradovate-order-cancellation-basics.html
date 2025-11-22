@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tradovate Order Cancellation Basics</title>
+<meta name="description" content="A clear guide to canceling orders in Tradovate. Learn how to cancel entries, stops, targets, and full brackets without causing execution errors.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-order-cancellation-basics.html">
+
+<meta property="og:title" content="Tradovate Order Cancellation Basics">
+<meta property="og:description" content="Learn the correct way to cancel limit orders, stops, targets, and bracket orders inside Tradovate—fast and without mistakes.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-order-cancellation-basics.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tradovate Order Cancellation Basics">
+<meta name="twitter:description" content="A straightforward guide to cancelling active orders in Tradovate.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Tradovate Order Cancellation Basics",
+"description": "A clear guide to canceling orders in Tradovate. Learn how to cancel entries, stops, targets, and full brackets without causing execution errors.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-order-cancellation-basics.html",
+"datePublished": "2025-11-21",
+"dateModified": "2025-11-21"
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+{ "@type": "ListItem", "position": 2, "name": "Platforms & Tutorials", "item": "https://grizzlyparrotttrading.com/platforms-tutorials/index.html" },
+{ "@type": "ListItem", "position": 3, "name": "Tradovate Order Cancellation Basics", "item": "https://grizzlyparrotttrading.com/platforms-tutorials/tradovate-order-cancellation-basics.html" }
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<div class="logo">
+<a href="../index.html">Grizzly Parrott Trading</a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Tradovate Order Cancellation Basics</h1>
+
+<p>Cancelling orders in Tradovate is simple on the surface, but if you cancel the wrong leg of a bracket or disable your OCO by mistake, you’ll create execution problems. This guide covers every method Tradovate offers to cancel orders cleanly without breaking your trade.</p>
+
+<h2>Cancelling Orders From the Chart</h2>
+
+<p>On the chart, every working order shows as a price line. To cancel it:</p>
+
+<ul>
+<li>Hover over the line</li>
+<li>Click the <strong>X</strong></li>
+</ul>
+
+<p>This works for:</p>
+
+<ul>
+<li>Limit entries waiting to fill</li>
+<li>Stop orders</li>
+<li>Targets</li>
+<li>Bracket legs</li>
+</ul>
+
+<p>If you don’t see order lines, check your visual settings or read your <a href="tradovate-chart-settings-complete-guide.html">chart settings guide</a>.</p>
+
+<h2>Cancelling Orders From the DOM</h2>
+
+<p>The DOM is faster and gives you batch cancellation buttons. These are key:</p>
+
+<ul>
+<li><strong>CXL Buy</strong> – cancels all buy-side orders</li>
+<li><strong>CXL Sell</strong> – cancels all sell-side orders</li>
+<li><strong>CXL All</strong> – wipes every working order</li>
+</ul>
+
+<p>If you’re scalping or moving quickly, DOM cancellation is the safest choice.</p>
+
+<h2>Cancelling Orders From the Order Entry Panel</h2>
+
+<p>If you don’t use the chart or DOM, you can still cancel through the order entry panel:</p>
+
+<ul>
+<li>Click the order in the “Working Orders” list</li>
+<li>Select <strong>Cancel</strong></li>
+</ul>
+
+<p>This method is slower but precise.</p>
+
+<h2>Canceling a Bracket vs a Single Leg</h2>
+
+<p>This is where most beginners get confused. Tradovate treats bracket cancellations differently depending on what’s removed.</p>
+
+<table>
+<tr><th>Action</th><th>Result</th></tr>
+<tr><td>Cancel entry</td><td>Entire bracket cancels</td></tr>
+<tr><td>Cancel stop</td><td>Target stays (no OCO)</td></tr>
+<tr><td>Cancel target</td><td>Stop stays (no OCO)</td></tr>
+<tr><td>Flatten</td><td>Everything cancels instantly</td></tr>
+</table>
+
+<p>If you accidentally remove one leg, your bracket loses OCO protection. That means your stop won’t cancel if your target fills, or vice versa. This is one of the fastest ways to flip into the opposite position by accident.</p>
+
+<h2>Cancelling Scale-In Orders</h2>
+
+<p>If you scale in with multiple limit orders, each one shows separately. Cancelling one:</p>
+
+<ul>
+<li>Does NOT cancel the other entries</li>
+<li>Does NOT affect your existing stop/target</li>
+<li>Does NOT modify your ATM unless the order fills</li>
+</ul>
+
+<p>Be sure you’re clicking the right line—don’t wipe all scaling levels by hitting CXL All unless you actually intend to reset.</p>
+
+<h2>Cancelling All Orders During Volatility</h2>
+
+<p>When the market gets stupid, you want speed. Use:</p>
+
+<ul>
+<li><strong>CXL All</strong> from the DOM</li>
+<li><strong>Flatten</strong> if you’re in a live position</li>
+</ul>
+
+<p>Flatten is your panic button. It closes your position and kills every order in one click. If you need to exit NOW, flatten is the correct move.</p>
+
+<h2>Canceling Problem Orders That Won’t Move</h2>
+
+<p>Sometimes Tradovate refuses to let you drag or adjust an order. Causes:</p>
+
+<ul>
+<li>The order already filled</li>
+<li>You’re grabbing the wrong leg</li>
+<li>The ATM is trying to protect a bracket</li>
+<li>Your workspace is desynced</li>
+</ul>
+
+<p>Solution is simple:</p>
+
+<ol>
+<li>Cancel everything</li>
+<li>Reset your ATM strategy</li>
+<li>Re-enter the trade clean</li>
+</ol>
+
+<p>Don’t fight a stuck bracket—just reset it.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>Order cancellation in Tradovate is simple when you know which method to use and how it affects ATM and OCO behavior. Learn to cancel correctly from the chart, DOM, and panel so you don’t break your brackets or leave stray orders hanging in the market.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Platforms & Tutorials</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+<a href="../platforms-tutorials/index.html" class="button">Back to Platforms &amp; Tutorials</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
