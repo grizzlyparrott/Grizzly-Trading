@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automated Strategy Rules in Prop Firms</title>
+<meta name="description" content="A blunt breakdown of automated strategy rules in prop firms, what bots are allowed, what gets you banned, and how risk desks detect automation.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/prop-firm-trading/automated-strategy-rules-in-prop-firms.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Automated Strategy Rules in Prop Firms">
+<meta property="og:description" content="Learn which automated strategies prop firms allow, which bots are banned, and how firms detect algorithmic trading violations.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/prop-firm-trading/automated-strategy-rules-in-prop-firms.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Automated Strategy Rules in Prop Firms">
+<meta name="twitter:description" content="Understand prop firm bot rules and how automated strategies get flagged.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Automated Strategy Rules in Prop Firms",
+"description": "A blunt breakdown of automated strategy rules in prop firms, what bots are allowed, what gets you banned, and how risk desks detect automation.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/prop-firm-trading/automated-strategy-rules-in-prop-firms.html",
+"datePublished": "2025-11-23",
+"dateModified": "2025-11-23"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+  { "@type": "ListItem", "position": 2, "name": "Prop Firm Trading", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/index.html" },
+  { "@type": "ListItem", "position": 3, "name": "Automated Strategy Rules in Prop Firms", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/automated-strategy-rules-in-prop-firms.html" }
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Automated Strategy Rules in Prop Firms</h1>
+
+<p>Most prop firms allow automation, but only if it fits their definition of “normal.” If your strategy fires orders like a bot, moves stops like a bot, or behaves like HFT-lite, the firm will ban you fast. Automation is fine until it looks abusive — then it's a violation.</p>
+
+<h2>What Prop Firms Consider Allowed Automation</h2>
+
+<p>Prop firms usually allow:</p>
+
+<ul>
+  <li>bracket strategies</li>
+  <li>ATM strategies</li>
+  <li>auto-breakeven stop rules</li>
+  <li>auto-trail stop rules</li>
+  <li>platform-native strategy templates</li>
+</ul>
+
+<p>If the automation is <strong>reactive</strong> (managing open orders), firms generally approve it.</p>
+
+<h2>Automation Prop Firms Consider Banned</h2>
+
+<p>These get you terminated instantly:</p>
+
+<ul>
+  <li>third-party trading bots</li>
+  <li>tick-by-tick scalpers firing hundreds of orders</li>
+  <li>API-driven trade engines</li>
+  <li>auto-entry algorithms running without human confirmation</li>
+  <li>news bots reacting to economic releases</li>
+  <li>DOM manipulation bots</li>
+</ul>
+
+<p>If your strategy acts without your direct manual decision, the firm will classify it as an algorithmic trading violation.</p>
+
+<h2>How Prop Firms Detect Bots</h2>
+
+<p>Risk engines analyze your execution just like they do in <a href="max-order-frequency-rules.html">order frequency checks</a> and <a href="platform-manipulation-detection.html">platform manipulation detection</a>. They track:</p>
+
+<ul>
+  <li>millisecond-level timestamps</li>
+  <li>identical behaviors across multiple sessions</li>
+  <li>perfect pattern repetition</li>
+  <li>superhuman reaction speeds</li>
+  <li>orders placed consistently within the same time slice</li>
+</ul>
+
+<p>Humans hesitate. Bots don’t. Risk engines know the difference.</p>
+
+<h2>Red Flags That Trigger Bot Review</h2>
+
+<h3>1. Identical Entries Across Multiple Accounts</h3>
+<p>If you fire the same trade at the same time on stacked accounts with zero variance, firms assume a bot or an unauthorized copier.</p>
+
+<h3>2. High Message Rate With Low Fill Rate</h3>
+<p>Bots spray orders. Humans don’t. If your order-to-fill ratio is insane, you get flagged.</p>
+
+<h3>3. Entries Exactly on Candle Open</h3>
+<p>Firms know this is typical bot behavior. Humans are rarely that precise.</p>
+
+<h3>4. Zero-Latency Cancel/Replace Behavior</h3>
+<p>No manual trader can cancel and re-place orders with sub-20ms consistency.</p>
+
+<h2>Allowed vs Banned Automation Summary</h2>
+
+<table>
+<tr><th>Allowed</th><th>Banned</th></tr>
+<tr><td>ATM bracket strategies</td><td>API-autonomous bots</td></tr>
+<tr><td>Auto-BE stop rules</td><td>High-frequency scalpers</td></tr>
+<tr><td>Auto-trailing stops</td><td>DOM manipulation bots</td></tr>
+<tr><td>Platform-native strategy templates</td><td>News reaction bots</td></tr>
+</table>
+
+<h2>How to Use Automation Without Getting Banned</h2>
+
+<ul>
+  <li>enter trades manually</li>
+  <li>use ATM strategies only after the trade is opened</li>
+  <li>avoid rapid cancel/replace cycles</li>
+  <li>don’t fire dozens of orders per minute</li>
+  <li>avoid “hands-off” strategies</li>
+</ul>
+
+<p>If you aren’t manually choosing your entries, it’s illegal in almost every prop firm.</p>
+
+<h2>Final Takeaway</h2>
+
+<p>Automation is allowed — fully autonomous bots are not. If your strategy behaves like an algorithm instead of a person, the risk desk will spot it immediately. Keep automation limited to management and let your manual execution make the decisions.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Prop Firm Trading</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Prop Firm Trading</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>

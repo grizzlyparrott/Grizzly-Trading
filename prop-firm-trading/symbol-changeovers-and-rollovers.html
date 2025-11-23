@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symbol Changeovers & Rollovers in Prop Firm Trading</title>
+<meta name="description" content="A blunt breakdown of symbol changeovers and rollover rules in prop firms so you don’t violate trading policies during contract expiration cycles.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/prop-firm-trading/symbol-changeovers-and-rollovers.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Symbol Changeovers & Rollovers in Prop Firm Trading">
+<meta property="og:description" content="Learn how prop firms handle futures rollovers, contract expiration, and symbol changeover rules that traders must follow.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/prop-firm-trading/symbol-changeovers-and-rollovers.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Symbol Changeovers & Rollovers in Prop Firm Trading">
+<meta name="twitter:description" content="Understand the rollover rules and symbol expiration requirements inside prop firms.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Symbol Changeovers & Rollovers in Prop Firm Trading",
+"description": "A blunt breakdown of symbol changeovers and rollover rules in prop firms so traders avoid violations during contract expiration cycles.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/prop-firm-trading/symbol-changeovers-and-rollovers.html",
+"datePublished": "2025-11-23",
+"dateModified": "2025-11-23"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+  { "@type": "ListItem", "position": 2, "name": "Prop Firm Trading", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/index.html" },
+  { "@type": "ListItem", "position": 3, "name": "Symbol Changeovers & Rollovers", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/symbol-changeovers-and-rollovers.html" }
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Symbol Changeovers & Rollovers in Prop Firm Trading</h1>
+
+<p>Every futures contract expires. When it does, the exchange rolls volume into the next month, and your platform changes the symbol. Prop firms expect you to handle this cleanly — because if you trade the wrong symbol, during the wrong phase, with the wrong liquidity, you can blow the account or trigger a violation instantly.</p>
+
+<h2>What Is a Rollover?</h2>
+
+<p>A rollover is when traders shift from the expiring futures contract to the next active contract month. Example:</p>
+
+<ul>
+  <li>ESU (September) → ESZ (December)</li>
+  <li>CLX (November) → CLZ (December)</li>
+</ul>
+
+<p>Volume moves first. Your broker follows. Your prop firm requires you to follow.</p>
+
+<h2>Why Prop Firms Care About Rollovers</h2>
+
+<p>Trading an expired or thin contract creates problems:</p>
+
+<ul>
+  <li>liquidity collapses</li>
+  <li>spreads widen</li>
+  <li>fills slip badly</li>
+  <li>margin requirements change</li>
+  <li>risk engines behave unpredictably</li>
+</ul>
+
+<p>This is the same reason firms tighten rules around <a href="low-liquidity-session-rules.html">low-liquidity sessions</a> — dead books create account blowups.</p>
+
+<h2>Common Prop Firm Rollover Requirements</h2>
+
+<p>Most firms enforce at least one of these rules:</p>
+
+<ul>
+  <li><strong>Stop trading the old contract on rollover day</strong></li>
+  <li><strong>Use only the front month once volume shifts</strong></li>
+  <li><strong>No trading in expired or cash-settled symbols</strong></li>
+  <li><strong>Bracket orders must be canceled before switching symbols</strong></li>
+  <li><strong>Positions must be flat before changing contract months</strong></li>
+</ul>
+
+<p>Violating rollover protocol = hard violation almost every time.</p>
+
+<h2>How Platforms Handle Symbol Changeovers</h2>
+
+<p>Your platform will do one of three things:</p>
+
+<ul>
+  <li><strong>Auto-switch to the next month</strong> (common in web platforms)</li>
+  <li><strong>Warn you and redirect you</strong></li>
+  <li><strong>Leave you on the dead contract</strong> and let you blow up</li>
+</ul>
+
+<p>NinjaTrader and RTrader often auto-switch. Tradovate sometimes forces you manually.  
+If you aren’t paying attention, you’ll trade the wrong contract.</p>
+
+<h2>Rollover Red Flags That Can Break Your Account</h2>
+
+<h3>1. Leaving Working Orders on the Old Symbol</h3>
+<p>Old bracket orders + new trades = collision. Firms treat this as reckless behavior.</p>
+
+<h3>2. Trading the Expiring Contract During Low Liquidity</h3>
+<p>Volume dies fast on the last few days. ES, NQ, CL, NG all get nasty during late rollover.</p>
+
+<h3>3. Using Old Month During New Month’s Volatility</h3>
+<p>When the new contract becomes front month, the old month becomes untradable.</p>
+
+<h3>4. Holding Through Expiration</h3>
+<p>Some contracts go physical delivery. Prop firms do NOT let you anywhere near that.</p>
+
+<h2>Rollover Timing for Major Futures</h2>
+
+<table>
+<tr><th>Instrument</th><th>Rollover Pattern</th><th>Notes</th></tr>
+<tr><td>ES/NQ/YM/RTY</td><td>Quarterly</td><td>Volume shifts early; switch ASAP</td></tr>
+<tr><td>CL</td><td>Monthly</td><td>Volatile rollover week</td></tr>
+<tr><td>NG</td><td>Monthly</td><td>Dangerous during expiration</td></tr>
+<tr><td>Metals</td><td>Monthly</td><td>Large gaps common</td></tr>
+</table>
+
+<h2>What Prop Firms Expect You to Do</h2>
+
+<ul>
+  <li>switch your chart and DOM on rollover day</li>
+  <li>cancel all working orders before switching symbols</li>
+  <li>flatten positions early on expiration week</li>
+  <li>verify the correct contract’s liquidity before trading</li>
+</ul>
+
+<p>They expect traders to know rollover mechanics before going funded.</p>
+
+<h2>Final Takeaway</h2>
+
+<p>Symbol changeovers and rollovers are mandatory housekeeping in futures trading. Prop firms enforce strict rules because expired contracts become death traps. Switch early, flatten cleanly, and don’t trade dead liquidity — or the firm’s risk engine will flatten for you.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Prop Firm Trading</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Prop Firm Trading</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
