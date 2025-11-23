@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Prop Firms Calculate Profit Targets</title>
+<meta name="description" content="A blunt breakdown of how prop firms calculate profit targets, why they scale by account size, and what traders must hit to pass evaluations.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/prop-firm-trading/how-prop-firms-calculate-profit-targets.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="How Prop Firms Calculate Profit Targets">
+<meta property="og:description" content="Learn how prop firm profit targets are calculated and why each account size uses a specific performance requirement.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/prop-firm-trading/how-prop-firms-calculate-profit-targets.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How Prop Firms Calculate Profit Targets">
+<meta name="twitter:description" content="Understand the math behind prop firm evaluation profit targets.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "How Prop Firms Calculate Profit Targets",
+"description": "A blunt breakdown of how prop firms calculate profit targets, why they scale by account size, and what traders must hit to pass evaluations.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/prop-firm-trading/how-prop-firms-calculate-profit-targets.html",
+"datePublished": "2025-11-22",
+"dateModified": "2025-11-22"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+  { "@type": "ListItem", "position": 2, "name": "Prop Firm Trading", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/index.html" },
+  { "@type": "ListItem", "position": 3, "name": "How Prop Firms Calculate Profit Targets", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/how-prop-firms-calculate-profit-targets.html" }
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>How Prop Firms Calculate Profit Targets</h1>
+
+<p>Profit targets decide whether you pass the evaluation or stay stuck paying resets. They’re not random, and they’re not based on what “feels fair.” Prop firms use a specific formula tied to account size, drawdown, and average trader performance. If you understand the math, you’ll know exactly which targets are realistic for your strategy.</p>
+
+<h2>The Logic Behind Profit Targets</h2>
+<p>Prop firms calculate profit targets using three factors:</p>
+
+<ul>
+  <li><strong>Account size</strong></li>
+  <li><strong>Trailing drawdown amount</strong></li>
+  <li><strong>Historical trader pass rates</strong></li>
+</ul>
+
+<p>Their goal is simple: make the target difficult enough to filter out weak traders but achievable enough to get repeat business.</p>
+
+<h2>Typical Profit Targets by Account Size</h2>
+
+<table>
+<tr><th>Account Size</th><th>Profit Target</th></tr>
+<tr><td>$25,000</td><td>$1,500</td></tr>
+<tr><td>$50,000</td><td>$3,000</td></tr>
+<tr><td>$100,000</td><td>$6,000</td></tr>
+<tr><td>$150,000</td><td>$9,000</td></tr>
+<tr><td>$250,000</td><td>$15,000</td></tr>
+</table>
+
+<p>Targets scale linearly because the firm expects you to take larger trades in larger accounts. It’s not personal — it’s just how their backend risk models work.</p>
+
+<h2>Why Targets Scale With Trailing Drawdown</h2>
+<p>Trailing drawdown and profit targets are linked. If a trailing drawdown is small, the profit target must be low too, or beginners have no shot.</p>
+
+<p>Example:</p>
+
+<ul>
+  <li>$25K account → $1,500 drawdown → $1,500 target</li>
+  <li>$50K account → $2,500–$3,000 drawdown → $3,000 target</li>
+  <li>$100K account → $3,000–$4,000 drawdown → $6,000 target</li>
+</ul>
+
+<p>The firm expects you to grow your account faster than you risk losing it.</p>
+
+<h2>Profit Targets Are Built Around Microlot Math</h2>
+<p>Prop firms know most traders use micros, especially on $25K–$50K accounts. So they design the targets around realistic micro trading output.</p>
+
+<p>Typical micro ATR-based potential per session on ES/NQ:</p>
+
+<ul>
+  <li><strong>Small day:</strong> $40–$120</li>
+  <li><strong>Moderate day:</strong> $150–$300</li>
+  <li><strong>Strong day:</strong> $300–$600</li>
+</ul>
+
+<p>A $3,000 target usually takes 10–20 sessions of solid trading — not one massive day, which is why firms also check <a href="consistency-rules-explained.html">consistency rules</a>.</p>
+
+<h2>Evaluation Time Limits and Targets</h2>
+<p>Most firms don’t force an evaluation time limit, but they design targets so the average trader runs out of psychological steam before hitting it.</p>
+
+<ul>
+  <li>Too small a target? Everyone passes.</li>
+  <li>Too big a target? No one pays after they fail.</li>
+</ul>
+
+<p>Targets are engineered right in the middle.</p>
+
+<h2>Why Bigger Accounts Have Harder Targets</h2>
+<p>Bigger accounts assume you’re:</p>
+
+<ul>
+  <li>Trading larger size</li>
+  <li>Comfortable with volatility</li>
+  <li>Using scaling techniques</li>
+</ul>
+
+<p>If you’re trading micros on a $100K account, the target will feel impossible — most beginners are better suited for the <a href="best-prop-firm-account-size-for-beginners.html">$50K account</a>.</p>
+
+<h2>Pass Rates and Profit Targets</h2>
+<p>Profit targets aren’t based on “fairness.” They’re based on math and behavior. Firms know:</p>
+
+<ul>
+  <li>A target too low means too many payouts</li>
+  <li>A target too high means traders quit</li>
+  <li>The sweet spot is where 5–15% of traders pass</li>
+</ul>
+
+<p>That pass rate is good business for the firm and achievable for disciplined traders.</p>
+
+<h2>Final Takeaway</h2>
+<p>Prop firm profit targets follow a formula built on account size, drawdown, and realistic performance. They’re not random — they reflect the firm’s risk model and expectations. Understand the target, trade small and steady, and you’ll hit it without relying on oversized hail-mary trades.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Prop Firm Trading</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Prop Firm Trading</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
