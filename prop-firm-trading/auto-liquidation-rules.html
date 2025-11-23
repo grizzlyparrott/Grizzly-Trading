@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto-Liquidation Rules in Prop Firms: How Forced Exits Actually Work</title>
+<meta name="description" content="A blunt breakdown of auto-liquidation rules in prop firms, how forced exits work, and what triggers automatic flattening of your account.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/prop-firm-trading/auto-liquidation-rules.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Auto-Liquidation Rules in Prop Firms: How Forced Exits Actually Work">
+<meta property="og:description" content="Learn how prop firms automatically liquidate positions, what triggers forced exits, and why flattening happens even when the platform looks stable.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/prop-firm-trading/auto-liquidation-rules.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Auto-Liquidation Rules in Prop Firms: How Forced Exits Actually Work">
+<meta name="twitter:description" content="Understand why prop firms auto-liquidate trades and how to stay clear of violations.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Auto-Liquidation Rules in Prop Firms: How Forced Exits Actually Work",
+"description": "A blunt breakdown of auto-liquidation rules in prop firms, how forced exits work, and what triggers automatic flattening of your account.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/prop-firm-trading/auto-liquidation-rules.html",
+"datePublished": "2025-11-22",
+"dateModified": "2025-11-22"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+  { "@type": "ListItem", "position": 2, "name": "Prop Firm Trading", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/index.html" },
+  { "@type": "ListItem", "position": 3, "name": "Auto-Liquidation Rules in Prop Firms", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/auto-liquidation-rules.html" }
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Auto-Liquidation Rules in Prop Firms: How Forced Exits Actually Work</h1>
+
+<p>Auto-liquidation is the firm’s kill switch. When the system decides your account is unsafe — because you breached a limit, got too close to one, or entered a restricted scenario — it flattens your positions instantly. You don’t get a warning. You don’t get a countdown. The system just nukes everything on the spot.</p>
+
+<h2>Why Auto-Liquidation Exists</h2>
+<p>Prop firms use auto-liquidation to protect their capital. The risk desk doesn't sit around watching individual traders. Automation handles most of the enforcement.</p>
+
+<p>Auto-liquidation activates when you:</p>
+
+<ul>
+  <li>break a rule</li>
+  <li>approach a drawdown level</li>
+  <li>trade during restricted conditions</li>
+  <li>lose connection during an open position</li>
+</ul>
+
+<p>The system treats everything as a threat unless it’s explicitly allowed.</p>
+
+<h2>Common Triggers for Auto-Liquidation</h2>
+
+<h3>1. Trailing Drawdown Violation</h3>
+<p>This is the most common trigger. When your trailing drawdown level is hit — even by one tick — your entire account is flattened instantly.</p>
+
+<h3>2. Daily Loss Limit Violation</h3>
+<p>If your realized loss hits the daily cap, the system flattens you and locks your account from further trading.</p>
+
+<h3>3. Max Position Size Breach</h3>
+<p>Even if the trade is profitable, exceeding the contract limit triggers an instant flatten. It works the same way as described in <a href="max-position-size-rules-explained.html">max position size rules</a>.</p>
+
+<h3>4. News Trading Restrictions</h3>
+<p>If you open or hold trades during banned economic releases, the system may force liquidate and then flag you. Details are covered in <a href="news-trading-restrictions.html">news-trading restrictions</a>.</p>
+
+<h3>5. Platform Disconnects</h3>
+<p>If your platform disconnects and the risk desk sees exposure they don’t like, they liquidate you automatically to prevent runaway losses.</p>
+
+<h3>6. Trade Copier Violations</h3>
+<p>If a copier triggers oversized exposure across multiple accounts, the firm may flatten all accounts instantly.</p>
+
+<h3>7. Cross-Market Exposure</h3>
+<p>Some firms monitor correlated assets. Too much exposure across correlated markets can trigger an automated flatten.</p>
+
+<h2>How Auto-Liquidation Actually Works</h2>
+<p>Prop firms use server-side risk engines that track your account in real time. These engines sit above your trading platform — meaning:</p>
+
+<ul>
+  <li>your platform may show a position</li>
+  <li>but the firm already closed it five seconds earlier</li>
+</ul>
+
+<p>When the system flattens you:</p>
+
+<ul>
+  <li>all positions close at market</li>
+  <li>all working orders are canceled</li>
+  <li>your account is locked until reviewed</li>
+</ul>
+
+<p>You may not even see the flatten order until your platform syncs with the server.</p>
+
+<h2>Auto-Liquidation During High Volatility</h2>
+<p>This is the dangerous part. When volatility spikes:</p>
+
+<ul>
+  <li>slippage increases</li>
+  <li>fills become erratic</li>
+  <li>brackets fire late</li>
+</ul>
+
+<p>The system may flatten you early to keep you from blowing through drawdown limits.</p>
+
+<h2>What Happens After Auto-Liquidation?</h2>
+<p>Two things:</p>
+
+<ul>
+  <li><strong>Evaluation accounts:</strong> usually failed</li>
+  <li><strong>Funded/PAs:</strong> placed under review; may lose the account</li>
+</ul>
+
+<p>Some firms give warnings for minor cases, but most treat it as a full violation.</p>
+
+<h2>How to Avoid Auto-Liquidation</h2>
+<ul>
+  <li>Use smaller size</li>
+  <li>Keep a buffer above trailing drawdown</li>
+  <li>Watch news windows closely</li>
+  <li>Trade with a stable internet connection</li>
+  <li>Avoid stacking orders during volatility</li>
+</ul>
+
+<p>Auto-liquidation is predictable once you understand the triggers — it’s not random.</p>
+
+<h2>Final Takeaway</h2>
+<p>Auto-liquidation is the enforcement engine behind every prop firm rule. If you get too close to danger, the system will flatten you instantly. Know the triggers, manage risk properly, and stay far away from the levels that activate the kill switch.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Prop Firm Trading</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Prop Firm Trading</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>

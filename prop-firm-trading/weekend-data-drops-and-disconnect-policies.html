@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekend Data Drops & Platform Disconnect Policies in Prop Firms</title>
+<meta name="description" content="A blunt breakdown of weekend data drops, platform disconnects, and how prop firms handle lost connections during live and evaluation trading.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/prop-firm-trading/weekend-data-drops-and-disconnect-policies.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Weekend Data Drops & Platform Disconnect Policies in Prop Firms">
+<meta property="og:description" content="Learn how prop firms treat weekend data drops, outages, and lost connections so you don’t get violated by surprise.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/prop-firm-trading/weekend-data-drops-and-disconnect-policies.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weekend Data Drops & Platform Disconnect Policies in Prop Firms">
+<meta name="twitter:description" content="Understand how prop firms handle platform disconnects and weekend data failures.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Weekend Data Drops & Platform Disconnect Policies in Prop Firms",
+"description": "A blunt breakdown of weekend data drops, platform disconnects, and how prop firms handle lost connections during live and evaluation trading.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/prop-firm-trading/weekend-data-drops-and-disconnect-policies.html",
+"datePublished": "2025-11-22",
+"dateModified": "2025-11-22"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+  { "@type": "ListItem", "position": 2, "name": "Prop Firm Trading", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/index.html" },
+  { "@type": "ListItem", "position": 3, "name": "Weekend Data Drops & Platform Disconnect Policies in Prop Firms", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/weekend-data-drops-and-disconnect-policies.html" }
+]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Weekend Data Drops & Platform Disconnect Policies in Prop Firms</h1>
+
+<p>Weekend data drops and platform disconnects are a silent killer in prop trading. The market might be closed, but risk systems are still running — and if data fails or your platform loses connection at the wrong time, you can violate an account without taking a single trade. Prop firms won’t take responsibility unless the failure is on their side, so you need to understand how these policies work.</p>
+
+<h2>Why Weekend Data Drops Happen</h2>
+<p>During the weekend, futures markets are closed. That’s when brokers, data providers, and prop firms do maintenance. Because of this, two things can happen:</p>
+
+<ul>
+  <li><strong>data feed resets</strong> (common Sunday afternoons)</li>
+  <li><strong>platform reconnect cycles</strong></li>
+</ul>
+
+<p>If your platform tries to reconnect during these moments, orders or positions can behave unpredictably.</p>
+
+<h2>How Prop Firms Handle Weekend Maintenance</h2>
+<p>Most prop firms use three rules related to weekend data integrity:</p>
+
+<ul>
+  <li><strong>You must be flat before the weekend</strong></li>
+  <li><strong>Your brackets/stops must be canceled before market close</strong></li>
+  <li><strong>Firms are not responsible for fills caused by stale orders</strong></li>
+</ul>
+
+<p>These are separate from weekend holding rules — those deal with <strong>positions</strong>. This article deals with <strong>data behavior and platform stability</strong>.</p>
+
+<h2>Platform Disconnects: How They Trigger Violations</h2>
+<p>Disconnects are dangerous because your platform and the firm’s server can go out of sync.</p>
+
+<p>Disconnect violations happen when:</p>
+
+<ul>
+  <li>your platform shows flat but the firm shows an active order</li>
+  <li>a bracket order fires after reconnecting</li>
+  <li>a stale stop gets triggered from old data</li>
+  <li>a market order gets stuck in limbo and fills late</li>
+</ul>
+
+<p>If this happens during high volatility or a gap, you can blow trailing drawdown instantly.</p>
+
+<h2>Who Is Responsible for a Disconnect?</h2>
+<p>Prop firms use a simple rule:</p>
+
+<ul>
+  <li><strong>If it’s your internet or platform → your fault.</strong></li>
+  <li><strong>If it’s their server → they may reimburse or fix the account.</strong></li>
+</ul>
+
+<p>They check logs to see where the failure occurred. Unless the outage was firm-wide, they will almost always blame the trader.</p>
+
+<h2>Common Disconnect Scenarios</h2>
+
+<h3>1. Losing Internet Mid-Trade</h3>
+<p>Your platform freezes. Orders may still be active on the firm’s server. When it reconnects, the trade might be deep in drawdown. Violation triggered.</p>
+
+<h3>2. Platform Freezing During Volatility</h3>
+<p>Platforms like NinjaTrader and Tradovate can lock up temporarily when volatility explodes. If your bracket executes late, you’re done.</p>
+
+<h3>3. Stale Orders After Weekend Maintenance</h3>
+<p>Your platform might show no orders, but the firm still has one sitting on the server. When the market opens, the order activates.</p>
+
+<h3>4. Data Feed Dropping but Internet Still Connected</h3>
+<p>This is the worst one, because the platform looks alive. You enter a trade into dead data and get filled at a terrible price once the feed reconnects.</p>
+
+<h2>How to Protect Yourself</h2>
+<ul>
+  <li>Always flatten and clear working orders on Friday</li>
+  <li>Restart your platform every Sunday before opening</li>
+  <li>Use a wired connection during active trading</li>
+  <li>Keep your phone hotspot ready for emergencies</li>
+  <li>Disable automation near the weekend</li>
+</ul>
+
+<p>These rules complement the logic you see in <a href="news-trading-restrictions.html">news-trading restrictions</a> — both are about reducing unpredictable risk.</p>
+
+<h2>Do Firms Ever Reset Accounts After Disconnects?</h2>
+<p>Some do, but only if the outage was on their side and affected many traders simultaneously. If it’s only you, they assume it was user error.</p>
+
+<h2>Final Takeaway</h2>
+<p>Weekend data drops and platform disconnects are a real threat. Prop firms expect you to manage your own technical stability. If your platform loses connection or your data drops, the firm will hold you responsible — even if the market was closed. Stay flat, clear orders, and treat every weekend like a maintenance risk window.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Prop Firm Trading</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Prop Firm Trading</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
