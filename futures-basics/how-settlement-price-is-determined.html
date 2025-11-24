@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How the Futures Settlement Price Is Actually Determined</title>
+<meta name="description" content="A blunt breakdown of how futures settlement prices are really calculated—using formulas, volume data, and exchange rules beginners never see.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/how-settlement-price-is-determined.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="How the Futures Settlement Price Is Actually Determined">
+<meta property="og:description" content="Learn how futures settlement prices are calculated using weighted data and exchange methodology—not just mark-to-market theory.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/how-settlement-price-is-determined.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How the Futures Settlement Price Is Actually Determined">
+<meta name="twitter:description" content="A direct explanation of how the CME calculates settlement prices and why traders must understand the data behind it.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How the Futures Settlement Price Is Actually Determined",
+  "description": "A blunt breakdown of how futures settlement prices are really calculated—using formulas, volume data, and exchange rules beginners never see.",
+  "author": {
+    "@type": "Person",
+    "name": "Grizzly Parrott"
+  },
+  "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/how-settlement-price-is-determined.html",
+  "datePublished": "2025-11-23",
+  "dateModified": "2025-11-23"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://grizzlyparrotttrading.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Futures Basics",
+      "item": "https://grizzlyparrotttrading.com/futures-basics/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How the Futures Settlement Price Is Actually Determined",
+      "item": "https://grizzlyparrotttrading.com/futures-basics/how-settlement-price-is-determined.html"
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>How the Futures Settlement Price Is Actually Determined</h1>
+
+<p>The settlement price isn’t the last traded price. Beginners assume it is, and that mistake blows up trading plans, risk models, and prop accounts. The settlement is a calculated price based on volume-weighted activity during a specific window chosen by the exchange.</p>
+
+<h2>The Settlement Window Explained</h2>
+<p>The CME doesn’t pick a random number. It uses a preset window—usually the last 30 seconds to 1 minute of the session—to capture real, tradeable pricing. This window filters out manipulation and thin prints that happen at the bell.</p>
+
+<table>
+<tr><th>Contract</th><th>Settlement Window</th></tr>
+<tr><td>ES / MES</td><td>Last 30 seconds</td></tr>
+<tr><td>NQ / MNQ</td><td>Last 30 seconds</td></tr>
+<tr><td>CL</td><td>Last 1 minute</td></tr>
+<tr><td>GC</td><td>Last 1 minute</td></tr>
+</table>
+
+<p>If you haven't read your <a href="mark-to-market-explained.html">Mark-to-Market article</a>, do that first—it explains why the settlement matters for daily P/L.</p>
+
+<h2>The Real Calculation: Volume-Weighted Average Price</h2>
+<p>The CME calculates settlement using a volume-weighted average price (VWAP) inside the window. That means:</p>
+
+<ul>
+  <li>Prices with higher trade size matter more</li>
+  <li>Tiny prints don’t control the close</li>
+  <li>Fast moves can distort the result if volume is thin</li>
+</ul>
+
+<h3>The Formula (Simplified)</h3>
+<p><strong>Settlement = Σ (Price × Volume) ÷ Σ Volume</strong></p>
+
+<p>It’s math, not opinion. The exchange uses data, not vibes.</p>
+
+<h2>Why Settlement Matters More Than the Last Price</h2>
+<p>Your account P/L resets using the settlement, not the final trade. That means stop placement, margin, and prop-firm trailing drawdown rules all react to settlement—not whatever random last print hit the tape.</p>
+
+<p>This is why day traders who ignore settlement get blindsided. If the market rips in the final seconds, your “flat” or “safe” position may show a totally different P/L after settlement hits.</p>
+
+<h2>Example: Two Last Prints, One Settlement</h2>
+<p>Imagine ES closes its last trades like this:</p>
+
+<table>
+<tr><th>Price</th><th>Size</th></tr>
+<tr><td>5320.00</td><td>1 lot</td></tr>
+<tr><td>5318.75</td><td>200 lots</td></tr>
+</table>
+
+<p>The settlement will be closer to 5318.75 because size dictates importance. The 1-lot print is meaningless.</p>
+
+<h2>How Exchanges Prevent Manipulation</h2>
+<p>Big players could push price with tiny orders if the exchange didn’t use VWAP. The settlement window makes that manipulation nearly impossible.</p>
+
+<ul>
+  <li>Minimum volume requirements</li>
+  <li>Exclusion of “off-market” prints</li>
+  <li>Automatic detection of abnormal spikes</li>
+</ul>
+
+<p>Without these rules, closing prices would be a joke.</p>
+
+<h2>Final Takeaway: The Settlement Price Is the Exchange’s Official Truth</h2>
+<p>If you don’t understand how settlement is determined, you can’t manage risk. The market can print anything at the bell—the exchange decides the real number that resets your P/L and margin for the next session.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Futures Basics</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>

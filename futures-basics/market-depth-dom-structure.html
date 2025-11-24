@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Depth in Futures: How the DOM Actually Works</title>
+<meta name="description" content="A blunt, clear explanation of how market depth works in futures trading, how to read the DOM, and why beginners misunderstand liquidity levels.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/market-depth-dom-structure.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Market Depth in Futures: How the DOM Actually Works">
+<meta property="og:description" content="Learn how market depth works, how to read DOM levels, and how real liquidity behaves in futures markets.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/market-depth-dom-structure.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Market Depth in Futures: How the DOM Actually Works">
+<meta name="twitter:description" content="A direct breakdown of DOM structure and how to interpret true vs. fake liquidity in futures trading.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Market Depth in Futures: How the DOM Actually Works",
+  "description": "A blunt, clear explanation of how market depth works in futures trading, how to read the DOM, and why beginners misunderstand liquidity levels.",
+  "author": {
+    "@type": "Person",
+    "name": "Grizzly Parrott"
+  },
+  "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/market-depth-dom-structure.html",
+  "datePublished": "2025-11-23",
+  "dateModified": "2025-11-23"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://grizzlyparrotttrading.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Futures Basics",
+      "item": "https://grizzlyparrotttrading.com/futures-basics/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Market Depth in Futures: How the DOM Actually Works",
+      "item": "https://grizzlyparrotttrading.com/futures-basics/market-depth-dom-structure.html"
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Market Depth in Futures: How the DOM Actually Works</h1>
+
+<p>Most beginners stare at the DOM like it’s a magic crystal ball. It’s not. Market depth simply shows resting orders above and below the current price, and most of those orders will never fill. If you don’t understand how the DOM works, you’ll misread liquidity and get run over.</p>
+
+<h2>What Market Depth Really Shows</h2>
+<p>The DOM displays limit orders sitting at each price level. These orders are waiting to be hit or lifted. That’s it. They are not guarantees of support or resistance.</p>
+
+<table>
+<tr><th>Column</th><th>Meaning</th></tr>
+<tr><td>Bid Size</td><td>Resting BUY orders below price</td></tr>
+<tr><td>Price</td><td>Current price ladder</td></tr>
+<tr><td>Ask Size</td><td>Resting SELL orders above price</td></tr>
+</table>
+
+<p>If you want broader context on how futures orders work, review <a href="limit-vs-market-orders.html">Limit vs. Market Orders</a>.</p>
+
+<h2>Fake Liquidity: Why Most DOM Levels Don’t Matter</h2>
+<p>Large sizes on the DOM often get pulled before price reaches them. This is intentional. Algos flash size to influence traders, then remove it as price approaches.</p>
+
+<p>True liquidity only exists when:</p>
+
+<ul>
+  <li>orders stay in place as price approaches</li>
+  <li>volume actually executes at that level</li>
+  <li>the size doesn’t disappear during volatility</li>
+</ul>
+
+<p>This is why the DOM can’t be trusted at face value.</p>
+
+<h2>How the DOM Shifts During Volatility</h2>
+<p>When markets move fast, DOM levels evaporate. Sizes thin out because traders pull orders to avoid being run over. This is where beginners get faked out—they assume the book is deep when it’s really hollow.</p>
+
+<h3>Common Example</h3>
+<ul>
+  <li>NQ shows 300 lots stacked on the bid</li>
+  <li>Price drops toward it</li>
+  <li>That 300 becomes 40</li>
+  <li>Then price blows through the level instantly</li>
+</ul>
+
+<p>The “liquidity” was never real.</p>
+
+<h2>Trade Execution and Slippage</h2>
+<p>Market depth determines how badly you get slipped. Thin DOM = bigger slippage. This is why traders in large contracts (CL, NQ, GC) must understand how deep the book is—and why micro contracts exist for smaller accounts.</p>
+
+<p>For more context, see <a href="futures-liquidity-explained.html">Futures Liquidity Explained</a>.</p>
+
+<h2>How Professionals Read Market Depth</h2>
+<p>Pros don’t look at individual levels—they look for behavior:</p>
+
+<ul>
+  <li>Does size hold or get pulled?</li>
+  <li>Does price stall where large orders sit?</li>
+  <li>Are market orders absorbing or lifting?</li>
+  <li>Is one side stacked consistently?</li>
+</ul>
+
+<p>Market depth is about the <strong>interaction</strong> between resting orders and executed orders, not the raw numbers.</p>
+
+<h2>Final Takeaway: The DOM Shows Intent, Not Commitment</h2>
+<p>Market depth isn’t a wall—it’s a suggestion. True liquidity only exists when volume actually trades. Use the DOM to understand flow, not to predict the future.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Futures Basics</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
