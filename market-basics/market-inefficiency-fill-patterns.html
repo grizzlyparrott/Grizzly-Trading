@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Inefficiency Fill Patterns: Why Price Revisits Voids</title>
+  <meta name="description" content="Learn why markets revisit inefficiencies, how fill patterns work, and how to read price behavior inside liquidity voids.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://grizzlyparrotttrading.com/market-basics/market-inefficiency-fill-patterns.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Market Inefficiency Fill Patterns">
+  <meta property="og:description" content="A blunt breakdown of why inefficiencies get filled, how price behaves inside voids, and how traders use these patterns.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://grizzlyparrotttrading.com/market-basics/market-inefficiency-fill-patterns.html">
+  <meta property="og:site_name" content="Grizzly Parrott Trading">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Market Inefficiency Fill Patterns">
+  <meta name="twitter:description" content="Understand why the market revisits inefficiencies and how to read the fill behavior with precision.">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JMJVR3G5YN');
+  </script>
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Market Inefficiency Fill Patterns: Why Price Revisits Voids",
+    "description": "Learn why markets revisit inefficiencies, how fill patterns work, and how to read price behavior inside liquidity voids.",
+    "author": {
+      "@type": "Person",
+      "name": "Grizzly Parrott"
+    },
+    "mainEntityOfPage": "https://grizzlyparrotttrading.com/market-basics/market-inefficiency-fill-patterns.html",
+    "datePublished": "2025-11-24",
+    "dateModified": "2025-11-24"
+  }
+  </script>
+
+  <!-- JSON-LD: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrotttrading.com/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Market Basics",
+        "item": "https://grizzlyparrotttrading.com/market-basics/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Market Inefficiency Fill Patterns",
+        "item": "https://grizzlyparrotttrading.com/market-basics/market-inefficiency-fill-patterns.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Market Inefficiency Fill Patterns: Why Price Revisits Voids</h1>
+
+<p>
+Market inefficiencies—also called liquidity voids, gaps, imbalances, or single-print zones—are the footprints of aggressive movement.
+The market almost always revisits them because the auction wants to restore balance. Understanding how price fills these inefficiencies
+gives you reliable continuation and reversal clues.
+</p>
+
+<h2>What an Inefficiency Actually Is</h2>
+<p>
+An inefficiency is an area where price moved too fast for two-sided trading to occur. One side dominated so aggressively that the other side
+never had a chance to trade.
+</p>
+
+<ul>
+  <li>Wide displacement bars</li>
+  <li>Thin or missing volume nodes</li>
+  <li>No overlapping bid/ask interaction</li>
+  <li>Single-print footprints</li>
+</ul>
+
+<p>
+These usually show up right after  
+<a href="displacement-candles-and-trend-initiation.html">displacement events</a>.
+</p>
+
+<h2>Why Inefficiencies Get Filled</h2>
+<p>
+The auction hates imbalance. When price leaves an inefficiency behind, it’s unfinished business. At some point, the market comes back to test it.
+Not because of magic—because that’s where the untraded prices are.
+</p>
+
+<table>
+<thead>
+  <tr>
+    <th>Reason</th>
+    <th>Mechanic</th>
+    <th>Outcome</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Unfilled orders</td>
+    <td>Side that got left behind wants fills</td>
+    <td>Market rotates back</td>
+  </tr>
+  <tr>
+    <td>Liquidity pockets</td>
+    <td>Resting orders stored in the void</td>
+    <td>Price seeks interaction</td>
+  </tr>
+  <tr>
+    <td>Auction rebalancing</td>
+    <td>Need for two-sided trade</td>
+    <td>Void gets tested</td>
+  </tr>
+</tbody>
+</table>
+
+<h2>Common Inefficiency Fill Patterns</h2>
+<p>
+Price behaves predictably inside inefficiencies. These are the most reliable patterns:
+</p>
+
+<h3>1. The Shallow Fill and Reject</h3>
+<p>
+Price dips into the inefficiency just enough to test willingness, then instantly rejects out.  
+This usually means trend continuation.
+</p>
+
+<h3>2. The Full Fill and Flip</h3>
+<p>
+Price fills the entire void, stalls at the far end, then rotates back the other way.  
+This often signals a reversal, especially when combined with  
+<a href="orderflow-pivots-identifying-shift-points.html">orderflow pivot behavior</a>.
+</p>
+
+<h3>3. The Multi-Leg Backfill</h3>
+<p>
+Price fills the inefficiency piece by piece over several rotations.  
+This usually happens in slower markets or developing balance areas.
+</p>
+
+<h2>How to Trade Inefficiency Fills</h2>
+<p>
+The key is knowing which side of the market owns the displacement that created the inefficiency.
+</p>
+
+<ul>
+  <li>Identify the side that caused the void</li>
+  <li>Mark the origin of displacement</li>
+  <li>Wait for price to rotate into the inefficiency</li>
+  <li>Trade continuation if rejection is fast</li>
+  <li>Trade reversal only if the void fills fully and stalls</li>
+</ul>
+
+<h2>The Bottom Line</h2>
+<p>
+Inefficiency fills aren’t random—they’re the auction correcting an incomplete move.  
+Learn the common fill behaviors, line them up with structure and orderflow, and inefficiencies become high-clarity zones instead of mysterious chart gaps.
+</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Market Basics</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="../market-basics/index.html" class="button">Back to Market Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
