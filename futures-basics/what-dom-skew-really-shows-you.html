@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Depth of Market Skew Really Shows You</title>
+<meta name="description" content="A blunt breakdown of what DOM skew actually tells you in futures trading and why most traders interpret it completely wrong.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/what-dom-skew-really-shows-you.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="What Depth of Market Skew Really Shows You">
+<meta property="og:description" content="A direct explanation of DOM skew, what it actually means, and how to read it without falling for fake liquidity.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/what-dom-skew-really-shows-you.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What Depth of Market Skew Really Shows You">
+<meta name="twitter:description" content="A blunt explanation of real DOM skew behavior and how it exposes pressure in futures markets.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Depth of Market Skew Really Shows You",
+  "description": "A blunt breakdown of what DOM skew actually tells you in futures trading and why most traders interpret it completely wrong.",
+  "author": { "@type": "Person", "name": "Grizzly Parrott" },
+  "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/what-dom-skew-really-shows-you.html",
+  "datePublished": "2025-11-23",
+  "dateModified": "2025-11-23"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+    { "@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrotttrading.com/futures-basics/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "What Depth of Market Skew Really Shows You", "item": "https://grizzlyparrotttrading.com/futures-basics/what-dom-skew-really-shows-you.html" }
+  ]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<div class="logo">
+<a href="../index.html">Grizzly Parrott Trading</a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>What Depth of Market Skew Really Shows You</h1>
+
+<p>DOM skew—when one side of the book shows more resting orders than the other—is one of the most misunderstood signals in futures trading. Traders stare at the bid and offer numbers like they’re gospel, but most of the time that “skew” is either bait, noise, or meaningless size placed by algos that have zero intention of getting filled.</p>
+
+<h2>What DOM Skew Actually Measures</h2>
+<p>DOM skew is simply an imbalance in the displayed resting liquidity on the bid vs the offer. That’s it. It doesn’t automatically predict direction, and it doesn’t tell you who’s stronger.</p>
+
+<ul>
+  <li><strong>More bids than offers</strong> → passive buyers present</li>
+  <li><strong>More offers than bids</strong> → passive sellers present</li>
+  <li><strong>Sudden size spikes</strong> → often spoofing or hedging behavior</li>
+</ul>
+
+<p>To interpret DOM skew properly, you need to understand <a href="tick-ladder-behavior-in-liquid-futures.html">tick ladder behavior</a> because the ladder reveals aggression—not just what’s sitting there.</p>
+
+<h2>Why DOM Skew Is Often Fake</h2>
+<p>A huge portion of visible DOM is spoof liquidity. It appears, disappears, shifts levels, or trails price. Algorithms place this liquidity to influence trader behavior, not to be executed.</p>
+
+<table>
+<thead>
+<tr><th>DOM Behavior</th><th>Real Meaning</th></tr>
+</thead>
+<tbody>
+<tr><td>Large bids appear below price</td><td>Support bait, not certainty</td></tr>
+<tr><td>Large offers flash then vanish</td><td>Algo manipulation</td></tr>
+<tr><td>Stacked book on one side</td><td>Passive interest, not guaranteed direction</td></tr>
+</tbody>
+</table>
+
+<p>This is why staring at size without watching aggressor activity is useless.</p>
+
+<h2>The Only DOM Skew That Matters</h2>
+<p>There are only two situations where DOM skew has real meaning:</p>
+
+<h3>1. When Skew Persists During Aggressive Flow</h3>
+<p>If the bid stays stacked AND buyers keep lifting offers, that’s real strength.</p>
+
+<h3>2. When Skew Holds During a Sweep</h3>
+<p>If sellers sweep bids and the bids instantly refill, that’s genuine support—not spoofing.</p>
+
+<p>This is where DOM skew aligns with <a href="market-depth-dom-structure.html">DOM structure behavior</a>.</p>
+
+<h2>How to Read Skew Without Getting Manipulated</h2>
+<p>Ignore the raw numbers. Watch how price reacts to the skew.</p>
+
+<ul>
+  <li>If price moves into stacked bids and bounces → real</li>
+  <li>If the stacked bids vanish on approach → spoof</li>
+  <li>If offers stack and price can’t push through → resistance</li>
+  <li>If offers stack but disappear when tested → fake pressure</li>
+</ul>
+
+<h2>Why Most Traders Misread DOM Skew</h2>
+<p>Because they treat passive liquidity like confirmation of a trend. It isn’t. Strong markets move on aggressive orders, not passive ones. DOM skew only matters when it interacts with real trades hitting the ladder.</p>
+
+<h2>The Bottom Line</h2>
+<p>DOM skew is only useful when paired with actual order flow. If you just stare at the numbers, you’re reading noise. If you watch how those numbers behave when challenged, you’re reading real pressure.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+<a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
