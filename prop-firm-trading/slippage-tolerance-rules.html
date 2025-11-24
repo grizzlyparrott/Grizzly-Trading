@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slippage Tolerance Rules: How Prop Firms Judge Your Executions</title>
+<meta name="description" content="A blunt breakdown of slippage tolerance rules in prop firms, how execution slippage is measured, and what triggers a violation or risk flag.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/prop-firm-trading/slippage-tolerance-rules.html">
+
+<meta property="og:title" content="Slippage Tolerance Rules: How Prop Firms Judge Your Executions">
+<meta property="og:description" content="Learn how prop firms evaluate execution slippage, what counts as excessive slippage, and why it matters for evaluations.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/prop-firm-trading/slippage-tolerance-rules.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Slippage Tolerance Rules: How Prop Firms Judge Your Executions">
+<meta name="twitter:description" content="A no-fluff explanation of slippage tolerance limits in prop firm trading evaluations.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Slippage Tolerance Rules: How Prop Firms Judge Your Executions",
+  "description": "A blunt breakdown of slippage tolerance rules in prop firms, how execution slippage is measured, and what triggers a violation or risk flag.",
+  "author": { "@type": "Person", "name": "Grizzly Parrott" },
+  "mainEntityOfPage": "https://grizzlyparrotttrading.com/prop-firm-trading/slippage-tolerance-rules.html",
+  "datePublished": "2025-11-23",
+  "dateModified": "2025-11-23"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+    { "@type": "ListItem", "position": 2, "name": "Prop Firm Trading", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "Slippage Tolerance Rules: How Prop Firms Judge Your Executions", "item": "https://grizzlyparrotttrading.com/prop-firm-trading/slippage-tolerance-rules.html" }
+  ]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo"><a href="../index.html">Grizzly Parrott Trading</a></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Slippage Tolerance Rules: How Prop Firms Judge Your Executions</h1>
+
+<p>
+Slippage matters more in prop firms than in normal retail trading. Every tick that slips pushes you closer to violating max daily loss, trailing drawdown, or consistency checks. Prop firms watch slippage closely and flag traders whose executions show excessive deviation from expected prices.
+</p>
+
+<h2>What Slippage Actually Is</h2>
+<p>
+Slippage is the difference between the price you expected and the price you actually got filled at. It’s unavoidable — but the amount of slippage you take says a lot about how you trade.</p>
+
+<ul>
+  <li>Market orders = higher slippage</li>
+  <li>Limit orders = controlled fills</li>
+  <li>Trading volatile reports = worst slippage</li>
+</ul>
+
+<p>
+If you want to understand why execution varies across firms, see the article on <a href="prop-firm-liquidity-provider-routing.html">liquidity provider routing</a>.
+</p>
+
+<h2>How Prop Firms Measure Slippage</h2>
+<p>
+Firms use automated systems that compare your fills to the market state at the time of execution.</p>
+
+<table>
+  <tr>
+    <th>Factor</th>
+    <th>What the System Checks</th>
+  </tr>
+  <tr>
+    <td>Bid/ask spread</td>
+    <td>Was your fill inside or outside expected range?</td>
+  </tr>
+  <tr>
+    <td>Volatility</td>
+    <td>Was the market moving fast?</td>
+  </tr>
+  <tr>
+    <td>Order type</td>
+    <td>Did you use limits or markets?</td>
+  </tr>
+  <tr>
+    <td>Liquidity</td>
+    <td>Was your size too big for conditions?</td>
+  </tr>
+</table>
+
+<h2>Execution Patterns That Raise Red Flags</h2>
+<p>
+Some traders’ execution fingerprints immediately tell the firm they’re reckless.</p>
+
+<ul>
+  <li>Consistently entering on extreme volatility spikes</li>
+  <li>Market ordering during news events</li>
+  <li>Using size too large for the session</li>
+  <li>Repeated slippage far beyond expected ranges</li>
+</ul>
+
+<p>
+If the behavior matches other violations, it feeds into <a href="behavior-risk-scoring.html">internal risk scoring</a>.
+</p>
+
+<h2>Why Slippage Can Trigger Violations</h2>
+<p>
+Excessive slippage doesn’t just hurt your P&L — it can directly cause you to break rules.</p>
+
+<ul>
+  <li>Slippage may push a losing trade into max daily loss territory</li>
+  <li>Slippage may cause trailing drawdown to hit sooner</li>
+  <li>Slippage during restricted news windows is an auto-violation</li>
+</ul>
+
+<h2>How to Reduce Slippage in Prop Firm Trading</h2>
+<p>
+You can’t control slippage fully, but you can keep it within safe limits.</p>
+
+<ul>
+  <li>Use limit orders whenever possible</li>
+  <li>Avoid trading the first minutes of session opens</li>
+  <li>Stop trading during major economic reports</li>
+  <li>Reduce size during low liquidity times</li>
+</ul>
+
+<h2>The Bottom Line</h2>
+<p>
+Prop firms don’t expect zero slippage — they expect controlled slippage. Consistent, predictable fills show discipline. Wild slippage shows recklessness, and reckless execution gets you flagged fast. Trade clean and keep your fills within sane boundaries.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Prop Firm Trading</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="../prop-firm-trading/index.html" class="button">Back to Prop Firm Trading</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
