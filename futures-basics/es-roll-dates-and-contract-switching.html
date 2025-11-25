@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ES Roll Dates and How to Switch Contracts Cleanly</title>
+<meta name="description" content="A blunt guide to ES roll dates and how to switch contracts without getting clipped by liquidity shifts or bad fills.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/es-roll-dates-and-contract-switching.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="ES Roll Dates and How to Switch Contracts Cleanly">
+<meta property="og:description" content="Learn the exact ES roll schedule, why liquidity shifts, and how to switch contracts without sloppy execution.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/es-roll-dates-and-contract-switching.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES Roll Dates and How to Switch Contracts Cleanly">
+<meta name="twitter:description" content="A direct guide to ES roll dates, liquidity shifts, and contract switching.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ES Roll Dates and How to Switch Contracts Cleanly",
+  "description": "A blunt guide to ES roll dates and how to switch contracts without getting clipped by liquidity shifts or bad fills.",
+  "author": { "@type": "Person", "name": "Grizzly Parrott" },
+  "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/es-roll-dates-and-contract-switching.html",
+  "datePublished": "2025-11-24",
+  "dateModified": "2025-11-24"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+    { "@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrotttrading.com/futures-basics/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "ES Roll Dates and How to Switch Contracts Cleanly", "item": "https://grizzlyparrotttrading.com/futures-basics/es-roll-dates-and-contract-switching.html" }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo"><a href="../index.html">Grizzly Parrott Trading</a></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>ES Roll Dates and How to Switch Contracts Cleanly</h1>
+
+<p>
+Most beginners have no idea when ES rolls or how to switch contracts without getting terrible fills. ES roll dates follow a strict schedule, and liquidity shifts in predictable ways. If you don’t understand this, you end up trading the wrong contract — the one nobody else is using.
+</p>
+
+<h2>How ES Roll Dates Work</h2>
+<p>
+ES contracts follow the quarterly expiration cycle: March (H), June (M), September (U), December (Z).  
+But here’s the key: <strong>traders roll early — long before expiration.</strong>
+</p>
+
+<table>
+<tr><th>Month Code</th><th>Contract Month</th></tr>
+<tr><td>H</td><td>March</td></tr>
+<tr><td>M</td><td>June</td></tr>
+<tr><td>U</td><td>September</td></tr>
+<tr><td>Z</td><td>December</td></tr>
+</table>
+
+<h2>When Traders Actually Roll</h2>
+<p>
+The real roll happens on the <strong>Thursday before the second Friday</strong> of the contract expiration month.  
+That’s when liquidity jumps from the expiring contract to the next one.
+</p>
+
+<p>
+Typical pattern:
+<ul>
+  <li>Day before roll: liquidity split</li>
+  <li>Roll day: majority shifts to new contract</li>
+  <li>Next day: old contract becomes unusable</li>
+</ul>
+</p>
+
+<h2>How to Know Which Contract to Trade</h2>
+<p>
+Check depth, volume, and the DOM. The contract with the highest volume is the real ES for the day.  
+Trading the wrong one means:
+<ul>
+  <li>Worse fills</li>
+  <li>Wider spreads</li>
+  <li>No follow-through</li>
+</ul>
+</p>
+
+<h2>How to Switch Contracts Cleanly</h2>
+<p>
+Switching contracts is simple — people just overthink it.
+</p>
+
+<h3>1. Close or flatten your position</h3>
+<p>
+Never roll while still holding a trade unless you know what you’re doing.</p>
+
+<h3>2. Change your chart and DOM symbol</h3>
+<p>
+Example: from ESZ5 → ESH6.</p>
+
+<h3>3. Rebuild your levels</h3>
+<p>
+New contract means slightly different prices.  
+Rebuild your:
+<ul>
+  <li>Session highs/lows</li>
+  <li>VWAP</li>
+  <li>Opening range</li>
+  <li>Premarket levels</li>
+</ul>
+</p>
+
+<p>
+If you need help re-marking key levels, read  
+<a href="es-session-highs-lows-and-vwap-usage.html">Session Highs/Lows & VWAP</a>.
+</p>
+
+<h3>4. Check ATR again</h3>
+<p>
+New contract = new volatility.  
+If you're not using ATR properly yet, review  
+<a href="es-atr-behavior-and-volatility-zones.html">ES ATR Volatility Zones</a>.
+</p>
+
+<h2>Final Takeaway</h2>
+<p>
+ES roll dates aren’t complicated. The roll schedule is fixed, liquidity shifts predictably, and switching contracts is simple if you follow the volume. Trade the contract everyone else is trading — not the one that’s expiring in a week.
+</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+
+</body>
+</html>

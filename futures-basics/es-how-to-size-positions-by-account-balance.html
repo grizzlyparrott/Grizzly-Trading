@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sizing ES Positions by Account Balance and Risk Limits</title>
+<meta name="description" content="A direct guide to sizing ES positions using account balance, volatility, and daily loss limits so beginners stop blowing up on one trade.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Sizing ES Positions by Account Balance and Risk Limits">
+<meta property="og:description" content="Learn how to size ES positions correctly using simple risk math aligned with your account and volatility.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sizing ES Positions by Account Balance and Risk Limits">
+<meta name="twitter:description" content="A blunt walkthrough of ES position sizing based on account size and volatility.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sizing ES Positions by Account Balance and Risk Limits",
+  "description": "A direct guide to sizing ES positions using account balance, volatility, and daily loss limits so beginners stop blowing up on one trade.",
+  "author": { "@type": "Person", "name": "Grizzly Parrott" },
+  "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html",
+  "datePublished": "2025-11-24",
+  "dateModified": "2025-11-24"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+    { "@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrotttrading.com/futures-basics/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "Sizing ES Positions by Account Balance and Risk Limits", "item": "https://grizzlyparrotttrading.com/futures-basics/es-how-to-size-positions-by-account-balance.html" }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo"><a href="../index.html">Grizzly Parrott Trading</a></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Sizing ES Positions by Account Balance and Risk Limits</h1>
+
+<p>
+Most ES beginners size trades based on “what feels right,” which is why they blow their accounts in a week. ES moves fast, and one bad trade can hit your daily loss limit instantly. This guide gives you the exact position sizing logic pros use so you can survive long enough to learn.
+</p>
+
+<h2>Step 1: Know Your Dollar Risk Per Trade</h2>
+<p>
+Forget fancy formulas. You only need one number:  
+<strong>Max dollar loss you’re willing to take on a single ES trade.</strong>
+</p>
+
+<p>
+Standard recommendations:  
+<ul>
+  <li>Small accounts: 0.5%–1% of total balance</li>
+  <li>Prop accounts: 1/20th of daily loss limit</li>
+</ul>
+</p>
+
+<p>
+If you don't know how your daily volatility affects stops, review  
+<a href="es-atr-behavior-and-volatility-zones.html">ES ATR Volatility Zones</a>.
+</p>
+
+<h2>Step 2: Calculate the Stop Size Based on ES Volatility</h2>
+<p>
+ES stop size depends on ATR and structure. Typical intraday stops:
+</p>
+
+<table>
+<tr><th>Market Condition</th><th>Typical Stop</th></tr>
+<tr><td>Low volatility</td><td>3–5 points</td></tr>
+<tr><td>Normal volatility</td><td>5–8 points</td></tr>
+<tr><td>High volatility</td><td>10–15 points</td></tr>
+</table>
+
+<p>
+Stops smaller than volatility guarantee getting wicked out.
+</p>
+
+<h2>Step 3: Convert Stop Size Into Dollar Risk</h2>
+<p>
+ES = $50 per point.  
+So:
+</p>
+
+<table>
+<tr><th>Stop Size</th><th>Dollar Risk (per contract)</th></tr>
+<tr><td>5 points</td><td>$250</td></tr>
+<tr><td>8 points</td><td>$400</td></tr>
+<tr><td>10 points</td><td>$500</td></tr>
+</table>
+
+<p>
+If a 5-point stop is too expensive, your account is too small for ES — use MES.
+</p>
+
+<h2>Step 4: Position Size Formula</h2>
+<p>
+The formula is brutally simple:
+</p>
+
+<p><strong>Contracts = (Max risk per trade) ÷ (Stop dollar value)</strong></p>
+
+<p>
+Example:  
+$300 risk per trade and $250 stop size → 1 contract.  
+$600 risk per trade and $250 stop size → 2 contracts.
+</p>
+
+<h2>Step 5: Respect the Daily Loss Limit</h2>
+<p>
+Prop accounts get blown because traders take three “one last try” trades.  
+Your daily loss limit = your hard ceiling.  
+One ES stop can equal half the daily limit — be smart.
+</p>
+
+<h2>Final Takeaway</h2>
+<p>
+ES position sizing isn’t emotional. It’s math.  
+Know your max risk per trade, set a stop based on actual ES volatility, and size contracts accordingly. If the math says your size is too big, listen — ES punishes oversized traders instantly.
+</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
