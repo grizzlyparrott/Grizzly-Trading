@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6C Margin Requirements and Position Sizing for Small Accounts</title>
+<meta name="description" content="A blunt guide to 6C margin requirements and how to size CAD/USD futures trades correctly without blowing up a small account.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/6c-margin-and-position-sizing.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="6C Margin Requirements and Position Sizing for Small Accounts">
+<meta property="og:description" content="Learn the real 6C CAD/USD futures margin requirements, how much one contract actually risks, and how to size trades safely.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/6c-margin-and-position-sizing.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="6C Margin Requirements and Position Sizing for Small Accounts">
+<meta name="twitter:description" content="A no-fluff explanation of 6C futures margin, leverage, and safe position sizing for CAD/USD traders.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "6C Margin Requirements and Position Sizing for Small Accounts",
+"description": "A blunt guide to 6C margin requirements and how to size CAD/USD futures trades correctly without blowing up a small account.",
+"author": { "@type": "Person", "name": "Grizzly Parrott" },
+"mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/6c-margin-and-position-sizing.html",
+"datePublished": "2025-11-27",
+"dateModified": "2025-11-27"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+  { "@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrotttrading.com/futures-basics/index.html" },
+  { "@type": "ListItem", "position": 3, "name": "6C Margin Requirements and Position Sizing for Small Accounts", "item": "https://grizzlyparrotttrading.com/futures-basics/6c-margin-and-position-sizing.html" }
+]
+}
+</script>
+
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<div class="logo">
+<a href="../index.html">Grizzly Parrott Trading</a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="../futures-basics/index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>6C Margin Requirements and Position Sizing for Small Accounts</h1>
+
+<p>6C Canadian Dollar futures look harmless until you realize every tick is $10. That means a basic 30–40 tick stop is $300–$400 risk per contract. If you’re running a small account or a prop evaluation, that can nuke your entire day instantly. This guide gives you the real numbers so you stop oversizing trades.</p>
+
+<h2>The Real Margin Requirements for 6C</h2>
+<p>Margin requirements vary slightly by broker, but the CME exchange sets the baseline. For the standard 6C contract, most traders see:</p>
+
+<table>
+<tr><th>Margin Type</th><th>Typical Amount</th></tr>
+<tr><td>Initial Margin</td><td>$2,000–$2,500</td></tr>
+<tr><td>Maintenance Margin</td><td>$1,800–$2,200</td></tr>
+</table>
+
+<p>Day trading margin can be far lower depending on your broker, but that doesn’t mean the risk is lower. The contract still moves $10 per tick no matter what margin deal you get.</p>
+
+<h2>Why Margin ≠ Risk</h2>
+<p>Margin is not the amount of money you can lose. It’s just the amount required to open the position. The real risk comes from:</p>
+
+<ul>
+<li>Your stop size</li>
+<li>Your position size</li>
+<li>Volatility of CAD/USD</li>
+<li>Oil and USD shocks</li>
+</ul>
+
+<p>A single strong oil move can rip 6C 50+ ticks in minutes. That’s $500 per contract—half a small account gone instantly.</p>
+
+<h2>How to Size 6C Positions Correctly</h2>
+<p>Use simple math:  
+<strong>Tick value × stop size = real risk.</strong></p>
+
+<p>6C tick value is always $10. So a 25-tick stop = $250 risk. If your account can’t take that hit comfortably, your size is too big.</p>
+
+<h3>Examples:</h3>
+
+<table>
+<tr><th>Stop Size</th><th>Risk per Contract</th></tr>
+<tr><td>10 ticks</td><td>$100</td></tr>
+<tr><td>20 ticks</td><td>$200</td></tr>
+<tr><td>30 ticks</td><td>$300</td></tr>
+<tr><td>40 ticks</td><td>$400</td></tr>
+</table>
+
+<p>This should already make you rethink the size you place.</p>
+
+<h2>Position Sizing for Small Accounts</h2>
+<p>Beginners love to oversize because 6C “doesn’t move much.” Wrong. CAD moves slower than the Yen, but the tick value is much larger than 6J. One decent swing can wipe a small account.</p>
+
+<h3>Safe rules for small accounts:</h3>
+
+<ul>
+<li>Risk 1–2% of account max per trade</li>
+<li>Use stops no larger than 20–30 ticks</li>
+<li>Trade only during high-liquidity windows</li>
+<li>Avoid holding through scheduled news</li>
+</ul>
+
+<p>If you want tiny sizing, use the micro contract (<strong>MCD</strong>) when available. Its tick value is 1/10th of the main contract, making it beginner-friendly.</p>
+
+<h2>Why Volatility Dictates Stop Size</h2>
+<p>If oil is trending hard or USD is moving aggressively, a 15-tick stop is suicide. You need stops that match volatility. You don’t pick numbers out of thin air—you size based on the environment.</p>
+
+<p>This ties directly into your <a href="6c-volatility-patterns.html">6C volatility patterns guide</a>.</p>
+
+<h2>Final Thoughts</h2>
+<p>6C margin is cheap, but the contract is not. Tick size determines your real risk, not the margin requirement. If you size properly and respect CAD’s volatility drivers, you can trade 6C without blowing out your account. If you treat it casually, CAD will take your money fast.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+<a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
