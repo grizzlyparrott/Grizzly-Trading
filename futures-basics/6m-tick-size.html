@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6M Tick Size Explained</title>
+<meta name="description" content="A complete breakdown of 6M tick size, tick value, and contract math so traders understand exactly how the Peso future moves and how much each move is worth.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/6m-tick-size.html">
+
+<meta property="og:title" content="6M Tick Size Explained">
+<meta property="og:description" content="A complete breakdown of 6M tick size, tick value, and contract math so traders understand exactly how the Peso future moves and how much each move is worth.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/6m-tick-size.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="6M Tick Size Explained">
+<meta name="twitter:description" content="A complete breakdown of 6M tick size, tick value, and contract math so traders understand exactly how the Peso future moves and how much each move is worth.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "6M Tick Size Explained",
+  "description": "A complete breakdown of 6M tick size, tick value, and contract math so traders understand exactly how the Peso future moves and how much each move is worth.",
+  "author": { "@type": "Person", "name": "Grizzly Parrott" },
+  "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/6m-tick-size.html",
+  "datePublished": "2025-11-28",
+  "dateModified": "2025-11-28"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+    { "@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrotttrading.com/futures-basics/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "6M Tick Size Explained", "item": "https://grizzlyparrotttrading.com/futures-basics/6m-tick-size.html" }
+  ]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>6M Tick Size Explained</h1>
+
+<p>The 6M contract moves in increments of <strong>0.0001</strong>, and each tick is worth roughly <strong>$2.50–$3.00</strong> depending on the USD/MXN exchange rate. If you don’t fully understand this math, you’re trading blind. This breakdown shows exactly how every price move turns into real P&amp;L.</p>
+
+<h2>The Exact Tick Structure</h2>
+
+<p>6M quotes like this:</p>
+
+<pre class="code-block">
+19.5650
+19.5651
+19.5652
+</pre>
+
+<p>Each step is <strong>0.0001</strong>. That’s the minimum price fluctuation. Multiply it by the contract size and you get the tick value.</p>
+
+<h2>Tick Value Formula</h2>
+
+<p>Here’s the blunt math:</p>
+
+<pre class="code-block">
+Tick Value = Contract Size × Tick Size
+Tick Value = 500,000 MXN × 0.0001
+Tick Value = 50 MXN
+</pre>
+
+<p>You then convert that 50 MXN to USD:</p>
+
+<pre class="code-block">
+Tick Value (USD) = 50 ÷ Exchange Rate
+</pre>
+
+<p>So at different USD/MXN levels, the tick value changes slightly. Here's the chart.</p>
+
+<h2>Tick Value Table at Different Prices</h2>
+
+<table>
+<tr><th>USD/MXN Price</th><th>Tick Value (USD)</th></tr>
+<tr><td>16.00</td><td>$3.12</td></tr>
+<tr><td>17.00</td><td>$2.94</td></tr>
+<tr><td>18.00</td><td>$2.77</td></tr>
+<tr><td>19.00</td><td>$2.63</td></tr>
+<tr><td>20.00</td><td>$2.50</td></tr>
+<tr><td>21.00</td><td>$2.38</td></tr>
+</table>
+
+<p>This is why 6M can melt your account—it’s not a static $1.25 per tick like many micros. It hits harder the stronger MXN is.</p>
+
+<h2>How Far 6M Actually Moves</h2>
+
+<p>Here’s the average intraday range of 6M over typical conditions. This is a simple ASCII-style chart that works in your static HTML site:</p>
+
+<pre class="code-block">
+Average True Range (ATR-14) | Typical Days
+------------------------------------------
+0.0100 - 0.0150  ████████████████████████
+0.0150 - 0.0200  █████████████████
+0.0200 - 0.0300  ████████
+0.0300+          ███
+</pre>
+
+<p>Most beginners underestimate how big 0.0100 is. That’s <strong>100 ticks</strong>. Multiply by ~$2.70 per tick and you’re staring at ~$270 per contract. And that’s a normal day.</p>
+
+<p>That volatility is why prop firms allow 6M—it provides massive movement for low margin.</p>
+
+<h2>Real Example: A 6M Move Converted to Dollars</h2>
+
+<p>Let’s say price jumps from 19.4200 to 19.4550. That’s a 0.0350 move.</p>
+
+<pre class="code-block">
+0.0350 ÷ 0.0001 = 350 ticks
+350 ticks × $2.60 = $910 profit/loss
+</pre>
+
+<p>You blink wrong and that’s a mortgage payment.</p>
+
+<h2>Why 6M Tick Math Matters</h2>
+
+<p>You never set stops in dollars first. You set them in ticks based on ATR. 6M can swing 80–120 ticks in a heartbeat. Using a 20–30 tick stop like you would in 6E or 6J is suicide. Respect the tick math or you get folded immediately.</p>
+
+<p>If you want to see how this compares to majors, check the article <a href="6m-vs-6e-vs-6j.html">6M vs 6E vs 6J</a> once it’s live.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>Every tick in 6M is worth around $2.50–$3.00, and the contract routinely moves hundreds of ticks per session. If you don’t understand tick math, you can’t size your trades, manage risk, or even survive volatile peso conditions. The next article breaks down why 6M behaves differently from major currency futures and why you can’t trade it with the same playbook.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Futures Basics</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+
+</body>
+</html>
