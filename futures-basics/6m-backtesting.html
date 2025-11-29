@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backtesting 6M Correctly</title>
+<meta name="description" content="How to backtest USD/MXN 6M futures the right way without getting misled by volatility spikes, irregular structure, and distortion from extreme ATR.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/6m-backtesting.html">
+
+<meta property="og:title" content="Backtesting 6M Correctly">
+<meta property="og:description" content="A detailed guide to backtesting 6M futures without getting fooled by extreme volatility and irregular FX structure.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/6m-backtesting.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Backtesting 6M Correctly">
+<meta name="twitter:description" content="Learn the correct method for backtesting USD/MXN 6M futures so volatility doesn’t distort your results.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Backtesting 6M Correctly",
+  "description": "A complete guide to backtesting USD/MXN 6M futures without being misled by volatility spikes, thin liquidity, and extreme ATR expansion.",
+  "author": { "@type": "Person", "name": "Grizzly Parrott" },
+  "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/6m-backtesting.html",
+  "datePublished": "2025-11-28",
+  "dateModified": "2025-11-28"
+}
+</script>
+
+<!-- Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem","position": 1, "name": "Home","item": "https://grizzlyparrotttrading.com/index.html" },
+    { "@type": "ListItem","position": 2, "name": "Futures Basics","item": "https://grizzlyparrotttrading.com/futures-basics/index.html" },
+    { "@type": "ListItem","position": 3, "name": "Backtesting 6M Correctly","item": "https://grizzlyparrotttrading.com/futures-basics/6m-backtesting.html" }
+  ]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+<div class="container header-inner">
+  <div class="logo"><a href="../index.html">Grizzly Parrott Trading</a></div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+      <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+      <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+      <li><a href="../market-basics/index.html">Market Basics</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>How to Backtest 6M Futures Without Getting Misled by Volatility</h1>
+
+<p>Backtesting 6M (USD/MXN futures) is nothing like backtesting majors or equity futures. The Peso’s volatility, thin liquidity, and irregular price structure destroy most backtests because traders don’t adjust for ATR expansion, slippage simulation, or the intraday volatility windows that 6M is built on. If you don’t test it correctly, your strategy will look perfect on paper and blow up in live trading.</p>
+
+<h2>1. Understand Why 6M Backtests Fail</h2>
+
+<p>Most backtests fail on 6M for three reasons:</p>
+
+<ul>
+  <li><strong>Volatility distortion:</strong> ATR can double or triple from one period to another.</li>
+  <li><strong>Spread spikes:</strong> randomness in the bid-ask flows isn’t modeled.</li>
+  <li><strong>Data gaps:</strong> thin liquidity means micro-jumps aren’t shown accurately on candles.</li>
+</ul>
+
+<p>You must fix these flaws or your backtest results are worthless.</p>
+
+<h2>2. Use ATR-Normalized Rules Instead of Static Rules</h2>
+
+<p>You saw in <a href="6m-volatility-profile.html">6M Volatility Profile</a> that this contract averages 600–1200 ticks daily. A strategy using fixed 20–30 tick stops or fixed-size targets will always fail during ATR expansion.</p>
+
+<h3>Backtest with ATR-based components:</h3>
+
+<ul>
+  <li><strong>Stop = 1× Hourly ATR</strong></li>
+  <li><strong>Target = 1.5–2× ATR(5)</strong></li>
+  <li><strong>Breakout filters = ATR rising</strong></li>
+  <li><strong>No-trade filter = ATR collapsing</strong></li>
+</ul>
+
+<p>This keeps your strategy aligned with the contract’s volatility regime.</p>
+
+<h2>3. Account for Slippage Properly (Most Don’t)</h2>
+
+<p>6M slippage is no joke. You already saw why in <a href="6m-slippage.html">6M Slippage Explained</a>. Backtests that assume “perfect fills” are fantasy. You must simulate slippage properly.</p>
+
+<h3>Use this simple rule:</h3>
+
+<ul>
+  <li><strong>Add 2 ticks slippage per entry</strong></li>
+  <li><strong>Add 3–6 ticks slippage per stop-out</strong></li>
+  <li><strong>Double slippage during news or illiquid hours</strong></li>
+</ul>
+
+<p>It’s not perfect, but it makes backtests realistic instead of delusional.</p>
+
+<h2>4. Separate Backtests by Market Regime</h2>
+
+<p>6M behaves like multiple different markets depending on volatility and macro conditions. You must categorize your test periods.</p>
+
+<h3>Break your backtest into regimes:</h3>
+
+<table>
+<tr><th>Regime</th><th>Characteristics</th><th>Why It Matters</th></tr>
+<tr><td>Carry-driven</td><td>low VIX, strong MXN</td><td>smooth downtrends</td></tr>
+<tr><td>Risk-off</td><td>high VIX, USD surge</td><td>violent upward spikes</td></tr>
+<tr><td>Compression</td><td>tight ranges</td><td>false breakouts</td></tr>
+<tr><td>Expansion</td><td>ATR increasing</td><td>trend continuation valid</td></tr>
+</table>
+
+<p>Testing all regimes together without separating them gives you garbage statistics.</p>
+
+<h2>5. Avoid Backtesting Overnight Sessions</h2>
+
+<p>6M overnight liquidity is extremely thin. Backtesting overnight entries or signals produces fake edges that don’t work live.</p>
+
+<h3>No trading windows for live or backtest:</h3>
+
+<ul>
+  <li><strong>7 PM – 7 AM ET</strong> — too thin</li>
+  <li><strong>12 PM – 2:30 PM ET</strong> — mid-day chop</li>
+</ul>
+
+<p>Test during the same time windows you actually trade.</p>
+
+<h2>6. Layer Fundamental Filters Into Your Backtest</h2>
+
+<p>6M is fundamentally driven. Technical-only strategies fail because USD/MXN responds to real capital flows.</p>
+
+<p>Use these fundamental filters:</p>
+
+<ul>
+  <li><strong>DXY direction filter</strong> — only long 6M when DXY rising.</li>
+  <li><strong>Rate spread filter</strong> — only short 6M when Banxico yield advantage is stable.</li>
+  <li><strong>Risk sentiment filter</strong> — avoid longs during risk-on MXN strength windows.</li>
+</ul>
+
+<p>A strategy that ignores macro will have 50% worse performance live.</p>
+
+<h2>7. Test Entry Delay and Exit Delay</h2>
+
+<p>6M jumps levels constantly. Your backtest needs to simulate that.</p>
+
+<h3>Rules:</h3>
+
+<ul>
+  <li><strong>Entry at next tick, not signal tick</strong></li>
+  <li><strong>Stops triggered one tick early</strong></li>
+  <li><strong>Exits delayed one tick</strong></li>
+</ul>
+
+<p>This reduces the “perfect backtest problem” where charts give price levels you would never get filled at.</p>
+
+<h2>8. Use Tick Data If You Want Accurate Results</h2>
+
+<p>Candle data hides micro-gaps. 6M gaps constantly, but candles smooth them out. If you want clean backtests, use tick or volume-based histories.</p>
+
+<p>Without tick data, tight-stop strategies look profitable — then instantly blow up in live markets.</p>
+
+<h2>Definitions for Screen Readers</h2>
+
+<p><strong>Backtesting:</strong> Testing a strategy on historical data to evaluate performance.</p>
+<p><strong>ATR:</strong> Average True Range, a volatility measure.</p>
+<p><strong>Slippage:</strong> Difference between expected fill price and actual fill price.</p>
+<p><strong>Regime:</strong> A market condition defined by volatility or macro behavior.</p>
+<p><strong>Tick data:</strong> Every individual trade recorded, used for precision testing.</p>
+
+<h2>Bottom Line</h2>
+
+<p>Backtesting 6M requires volatility-adjusted stops, tick-level data, regime separation, realistic slippage assumptions, and fundamental filters. If you skip even one of these, your strategy will look incredible in your backtest and fail the moment you trade it live. The next article wraps up the 20-article series by explaining how to avoid common data traps that distort 6M testing.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Futures Basics</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+
+</body>
+</html>

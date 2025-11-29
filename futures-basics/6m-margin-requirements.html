@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6M Margin Requirements</title>
+<meta name="description" content="A full breakdown of 6M margin requirements, including day margin, overnight margin, SPAN risk, and why Peso futures tempt traders into oversizing.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/6m-margin-requirements.html">
+
+<meta property="og:title" content="6M Margin Requirements">
+<meta property="og:description" content="A full breakdown of 6M margin requirements for USD/MXN futures, including day trading margin, overnight margin, and why traders misuse leverage.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/6m-margin-requirements.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="6M Margin Requirements">
+<meta name="twitter:description" content="A full breakdown of 6M USD/MXN futures margin rules, SPAN logic, and how these margins can mislead traders into dangerous sizing decisions.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "6M Margin Requirements",
+  "description": "A detailed breakdown of 6M margin requirements, including day margin, overnight margin, SPAN risk, and common trader mistakes.",
+  "author": { "@type": "Person", "name": "Grizzly Parrott" },
+  "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/6m-margin-requirements.html",
+  "datePublished": "2025-11-28",
+  "dateModified": "2025-11-28"
+}
+</script>
+
+<!-- Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrotttrading.com/index.html" },
+    { "@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrotttrading.com/futures-basics/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "6M Margin Requirements", "item": "https://grizzlyparrotttrading.com/futures-basics/6m-margin-requirements.html" }
+  ]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrott Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>6M Margin Requirements</h1>
+
+<p>6M (USD/MXN futures) has one of the most misleading margin structures on the CME. The day-trading margin seems tiny compared to the contract’s real volatility, and beginners constantly oversize because they don’t understand how SPAN margin, overnight margin, and risk-based margin calculations actually work. This article breaks down the entire margin system in plain English.</p>
+
+<h2>What “Margin” Actually Means for 6M</h2>
+
+<p>Margin is not a fee and not a cost. It is a security deposit your broker holds to make sure you can survive normal price movement without going negative. Because 6M can move hundreds of ticks quickly, margin requirements exist to prevent traders from blowing up on routine volatility.</p>
+
+<p>There are three types of margins that matter:</p>
+
+<ul>
+  <li><strong>Exchange (CME) Initial Margin</strong> – the baseline required to open a position.</li>
+  <li><strong>Exchange Maintenance Margin</strong> – the minimum balance required to keep the position open.</li>
+  <li><strong>Broker Day-Trading Margin</strong> – the “discounted” margin offered during active hours.</li>
+</ul>
+
+<p>Understanding each one prevents you from getting liquidated for reasons you didn’t see coming.</p>
+
+<h2>CME Initial and Maintenance Margin</h2>
+
+<p>The CME assigns margin using SPAN (Standard Portfolio Analysis of Risk). SPAN evaluates the worst-case move in the Peso’s volatility conditions and sets the margin accordingly.</p>
+
+<p>A typical margin structure for 6M looks like this (values vary with volatility):</p>
+
+<table>
+<tr><th>Type</th><th>Approx Value</th><th>Purpose</th></tr>
+<tr><td>CME Initial Margin</td><td>$2,200–$2,600</td><td>Required to open a new 6M position.</td></tr>
+<tr><td>CME Maintenance Margin</td><td>$2,000–$2,300</td><td>Minimum required to keep the trade open.</td></tr>
+</table>
+
+<p>These are REAL numbers based on the contract’s volatility. 6M is not a micro—this is a large contract that can swing $600–$1,200 in completely normal conditions.</p>
+
+<h2>Why Broker “Day Margin” Is Dangerous</h2>
+
+<p>Most brokers offer a discounted intraday margin during U.S. trading hours. For 6M, this can be shockingly low:</p>
+
+<ul>
+  <li>$300</li>
+  <li>$500</li>
+  <li>$800</li>
+</ul>
+
+<p>These small day margins do NOT change the contract’s volatility. They simply allow traders to open a position with far more leverage than the CME believes is safe.</p>
+
+<p>Example:</p>
+
+<ul>
+  <li>6M day margin: $500</li>
+  <li>6M ATR: 0.0700 (700 ticks)</li>
+  <li>Tick value: roughly $2.60</li>
+</ul>
+
+<p>Normal intraday volatility might be around:</p>
+
+<p>700 ticks × $2.60 ≈ <strong>$1,820</strong></p>
+
+<p>If you opened with $500, you’re already sized 3–4× beyond what your account can handle. This is why more traders blow out on 6M than almost any other currency future.</p>
+
+<h2>Understanding “SPAN Risk” for 6M</h2>
+
+<p>SPAN evaluates positions under multiple stress scenarios. For 6M this includes:</p>
+
+<ul>
+  <li>Large USD/MXN up-moves</li>
+  <li>Large down-moves</li>
+  <li>Volatility expansions</li>
+  <li>Correlated asset shocks (oil, emerging markets, USD basket)</li>
+</ul>
+
+<p>Because 6M is an emerging-market currency and reacts violently to rate shocks and global risk sentiment, SPAN assumes bigger worst-case scenarios than it does for majors like EUR/USD or JPY.</p>
+
+<p>This is why CME margin is higher for 6M even though the contract <em>looks</em> similar in structure to 6E.</p>
+
+<h2>Overnight Margin: The Account Killer</h2>
+
+<p>When the market closes or when your broker switches to “overnight” mode, day-trading margins disappear instantly. Your account must now meet the CME’s real margin requirements.</p>
+
+<p>If you opened with a small intraday margin, this is where you get forced out. Brokers do not wait. They liquidate immediately when your account drops below maintenance margin.</p>
+
+<p>A trader sized too heavy intraday might experience this:</p>
+
+<ul>
+  <li>Account balance: $1,000</li>
+  <li>Day margin per contract: $500</li>
+  <li>Initial margin per contract: $2,400</li>
+</ul>
+
+<p>If the broker switches to overnight margin and you don’t have $2,400, your position will be closed automatically even if the trade is currently winning.</p>
+
+<h2>Why 6M Encourages Dangerous Position Sizing</h2>
+
+<p>6M looks affordable because brokers allow traders to open it for a few hundred dollars. But the contract size (500,000 MXN) and the tick value (~$2.50–$3.00) make small stop losses unrealistic.</p>
+
+<p>A normal protective stop might be 80–120 ticks. Even the tighter 80-tick stop equals around:</p>
+
+<p>80 ticks × $2.60 ≈ <strong>$208</strong></p>
+
+<p>That is nearly half the size of a $500-margin account. One mistake destroys your day.</p>
+
+<h2>Recommended Position Sizing Logic</h2>
+
+<p>Instead of using broker day-margin as your “account requirement,” it’s better to size based on volatility. Use this rule:</p>
+
+<p><strong>Your stop loss × tick value × 3 = minimum account capital per contract.</strong></p>
+
+<p>Example: 100-tick stop.</p>
+
+<p>100 × $2.60 × 3 = $780</p>
+
+<p>That means your account should be around $800 minimum per contract if you want to survive random spikes. This is far more realistic than the fantasy margins your broker advertises.</p>
+
+<h2>Key Definitions for Screen Readers</h2>
+
+<p><strong>Initial Margin:</strong> The amount of money you need to open a position.</p>
+
+<p><strong>Maintenance Margin:</strong> The minimum balance required to keep that position open.</p>
+
+<p><strong>Day-Trading Margin:</strong> A reduced margin your broker offers during active hours. It is not recognized by the exchange and does not protect you from forced liquidation.</p>
+
+<p><strong>SPAN Margin:</strong> A risk-based calculation system used by the CME to determine margin requirements based on volatility, worst-case scenarios, and correlated market shocks.</p>
+
+<p><strong>Overnight Margin:</strong> The margin required once the trading session ends. Almost always higher than day-trading margin.</p>
+
+<h2>Bottom Line</h2>
+
+<p>6M margin requirements are designed to match the contract’s extreme volatility. Brokers discount margins for marketing reasons, not safety. If you size trades based on the small day margin instead of real market risk, you’ll blow the account. Understanding SPAN margin, overnight rules, and volatility-based stop placement is mandatory for trading USD/MXN with any longevity.</p>
+
+<p>The next article explains how Banxico interventions and policy signals influence 6M, even when they don’t officially change rates.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Futures Basics</a></li>
+  <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+  <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+  <li><a href="../market-basics/index.html">Market Basics</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+
+</body>
+</html>
