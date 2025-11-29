@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6Z Position Sizing Rules</title>
+<meta name="description" content="A full breakdown of how to size 6Z futures positions safely, using ATR math, volatility analysis, session risk, and slippage buffers to avoid account blowouts.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/6z-position-sizing.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="6Z Position Sizing Rules">
+<meta property="og:description" content="Learn how to size 6Z trades safely—volatility-adjusted sizing, ATR-based risk, slippage buffers, and EM FX position frameworks.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/6z-position-sizing.html">
+<meta property="og:site_name" content="Grizzly Parrott Trading">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="6Z Position Sizing Rules">
+<meta name="twitter:description" content="The no-BS guide to position sizing for 6Z South African Rand futures.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Article",
+"headline":"6Z Position Sizing Rules",
+"description":"A deep, practical guide to volatility-based position sizing for 6Z futures.",
+"author":{"@type":"Person","name":"Grizzly Parrott"},
+"mainEntityOfPage":"https://grizzlyparrotttrading.com/futures-basics/6z-position-sizing.html",
+"datePublished":"2025-11-28",
+"dateModified":"2025-11-28"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"BreadcrumbList",
+"itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://grizzlyparrotttrading.com/index.html"},
+  {"@type":"ListItem","position":2,"name":"Futures Basics","item":"https://grizzlyparrotttrading.com/futures-basics/index.html"},
+  {"@type":"ListItem","position":3,"name":"6Z Position Sizing Rules","item":"https://grizzlyparrotttrading.com/futures-basics/6z-position-sizing.html"}
+]}
+</script>
+
+</head>
+<body>
+
+<header class="site-header">
+ <div class="container header-inner">
+   <div class="logo"><a href="../index.html">Grizzly Parrott Trading</a></div>
+   <nav class="main-nav">
+     <ul>
+       <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+       <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+       <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+       <li><a href="../market-basics/index.html">Market Basics</a></li>
+     </ul>
+   </nav>
+ </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>6Z Position Sizing: How to Size Safely in a High-Volatility Market</h1>
+
+<p>6Z is an emerging-market currency future with savage volatility and a $10 tick value. If you size it like 6E or ES, you won’t last a week. Proper position sizing is the difference between a survivable losing streak and a blown account. This guide gives you the exact sizing logic institutions use for EM FX futures.</p>
+
+<h2>Why Position Sizing Matters More for 6Z Than Majors</h2>
+
+<p>6Z has:</p>
+
+<ul>
+ <li>thin liquidity</li>
+ <li>fast jumps and gaps</li>
+ <li>huge volatility bursts</li>
+ <li>slippage during stops</li>
+ <li>no micro contract to “scale down” with</li>
+</ul>
+
+<p>One contract can create P/L swings that would require 3–5 contracts on a major FX pair.  
+Sizing wrong on 6Z magnifies every mistake.</p>
+
+<h2>1. Do Not Use Fixed Tick Stops</h2>
+
+<p>Major FX traders love 5–10 tick stops. That is suicide in 6Z.  
+6Z moves in 10+ tick bursts constantly.  
+Your stop will get hit before the trade even forms.</p>
+
+<p>You must size based on volatility, not preference.</p>
+
+<h2>2. The Only Correct Framework: ATR-Based Position Size</h2>
+
+<p>ATR (Average True Range) tells you how far price moves per bar.  
+Use it to determine how much heat your trade will take.</p>
+
+<h3>Formula:</h3>
+
+<p><strong>Risk per trade ÷ (ATR × tick value) = max contracts</strong></p>
+
+<p>Example:</p>
+
+<ul>
+ <li>Account risk per trade: $100</li>
+ <li>ATR (5-min): 0.0040 = 40 ticks</li>
+ <li>$10 per tick</li>
+</ul>
+
+<p>40 ticks × $10 = $400 per contract  
+$100 ÷ $400 = 0.25 contracts → <strong>round down to 0</strong></p>
+
+<p>This means:  
+If ATR is high, you size down or skip the trade.  
+6Z does not care that you “want to trade.”</p>
+
+<h2>3. Volatility-Adaptive Position Size Table</h2>
+
+<p>Use this table as a sanity check for single-contract sizing:</p>
+
+<table>
+<tr><th>ATR (ticks)</th><th>Risk per Contract</th><th>Comment</th></tr>
+<tr><td>20–30 ticks</td><td>$200–$300</td><td>Playable</td></tr>
+<tr><td>30–50 ticks</td><td>$300–$500</td><td>Trade small</td></tr>
+<tr><td>50–80 ticks</td><td>$500–$800</td><td>Half size</td></tr>
+<tr><td>80–120 ticks</td><td>$800–$1200</td><td>Avoid unless expert</td></tr>
+</table>
+
+<p>Most traders shouldn't touch 6Z when ATR is above 80 ticks.  
+It becomes a grenade.</p>
+
+<h2>4. Session-Based Sizing Rules</h2>
+
+<p>Liquidity changes position sizing. 6Z is a different market depending on session.</p>
+
+<h3>London Session</h3>
+<ul>
+ <li>best liquidity</li>
+ <li>cleanest structure</li>
+ <li>tightest spreads</li>
+</ul>
+
+<p>Use full size here.</p>
+
+<h3>U.S. Session</h3>
+<ul>
+ <li>high volatility</li>
+ <li>fast reactions to U.S. data</li>
+</ul>
+
+<p>Use 50–75% size.</p>
+
+<h3>Asia Session (Rule: Do Not Trade)</h3>
+<ul>
+ <li>paper-thin liquidity</li>
+ <li>10–30 tick jumps “out of nowhere”</li>
+ <li>random spikes without volume</li>
+</ul>
+
+<p>If you insist on trading Asia:  
+Use 25% size or less.  
+Preferably 0%.</p>
+
+<h2>5. Add a Slippage Buffer to Every Risk Calculation</h2>
+
+<p>6Z slippage is structural, not rare.  
+You should add a slippage allowance to your stop cost.</p>
+
+<h3>Slippage buffer:</h3>
+
+<ul>
+ <li>London session → +2–4 ticks</li>
+ <li>U.S. session → +4–8 ticks</li>
+ <li>Asia session → +10–20 ticks (yes, really)</li>
+</ul>
+
+<p>Add the buffer to your risk before computing size.</p>
+
+<h2>6. Never Increase Size After Losses</h2>
+
+<p>Martingale sizing kills more 6Z traders than any other mistake.  
+The contract’s volatility makes doubling down fatal.</p>
+
+<p>If anything:</p>
+
+<ul>
+ <li>reduce size after a loss</li>
+ <li>wait for structure to return</li>
+ <li>reset only after a clean trade</li>
+</ul>
+
+<h2>7. The “Half-Size Rule” for Emerging-Market FX</h2>
+
+<p>Institutional EM desks routinely use half the size they would use for a major FX trade.</p>
+
+<p>Adopt the same rule:</p>
+
+<ul>
+ <li>if you normally trade 2 contracts → trade 1</li>
+ <li>if you normally trade 1 → trade 0 or trade smaller markets</li>
+</ul>
+
+<p>Your job is survival—not max leverage.</p>
+
+<h2>8. The Trend-Day Sizing Problem</h2>
+
+<p>6Z trend days have two phases:</p>
+
+<ul>
+ <li>a slow drift</li>
+ <li>a violent expansion</li>
+</ul>
+
+<p>If you size too big during the drift, the expansion will shake you out.  
+During trends:</p>
+
+<ul>
+ <li>use smaller size</li>
+ <li>widen stops</li>
+ <li>add only after confirmed continuation</li>
+</ul>
+
+<p>Trend days are profitable only if your size doesn’t force you out early.</p>
+
+<h2>9. Macro Risk Events Require Micro Size</h2>
+
+<p>During:</p>
+
+<ul>
+ <li>CPI</li>
+ <li>FOMC</li>
+ <li>NFP</li>
+ <li>SARB decisions</li>
+</ul>
+
+<p>6Z becomes a flamethrower.  
+You either:</p>
+
+<ul>
+ <li>cut size to 10–25%</li>
+ <li>exit entirely</li>
+</ul>
+
+<p>or you accept that a single spike can slip you 40–80 ticks.</p>
+
+<h2>10. Position Size Relative to Account Size</h2>
+
+<p>Here’s the reality nobody likes:</p>
+
+<ul>
+ <li>6Z is not appropriate for tiny accounts</li>
+ <li>a single contract is often 2–5% of an account’s risk</li>
+ <li>volatility requires space you may not have</li>
+</ul>
+
+<p>If one normal 6Z stopout equals more than 1–2% of your account, you’re undercapitalized for this product.  
+Consider major FX futures or micros until your account grows.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>6Z demands sizing discipline.  
+You size based on ATR, slippage, session liquidity, and macro conditions—not preference or emotion.  
+Get sizing wrong and even perfect analysis won’t save you.  
+Get sizing right and 6Z becomes one of the most profitable EM FX futures on the CME.</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+ <li><a href="index.html">Futures Basics</a></li>
+ <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+ <li><a href="../platforms-tutorials/index.html">Platforms & Tutorials</a></li>
+ <li><a href="../market-basics/index.html">Market Basics</a></li>
+ <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+ <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
