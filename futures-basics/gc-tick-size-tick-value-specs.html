@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GC Tick Size, Tick Value, and Contract Specs</title>
+<meta name="description" content="Understand GC tick size, tick value, and core contract specifications so you know exactly how Gold futures move and how each tick hits your account.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/gc-tick-size-tick-value-specs.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="GC Tick Size, Tick Value, and Contract Specs">
+<meta property="og:description" content="A clear breakdown of GC tick size, tick value, and key contract specs so you stop guessing and know exactly what every move in Gold futures means.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/gc-tick-size-tick-value-specs.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+<meta property="og:image:width" content="1792">
+<meta property="og:image:height" content="941">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+<meta name="twitter:title" content="GC Tick Size, Tick Value, and Contract Specs">
+<meta name="twitter:description" content="Learn how GC tick size and tick value work, and how Gold futures contract specs translate directly into your real P&L swings.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "GC Tick Size, Tick Value, and Contract Specs",
+  "description": "Understand GC tick size, tick value, and core contract specifications so you know exactly how Gold futures move and how each tick hits your account.",
+  "author": {
+    "@type": "Person",
+    "name": "Grizzly Parrott"
+  },
+  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/gc-tick-size-tick-value-specs.html",
+  "datePublished": "2025-11-30",
+  "dateModified": "2025-11-30"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://grizzlyparrottrading.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Futures Basics",
+      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GC Tick Size, Tick Value, and Contract Specs",
+      "item": "https://grizzlyparrottrading.com/futures-basics/gc-tick-size-tick-value-specs.html"
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrot Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>GC Tick Size, Tick Value, and Contract Specs</h1>
+
+<p>
+If you trade Gold futures without knowing GC tick size, tick value, and the basic contract specs, you’re guessing at risk. GC is simple: every tick has a fixed dollar value, the contract size is fixed, and the exchange rules never change just because you didn’t bother to read them.
+</p>
+
+<h2>GC Tick Size: The Smallest Price Movement</h2>
+<p>
+GC tick size is the minimum increment the price can move. On CME, standard Gold futures (GC) trade in <strong>0.10</strong> increments. That means price can go from 2385.40 to 2385.50, but not 2385.46. Every one of those 0.10 moves is one tick.
+</p>
+
+<table>
+  <tr><th>Contract</th><th>Tick Size</th></tr>
+  <tr><td>GC (full-size)</td><td>0.10</td></tr>
+  <tr><td>MGC (micro)</td><td>0.10</td></tr>
+</table>
+
+<p>
+Same tick size for GC and MGC. The difference is how much each tick is worth in dollars, not how far the chart moves. If you haven’t read the foundation yet, start with <a href="what-are-gold-futures-gc.html">what Gold futures (GC) are</a> so this all plugs in correctly.
+</p>
+
+<h2>GC Tick Value: How Much Each Tick Is Worth</h2>
+<p>
+GC tick value is where your P&amp;L gets real. One GC contract controls <strong>100 troy ounces</strong> of gold. The market is quoted in dollars per ounce. Put those together:
+</p>
+
+<ul>
+  <li>Tick size = 0.10</li>
+  <li>Contract size = 100 oz</li>
+  <li><strong>Tick value = 0.10 × 100 = $10 per tick</strong></li>
+</ul>
+
+<p>
+So if GC moves from 2385.40 to 2387.10, that’s a 1.70 move. Divide by 0.10:
+</p>
+
+<ul>
+  <li>1.70 ÷ 0.10 = 17 ticks</li>
+  <li>17 ticks × $10 = <strong>$170</strong> per contract</li>
+</ul>
+
+<p>
+The math is dead simple. The problem is most traders never do it before they click buy. They size like they’re trading a micro when they’re actually holding full-size GC.
+</p>
+
+<h2>GC vs MGC: Tick Size Is the Same, Tick Value Is Not</h2>
+<p>
+Here’s where a lot of beginner accounts get wrecked. GC and MGC move the same on the chart, but not in your P&amp;L.
+</p>
+
+<table>
+  <tr><th>Spec</th><th>GC</th><th>MGC</th></tr>
+  <tr><td>Contract Size</td><td>100 oz</td><td>10 oz</td></tr>
+  <tr><td>Tick Size</td><td>0.10</td><td>0.10</td></tr>
+  <tr><td>Tick Value</td><td>$10 per tick</td><td>$1 per tick</td></tr>
+  <tr><td>10-point move (100 ticks)</td><td>$1,000</td><td>$100</td></tr>
+</table>
+
+<p>
+Same tick size, same visual chart, completely different dollar swings. If your account is small or you’re still figuring out volatility, you have no business loading full GC until you understand sizing. I go into risk math deeper in <a href="es-how-to-size-positions-by-account-balance.html">this ES position sizing article</a>, but the logic is identical.
+</p>
+
+<h2>Core GC Contract Specifications You Actually Need</h2>
+<p>
+You don’t have to memorize the entire CME rulebook, but the core GC contract specs are non-negotiable if you’re going to trade it.
+</p>
+
+<table>
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Symbol</td><td>GC</td></tr>
+  <tr><td>Exchange</td><td>CME / COMEX</td></tr>
+  <tr><td>Contract Size</td><td>100 troy ounces</td></tr>
+  <tr><td>Price Quotation</td><td>USD per ounce</td></tr>
+  <tr><td>Tick Size</td><td>0.10</td></tr>
+  <tr><td>Tick Value</td><td>$10 per tick</td></tr>
+  <tr><td>Trading Hours</td><td>Mostly nearly 24h electronic (Globex), with brief daily pauses</td></tr>
+  <tr><td>Active Months</td><td>Feb, Apr, Jun, Aug, Dec most liquid</td></tr>
+</table>
+
+<p>
+For intraday trading, the main things that hit you in the face every day are <strong>tick value, contract size, and trading hours</strong>. The rest matters more when you’re rolling contracts or holding longer swings.
+</p>
+
+<h2>How Tick Size and Tick Value Tie Into Risk Per Trade</h2>
+<p>
+GC will happily move 2–5 points in a short burst when volatility picks up. That’s 20–50 ticks:
+</p>
+
+<ul>
+  <li>GC: 20–50 ticks × $10 = $200–$500 per contract</li>
+  <li>MGC: 20–50 ticks × $1 = $20–$50 per contract</li>
+</ul>
+
+<p>
+If your stop is 2.5 points (25 ticks) on GC, that’s $250 per contract. With a $5,000 account, you’re risking 5% on one trade if you use 1 contract. Double up, and it’s 10%. That’s how people blow out in a week and then claim the market is “rigged.”
+</p>
+
+<p>
+You don’t need a fancy risk model. You need two numbers before every entry:
+</p>
+
+<ul>
+  <li>How many ticks is my stop?</li>
+  <li>How many dollars per tick am I holding?</li>
+</ul>
+
+<p>
+Multiply those together. If the loss is stupid for your account size, you either cut size, widen the stop and drop size, or don’t take the trade.
+</p>
+
+<h2>GC Contract Specs and Volatility Go Hand in Hand</h2>
+<p>
+GC can run hard around major economic releases and Fed events. When tick value is fixed and volatility spikes, the only thing that changes is how fast you hit your stop or target. That’s why combining GC contract specs with volatility tools like ATR is mandatory. If you haven’t already, read how ES ATR defines volatility zones in <a href="es-atr-behavior-and-volatility-zones.html">this ES ATR article</a> and apply the same logic to GC.
+</p>
+
+<h2>Final Takeaway: Know GC Tick Size and Tick Value Before You Trade</h2>
+<p>
+Gold futures aren’t complicated. GC tick size is 0.10, tick value is $10, and the contract controls 100 ounces. That’s it. Once you internalize those numbers and tie them into your stop distance and account size, you stop trading blind and start making concrete decisions about risk. GC contract specs aren’t trivia—they’re the rules your P&amp;L is forced to play by.
+</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>

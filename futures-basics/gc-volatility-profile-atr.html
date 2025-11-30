@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GC Volatility Profile and ATR Behavior</title>
+<meta name="description" content="Understand the volatility profile of Gold futures (GC): ATR ranges, average swing size, and how to size risk so GC volatility doesn’t blow your account up.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/gc-volatility-profile-atr.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="GC Volatility Profile and ATR Behavior">
+<meta property="og:description" content="A blunt breakdown of GC volatility: ATR ranges, average move size, and practical risk management for Gold futures.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/gc-volatility-profile-atr.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrotttrading.com/og-default.png">
+<meta property="og:image:width" content="1792">
+<meta property="og:image:height" content="941">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://grizzlyparrotttrading.com/og-default.png">
+<meta name="twitter:title" content="GC Volatility Profile and ATR Behavior">
+<meta name="twitter:description" content="See how Gold futures really move, in ticks and dollars, and how to keep your risk sane.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "GC Volatility Profile and ATR Behavior",
+  "description": "Understand the volatility profile of Gold futures (GC): ATR ranges, average swing size, and how to size risk so GC volatility doesn’t blow your account up.",
+  "author": {
+    "@type": "Person",
+    "name": "Grizzly Parrott"
+  },
+  "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/gc-volatility-profile-atr.html",
+  "datePublished": "2025-11-30",
+  "dateModified": "2025-11-30"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://grizzlyparrotttrading.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Futures Basics",
+      "item": "https://grizzlyparrotttrading.com/futures-basics/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GC Volatility Profile and ATR Behavior",
+      "item": "https://grizzlyparrotttrading.com/futures-basics/gc-volatility-profile-atr.html"
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrot Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>GC Volatility Profile and ATR Behavior</h1>
+
+<p>
+Gold futures (GC) are not a slow market. One contract controls 100 ounces, each tick is $10, and volatility can go from sleepy to insane in seconds around news. If you don’t understand GC’s volatility profile and ATR behavior, you’re not trading—you’re gambling with a high-explosive product.
+</p>
+
+<h2>GC Volatility Starts With Tick Value and Contract Size</h2>
+
+<p>
+Before you talk ATR or volatility zones, you need the basics:</p>
+
+<ul>
+  <li>Contract size: 100 troy ounces</li>
+  <li>Tick size: 0.10</li>
+  <li>Tick value: $10 per tick</li>
+</ul>
+
+<p>
+A 1.0 move in GC (for example, 2385.0 to 2386.0) is 10 ticks, which is $100 per contract. A 5.0 move is 50 ticks, or $500 per contract. That’s why GC volatility hits harder than people expect. If you haven’t read it yet, go back to <a href="gc-tick-size-tick-value-specs.html">GC tick size, tick value, and specs</a> first.
+</p>
+
+<h2>Typical GC ATR Ranges by Timeframe</h2>
+
+<p>
+Exact ATR numbers change over time, but the ranges stay consistent enough that you can build rules around them. Think in terms of “zones” instead of pretending you’ll nail a perfect value.</p>
+
+<table>
+  <tr><th>Timeframe</th><th>Low Volatility</th><th>Normal Volatility</th><th>High Volatility</th></tr>
+  <tr><td>1-minute ATR</td><td>0.30–0.60</td><td>0.60–1.20</td><td>1.20+</td></tr>
+  <tr><td>5-minute ATR</td><td>0.80–1.50</td><td>1.50–3.00</td><td>3.00+</td></tr>
+  <tr><td>Daily ATR</td><td>10–18</td><td>18–30</td><td>30+</td></tr>
+</table>
+
+<p>
+These ranges mean:
+</p>
+
+<ul>
+  <li>1-minute ATR at 0.40 → GC is crawling.</li>
+  <li>1-minute ATR above 1.20 → GC is in expansion; expect violent bars.</li>
+  <li>Daily ATR above 30 → macro event environment, not normal trading.</li>
+</ul>
+
+<h2>Average Intraday Swing Sizes in GC</h2>
+
+<p>
+GC tends to move in “rotations” rather than random ticks. You’ll see the same swing sizes repeat all day when volatility is stable.</p>
+
+<ul>
+  <li>During quiet sessions: 1.5–3.0 point swings (15–30 ticks, $150–$300 per contract)</li>
+  <li>During normal U.S. session: 3.0–6.0 point swings (30–60 ticks, $300–$600 per contract)</li>
+  <li>During news / high vol: 8.0–15.0 point bursts (80–150 ticks, $800–$1,500 per contract)</li>
+</ul>
+
+<p>
+If your stop is 0.8 points when GC is rotating 5 points at a time, you will get clipped on nearly every move. The size of the swings dictates the size of the stop, not what you “wish” your risk was.
+</p>
+
+<h2>GC Volatility by Session</h2>
+
+<p>
+GC volatility is not evenly distributed across the day. It follows the same session rhythm you saw in <a href="best-times-to-trade-gc.html">the best times to trade GC article</a>.</p>
+
+<table>
+  <tr><th>Session (ET)</th><th>Volatility Profile</th></tr>
+  <tr><td>Asia (6:00 pm – 3:00 am)</td><td>Low ATR, small rotations, fake structure</td></tr>
+  <tr><td>London (3:00 am – 8:00 am)</td><td>ATR expansion, first real trend legs</td></tr>
+  <tr><td>U.S. (8:00 am – 4:00 pm)</td><td>Highest volatility, strong directional moves</td></tr>
+</table>
+
+<p>
+If you’re trying to scalp GC in the middle of the night expecting U.S. session movement, that’s on you. The ATR isn’t there.
+</p>
+
+<h2>What ATR Actually Does for You in GC</h2>
+
+<p>
+ATR on GC is not a “nice to have” indicator. It tells you:</p>
+
+<ul>
+  <li>how wide your stop needs to be to survive normal noise</li>
+  <li>how far your targets can be without being delusional</li>
+  <li>whether the market is in a compression phase or expansion phase</li>
+</ul>
+
+<p>
+On a 5-minute chart:</p>
+
+<ul>
+  <li>ATR at 1.0 → you’re in a calm environment; 2–3 point stops are already generous.</li>
+  <li>ATR at 3.0+ → GC is flying; a 2-point stop is just begging to get slapped.</li>
+</ul>
+
+<p>
+This is the same logic you applied to ES in <a href="es-atr-behavior-and-volatility-zones.html">ES ATR Behavior and Volatility Zones</a>, just scaled to GC’s tick value.
+</p>
+
+<h2>Defining GC Volatility Zones With ATR</h2>
+
+<p>
+You can simplify GC’s volatility profile into three zones using 5-minute ATR:</p>
+
+<table>
+  <tr><th>5-Min ATR</th><th>Zone</th><th>What It Means</th></tr>
+  <tr><td>0.80–1.50</td><td>Compression</td><td>GC is drifting, breakouts will be cleaner</td></tr>
+  <tr><td>1.50–3.00</td><td>Normal</td><td>Standard intraday behavior, good for most setups</td></tr>
+  <tr><td>3.00+</td><td>Expansion</td><td>News-level or macro volatility, size down or get out</td></tr>
+</table>
+
+<p>
+Your job isn’t to “fight” these zones. Your job is to adjust size and expectations to match them.
+</p>
+
+<h2>Risk Management: ATR × Tick Value = Reality Check</h2>
+
+<p>
+Your risk per trade in GC is just:
+</p>
+
+<ul>
+  <li>stop distance (in ticks) × $10 × number of contracts</li>
+</ul>
+
+<p>
+Example:</p>
+
+<ul>
+  <li>5-minute ATR ≈ 2.5 points</li>
+  <li>you set your stop at 2.5 points (25 ticks)</li>
+  <li>25 ticks × $10 = $250 per contract</li>
+</ul>
+
+<p>
+On a $5,000 account, that’s 5% risk for <em>one</em> GC contract. Two contracts is 10%. That’s how people blow out in a handful of trades and then blame “volatility.”
+</p>
+
+<h2>Adapting Position Size to GC Volatility</h2>
+
+<p>
+There are only three sane adjustments when GC volatility changes:</p>
+
+<ul>
+  <li>keep your stop in ATR terms and reduce contracts</li>
+  <li>reduce time in the market by trading only best sessions</li>
+  <li>switch to MGC when volatility spikes instead of pretending it’s fine</li>
+</ul>
+
+<p>
+Any other “solution” is just hoping GC behaves according to your comfort level. It won’t.
+</p>
+
+<h2>Final Takeaway: GC Volatility Is Your Risk, Not a Surprise</h2>
+
+<p>
+GC has a clear volatility profile: specific ATR ranges by timeframe, predictable swing sizes, and session-based expansion patterns. Once you know that a normal GC swing is 3–6 points and that news can push 10+ points quickly, you stop pretending a 1-point stop on a full-size contract is reasonable. Volatility isn’t the problem—ignoring it is.
+</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>

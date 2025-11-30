@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GC Margin: Day vs Overnight Explained</title>
+<meta name="description" content="Understand how Gold futures (GC) margin works, the difference between exchange margin and broker day-trade margin, and why overnight risk is a different game.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrotttrading.com/futures-basics/gc-margin-day-vs-overnight.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="GC Margin: Day vs Overnight Explained">
+<meta property="og:description" content="A blunt breakdown of Gold futures (GC) margin: exchange vs broker margin, day-trade vs overnight, and what that means for account risk.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrotttrading.com/futures-basics/gc-margin-day-vs-overnight.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrotttrading.com/og-default.png">
+<meta property="og:image:width" content="1792">
+<meta property="og:image:height" content="941">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://grizzlyparrotttrading.com/og-default.png">
+<meta name="twitter:title" content="GC Margin: Day vs Overnight Explained">
+<meta name="twitter:description" content="Know exactly how GC day-trade and overnight margin work so you stop guessing and blowing up on leverage you don’t understand.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "GC Margin: Day vs Overnight Explained",
+  "description": "Understand how Gold futures (GC) margin works, the difference between exchange margin and broker day-trade margin, and why overnight risk is a different game.",
+  "author": {
+    "@type": "Person",
+    "name": "Grizzly Parrott"
+  },
+  "mainEntityOfPage": "https://grizzlyparrotttrading.com/futures-basics/gc-margin-day-vs-overnight.html",
+  "datePublished": "2025-11-30",
+  "dateModified": "2025-11-30"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://grizzlyparrotttrading.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Futures Basics",
+      "item": "https://grizzlyparrotttrading.com/futures-basics/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GC Margin: Day vs Overnight Explained",
+      "item": "https://grizzlyparrotttrading.com/futures-basics/gc-margin-day-vs-overnight.html"
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrot Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>GC Margin: Day vs Overnight Explained</h1>
+
+<p>
+Gold futures (GC) margin is simple on paper and brutal in practice. You’ve got exchange margin, broker day-trade margin, and overnight margin. If you don’t know the difference, you’re handing your account to volatility with a bow on it.
+</p>
+
+<h2>The GC Margin Stack: Exchange vs Broker</h2>
+<p>
+There are two layers of margin you need to understand for GC:
+</p>
+
+<ul>
+  <li><strong>Exchange margin</strong> – what CME requires from your broker for each contract.</li>
+  <li><strong>Broker margin</strong> – what your broker chooses to require from you.</li>
+</ul>
+
+<p>
+CME sets <strong>initial</strong> and <strong>maintenance</strong> margin per GC contract. Brokers then decide:
+</p>
+
+<ul>
+  <li>how much to require intraday (day-trade margin)</li>
+  <li>whether they even offer reduced intraday margin</li>
+  <li>what you must hold to stay in an overnight position</li>
+</ul>
+
+<p>
+So GC margin isn’t one number. It’s a stack of rules.
+</p>
+
+<h2>Exchange Margin Basics for GC</h2>
+<p>
+CME publishes initial and maintenance margin for GC and updates it when volatility spikes or calms down. The maintenance margin is the minimum you must hold to keep the position open. Initial margin is slightly higher and is what you need to <em>open</em> the position.
+</p>
+
+<table>
+  <tr><th>Type</th><th>What It Means</th></tr>
+  <tr><td>Initial Margin</td><td>Capital required to open 1 GC contract</td></tr>
+  <tr><td>Maintenance Margin</td><td>Minimum equity to keep that contract open</td></tr>
+</table>
+
+<p>
+Actual dollar values move over time, but they’re always sized for the reality that one GC contract controls 100 oz of gold. If you don’t know what that means in tick terms, read <a href="gc-tick-size-tick-value-specs.html">GC tick size and tick value</a>.
+</p>
+
+<h2>Day-Trade Margin on GC: Broker Leverage</h2>
+<p>
+Day-trade margin is a broker invention, not a CME concept. Brokers slash the required capital during set intraday hours to attract active traders. You might see something like:
+</p>
+
+<ul>
+  <li><strong>GC intraday margin:</strong> a fraction of exchange initial margin</li>
+  <li><strong>GC overnight margin:</strong> at or near full exchange initial margin</li>
+</ul>
+
+<p>
+That discount is leverage, not a favor. GC can move dozens of ticks fast. A “cheap” intraday margin requirement just means the broker lets you put on more contracts than you realistically should.
+</p>
+
+<h2>Overnight Margin on GC: Where People Blow Up</h2>
+<p>
+Overnight margin is where reality shows up. Once the broker’s “day session” ends, they want you at or above a much higher equity requirement to keep the contract.
+</p>
+
+<p>
+Three ways traders get wrecked:
+</p>
+
+<ul>
+  <li>They forget when day margins end.</li>
+  <li>They’re overleveraged intraday and can’t hold overnight.</li>
+  <li>The broker auto-flattens them into a bad fill when the bell hits.</li>
+</ul>
+
+<p>
+If you can’t comfortably meet overnight margin on GC, you shouldn’t be swinging that contract. Period.
+</p>
+
+<h2>Example: How GC Margin and Volatility Interact</h2>
+<p>
+Forget the exact CME numbers and look at the mechanics. GC tick value is fixed: $10 per tick per contract. GC can easily move 50–100 ticks around major economic reports.
+</p>
+
+<ul>
+  <li><strong>50 ticks × $10 = $500 per contract</strong></li>
+  <li><strong>100 ticks × $10 = $1,000 per contract</strong></li>
+</ul>
+
+<p>
+If your broker lets you open a GC with a low day-trade margin and you size up to 3–5 contracts “because you can,” a normal GC news move can swing your account thousands in minutes. That’s not the broker’s fault. That’s you not understanding the product. If you don’t understand GC’s behavior during key windows, read <a href="best-times-to-trade-gc.html">the timing article</a>.
+</p>
+
+<h2>GC Margin and Account Size: What Actually Matters</h2>
+<p>
+Margin should never be your sizing target. It’s the <em>minimum</em> the system demands, not the <em>smart</em> risk number. For GC:
+</p>
+
+<ul>
+  <li>one contract controls 100 ounces</li>
+  <li>every 1.0 move in price = 10 points = 100 ticks = $1,000 per contract</li>
+</ul>
+
+<p>
+Ask yourself a basic question before you enter:
+</p>
+
+<ul>
+  <li>“If GC moves 2–3 points against me, can my account survive that?”</li>
+</ul>
+
+<p>
+If the answer is no, you either:
+</p>
+
+<ul>
+  <li>trade MGC instead</li>
+  <li>cut your contract count</li>
+  <li>or don’t trade GC at all until your account is bigger</li>
+</ul>
+
+<p>
+That’s the same position sizing logic I lay out for ES in <a href="es-how-to-size-positions-by-account-balance.html">this position sizing article</a>.
+</p>
+
+<h2>Why GC Overnight Risk Is a Different Game</h2>
+<p>
+Holding GC overnight brings in:
+</p>
+
+<ul>
+  <li>gap risk from macro headlines</li>
+  <li>liquidity changes when sessions open/close</li>
+  <li>spread widening during roll, holidays, and thin hours</li>
+</ul>
+
+<p>
+Your broker’s overnight margin requirement is them pricing in that risk. It’s not arbitrary. If you want to swing GC, size for the overnight margin, not the cute intraday discount.
+</p>
+
+<h2>Final Takeaway: Margin Is a Floor, Not a Goal</h2>
+<p>
+GC margin requirements exist to keep the system from blowing up, not to protect you from your own leverage addiction. Exchange margin is the hard requirement. Broker day-trade margin is a marketing lever. Overnight margin is where risk gets real. If you understand GC tick value, contract size, and margin structure, you’ll stop sizing off what the broker “allows” and start sizing off what your account can actually handle.
+</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul
