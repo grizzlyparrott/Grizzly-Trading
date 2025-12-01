@@ -312,6 +312,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "A Complete Risk Management Framework for Silver Futures (SI)",
+    "url": "/futures-basics/si-risk-management-framework.html",
+    "description": "A no-nonsense SI risk framework built on volatility, ATR, sizing, off-hours behavior, and the realities of trading a thin, explosive metals contract.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "A Simple, Readable Chart Layout – Grizzly Parrot Trading",
     "url": "/platforms-tutorials/simple-readable-chart-layout.html",
     "description": "A clean futures chart layout you can actually read in real time without clutter, confusion, or a wall of indicators.",
@@ -444,6 +450,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Best Technical Indicators for Trading Silver Futures (SI)",
+    "url": "/futures-basics/best-technical-indicators-for-si.html",
+    "description": "A blunt, detailed breakdown of the technical indicators that actually work on Silver futures (SI) — and the ones that fall apart under real volatility.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Best Time to Trade 6C Futures: When CAD/USD Actually Moves",
     "url": "/futures-basics/best-time-to-trade-6c.html",
     "description": "Learn the best times to trade 6C Canadian Dollar futures, including peak liquidity windows, volatility cycles, and when to avoid the chart.",
@@ -483,6 +495,12 @@
     "title": "Best Times to Trade GC Futures",
     "url": "/futures-basics/best-times-to-trade-gc.html",
     "description": "See the exact best times of day to trade Gold futures (GC), including volatility windows, dead zones, and the sessions where GC actually trends.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Best Times to Trade Silver Futures (SI)",
+    "url": "/futures-basics/best-times-to-trade-si-futures.html",
+    "description": "The exact volatility windows, volume shifts, and session behaviors that make certain hours the best times to trade Silver futures (SI).",
     "category": "Futures Basics"
   },
   {
@@ -699,6 +717,12 @@
     "title": "Common Liquidity Traps in 6B Futures",
     "url": "/futures-basics/common-liquidity-traps-in-6b-futures.html",
     "description": "A blunt breakdown of the most common liquidity traps in 6B British Pound futures and how to avoid getting caught in them.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Common Mistakes in Silver Futures (SI) Trading",
+    "url": "/futures-basics/common-mistakes-in-si-trading.html",
+    "description": "The biggest mistakes traders make in Silver futures (SI), why they happen, and how to avoid getting shredded by SI’s volatility and liquidity.",
     "category": "Futures Basics"
   },
   {
@@ -1278,6 +1302,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "How Businesses Hedge With Silver Futures (SI)",
+    "url": "/futures-basics/how-businesses-hedge-with-si-futures.html",
+    "description": "A deep, blunt breakdown of how manufacturers, refiners, and producers hedge with Silver futures (SI) using real commercial mechanics and spread logic.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "How Carry Trades Impact 6J Futures: The Real Engine Behind Yen Trends",
     "url": "/futures-basics/6j-carry-trade-impact.html",
     "description": "A blunt explanation of how global carry trades drive major trends in 6J Yen futures and why unwinds create explosive reversals.",
@@ -1293,6 +1323,12 @@
     "title": "How China’s Economic Data Impacts 6A AUD/USD Futures",
     "url": "/futures-basics/china-economic-data-6a-impact.html",
     "description": "A blunt breakdown of how China’s economic data moves 6A AUD/USD futures and which reports actually matter for real trading.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "How COMEX Inventories Affect Silver Futures (SI)",
+    "url": "/futures-basics/how-comex-inventories-affect-si.html",
+    "description": "A detailed breakdown of COMEX silver inventories—registered vs eligible, withdrawals, and squeezes—and how they actually affect Silver futures (SI).",
     "category": "Futures Basics"
   },
   {
@@ -1324,6 +1360,12 @@
     "url": "/prop-firm-trading/data-feed-quality-evaluation.html",
     "description": "A blunt explanation of how data feed quality affects fills, slippage, rule violations, and overall chances of passing a prop firm evaluation.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "How Dollar Strength Impacts SI Price Movement",
+    "url": "/futures-basics/how-dollar-strength-impacts-si-price.html",
+    "description": "A deep, no-nonsense breakdown of how dollar strength drives Silver futures (SI), including correlations, volatility responses, and real trading implications.",
+    "category": "Futures Basics"
   },
   {
     "title": "How DXY Strength Impacts GC Futures",
@@ -1800,6 +1842,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "How to Trade Around Whipsaws",
+    "url": "/market-basics/trade-around-whipsaws.html",
+    "description": "Practical methods to trade around price whipsaws: filters, timing rules, confirmation tools, and ways to avoid getting chopped to death.",
+    "category": "Market Basics"
+  },
+  {
     "title": "How to Use Bracket Orders in Tradovate | Grizzly Parrot Trading",
     "url": "/platforms-tutorials/tradovate-bracket-orders.html",
     "description": "Step-by-step guide to setting up bracket orders in Tradovate so every trade has a stop and target automatically.",
@@ -1930,6 +1978,12 @@
     "url": "/market-basics/impulse-vs-rotational-market-behavior.html",
     "description": "Learn the difference between impulse and rotational market behavior, how to classify state quickly, and what each environment means for trade selection.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Industrial Demand and Its Role in Silver Futures (SI)",
+    "url": "/futures-basics/industrial-demand-and-si-futures.html",
+    "description": "A detailed breakdown of industrial demand for silver—electronics, solar, batteries—and how these real-world flows impact Silver futures (SI).",
+    "category": "Futures Basics"
   },
   {
     "title": "Initiative vs Responsive Activity: Who Really Controls the Auction?",
@@ -2958,6 +3012,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Reading the SI Depth of Market (DOM) Like a Pro",
+    "url": "/futures-basics/si-dom-reading-guide.html",
+    "description": "A blunt guide to reading the SI DOM—liquidity pockets, spoofing, spreads, and how Silver futures actually trade under the surface.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Relative Performance: How to Measure Strength vs. Weakness",
     "url": "/market-basics/relative-performance-how-to-measure-strength-vs-weakness.html",
     "description": "Learn how to measure relative performance across indexes and sectors so you can spot strength, weakness, and divergence before price moves.",
@@ -2992,6 +3052,12 @@
     "url": "/market-basics/risk-on-risk-off-basics.html",
     "description": "Learn Risk-On vs Risk-Off basics—how shifting sentiment impacts futures markets, volatility, and cross-asset rotation.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Roll Yield Explained for Futures Traders",
+    "url": "/futures-basics/roll-yield-explained.html",
+    "description": "A blunt breakdown of roll yield in futures trading: what it is, why it matters, and how it impacts long-term and short-term futures positions.",
+    "category": "Futures Basics"
   },
   {
     "title": "Running Multiple Prop Firm Evaluations | Grizzly Parrot Trading",
@@ -3081,6 +3147,48 @@
     "title": "Settlement Price vs Last Traded Price: Why They Rarely Match",
     "url": "/futures-basics/settlement-vs-last-traded-price.html",
     "description": "A blunt breakdown of why the settlement price and last traded price are usually different in futures markets and what each number actually represents.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior",
+    "url": "/futures-basics/si-calendar-spreads-explained.html",
+    "description": "A detailed breakdown of SI calendar spreads — how Silver futures months interact, what drives the curve, and how spreads affect volatility and price.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "SI Margin Requirements: Day vs Overnight",
+    "url": "/futures-basics/si-margin-requirements-day-vs-overnight.html",
+    "description": "A deep breakdown of Silver futures (SI) margin requirements—day margin, overnight margin, leverage impact, and real risk mechanics.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "SI Seasonality Patterns in Silver Futures",
+    "url": "/futures-basics/si-seasonality-patterns.html",
+    "description": "A blunt, data-backed breakdown of Silver futures (SI) seasonality—why certain months trend stronger, weaker, or more volatile, and how traders use it.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "SI Tick Size, Tick Value, and Full Contract Specs",
+    "url": "/futures-basics/si-tick-size-and-contract-specs.html",
+    "description": "Learn the exact tick size, tick value, and contract specs of Silver futures (SI) so you know your real dollar risk before you place a trade.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "SI Volatility and ATR Profile for Silver Futures",
+    "url": "/futures-basics/si-volatility-and-atr-profile.html",
+    "description": "A detailed breakdown of Silver futures (SI) volatility and ATR behavior so you can size trades and stops with real numbers instead of guesses.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "SI vs SIL vs SLV: Complete Breakdown of Silver Markets",
+    "url": "/futures-basics/si-vs-sil-vs-slv.html",
+    "description": "A blunt comparison of SI futures, SIL stocks, and the SLV ETF — liquidity, volatility, tracking quality, and which market traders should actually use.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Silver Supply and Mining Fundamentals for SI Traders",
+    "url": "/futures-basics/silver-supply-and-mining-fundamentals.html",
+    "description": "A hard-edged breakdown of global silver supply, mining structure, and what actually matters for Silver futures (SI) traders watching COMEX price.",
     "category": "Futures Basics"
   },
   {
@@ -3510,6 +3618,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "U.S. Economic Data That Moves Silver Futures (SI)",
+    "url": "/futures-basics/us-economic-data-that-moves-si.html",
+    "description": "The exact U.S. economic reports that move Silver futures (SI), how hard they hit, and what SI does during each release. No fluff—only mechanics.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Understanding Futures Term Structure Without the Math",
     "url": "/futures-basics/understanding-futures-term-structure.html",
     "description": "A blunt explanation of futures term structure, why it shifts, and how traders should actually use it without getting buried in formulas.",
@@ -3696,6 +3810,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "What Are Silver Futures (SI)? Complete Contract Breakdown",
+    "url": "/futures-basics/what-are-silver-futures-si.html",
+    "description": "A blunt beginner-friendly breakdown of Silver futures (SI), how the COMEX contract works, and why traders choose SI over spot or ETFs.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "What Calendar Spreads Reveal About Supply-Demand Shifts",
     "url": "/futures-basics/what-calendar-spreads-reveal-about-supply-demand-shifts.html",
     "description": "A blunt breakdown of how calendar spreads expose real supply-demand pressure in futures markets, long before the front month reacts.",
@@ -3814,6 +3934,12 @@
     "url": "/prop-firm-trading/when-to-take-profit-in-evaluations.html",
     "description": "The exact profit-taking strategy for futures prop firm evaluations: when to exit, how much to hold, and why evaluation rules change optimal targets.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "Whipsaws in Futures: Liquidity and Algos",
+    "url": "/futures-basics/futures-whipsaw-mechanics.html",
+    "description": "A blunt breakdown of whipsaws in futures: how liquidity, news, and algorithmic behavior create fake moves that stop traders out.",
+    "category": "Futures Basics"
   },
   {
     "title": "Why 6B Often Trends During the Early U.S. Session",
@@ -4000,6 +4126,12 @@
     "url": "/prop-firm-trading/prop-firm-grid-and-martingale-bans.html",
     "description": "A blunt explanation of why prop firms ban grid trading and martingale strategies, how they detect them, and the risks these methods create for evaluations.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "Why SI Trades Differ From GC: Volatility & Liquidity Forces",
+    "url": "/futures-basics/why-si-differs-from-gc-volatility-liquidity.html",
+    "description": "A detailed breakdown of why Silver futures (SI) move differently than Gold (GC) by volatility structure, liquidity depth, industrial demand, and order flow.",
+    "category": "Futures Basics"
   },
   {
     "title": "Why Some Futures Contracts Are Cash-Settled vs Physically Settled",
