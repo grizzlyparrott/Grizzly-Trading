@@ -102,6 +102,110 @@
           <p id="no-results-message" style="display:none;">No pages match your search.</p>
         </div> -->
 
+        <!-- SEARCH BAR -->
+<div id="search-container">
+  <input id="search-input" type="text" placeholder="Search all articles..." autocomplete="off">
+  <div id="search-results"></div>
+</div>
+
+<script>
+async function loadSearchIndex() {
+  const res = await fetch('/search-index.json');
+  return await res.json();
+}
+
+let SEARCH_DATA = [];
+loadSearchIndex().then(d => SEARCH_DATA = d);
+
+const input = document.getElementById('search-input');
+const resultsBox = document.getElementById('search-results');
+
+input.addEventListener('input', () => {
+  const q = input.value.toLowerCase().trim();
+  if (!q) {
+    resultsBox.innerHTML = '';
+    return;
+  }
+
+  const hits = SEARCH_DATA.filter(item =>
+    item.title.toLowerCase().includes(q) ||
+    item.description.toLowerCase().includes(q)
+  ).slice(0, 20); // limit results
+
+  if (hits.length === 0) {
+    resultsBox.innerHTML = '<div class="no-results">No matches</div>';
+    return;
+  }
+
+  resultsBox.innerHTML = hits
+    .map(item => `
+      <a class="search-item" href="${item.url}">
+        <div class="search-title">${item.title}</div>
+        <div class="search-desc">${item.description}</div>
+        <div class="search-cat">${item.category}</div>
+      </a>
+    `)
+    .join('');
+});
+</script>
+
+<style>
+#search-container {
+  margin: 20px 0;
+  max-width: 700px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  border: 2px solid #0a3764;
+  border-radius: 6px;
+  outline: none;
+}
+
+#search-results {
+  background: #fff;
+  border: 1px solid #ccc;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 8px;
+  border-radius: 6px;
+}
+
+.search-item {
+  display: block;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #000;
+}
+
+.search-item:hover {
+  background: #f0f6ff;
+}
+
+.search-title {
+  font-weight: bold;
+}
+
+.search-desc {
+  font-size: 14px;
+  color: #444;
+}
+
+.search-cat {
+  font-size: 12px;
+  color: #0a3764;
+  margin-top: 2px;
+}
+
+.no-results {
+  padding: 10px;
+  color: #666;
+}
+</style>
+
 
         <!-- Category overview -->
         <section class="section">
