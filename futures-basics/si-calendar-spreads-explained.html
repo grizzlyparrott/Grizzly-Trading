@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior</title>
+<meta name="description" content="A detailed breakdown of SI calendar spreads — how Silver futures months interact, what drives the curve, and how spreads affect volatility and price.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior">
+<meta property="og:description" content="Learn how Silver futures (SI) calendar spreads work, how contract months interact, and how term structure impacts volatility and roll periods.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+<meta property="og:image:width" content="1792">
+<meta property="og:image:height" content="941">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+<meta name="twitter:title" content="SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior">
+<meta name="twitter:description" content="A no-BS guide to understanding how SI futures months interact through calendar spreads and term structure.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior",
+  "description": "A deep explanation of Silver futures (SI) calendar spreads — how term structure, carry, and roll mechanics impact volatility and direction.",
+  "author": { "@type": "Person", "name": "Grizzly Parrott" },
+  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html",
+  "datePublished": "2025-11-30",
+  "dateModified": "2025-11-30"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrottrading.com/index.html" },
+    { "@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrottrading.com/futures-basics/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior", "item": "https://grizzlyparrottrading.com/futures-basics/si-calendar-spreads-explained.html" }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrot Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior</h1>
+
+<p>
+Most retail traders have no clue how SI calendar spreads work, and it shows. They treat every SI month like it's identical, then wonder why volatility spikes during roll periods and why certain contract months behave differently. Calendar spreads explain all of that. If you want to understand how silver really trades under the hood, this is mandatory knowledge.
+</p>
+
+<h2>What an SI Calendar Spread Actually Is</h2>
+
+<p>
+A calendar spread is simply:
+</p>
+
+<p><strong>Long one SI contract month, short another SI contract month.</strong></p>
+
+<p>
+Example:  
+Buy July SI / Sell September SI.
+</p>
+
+<p>
+This gives you exposure to <strong>the price difference between months</strong>, not the outright direction of silver.
+</p>
+
+<h2>Why SI Months Don’t Trade the Same</h2>
+
+<p>
+SI months diverge because of:
+</p>
+
+<ul>
+  <li>inventory levels</li>
+  <li>delivery risks</li>
+  <li>storage and financing costs</li>
+  <li>hedging demand from miners/refiners</li>
+  <li>industrial seasonality</li>
+</ul>
+
+<p>
+This is identical to the issues covered in <a href="how-comex-inventories-affect-si.html">COMEX Inventories & SI</a>, just applied across different months.
+</p>
+
+<h2>Contango vs Backwardation in SI</h2>
+
+<p>
+These two terms define the entire curve:
+</p>
+
+<h3>Contango</h3>
+<p>
+Back months > Front month  
+— Usually when storage is cheap and inventories are comfortable.</p>
+
+<h3>Backwardation</h3>
+<p>
+Front month > Back months  
+— Typically when inventories get tight or demand spikes.</p>
+
+<p>
+SI sees both. It's not like crude oil where contango dominates. Silver swings depending on industrial cycles.
+</p>
+
+<h2>How Calendar Spreads Move SI Volatility</h2>
+
+<p>
+During roll periods, spreads tighten or blow out. This causes:
+</p>
+
+<ul>
+  <li>sudden front-month volatility</li>
+  <li>DOM thinning</li>
+  <li>fakeouts that aren’t actually fakeouts — just spread movement</li>
+</ul>
+
+<p>
+If you’ve ever seen SI behave “wrong” one week before expiration, calendar spreads were the reason.
+</p>
+
+<h2>How Hedgers Use Calendar Spreads</h2>
+
+<p>
+Commercial players use spreads to hedge without taking outright directional exposure.
+</p>
+
+<h3>Example: Refinery Inventory Hedge</h3>
+<ul>
+  <li>Refiner expects inventory to peak in May</li>
+  <li>They short May SI, long July SI</li>
+</ul>
+
+<p>
+They’re hedging carry costs and inventory timing, not trying to guess direction.
+</p>
+
+<h2>Why Outright Traders Must Respect Spread Behavior</h2>
+
+<p>
+Even if you never trade spreads directly, spreads <strong>shape front-month behavior.</strong>
+</p>
+
+<ul>
+  <li>roll week → more whipsaws</li>
+  <li>spread tightening → front month grinds</li>
+  <li>spread blowouts → violent air pockets</li>
+</ul>
+
+<p>
+SI is thin enough that spread adjustments hit price action directly.
+</p>
+
+<h2>Practical Rules for SI Traders</h2>
+
+<h3>1. Avoid holding front month during roll week</h3>
+<p>
+Volatility jumps, liquidity disappears, and your fills get trashed.</p>
+
+<h3>2. Know which month is the “active” contract</h3>
+<p>
+Liquidity shifts like clockwork. Trade dead months and you’re asking for slippage.</p>
+
+<h3>3. Watch the spread when price makes no sense</h3>
+<p>
+Half the “weird” SI moves are spread-driven, not technical.</p>
+
+<h2>Final Takeaway</h2>
+
+<p>
+Calendar spreads are the backbone of SI’s internal price mechanics. They explain volatility spikes, roll behavior, why months diverge, and why front-month SI acts like a different market at times. The more you understand spreads and term structure, the more SI’s price action stops looking random and starts looking structured — because it is.
+</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>

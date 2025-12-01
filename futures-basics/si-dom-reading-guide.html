@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reading the SI Depth of Market (DOM) Like a Pro</title>
+<meta name="description" content="A blunt guide to reading the SI DOM—liquidity pockets, spoofing, spreads, and how Silver futures actually trade under the surface.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/si-dom-reading-guide.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Reading the SI Depth of Market (DOM) Like a Pro">
+<meta property="og:description" content="Learn how to read Silver futures (SI) DOM flow—real liquidity, fake size, spread behavior, and how pros read order flow on a thin contract.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/si-dom-reading-guide.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+<meta property="og:image:width" content="1792">
+<meta property="og:image:height" content="941">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+<meta name="twitter:title" content="Reading the SI Depth of Market (DOM) Like a Pro">
+<meta name="twitter:description" content="A no-BS breakdown of SI DOM behavior—real vs fake liquidity, spread shifts, and how to read order flow on a thin metals contract.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Reading the SI Depth of Market (DOM) Like a Pro",
+  "description": "A detailed walkthrough of how to read Silver futures (SI) DOM flow, including liquidity pockets, fake size, and spread movement.",
+  "author": { "@type": "Person", "name": "Grizzly Parrott" },
+  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/si-dom-reading-guide.html",
+  "datePublished": "2025-11-30",
+  "dateModified": "2025-11-30"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrottrading.com/index.html" },
+    { "@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrottrading.com/futures-basics/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "Reading the SI Depth of Market (DOM) Like a Pro", "item": "https://grizzlyparrottrading.com/futures-basics/si-dom-reading-guide.html" }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Grizzly Parrot Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Reading the SI Depth of Market (DOM) Like a Pro</h1>
+
+<p>
+SI’s DOM isn’t like ES or NQ. It’s thinner, more deceptive, and way easier to push around with modest size. If you try to read SI DOM like a deep equity index product, you’ll misread half the signals and get faked out constantly. This guide breaks down what actually matters on the SI DOM and what’s just noise.
+</p>
+
+<h2>Why SI DOM Is Harder to Read Than GC or ES</h2>
+
+<p>
+Silver futures have:
+</p>
+
+<ul>
+  <li>thinner book depth</li>
+  <li>wider natural spreads</li>
+  <li>faster liquidity pulls</li>
+  <li>more spoofing attempts</li>
+</ul>
+
+<p>
+SI simply doesn’t have the same institutional bandwidth as ES or GC. That means:
+</p>
+
+<p><strong>A small order can move the book. A medium order can move the market.</strong></p>
+
+<h2>Spread Behavior — The First Thing You Watch</h2>
+
+<p>
+SI’s spread naturally fluctuates between 1–3 ticks during liquid hours, and 3–6 ticks off-hours.  
+When spreads widen:
+</p>
+
+<ul>
+  <li>liquidity is drying up</li>
+  <li>volatility expansion is coming</li>
+  <li>slippage risk is rising</li>
+</ul>
+
+<p>
+If you’re scalping SI without watching the spread, you’re asking for surprise fills you didn’t plan for.
+</p>
+
+<h2>Real Size vs. Fake Size (Spoofing)</h2>
+
+<p>
+SI sees more spoofing than any of the big metals. It’s thin enough that traders flash large orders to influence behavior, then pull the size before execution.
+</p>
+
+<h3>How to tell fake size from real size</h3>
+
+<ul>
+  <li><strong>Fake size</strong> appears and disappears within 1–3 seconds</li>
+  <li><strong>Fake size</strong> is always far from the best bid/ask</li>
+  <li><strong>Real size</strong> survives pullbacks and gets slowly chipped away</li>
+  <li><strong>Real size</strong> remains steady into aggressor flow</li>
+</ul>
+
+<p>
+A stack of 200 lots that evaporates the moment price approaches is spoofing.  
+A stack of 40 lots that gets chewed 5–10 lots at a time is real.
+</p>
+
+<h2>Liquidity Pockets (The Real SI Cheat Code)</h2>
+
+<p>
+SI forms liquidity pockets — areas on the DOM where size consistently appears or defends.  
+These pockets matter more than any indicator.
+</p>
+
+<h3>Two types matter:</h3>
+
+<ul>
+  <li><strong>Passive defense</strong> — size sitting on a level, defending it</li>
+  <li><strong>Aggressive absorption</strong> — market orders hit size and can’t break it</li>
+</ul>
+
+<p>
+If SI fails to break a level after multiple attempts and size reloads → that’s real defense.  
+Traders who can spot this stay out of bad breakout trades.
+</p>
+
+<h2>Absorption — The Most Important DOM Signal on SI</h2>
+
+<p>
+Absorption happens when SI gets hammered by market orders but refuses to move.  
+Because SI is thin, this stands out immediately.
+</p>
+
+<h3>Absorption signals:</h3>
+
+<ul>
+  <li>large trades hitting the bid/ask</li>
+  <li>but price barely ticks</li>
+  <li>resting size reloads in the same spot</li>
+</ul>
+
+<p>
+When you see absorption, the breakout you’re waiting for is likely fake.
+</p>
+
+<h2>How To Read SI’s Pulling & Stacking Behavior</h2>
+
+<p>
+SI traders constantly pull liquidity when they sense:
+</p>
+
+<ul>
+  <li>news approaching</li>
+  <li>momentum shifts</li>
+  <li>spoof attempts</li>
+  <li>large iceberg absorption</li>
+</ul>
+
+<p>
+A sudden pull of 50+ lots is usually a warning that volatility is coming.
+</p>
+
+<h2>Icebergs — Where the Real Money Hides</h2>
+
+<p>
+Iceberg orders don’t show full size.  
+On SI, icebergs usually appear when:
+</p>
+
+<ul>
+  <li>commercial buyers defend a level</li>
+  <li>large players scale in without showing intent</li>
+</ul>
+
+<p>
+If volume spikes but DOM size doesn’t shrink, you’re looking at an iceberg.
+</p>
+
+<h2>DOM Combined With Volume Profile = SI Cheat Mode</h2>
+
+<p>
+You saw in <a href="best-technical-indicators-for-si.html">Best SI Technical Indicators</a> how profile gives structure.  
+DOM gives execution clarity.
+</p>
+
+<p>
+Together, they show:
+</p>
+
+<ul>
+  <li>where liquidity sits</li>
+  <li>where momentum is real</li>
+  <li>where price is likely to stall or rip</li>
+</ul>
+
+<h2>Practical DOM Rules for SI</h2>
+
+<ul>
+  <li>If spread > 3 ticks → size down or wait</li>
+  <li>If size is flashing → ignore it</li>
+  <li>If size reloads → respect the level</li>
+  <li>If book pulls hard → expect volatility</li>
+  <li>If iceberg flow hits → trend continuation is likely</li>
+</ul>
+
+<h2>Final Takeaway</h2>
+
+<p>
+The SI DOM is thin, fast, and brutally honest if you know what to look for.  
+It exposes fake size, real levels, absorption, spread risks, and momentum way better than indicators ever will.  
+If you want clean SI entries and you’re sick of getting wicked out, reading the DOM correctly is the closest thing to cheating you’ll ever get in this market.
+</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+<li><a href="index.html">Futures Basics</a></li>
+<li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+<li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+<li><a href="../market-basics/index.html">Market Basics</a></li>
+<li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
