@@ -450,6 +450,18 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Best Technical Indicators for Palladium Futures",
+    "url": "/futures-basics/best-indicators-for-pa.html",
+    "description": "A blunt breakdown of which technical indicators actually work in Palladium futures, which fail, and how PA’s thin liquidity changes what signals matter.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Best Technical Indicators for Platinum Futures (PL): What Actually Works",
+    "url": "/futures-basics/best-indicators-for-pl.html",
+    "description": "A blunt breakdown of the only technical indicators that work on Platinum futures (PL): ATR, VWAP, structure levels, and volatility tools that survive thin liquidity.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Best Technical Indicators for Trading Silver Futures (SI)",
     "url": "/futures-basics/best-technical-indicators-for-si.html",
     "description": "A blunt, detailed breakdown of the technical indicators that actually work on Silver futures (SI) — and the ones that fall apart under real volatility.",
@@ -462,6 +474,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Best Times of Day to Trade Palladium Futures (PA)",
+    "url": "/futures-basics/best-times-to-trade-pa.html",
+    "description": "A blunt breakdown of the best times of day to trade Palladium futures, including RTH volatility windows, dead zones, and when PA liquidity is stable enough to avoid getting steamrolled.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Best Times to Trade 6L Futures: Volume, Volatility, and Real Opportunity",
     "url": "/futures-basics/best-times-to-trade-6l-futures.html",
     "description": "A detailed guide on the best times to trade 6L Brazilian Real futures, including volume patterns, volatility cycles, and session behavior.",
@@ -469,7 +487,7 @@
   },
   {
     "title": "Best Times to Trade 6M",
-    "url": "/futures-basics/-best-times.html",
+    "url": "/futures-basics/6m-best-times.html",
     "description": "A blunt breakdown of the best times to trade 6M futures, including volume cycles, volatility windows, and the sessions that consistently move the Peso.",
     "category": "Futures Basics"
   },
@@ -495,6 +513,12 @@
     "title": "Best Times to Trade GC Futures",
     "url": "/futures-basics/best-times-to-trade-gc.html",
     "description": "See the exact best times of day to trade Gold futures (GC), including volatility windows, dead zones, and the sessions where GC actually trends.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Best Times to Trade Platinum Futures (PL): Volume and Volatility Windows",
+    "url": "/futures-basics/best-times-to-trade-pl.html",
+    "description": "A blunt breakdown of the best times of day to trade Platinum futures (PL), when volume is real, and when liquidity thins out and tries to kill you.",
     "category": "Futures Basics"
   },
   {
@@ -666,6 +690,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "China’s Copper Demand: How the World’s Biggest Buyer Moves HG Futures",
+    "url": "/futures-basics/china-demand-copper-hg.html",
+    "description": "China consumes over half the world’s copper. Here’s how its construction cycles, manufacturing trends, credit flows, and stockpiling behavior directly move HG futures.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Climax Volume: When Markets Blow Out in One Final Burst",
     "url": "/market-basics/climax-volume-explained.html",
     "description": "Climax volume explained—why huge volume spikes often signal the end of a trend and what they reveal about trapped traders and market exhaustion.",
@@ -726,6 +756,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Common Mistakes New Palladium Traders Make",
+    "url": "/futures-basics/pa-common-mistakes.html",
+    "description": "A blunt breakdown of the most common mistakes new Palladium traders make, why PA punishes errors brutally, and how to avoid the traps that blow up beginners.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Common Mistakes Traders Make With 6L Brazilian Real Futures",
     "url": "/futures-basics/common-mistakes-traders-make-with-6l-brazilian-real-futures.html",
     "description": "A blunt breakdown of the most common mistakes traders make when trading 6L Brazilian Real futures and how to avoid blowing up on this exotic FX contract.",
@@ -735,6 +771,12 @@
     "title": "Common Mistakes Traders Make With 6N and How to Avoid Them",
     "url": "/futures-basics/6n-common-mistakes.html",
     "description": "A blunt breakdown of the biggest mistakes traders make when trading 6N futures and exactly how to avoid getting trapped by NZD/USD volatility.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Common Platinum Futures (PL) Trading Mistakes: Retail Errors That Blow Accounts",
+    "url": "/futures-basics/pl-common-trading-mistakes.html",
+    "description": "A blunt breakdown of the most common retail mistakes in Platinum futures (PL): oversizing, trading dead zones, tight stops, ignoring volatility, and misreading PL/PA correlation.",
     "category": "Futures Basics"
   },
   {
@@ -772,6 +814,78 @@
     "url": "/prop-firm-trading/contract-suspension-rules.html",
     "description": "A blunt guide to contract suspension rules in prop firms, why certain markets are disabled during volatility, and how traders should prepare.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "Copper and Renewable Energy Demand: How Electrification Drives HG Futures",
+    "url": "/futures-basics/copper-renewable-demand-hg.html",
+    "description": "Renewable energy buildouts consume massive volumes of copper. Here’s how electrification demand reshapes long-term HG futures behavior.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Copper Correlations: How HG Tracks (and Breaks From) Other Metals",
+    "url": "/futures-basics/copper-metal-correlations-hg.html",
+    "description": "Copper’s correlations with gold, silver, and industrial metals aren’t stable. Here’s how HG tracks, diverges, and decouples from other metal markets.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Copper Fundamentals: The Real Drivers Behind HG Futures",
+    "url": "/futures-basics/copper-fundamentals-hg.html",
+    "description": "A blunt, trader-focused breakdown of copper’s true fundamentals—mining flow, smelter activity, demand cycles, inventories, China, and what actually moves HG futures.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Copper Inventory Reports: How LME and COMEX Levels Move HG Futures",
+    "url": "/futures-basics/copper-inventory-reports-hg.html",
+    "description": "Copper inventory reports from the LME and COMEX are one of the strongest drivers of HG futures. Learn how draws, builds, and shocks shape price behavior.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Copper Market Structure: How Global Supply Chains Move HG Prices",
+    "url": "/futures-basics/copper-market-structure-hg.html",
+    "description": "Understand how global supply chains, mining flows, shipping routes, and real-world bottlenecks shape the structure and direction of copper futures (HG).",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Copper Primary vs Recycling Supply: Long-Term Balance Model for HG",
+    "url": "/futures-basics/copper-primary-vs-recycling-hg.html",
+    "description": "Copper’s long-term supply balance depends on both mining and recycling. Learn how these two streams interact and reshape HG futures trends over years.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Copper Recycling Economics: Long-Term Supply Influence on HG",
+    "url": "/futures-basics/copper-recycling-economics-hg.html",
+    "description": "Copper recycling economics shape long-term supply and HG price behavior. Learn how incentives, costs, and refining margins influence copper’s structural trend.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Copper Scrap Market: How Secondary Supply Impacts HG Futures",
+    "url": "/futures-basics/copper-scrap-market-hg.html",
+    "description": "Copper scrap supply acts as a shock absorber for the copper market. Learn how scrap flows tighten or loosen HG futures trend structure.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Copper Seasonality: How Monthly Patterns Shape HG Trends",
+    "url": "/futures-basics/copper-seasonality-hg.html",
+    "description": "A hard look at copper’s monthly seasonality. Learn when HG historically trends, stalls, and builds pressure so you can stop trading blind.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Copper Supply Shocks: How Mines, Smelters, and Logistics Hit HG Prices",
+    "url": "/futures-basics/copper-supply-shocks-hg.html",
+    "description": "Copper supply shocks from mines, smelters, and global logistics create violent HG moves. Learn how disruptions form, how they hit inventories, and how traders react.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Copper vs Crude Oil: How HG and CL React to Global Growth Differently",
+    "url": "/futures-basics/copper-vs-crude-hg-cl.html",
+    "description": "Copper and crude oil respond to global growth in totally different ways. Learn how HG and CL diverge in drivers, volatility, and macro sensitivity.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Copper vs Gold: How Industrial Demand and Safe-Haven Flows Move HG and GC",
+    "url": "/futures-basics/copper-vs-gold-price-behavior.html",
+    "description": "A blunt trader-focused breakdown of how copper (HG) and gold (GC) move differently, why their flows rarely align, and how industrial demand collides with safe-haven sentiment.",
+    "category": "Futures Basics"
   },
   {
     "title": "Cumulative Volume Delta Reversals: Clean Signals for Shifts in Control",
@@ -813,6 +927,12 @@
     "title": "Economic Reports That Move 6L Brazilian Real Futures",
     "url": "/futures-basics/economic-reports-that-move-6l-brazilian-real-futures.html",
     "description": "A direct trader’s guide to the U.S. and Brazil economic reports that actually move 6L Brazilian Real futures, including inflation, jobs, and central bank decisions.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Emerging Market Copper Demand: The Next Growth Engine for HG",
+    "url": "/futures-basics/copper-emerging-markets-hg.html",
+    "description": "Emerging markets are becoming the fastest-growing source of copper demand. Learn how infrastructure, manufacturing, and electrification in EM nations drive HG futures.",
     "category": "Futures Basics"
   },
   {
@@ -1176,10 +1296,40 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Geopolitical Shocks in Platinum Futures (PL): South Africa, Russia, and Supply Risk",
+    "url": "/futures-basics/pl-geopolitical-supply-risk.html",
+    "description": "A deep analysis of geopolitical risk in Platinum futures (PL): South African power issues, Russian supply disruptions, mining instability, and how shocks trigger violent PL price moves.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Geopolitical Supply Risks Driving Palladium Futures",
+    "url": "/futures-basics/pa-geopolitical-supply-risks.html",
+    "description": "A blunt breakdown of the geopolitical supply risks behind Palladium futures, focusing on Russia, South Africa, and why PA reacts violently to global disruptions.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Hedging Rules in Prop Firms for Correlated Markets",
     "url": "/prop-firm-trading/hedging-correlated-markets.html",
     "description": "A blunt breakdown of hedging rules in prop firms, how correlated markets affect risk, and why some hedge strategies trigger violations.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "HG Tick Size, Tick Value, and Margin: The Numbers That Actually Matter",
+    "url": "/futures-basics/hg-tick-size-tick-value-margin.html",
+    "description": "A clear, trader-focused breakdown of HG tick size, tick value, and margin requirements so you can size copper futures trades without blowing your account.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "HG Volatility Profile: How Copper’s ATR and Swing Behavior Shape Real Risk",
+    "url": "/futures-basics/hg-volatility-profile.html",
+    "description": "Copper’s volatility profile is unique. Learn how HG’s ATR, impulse structure, compression phases, and breakout behavior affect real trading risk.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "HG vs ZN: How Copper Tracks Bond Yields and Risk Appetite",
+    "url": "/futures-basics/hg-vs-zn-yields-risk.html",
+    "description": "Copper futures (HG) and 10-year note futures (ZN) reveal risk appetite. Learn how yields impact copper demand, growth expectations, and trend direction.",
+    "category": "Futures Basics"
   },
   {
     "title": "Hidden Liquidity: The Stuff You Never See on the Chart",
@@ -1272,6 +1422,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "How Algorithmic Traders Exploit Platinum Futures (PL): Liquidity Sweeps, Stop Hunts, and Thin-Book Games",
+    "url": "/futures-basics/pl-microstructure-algo-behavior.html",
+    "description": "A blunt guide showing how algorithms exploit Platinum futures (PL): stop runs, thin-book sweeps, liquidity sniping, and predictable retail traps caused by low depth.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "How Auction Theory Shapes Every Market Move",
     "url": "/market-basics/auction-theory-in-markets.html",
     "description": "A blunt breakdown of auction theory, how markets discover value, and why every price swing follows simple auction mechanics.",
@@ -1281,6 +1437,12 @@
     "title": "How Australian Employment Data Impacts 6A AUD/USD Futures",
     "url": "/futures-basics/6a-employment-data-impact.html",
     "description": "A straight breakdown of how Australian employment reports move 6A AUD/USD futures and why jobs data hits the Aussie harder than most releases.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "How Automotive Demand Cycles Drive Platinum Futures (PL)",
+    "url": "/futures-basics/pl-automotive-demand-catalyst-cycles.html",
+    "description": "A detailed breakdown of how catalytic converter demand, auto production cycles, and emission standards directly move Platinum futures (PL).",
     "category": "Futures Basics"
   },
   {
@@ -1575,6 +1737,12 @@
     "title": "How Options Flow Influences 6E Futures Movement",
     "url": "/futures-basics/how-options-flow-influences-6e.html",
     "description": "A blunt guide to how FX options flow, strike clusters, and gamma levels directly impact 6E futures direction and volatility.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "How Platinum and Rhodium Influence Palladium Futures",
+    "url": "/futures-basics/how-platin-rhodium-influence-pa.html",
+    "description": "A blunt breakdown of how platinum and rhodium prices influence Palladium futures, including substitution dynamics, industrial overlap, and cross-metal volatility transmission.",
     "category": "Futures Basics"
   },
   {
@@ -1890,6 +2058,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "How U.S. Dollar Strength Impacts Copper Prices: HG’s Currency Link Explained",
+    "url": "/futures-basics/usd-impact-copper-hg.html",
+    "description": "A blunt breakdown of how U.S. dollar strength pushes copper futures (HG) lower, why weak USD supports HG rallies, and how traders should read USD moves.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "How U.S. Economic Data Impacts 6C Futures",
     "url": "/futures-basics/6c-us-economic-data-impact.html",
     "description": "A blunt breakdown of which U.S. economic reports actually move 6C Canadian Dollar futures and why CAD reacts so strongly to USD data.",
@@ -1983,6 +2157,24 @@
     "title": "Industrial Demand and Its Role in Silver Futures (SI)",
     "url": "/futures-basics/industrial-demand-and-si-futures.html",
     "description": "A detailed breakdown of industrial demand for silver—electronics, solar, batteries—and how these real-world flows impact Silver futures (SI).",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Industrial Demand Drivers Behind Palladium Futures",
+    "url": "/futures-basics/pa-industrial-demand-drivers.html",
+    "description": "A blunt breakdown of the industrial demand drivers behind Palladium futures, including catalytic converters, electronics, and chemical applications influencing PA price.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Industrial Demand Drivers Behind Palladium Futures",
+    "url": "/futures-basics/why-pa-is-more-violent.html",
+    "description": "A blunt breakdown of the industrial demand drivers behind Palladium futures, including catalytic converters, electronics, and chemical applications influencing PA price.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Industrial Demand Shocks and Their Impact on Platinum Futures (PL)",
+    "url": "/futures-basics/pl-industrial-demand-factors.html",
+    "description": "A futures-focused breakdown of how industrial demand shocks in hydrogen, chemical, and manufacturing sectors move Platinum futures (PL) fast.",
     "category": "Futures Basics"
   },
   {
@@ -2100,6 +2292,12 @@
     "category": "Market Basics"
   },
   {
+    "title": "Liquidity Traps in Platinum Futures (PL): Avoiding Wide Spreads and Thin Books",
+    "url": "/futures-basics/pl-liquidity-traps-guide.html",
+    "description": "A deep microstructure breakdown of Platinum futures (PL): thin books, wide spreads, sweep behavior, air pockets, and the exact liquidity traps traders must avoid.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Liquidity Voids and Price Magnets: Why Markets Snap Back Into Gaps",
     "url": "/market-basics/liquidity-voids-price-magnets.html",
     "description": "A blunt guide to liquidity voids and price magnets—why price snaps back into thin areas of trading and how to use those gaps to your advantage.",
@@ -2139,6 +2337,18 @@
     "title": "Low-Volume Futures Contracts: Why These Markets Are Complete Traps",
     "url": "/futures-basics/low-volume-futures-contracts-warning.html",
     "description": "A blunt warning about low-volume futures contracts, why they move unpredictably, and how thin liquidity destroys fills and amplifies risk.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Macro Drivers of Palladium Futures: Rates, Inflation, and Auto Demand",
+    "url": "/futures-basics/pa-macro-drivers.html",
+    "description": "A blunt breakdown of the macro drivers behind Palladium futures, including interest rates, inflation trends, and global auto sales that directly shape PA demand and volatility.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Macro Drivers of Platinum Futures (PL): Rates, USD Strength, and Inflation Forces",
+    "url": "/futures-basics/macro-drivers-influence-pl.html",
+    "description": "A deep macro breakdown of how interest rates, USD strength, inflation, and global growth cycles drive Platinum futures (PL) volatility and long-term price direction.",
     "category": "Futures Basics"
   },
   {
@@ -2850,10 +3060,82 @@
     "category": "Prop Firm Trading"
   },
   {
+    "title": "PA vs PL: Spread Trading the Palladium–Platinum Relationship",
+    "url": "/futures-basics/pa-pl-vs-pa-spread-trading.html",
+    "description": "A blunt breakdown of PA vs PL spread trading, explaining the Palladium–Platinum relationship, substitution flows, volatility edges, and when the spread actually matters.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Palladium ATR Behavior and Volatility Structure",
+    "url": "/futures-basics/pa-atr-volatility-profile.html",
+    "description": "A blunt breakdown of Palladium futures ATR behavior, volatility structure, average swing size, and why PA",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Palladium Futures Seasonality: Monthly and Quarterly Patterns",
+    "url": "/futures-basics/pa-seasonality-patterns.html",
+    "description": "A blunt breakdown of Palladium futures seasonality, showing the monthly and quarterly tendencies that actually matter in PA and why thin liquidity amplifies these cycles.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Palladium Futures Tick Size, Tick Value, and Margin Explained",
+    "url": "/futures-basics/pa-tick-size-and-margins.html",
+    "description": "A blunt breakdown of Palladium futures tick size, tick value, and margin requirements so you understand the real risk behind every PA order you place.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Palladium Futures Volume Profile and Liquidity Zones",
+    "url": "/futures-basics/pa-volume-profile-liquidity.html",
+    "description": "A blunt breakdown of Palladium futures volume profile, how liquidity zones form, and why PA reacts violently around low-volume pockets and high-volume nodes.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Palladium Futures vs Spot: Price Divergences and Arbitrage Logic",
+    "url": "/futures-basics/pa-vs-spot-arbitrage.html",
+    "description": "A blunt breakdown of Palladium futures vs spot pricing, explaining why PA diverges, how arbitrage actually works, and what traders can and can",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Palladium Liquidity vs Gold and Silver",
+    "url": "/futures-basics/pa-liquidity-vs-gc-si.html",
+    "description": "A blunt comparison of Palladium liquidity vs Gold and Silver, why PA trades nothing like GC or SI, and how execution must adapt to survive PA’s thin market.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Palladium Microstructure: DOM, Sweep Risk, and Tape Reading",
+    "url": "/futures-basics/pa-microstructure.html",
+    "description": "A blunt breakdown of Palladium microstructure: DOM behavior, sweep risk, tape reading signals, and why PA’s thin book creates explosive moves.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Parabolic Moves: Why Markets Go Vertical Before They Collapse",
     "url": "/market-basics/parabolic-moves-explained.html",
     "description": "Parabolic moves explained—why markets go vertical, what fuels the blow-off phase, and how to avoid getting trapped in unsustainable price spikes.",
     "category": "Market Basics"
+  },
+  {
+    "title": "PL Margin Requirements: Day vs Overnight Explained",
+    "url": "/futures-basics/pl-margin-day-vs-overnight.html",
+    "description": "A hard-edged breakdown of Platinum futures (PL) margin mechanics: day margin vs overnight margin, risk modeling, and why brokers demand more during volatility.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "PL Seasonality: Platinum Futures Patterns and Tendencies",
+    "url": "/futures-basics/pl-seasonality-patterns.html",
+    "description": "A direct look at Platinum futures (PL) seasonality patterns, multi-year tendencies, and how to use them without trading like a superstition-chasing clown.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "PL Tick Size, Tick Value, and Full Platinum Contract Specs",
+    "url": "/futures-basics/pl-tick-size-and-contract-specs.html",
+    "description": "A complete breakdown of Platinum futures (PL) tick size, tick value, and every contract spec that actually matters for real trading decisions.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "PL Volatility Profile: ATR, Swing Size, and Platinum Risk Zones",
+    "url": "/futures-basics/pl-volatility-profile.html",
+    "description": "A hard-edged breakdown of Platinum futures (PL) volatility, ATR behavior, average swing size, and the real risk zones traders must respect.",
+    "category": "Futures Basics"
   },
   {
     "title": "Platforms & Tutorials | Grizzly Parrot Trading",
@@ -2866,6 +3148,36 @@
     "url": "/platforms-tutorials/article1.html",
     "description": "",
     "category": "Platforms & Tutorials"
+  },
+  {
+    "title": "Platinum Futures (PL) Hedging Strategies: How Traders Use PL to Manage Risk",
+    "url": "/futures-basics/pl-hedging-use-cases.html",
+    "description": "A trader-focused guide to hedging with Platinum futures (PL): ETF hedges, ratio hedges, synthetic positions, PGM basket exposure, and volatility management.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Platinum Futures (PL) Spread Strategies: Calendar, Inter-Metal, and Synthetic Plays",
+    "url": "/futures-basics/pl-spread-strategy-overview.html",
+    "description": "A trader-focused breakdown of Platinum futures (PL) spread strategies: calendar spreads, PL/PA inter-metal pairs, GC and SI hedges, and synthetic PL positioning.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Platinum Supply Chain: Mining Regions and Price Impact",
+    "url": "/futures-basics/platinum-supply-chain-price-impact.html",
+    "description": "A hard-edged breakdown of the platinum supply chain, major mining regions, and how production shocks in South Africa and Russia directly hit PL futures.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Platinum to Gold Ratio: What the PL/AU Relationship Really Signals",
+    "url": "/futures-basics/pl-gold-ratio-guide.html",
+    "description": "A deep, macro-heavy breakdown of the Platinum to Gold ratio (PL/AU), long-term cycles, value extremes, and how smart traders use the ratio to understand PL futures direction.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Platinum vs Palladium: PL/PA Spread Behavior and Correlation Shifts",
+    "url": "/futures-basics/pl-vs-pa-spread-correlation.html",
+    "description": "A hard-edged guide to the Platinum–Palladium (PL/PA) spread, correlation shifts, substitution cycles, and how real traders use the inter-metal relationship for futures edge.",
+    "category": "Futures Basics"
   },
   {
     "title": "Pre-Market Structure: Why the Opening Tone Is Set Before the Bell",
@@ -3034,6 +3346,12 @@
     "url": "/market-basics/risk-events-explained.html",
     "description": "A blunt breakdown of risk events, how markets price uncertainty, and why risk premium rises long before the event itself hits the tape.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Risk Management for Palladium Futures: Sizing and Stops",
+    "url": "/futures-basics/pa-risk-management.html",
+    "description": "A blunt guide to risk management in Palladium futures: sizing, stops, drawdown control, and how to stay alive in PA’s thin, violent market structure.",
+    "category": "Futures Basics"
   },
   {
     "title": "Risk Per Trade For Small Accounts – Grizzly Parrot Trading",
@@ -3327,6 +3645,12 @@
     "title": "The Best Times of Day to Trade 6S Swiss Franc Futures",
     "url": "/futures-basics/6s-best-times-of-day-to-trade-swiss-franc-futures.html",
     "description": "Learn the exact times of day when 6S Swiss Franc futures show real liquidity, clean structure, and reliable volatility. Trade 6S when it actually moves.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "The Best Times to Trade Copper Futures: When HG Actually Moves",
+    "url": "/futures-basics/best-times-to-trade-hg.html",
+    "description": "Learn the real session windows when copper futures (HG) actually move, why volatility clusters form, and how to time trades without guessing.",
     "category": "Futures Basics"
   },
   {
@@ -3804,9 +4128,27 @@
     "category": "Futures Basics"
   },
   {
+    "title": "What Are Copper Futures (HG)? Contract Breakdown for New Traders",
+    "url": "/futures-basics/what-are-copper-futures-hg.html",
+    "description": "A blunt, trader-focused breakdown of copper futures (HG), including contract specs, pricing, margin, and how the market actually moves.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "What Are Gold Futures (GC)?",
     "url": "/futures-basics/what-are-gold-futures-gc.html",
     "description": "A blunt, beginner-friendly breakdown of what Gold futures (GC) are, how the GC contract works on CME, and why traders use it instead of spot.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "What Are Palladium Futures (PA)? Complete Contract Breakdown",
+    "url": "/futures-basics/palladium-futures-overview.html",
+    "description": "A direct, detailed breakdown of Palladium futures (PA), including contract size, tick value, margin, and the real liquidity behavior traders must respect.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "What Are Platinum Futures (PL)? Complete Contract Breakdown",
+    "url": "/futures-basics/what-are-platinum-futures.html",
+    "description": "A straight-shot explanation of Platinum futures (PL), how the NYMEX contract works, and what beginners must understand before trading it.",
     "category": "Futures Basics"
   },
   {
@@ -4122,6 +4464,18 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Why Palladium Short Squeezes Happen and How They Unfold",
+    "url": "/futures-basics/pa-short-squeezes-explained.html",
+    "description": "A blunt breakdown of why Palladium futures short squeezes happen, how PA’s thin structure and supply risks amplify them, and the signs that a squeeze is forming.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why Platinum Trades Differently Than Gold and Silver",
+    "url": "/futures-basics/why-pl-differs-from-gold-silver.html",
+    "description": "A blunt explanation of why Platinum futures (PL) behave nothing like Gold (GC) or Silver (SI), and the structural factors that drive its volatility.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Why Prop Firms Ban Grid Trading and Martingale Strategies",
     "url": "/prop-firm-trading/prop-firm-grid-and-martingale-bans.html",
     "description": "A blunt explanation of why prop firms ban grid trading and martingale strategies, how they detect them, and the risks these methods create for evaluations.",
@@ -4131,6 +4485,12 @@
     "title": "Why SI Trades Differ From GC: Volatility & Liquidity Forces",
     "url": "/futures-basics/why-si-differs-from-gc-volatility-liquidity.html",
     "description": "A detailed breakdown of why Silver futures (SI) move differently than Gold (GC) by volatility structure, liquidity depth, industrial demand, and order flow.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why Slippage Hits Harder in Palladium Futures",
+    "url": "/futures-basics/pa-slippage-problems.html",
+    "description": "A blunt breakdown of why slippage is worse in Palladium futures, how PA’s thin liquidity magnifies every fill, and what traders can do to limit the damage.",
     "category": "Futures Basics"
   },
   {
