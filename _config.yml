@@ -1,0 +1,28 @@
+# _config.yml
+
+# Explicit site URL so there's no confusion
+url: "https://grizzlyparrottrading.com"
+
+# If there's a subpath for the site (if it's hosted in a subdirectory), put it here; otherwise it's empty
+baseurl: ""
+
+# Pretty URLs for cleaner links
+permalink: pretty
+
+# Default layout and values, if you have a layout file or anything specific you want set; otherwise null is fine
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: null
+
+# Timezone to be explicit
+timezone: "UTC"
+
+# Markdown processor
+markdown: kramdown
+
+# Any plugins or other settings, explicitly listed
+plugins: []
+
+# Include or exclude any directories explicitly if needed; otherwise, we'll leave them as you have them.
