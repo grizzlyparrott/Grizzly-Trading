@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- FAVICONS / MANIFEST -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Futures Margin & Leverage Visualizer | Grizzly Parrot Trading</title>
+    <meta name="description" content="See real futures leverage, margin usage, and dollar P/L for a move in points. Pick a contract, set account size and margin, and drag the slider.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrottrading.com/margin-leverage-visualizer.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Futures Margin & Leverage Visualizer | Grizzly Parrot Trading">
+    <meta property="og:description" content="Interactive futures margin and leverage tool with point-move P/L. No fluff, just the real numbers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grizzlyparrottrading.com/margin-leverage-visualizer.html">
+    <meta property="og:site_name" content="Grizzly Parrot Trading">
+    <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta property="og:image:width" content="1792">
+    <meta property="og:image:height" content="941">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta name="twitter:title" content="Futures Margin & Leverage Visualizer | Grizzly Parrot Trading">
+    <meta name="twitter:description" content="Check real leverage, margin usage, and P/L per point on common futures contracts.">
+
+    <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JMJVR3G5YN');
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrot Trading</span>
+        </div>
+        <nav class="main-nav">
+            <a href="/app.html" id="get-app-link">Get the App</a>
+            <a href="futures-basics/index.html">Futures Basics</a>
+            <a href="prop-firm-trading/index.html">Prop Firms</a>
+            <a href="platforms-tutorials/index.html">Platforms</a>
+            <a href="market-basics/index.html">Market Basics</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h1>Futures Margin &amp; Leverage Visualizer</h1>
+                <p>
+                    Pick a contract, plug in your account size and margin, and drag the slider.  
+                    See exactly how much leverage you are actually running and what a move in points does to your account.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Inputs</h2>
+
+            <div class="tool-grid">
+                <div class="tool-block">
+                    <label for="ml-symbol">Contract</label>
+                    <select id="ml-symbol">
+                        <!-- Index futures -->
+                        <option value="ES">ES (E-mini S&amp;P 500)</option>
+                        <option value="MES">MES (Micro E-mini S&amp;P 500)</option>
+                        <option value="NQ">NQ (E-mini Nasdaq-100)</option>
+                        <option value="MNQ">MNQ (Micro E-mini Nasdaq-100)</option>
+                        <option value="YM">YM (E-mini Dow)</option>
+                        <option value="MYM">MYM (Micro E-mini Dow)</option>
+                        <!-- FX majors -->
+                        <option value="6E">6E (Euro FX)</option>
+                        <option value="6B">6B (British Pound)</option>
+                        <option value="6J">6J (Japanese Yen)</option>
+                        <option value="6A">6A (Australian Dollar)</option>
+                        <option value="6C">6C (Canadian Dollar)</option>
+                        <option value="6S">6S (Swiss Franc)</option>
+                        <option value="6N">6N (New Zealand Dollar)</option>
+                        <option value="6M">6M (Mexican Peso)</option>
+                        <!-- Metals -->
+                        <option value="GC">GC (Gold)</option>
+                        <option value="MGC">MGC (Micro Gold)</option>
+                        <option value="SI">SI (Silver)</option>
+                        <option value="HG">HG (Copper)</option>
+                        <option value="PL">PL (Platinum)</option>
+                        <option value="PA">PA (Palladium)</option>
+                        <!-- Energies -->
+                        <option value="CL">CL (Crude Oil)</option>
+                        <option value="MCL">MCL (Micro Crude Oil)</option>
+                        <option value="NG">NG (Natural Gas)</option>
+                        <option value="RB">RB (RBOB Gasoline)</option>
+                        <option value="HO">HO (Heating Oil)</option>
+                        <!-- Grains -->
+                        <option value="ZC">ZC (Corn)</option>
+                        <option value="ZS">ZS (Soybeans)</option>
+                        <option value="ZW">ZW (Wheat)</option>
+                    </select>
+                </div>
+
+                <div class="tool-block">
+                    <label for="ml-account">Account Size ($)</label>
+                    <input type="number" id="ml-account" min="0" step="1" placeholder="e.g. 2500">
+                </div>
+
+                <div class="tool-block">
+                    <label for="ml-price">Current Futures Price</label>
+                    <input type="number" id="ml-price" min="0" step="0.0001" placeholder="e.g. 5300.00 or 1.1050 or 5.25">
+                    <p class="field-help">
+                        Enter price exactly how your platform shows it:<br>
+                        ES/CL/GC etc: normal price (e.g. 5300.00, 78.25).<br>
+                        FX (6E, 6B, etc.): decimal (e.g. 1.1050).<br>
+                        Grains (ZC, ZS, ZW): dollars per bushel (e.g. 5.25).
+                    </p>
+                </div>
+
+                <div class="tool-block">
+                    <label for="ml-contracts">Contracts</label>
+                    <input type="number" id="ml-contracts" min="1" step="1" placeholder="e.g. 1">
+                </div>
+
+                <div class="tool-block">
+                    <label for="ml-margin-intra">Intraday Margin / Contract ($)</label>
+                    <input type="number" id="ml-margin-intra" min="0" step="1" placeholder="e.g. 500">
+                </div>
+
+                <div class="tool-block">
+                    <label for="ml-margin-overnight">Overnight Margin / Contract ($)</label>
+                    <input type="number" id="ml-margin-overnight" min="0" step="1" placeholder="e.g. 13200">
+                </div>
+
+                <div class="tool-block">
+                    <label>Margin Mode</label>
+                    <div class="tool-inline">
+                        <label><input type="radio" name="ml-margin-mode" value="intra" checked> Intraday</label>
+                        <label><input type="radio" name="ml-margin-mode" value="overnight"> Overnight</label>
+                    </div>
+                </div>
+
+                <div class="tool-block">
+                    <label for="ml-move-points">Price Move (points)</label>
+                    <div class="ml-slider-row">
+                        <input type="range" id="ml-move-points" min="-50" max="50" step="0.25" value="5">
+                        <input type="number" id="ml-move-points-number" step="0.25" value="5">
+                    </div>
+                    <p class="field-help">
+                        Positive = move in your favor. Negative = move against you.<br>
+                        For FX/grains, think in price units (e.g. 0.0100 on 6E, 0.25 on ZC).
+                    </p>
+                </div>
+
+                <div class="tool-block">
+                    <button id="ml-calc-btn" class="button-primary">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Results</h2>
+            <div id="ml-results-summary" class="results-box">
+                <p>Fill out the inputs and hit Calculate.</p>
+            </div>
+            <div id="ml-results-detail" class="results-box" style="margin-top: 20px;">
+                <!-- details injected here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>How To Read This</h2>
+            <div class="grid grid-3">
+                <article class="card">
+                    <h3>Notional &amp; Leverage</h3>
+                    <p>
+                        Notional = price × contract multiplier × contracts.  
+                        Leverage = total notional ÷ your account. If you are running 30x leverage on a tiny account, you know how that ends.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Margin Usage</h3>
+                    <p>
+                        Margin used = margin/contract × contracts.  
+                        Margin % tells you how much of your account is locked just to hold the position.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>P/L Per Point</h3>
+                    <p>
+                        Every 1.00 price unit is a fixed dollar amount per contract.  
+                        The slider shows what a move of X units does in real dollars and % of your account.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="ml-year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://grizzlyparrott.github.io/Probabilistic-Execution/" style="color:#22c55e;" target="_blank">
+                Probabilistic Execution – Free 3-Phase Trading Routine
+            </a>
+        </div>
+    </div>
+    <script>
+        document.getElementById("ml-year").textContent = new Date().getFullYear();
+    </script>
+</footer>
+
+<script>
+// Contract specs: dollarPerPoint = P/L for a 1.00 move in price.
+// multiplier = contract size used for notional = price * multiplier.
+const ML_CONTRACTS = {
+  // INDEX FUTURES
+  ES:  { name: "ES (E-mini S&P 500)",               dollarPerPoint: 50,       multiplier: 50 },
+  MES: { name: "MES (Micro E-mini S&P 500)",        dollarPerPoint: 5,        multiplier: 5 },
+  NQ:  { name: "NQ (E-mini Nasdaq-100)",            dollarPerPoint: 20,       multiplier: 20 },
+  MNQ: { name: "MNQ (Micro E-mini Nasdaq-100)",     dollarPerPoint: 2,        multiplier: 2 },
+  YM:  { name: "YM (E-mini Dow)",                   dollarPerPoint: 5,        multiplier: 5 },
+  MYM: { name: "MYM (Micro E-mini Dow)",            dollarPerPoint: 0.5,      multiplier: 0.5 },
+
+  // FX MAJORS (contract size in base currency)
+  "6E": { name: "6E (Euro FX)",                     dollarPerPoint: 125000,   multiplier: 125000 },
+  "6B": { name: "6B (British Pound)",               dollarPerPoint: 62500,    multiplier: 62500 },
+  "6J": { name: "6J (Japanese Yen)",                dollarPerPoint: 12500000, multiplier: 12500000 },
+  "6A": { name: "6A (Australian Dollar)",           dollarPerPoint: 100000,   multiplier: 100000 },
+  "6C": { name: "6C (Canadian Dollar)",             dollarPerPoint: 100000,   multiplier: 100000 },
+  "6S": { name: "6S (Swiss Franc)",                 dollarPerPoint: 125000,   multiplier: 125000 },
+  "6N": { name: "6N (New Zealand Dollar)",          dollarPerPoint: 100000,   multiplier: 100000 },
+  "6M": { name: "6M (Mexican Peso)",                dollarPerPoint: 500000,   multiplier: 500000 },
+
+  // METALS
+  GC:  { name: "GC (Gold)",                         dollarPerPoint: 100,      multiplier: 100 },
+  MGC: { name: "MGC (Micro Gold)",                  dollarPerPoint: 10,       multiplier: 10 },
+  SI:  { name: "SI (Silver)",                       dollarPerPoint: 5000,     multiplier: 5000 },
+  HG:  { name: "HG (Copper)",                       dollarPerPoint: 25000,    multiplier: 25000 },
+  PL:  { name: "PL (Platinum)",                     dollarPerPoint: 50,       multiplier: 50 },
+  PA:  { name: "PA (Palladium)",                    dollarPerPoint: 100,      multiplier: 100 },
+
+  // ENERGIES
+  CL:  { name: "CL (Crude Oil)",                    dollarPerPoint: 1000,     multiplier: 1000 },
+  MCL: { name: "MCL (Micro Crude Oil)",             dollarPerPoint: 100,      multiplier: 100 },
+  NG:  { name: "NG (Natural Gas)",                  dollarPerPoint: 10000,    multiplier: 10000 },
+  RB:  { name: "RB (RBOB Gasoline)",                dollarPerPoint: 42000,    multiplier: 42000 },
+  HO:  { name: "HO (Heating Oil)",                  dollarPerPoint: 42000,    multiplier: 42000 },
+
+  // GRAINS (price in $/bushel)
+  ZC:  { name: "ZC (Corn)",                         dollarPerPoint: 5000,     multiplier: 5000 },
+  ZS:  { name: "ZS (Soybeans)",                     dollarPerPoint: 5000,     multiplier: 5000 },
+  ZW:  { name: "ZW (Wheat)",                        dollarPerPoint: 5000,     multiplier: 5000 }
+};
+
+function mlFmt(num, dec) {
+  return Number(num).toFixed(dec);
+}
+
+const mlSymbolEl = document.getElementById("ml-symbol");
+const mlAccountEl = document.getElementById("ml-account");
+const mlPriceEl = document.getElementById("ml-price");
+const mlContractsEl = document.getElementById("ml-contracts");
+const mlMarginIntraEl = document.getElementById("ml-margin-intra");
+const mlMarginOvernightEl = document.getElementById("ml-margin-overnight");
+const mlMoveSliderEl = document.getElementById("ml-move-points");
+const mlMoveNumberEl = document.getElementById("ml-move-points-number");
+const mlCalcBtn = document.getElementById("ml-calc-btn");
+const mlResultsSummary = document.getElementById("ml-results-summary");
+const mlResultsDetail = document.getElementById("ml-results-detail");
+
+// sync slider and numeric input
+mlMoveSliderEl.addEventListener("input", function () {
+  mlMoveNumberEl.value = mlMoveSliderEl.value;
+});
+
+mlMoveNumberEl.addEventListener("input", function () {
+  const v = parseFloat(mlMoveNumberEl.value);
+  if (!isNaN(v) && v >= parseFloat(mlMoveSliderEl.min) && v <= parseFloat(mlMoveSliderEl.max)) {
+    mlMoveSliderEl.value = v;
+  }
+});
+
+mlCalcBtn.addEventListener("click", function () {
+  const symbol = mlSymbolEl.value;
+  const spec = ML_CONTRACTS[symbol];
+
+  const account = parseFloat(mlAccountEl.value);
+  const price = parseFloat(mlPriceEl.value);
+  const contracts = parseFloat(mlContractsEl.value);
+  const marginIntra = parseFloat(mlMarginIntraEl.value);
+  const marginOvernight = parseFloat(mlMarginOvernightEl.value);
+  const movePoints = parseFloat(mlMoveSliderEl.value);
+  const marginMode = document.querySelector('input[name="ml-margin-mode"]:checked').value;
+
+  if (!spec) {
+    mlResultsSummary.innerHTML = "<p>Unknown contract spec.</p>";
+    mlResultsDetail.innerHTML = "";
+    return;
+  }
+
+  if (isNaN(account) || account <= 0) {
+    mlResultsSummary.innerHTML = "<p>Enter a valid account size.</p>";
+    mlResultsDetail.innerHTML = "";
+    return;
+  }
+
+  if (isNaN(price) || price <= 0) {
+    mlResultsSummary.innerHTML = "<p>Enter a valid current futures price.</p>";
+    mlResultsDetail.innerHTML = "";
+    return;
+  }
+
+  if (isNaN(contracts) || contracts <= 0) {
+    mlResultsSummary.innerHTML = "<p>Enter a valid number of contracts.</p>";
+    mlResultsDetail.innerHTML = "";
+    return;
+  }
+
+  let marginPer;
+  if (marginMode === "intra") {
+    if (isNaN(marginIntra) || marginIntra <= 0) {
+      mlResultsSummary.innerHTML = "<p>Enter intraday margin per contract or switch to overnight.</p>";
+      mlResultsDetail.innerHTML = "";
+      return;
+    }
+    marginPer = marginIntra;
+  } else {
+    if (isNaN(marginOvernight) || marginOvernight <= 0) {
+      mlResultsSummary.innerHTML = "<p>Enter overnight margin per contract or switch to intraday.</p>";
+      mlResultsDetail.innerHTML = "";
+      return;
+    }
+    marginPer = marginOvernight;
+  }
+
+  const dollarPerPoint = spec.dollarPerPoint;
+  const multiplier = spec.multiplier;
+
+  const notionalPer = price * multiplier;
+  const totalNotional = notionalPer * contracts;
+  const leverage = totalNotional / account;
+
+  const marginUsed = marginPer * contracts;
+  const marginPct = (marginUsed / account) * 100;
+
+  const plPerPointPerContract = dollarPerPoint;
+  const plPerPointTotal = plPerPointPerContract * contracts;
+
+  const movePL = movePoints * plPerPointTotal;
+  const movePLPct = (movePL / account) * 100;
+
+  mlResultsSummary.innerHTML = `
+    <p>
+      <strong>${spec.name}</strong> | ${contracts} contract(s) on a $${mlFmt(account, 0)} account at price ${mlFmt(price, 4)}.
+    </p>
+    <p>
+      Total notional: <strong>$${mlFmt(totalNotional, 2)}</strong>
+      &nbsp;|&nbsp; Leverage: <strong>${mlFmt(leverage, 1)}x</strong>
+      &nbsp;|&nbsp; Margin used: <strong>$${mlFmt(marginUsed, 0)}</strong> (${mlFmt(marginPct, 1)}% of account)
+    </p>
+  `;
+
+  mlResultsDetail.innerHTML = `
+    <div class="results-grid">
+      <div class="results-item">
+        <h3>Contract Specs</h3>
+        <p><strong>Dollar per 1.00 price move:</strong> $${mlFmt(dollarPerPoint, 2)} per contract</p>
+        <p><strong>Notional per contract:</strong> $${mlFmt(notionalPer, 2)}</p>
+        <p><strong>Total notional:</strong> $${mlFmt(totalNotional, 2)}</p>
+      </div>
+      <div class="results-item">
+        <h3>Margin Profile (${marginMode === "intra" ? "Intraday" : "Overnight"})</h3>
+        <p><strong>Margin per contract:</strong> $${mlFmt(marginPer, 0)}</p>
+        <p><strong>Total margin used:</strong> $${mlFmt(marginUsed, 0)}</p>
+        <p><strong>Margin usage:</strong> ${mlFmt(marginPct, 1)}% of account</p>
+      </div>
+      <div class="results-item">
+        <h3>P/L From Price Moves</h3>
+        <p><strong>1.00 move in price:</strong> $${mlFmt(plPerPointTotal, 2)} (${mlFmt((plPerPointTotal / account) * 100, 2)}% of account)</p>
+        <p><strong>${mlFmt(movePoints, 2)} move in price:</strong> $${mlFmt(movePL, 2)} (${mlFmt(movePLPct, 2)}% of account)</p>
+        <p class="field-help">
+          Positive = in your favor, negative = against you.
+        </p>
+      </div>
+    </div>
+  `;
+});
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/sw.js").catch(function () {});
+  });
+}
+</script>
+
+<style>
+.ml-slider-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.ml-slider-row input[type="range"] {
+  flex: 1;
+}
+.ml-slider-row input[type="number"] {
+  width: 90px;
+}
+</style>
+
+</body>
+</html>
