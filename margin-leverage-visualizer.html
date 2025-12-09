@@ -14,16 +14,16 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Futures Margin & Leverage Visualizer | Grizzly Parrot Trading</title>
-    <meta name="description" content="See real futures leverage, margin usage, and dollar P/L for a move in price. Pick a contract, set account size and margin, and drag the slider.">
+    <title>Futures Margin &amp; Leverage Visualizer | Grizzly Parrot Trading</title>
+    <meta name="description" content="See real futures leverage, margin usage, and P/L as % of your account for a move in price. Pick a contract, set account size and margin, and drag the slider.">
     <meta name="robots" content="index, follow">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://grizzlyparrottrading.com/margin-leverage-visualizer.html">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Futures Margin & Leverage Visualizer | Grizzly Parrot Trading">
-    <meta property="og:description" content="Interactive futures margin and leverage tool with live P/L chart and risk stats.">
+    <meta property="og:title" content="Futures Margin &amp; Leverage Visualizer | Grizzly Parrot Trading">
+    <meta property="og:description" content="Interactive futures margin and leverage tool with a simple risk bar: how much of your account you’re putting on the line.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://grizzlyparrottrading.com/margin-leverage-visualizer.html">
     <meta property="og:site_name" content="Grizzly Parrot Trading">
@@ -34,8 +34,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
-    <meta name="twitter:title" content="Futures Margin & Leverage Visualizer | Grizzly Parrot Trading">
-    <meta name="twitter:description" content="Check real leverage, margin usage, and P/L per point on common futures contracts.">
+    <meta name="twitter:title" content="Futures Margin &amp; Leverage Visualizer | Grizzly Parrot Trading">
+    <meta name="twitter:description" content="Check real leverage, margin usage, and account risk for a given move in price.">
 
     <!-- Google tag (Analytics) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
@@ -73,7 +73,7 @@
                 <h1>Futures Margin &amp; Leverage Visualizer</h1>
                 <p>
                     Pick a contract, plug in your account size and margin, and drag the slider.  
-                    See how much notional you’re swinging, how much margin you’re tying up, and what a move in price does to your P/L.
+                    You’ll see how much notional you’re swinging, how much margin you’re locking up, and how much of your account gets torched if price moves.
                 </p>
             </div>
         </div>
@@ -164,10 +164,10 @@
                     <label for="ml-price">Current Futures Price</label>
                     <input type="number" id="ml-price" min="0" step="0.0001" placeholder="e.g. 5300.00 or 1.1050 or 5.25">
                     <p class="field-help">
-                        Enter price exactly how your platform shows it.<br>
-                        Index / metals / energies: normal price (e.g. 5300.00, 78.25, 2450.4).<br>
-                        FX (6E, 6B, etc.): decimal (e.g. 1.1050, 0.7500).<br>
-                        Grains / softs: dollars per unit (e.g. 5.25 for ZC, 0.85 for ZL, 190.00 for KC).
+                        Use the same price format your platform shows.<br>
+                        Index / metals / energies: 5300.00, 78.25, 2450.4 etc.<br>
+                        FX (6E, 6B, etc.): 1.1050, 0.7500, etc.<br>
+                        Grains / softs: dollars per unit (5.25 for ZC, 0.85 for ZL, 190.00 for KC, etc.).
                     </p>
                 </div>
 
@@ -201,8 +201,8 @@
                         <input type="number" id="ml-move-points-number" step="0.25" value="5">
                     </div>
                     <p class="field-help">
-                        Positive = move in your favor. Negative = move against you.<br>
-                        This is in <strong>price units</strong>, not ticks.
+                        Positive = move in your favor. Negative = against you.  
+                        This is in price units, not ticks.
                     </p>
                 </div>
 
@@ -224,10 +224,12 @@
             </div>
 
             <div class="results-chart-wrapper">
-                <h3>Price Move vs P/L (Dollars)</h3>
-                <canvas id="ml-chart-pl" width="700" height="260"></canvas>
-                <p class="field-help">
-                    Line = P/L across the slider range. Dot = your current slider move.
+                <h3>Risk On This Move (% of Account)</h3>
+                <div class="risk-bar-outer">
+                    <div id="ml-risk-bar-inner"></div>
+                </div>
+                <p id="ml-risk-label" class="field-help">
+                    Adjust the slider to see how much of your account this move puts at risk.
                 </p>
             </div>
         </div>
@@ -240,7 +242,7 @@
                 <article class="card">
                     <h3>Notional &amp; Leverage</h3>
                     <p>
-                        Notional = price × contract multiplier × contracts.  
+                        Notional = price × contract size × contracts.  
                         Leverage = total notional ÷ your account.
                     </p>
                 </article>
@@ -254,8 +256,8 @@
                 <article class="card">
                     <h3>Damage From A Move</h3>
                     <p>
-                        The P/L line plus the percentage-of-account readout is the real point:  
-                        “If price moves X against me, I lose $Y, which is Z% of my account.”
+                        The key number is “P/L as % of account.”  
+                        If a normal wiggle costs you 10–20% of the account, you’re not “trading” — you’re begging to blow up.
                     </p>
                 </article>
             </div>
@@ -283,7 +285,7 @@
 
 <script>
 // Contract specs: dollarPerPoint = P/L for a 1.00 move in price.
-// multiplier = contract size used for notional = price * multiplier.
+// multiplier = contract size for notional = price * multiplier.
 const ML_CONTRACTS = {
   // INDEX FUTURES
   ES:  { name: "ES (E-mini S&P 500)",               dollarPerPoint: 50,       multiplier: 50 },
@@ -367,113 +369,41 @@ const mlMoveNumberEl = document.getElementById("ml-move-points-number");
 const mlCalcBtn = document.getElementById("ml-calc-btn");
 const mlResultsSummary = document.getElementById("ml-results-summary");
 const mlResultsDetail = document.getElementById("ml-results-detail");
+const mlRiskBar = document.getElementById("ml-risk-bar-inner");
+const mlRiskLabel = document.getElementById("ml-risk-label");
 
-const plCanvas = document.getElementById("ml-chart-pl");
-const plCtx = plCanvas.getContext("2d");
+function resetRiskBar() {
+  mlRiskBar.style.width = "0%";
+  mlRiskBar.style.backgroundColor = "#0f172a";
+  mlRiskLabel.textContent = "Adjust the slider to see how much of your account this move puts at risk.";
+}
 
-function drawMoveChart(ctx, canvas, computeYFromMove, minMove, maxMove, currentMove) {
-  const w = canvas.width;
-  const h = canvas.height;
-  ctx.clearRect(0, 0, w, h);
+function updateRiskBar(movePLPct) {
+  const pct = Math.abs(movePLPct);
+  const capped = Math.min(pct, 100);
 
-  const testVals = [minMove, maxMove, 0, currentMove];
-  const yVals = [];
-  for (let i = 0; i < testVals.length; i++) {
-    const y = computeYFromMove(testVals[i]);
-    if (isFinite(y)) yVals.push(y);
+  mlRiskBar.style.width = capped + "%";
+
+  let color, msg;
+  if (pct < 0.5) {
+    color = "#16a34a";
+    msg = "Risk: " + mlFmt(pct, 2) + "% of account. Boring. This is fine.";
+  } else if (pct < 1.5) {
+    color = "#16a34a";
+    msg = "Risk: " + mlFmt(pct, 2) + "% of account. Sensible sizing.";
+  } else if (pct < 3) {
+    color = "#facc15";
+    msg = "Risk: " + mlFmt(pct, 2) + "% of account. Getting spicy, make sure the setup actually deserves it.";
+  } else if (pct < 6) {
+    color = "#f97316";
+    msg = "Risk: " + mlFmt(pct, 2) + "% of account. This is heat. If this is a random click, you’re being stupid.";
+  } else {
+    color = "#dc2626";
+    msg = "Risk: " + mlFmt(pct, 2) + "% of account. You’re one dumb move away from ‘why is my account balance zero?’.";
   }
 
-  if (!yVals.length) {
-    ctx.fillStyle = "#666";
-    ctx.font = "14px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif";
-    ctx.fillText("Enter valid inputs to see the curve.", 20, h / 2);
-    return;
-  }
-
-  let yMin = Math.min.apply(null, yVals);
-  let yMax = Math.max.apply(null, yVals);
-  if (yMin === yMax) {
-    yMin -= 1;
-    yMax += 1;
-  }
-
-  const paddingLeft = 60;
-  const paddingRight = 20;
-  const paddingTop = 20;
-  const paddingBottom = 40;
-
-  const xToPx = (move) => {
-    const t = (move - minMove) / (maxMove - minMove || 1);
-    return paddingLeft + t * (w - paddingLeft - paddingRight);
-  };
-  const yToPx = (y) => {
-    const t = (y - yMin) / (yMax - yMin || 1);
-    return h - paddingBottom - t * (h - paddingTop - paddingBottom);
-  };
-
-  ctx.fillStyle = "#f7f9fc";
-  ctx.fillRect(0, 0, w, h);
-
-  ctx.strokeStyle = "#ccc";
-  ctx.lineWidth = 1;
-
-  // x-axis at y=0 if in range
-  if (yMin < 0 && yMax > 0) {
-    const zeroY = yToPx(0);
-    ctx.beginPath();
-    ctx.moveTo(paddingLeft, zeroY);
-    ctx.lineTo(w - paddingRight, zeroY);
-    ctx.stroke();
-  }
-
-  // y-axis at move=0
-  if (minMove < 0 && maxMove > 0) {
-    const zeroX = xToPx(0);
-    ctx.beginPath();
-    ctx.moveTo(zeroX, paddingTop);
-    ctx.lineTo(zeroX, h - paddingBottom);
-    ctx.stroke();
-  }
-
-  ctx.fillStyle = "#555";
-  ctx.font = "12px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif";
-
-  ctx.fillText(minMove.toFixed(1), xToPx(minMove) - 10, h - paddingBottom + 16);
-  ctx.fillText("0", xToPx(0) - 6, h - paddingBottom + 16);
-  ctx.fillText(maxMove.toFixed(1), xToPx(maxMove) - 10, h - paddingBottom + 16);
-
-  ctx.fillText("$" + mlFmt(yMax, 2), 10, yToPx(yMax) - 4);
-  ctx.fillText("$" + mlFmt(yMin, 2), 10, yToPx(yMin) + 12);
-
-  // line
-  ctx.strokeStyle = "#0a3764";
-  ctx.lineWidth = 2;
-  const steps = 60;
-  ctx.beginPath();
-  for (let i = 0; i <= steps; i++) {
-    const t = i / steps;
-    const move = minMove + t * (maxMove - minMove);
-    const yVal = computeYFromMove(move);
-    const xPx = xToPx(move);
-    const yPx = yToPx(yVal);
-    if (i === 0) ctx.moveTo(xPx, yPx);
-    else ctx.lineTo(xPx, yPx);
-  }
-  ctx.stroke();
-
-  // current point
-  const currY = computeYFromMove(currentMove);
-  const currX = xToPx(currentMove);
-  const currYPx = yToPx(currY);
-
-  ctx.fillStyle = currY >= 0 ? "#16a34a" : "#dc2626";
-  ctx.beginPath();
-  ctx.arc(currX, currYPx, 5, 0, Math.PI * 2);
-  ctx.fill();
-
-  ctx.fillStyle = "#111";
-  const label = `${currentMove.toFixed(2)} move → $${mlFmt(currY, 2)}`;
-  ctx.fillText(label, Math.min(currX + 8, w - paddingRight - 160), currYPx - 8);
+  mlRiskBar.style.backgroundColor = color;
+  mlRiskLabel.textContent = msg;
 }
 
 function mlCompute() {
@@ -491,28 +421,28 @@ function mlCompute() {
   if (!spec) {
     mlResultsSummary.innerHTML = "<p>Unknown contract spec.</p>";
     mlResultsDetail.innerHTML = "";
-    drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
+    resetRiskBar();
     return;
   }
 
   if (isNaN(account) || account <= 0) {
     mlResultsSummary.innerHTML = "<p>Enter a valid account size.</p>";
     mlResultsDetail.innerHTML = "";
-    drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
+    resetRiskBar();
     return;
   }
 
   if (isNaN(price) || price <= 0) {
     mlResultsSummary.innerHTML = "<p>Enter a valid current futures price.</p>";
     mlResultsDetail.innerHTML = "";
-    drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
+    resetRiskBar();
     return;
   }
 
   if (isNaN(contracts) || contracts <= 0) {
     mlResultsSummary.innerHTML = "<p>Enter a valid number of contracts.</p>";
     mlResultsDetail.innerHTML = "";
-    drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
+    resetRiskBar();
     return;
   }
 
@@ -521,7 +451,7 @@ function mlCompute() {
     if (isNaN(marginIntra) || marginIntra <= 0) {
       mlResultsSummary.innerHTML = "<p>Enter intraday margin per contract or switch to overnight.</p>";
       mlResultsDetail.innerHTML = "";
-      drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
+      resetRiskBar();
       return;
     }
     marginPer = marginIntra;
@@ -529,7 +459,7 @@ function mlCompute() {
     if (isNaN(marginOvernight) || marginOvernight <= 0) {
       mlResultsSummary.innerHTML = "<p>Enter overnight margin per contract or switch to intraday.</p>";
       mlResultsDetail.innerHTML = "";
-      drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
+      resetRiskBar();
       return;
     }
     marginPer = marginOvernight;
@@ -584,17 +514,7 @@ function mlCompute() {
     </div>
   `;
 
-  const sliderMin = parseFloat(mlMoveSliderEl.min);
-  const sliderMax = parseFloat(mlMoveSliderEl.max);
-
-  drawMoveChart(
-    plCtx,
-    plCanvas,
-    function(move) { return move * plPerPointTotal; },
-    sliderMin,
-    sliderMax,
-    movePoints
-  );
+  updateRiskBar(movePLPct);
 }
 
 // sync slider + live compute
@@ -629,8 +549,7 @@ document.querySelectorAll('input[name="ml-margin-mode"]').forEach(function(r) {
   r.addEventListener("change", mlCompute);
 });
 
-// initial empty chart
-drawMoveChart(plCtx, plCanvas, function(){ return 0; }, -1, 1, 0);
+resetRiskBar();
 </script>
 
 <script>
@@ -663,6 +582,19 @@ if ("serviceWorker" in navigator) {
 .results-chart-wrapper h3 {
   margin-top: 0;
   margin-bottom: 8px;
+}
+.risk-bar-outer {
+  width: 100%;
+  height: 18px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+#ml-risk-bar-inner {
+  height: 100%;
+  width: 0%;
+  background: #0f172a;
+  transition: width 0.2s linear, background-color 0.2s linear;
 }
 </style>
 
