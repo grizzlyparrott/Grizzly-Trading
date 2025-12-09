@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- FAVICONS / MANIFEST -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Position Size Calculator | Grizzly Parrot Trading</title>
+    <meta name="description" content="Position size calculator for futures. Set account size, risk, and stop distance, and see how many contracts you can actually afford to trade.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrottrading.com/position-size-calculator.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Position Size Calculator | Grizzly Parrot Trading">
+    <meta property="og:description" content="Simple futures position size calculator in plain English. No fluff, just how many contracts you can safely trade.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grizzlyparrottrading.com/position-size-calculator.html">
+    <meta property="og:site_name" content="Grizzly Parrot Trading">
+    <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta property="og:image:width" content="1792">
+    <meta property="og:image:height" content="941">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta name="twitter:title" content="Position Size Calculator | Grizzly Parrot Trading">
+    <meta name="twitter:description" content="Futures position sizing calculator based on account risk and stop size.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JMJVR3G5YN');
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-mark">GP</span>
+                <span class="logo-text">Grizzly Parrot Trading</span>
+            </div>
+            <nav class="main-nav">
+                <a href="/app.html" id="get-app-link">Get the App</a>
+                <a href="futures-basics/index.html">Futures Basics</a>
+                <a href="prop-firm-trading/index.html">Prop Firms</a>
+                <a href="platforms-tutorials/index.html">Platforms</a>
+                <a href="market-basics/index.html">Market Basics</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>Futures Position Size Calculator</h1>
+                    <p>
+                        Set your account size, risk per trade, and stop distance. This tells you how many contracts you can 
+                        actually afford to trade without lying to yourself.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOL SECTION -->
+        <section class="section">
+            <div class="container">
+                <h2>Inputs</h2>
+
+                <!-- OPTIONAL AD SLOT ABOVE TOOL -->
+                <!-- <div class="ad-slot ad-top">Your ad code here</div> -->
+
+                <div class="tool-grid">
+                    <div class="tool-block">
+                        <label for="ps-symbol">Contract</label>
+                        <select id="ps-symbol">
+                            <option value="ES">ES (E-mini S&P 500)</option>
+                            <option value="MES">MES (Micro E-mini S&P 500)</option>
+                            <option value="NQ">NQ (E-mini Nasdaq-100)</option>
+                            <option value="MNQ">MNQ (Micro E-mini Nasdaq-100)</option>
+                            <option value="YM">YM (E-mini Dow)</option>
+                            <option value="MYM">MYM (Micro E-mini Dow)</option>
+                            <option value="CL">CL (Crude Oil)</option>
+                            <option value="MCL">MCL (Micro Crude Oil)</option>
+                            <option value="GC">GC (Gold)</option>
+                            <option value="MGC">MGC (Micro Gold)</option>
+                            <option value="SI">SI (Silver)</option>
+                            <option value="6E">6E (Euro FX)</option>
+                            <option value="M6E">M6E (Micro Euro FX)</option>
+                            <option value="6J">6J (Japanese Yen)</option>
+                        </select>
+                    </div>
+
+                    <div class="tool-block">
+                        <label for="ps-account">Account Size ($)</label>
+                        <input type="number" id="ps-account" step="1" min="0" placeholder="e.g. 2500">
+                    </div>
+
+                    <div class="tool-block">
+                        <label>Risk Mode</label>
+                        <div class="tool-inline">
+                            <label><input type="radio" name="ps-risk-mode" value="percent" checked> % of account</label>
+                            <label><input type="radio" name="ps-risk-mode" value="dollar"> Fixed dollar risk</label>
+                        </div>
+                    </div>
+
+                    <div class="tool-block" id="ps-risk-percent-row">
+                        <label for="ps-risk-percent">Risk Per Trade (% of account)</label>
+                        <input type="number" id="ps-risk-percent" step="0.1" min="0" placeholder="e.g. 1.0">
+                    </div>
+
+                    <div class="tool-block" id="ps-risk-dollar-row" style="display:none;">
+                        <label for="ps-risk-dollar">Risk Per Trade ($)</label>
+                        <input type="number" id="ps-risk-dollar" step="1" min="0" placeholder="e.g. 25">
+                    </div>
+
+                    <div class="tool-block">
+                        <label>Stop Distance</label>
+                        <div class="tool-inline">
+                            <label><input type="radio" name="ps-stop-mode" value="ticks" checked> Ticks</label>
+                            <label><input type="radio" name="ps-stop-mode" value="points"> Points</label>
+                        </div>
+                    </div>
+
+                    <div class="tool-block">
+                        <label for="ps-stop">Stop Size</label>
+                        <input type="number" id="ps-stop" step="0.01" min="0" placeholder="e.g. 10 (ticks) or 2.5 (points)">
+                    </div>
+
+                    <div class="tool-block">
+                        <button id="ps-calc-button" class="button-primary">Calculate Position Size</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTS SECTION -->
+        <section class="section section-alt">
+            <div class="container">
+                <h2>Results</h2>
+                <div id="ps-results-box" class="results-box">
+                    <p>Fill out the inputs above and hit Calculate.</p>
+                </div>
+
+                <!-- OPTIONAL AD SLOT BELOW TOOL -->
+                <!-- <div class="ad-slot ad-bottom">Your ad code here</div> -->
+            </div>
+        </section>
+
+        <!-- QUICK NOTES -->
+        <section class="section">
+            <div class="container">
+                <h2>How This Calculator Thinks</h2>
+                <p class="section-intro">
+                    This is not magic. It just combines tick value, your stop size, and your chosen risk to tell you how 
+                    many contracts your account can realistically carry.
+                </p>
+                <div class="grid grid-3">
+                    <article class="card">
+                        <h3>1. Per-Contract Risk</h3>
+                        <p>
+                            Per-contract risk = stop distance in ticks × tick value. If you use points, it converts points to ticks first.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>2. Total Risk Budget</h3>
+                        <p>
+                            If you use %, it takes that percent of your account. If you use fixed $, it uses that number directly as your max loss.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>3. Contract Count</h3>
+                        <p>
+                            Position size = floor(total risk budget ÷ per-contract risk). If that comes out below 1, you can’t afford a single contract at that stop.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="ps-year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="contact.html">Contact</a>
+                <a href="https://grizzlyparrott.github.io/Probabilistic-Execution/" style="color:#22c55e;" target="_blank">
+                    Probabilistic Execution – Free 3-Phase Trading Routine
+                </a>
+            </div>
+        </div>
+        <script>
+            document.getElementById("ps-year").textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+    <!-- TOOL SCRIPT -->
+    <script>
+      // Contract specs: tickSize and tickValue in USD
+      const PS_CONTRACT_SPECS = {
+        ES:  { tickSize: 0.25,    tickValue: 12.5 },
+        MES: { tickSize: 0.25,    tickValue: 1.25 },
+        NQ:  { tickSize: 0.25,    tickValue: 5.0 },
+        MNQ: { tickSize: 0.25,    tickValue: 0.5 },
+        YM:  { tickSize: 1.0,     tickValue: 5.0 },
+        MYM: { tickSize: 1.0,     tickValue: 0.5 },
+        CL:  { tickSize: 0.01,    tickValue: 10.0 },
+        MCL: { tickSize: 0.01,    tickValue: 1.0 },
+        GC:  { tickSize: 0.1,     tickValue: 10.0 },
+        MGC: { tickSize: 0.1,     tickValue: 1.0 },
+        SI:  { tickSize: 0.005,   tickValue: 25.0 },
+        "6E": { tickSize: 0.00005, tickValue: 6.25 },
+        M6E: { tickSize: 0.00005, tickValue: 1.25 },
+        "6J": { tickSize: 0.0000005, tickValue: 6.25 }
+      };
+
+      const psSymbolEl = document.getElementById("ps-symbol");
+      const psAccountEl = document.getElementById("ps-account");
+      const psRiskPercentRow = document.getElementById("ps-risk-percent-row");
+      const psRiskDollarRow = document.getElementById("ps-risk-dollar-row");
+      const psRiskPercentEl = document.getElementById("ps-risk-percent");
+      const psRiskDollarEl = document.getElementById("ps-risk-dollar");
+      const psStopEl = document.getElementById("ps-stop");
+      const psResultsBox = document.getElementById("ps-results-box");
+      const psCalcButton = document.getElementById("ps-calc-button");
+
+      const psRiskModeInputs = document.querySelectorAll('input[name="ps-risk-mode"]');
+      const psStopModeInputs = document.querySelectorAll('input[name="ps-stop-mode"]');
+
+      psRiskModeInputs.forEach(input => {
+        input.addEventListener("change", () => {
+          const mode = document.querySelector('input[name="ps-risk-mode"]:checked').value;
+          if (mode === "percent") {
+            psRiskPercentRow.style.display = "block";
+            psRiskDollarRow.style.display = "none";
+          } else {
+            psRiskPercentRow.style.display = "none";
+            psRiskDollarRow.style.display = "block";
+          }
+        });
+      });
+
+      function psFormat(num, decimals) {
+        return Number(num).toFixed(decimals);
+      }
+
+      psCalcButton.addEventListener("click", function () {
+        const symbol = psSymbolEl.value;
+        const spec = PS_CONTRACT_SPECS[symbol];
+
+        if (!spec) {
+          psResultsBox.innerHTML = "<p>Unknown contract spec.</p>";
+          return;
+        }
+
+        const accountSize = parseFloat(psAccountEl.value);
+        if (isNaN(accountSize) || accountSize <= 0) {
+          psResultsBox.innerHTML = "<p>Enter a valid account size.</p>";
+          return;
+        }
+
+        const riskMode = document.querySelector('input[name=\"ps-risk-mode\"]:checked').value;
+        let riskBudget = 0;
+
+        if (riskMode === "percent") {
+          const pct = parseFloat(psRiskPercentEl.value);
+          if (isNaN(pct) || pct <= 0) {
+            psResultsBox.innerHTML = "<p>Enter a valid risk percentage above 0.</p>";
+            return;
+          }
+          riskBudget = accountSize * (pct / 100);
+        } else {
+          const dollars = parseFloat(psRiskDollarEl.value);
+          if (isNaN(dollars) || dollars <= 0) {
+            psResultsBox.innerHTML = "<p>Enter a valid dollar risk above 0.</p>";
+            return;
+          }
+          riskBudget = dollars;
+        }
+
+        const stopMode = document.querySelector('input[name=\"ps-stop-mode\"]:checked').value;
+        const stopInput = parseFloat(psStopEl.value);
+        if (isNaN(stopInput) || stopInput <= 0) {
+          psResultsBox.innerHTML = "<p>Enter a valid stop size.</p>";
+          return;
+        }
+
+        const tickSize = spec.tickSize;
+        const tickValue = spec.tickValue;
+
+        let stopTicks;
+        if (stopMode === "ticks") {
+          stopTicks = stopInput;
+        } else {
+          // points → ticks
+          const ticksPerPoint = 1 / tickSize;
+          stopTicks = stopInput * ticksPerPoint;
+        }
+
+        const riskPerContract = stopTicks * tickValue;
+        if (riskPerContract <= 0) {
+          psResultsBox.innerHTML = "<p>Stop or contract spec produced zero risk per contract.</p>";
+          return;
+        }
+
+        const rawContracts = riskBudget / riskPerContract;
+        const contracts = Math.floor(rawContracts);
+
+        const usedRisk = contracts * riskPerContract;
+        const leftoverRisk = riskBudget - usedRisk;
+
+        if (contracts < 1) {
+          psResultsBox.innerHTML = `
+            <div class="results-grid">
+              <div class="results-item">
+                <h3>Result</h3>
+                <p>You cannot afford even 1 contract with this stop and risk setting.</p>
+                <p>Either reduce your stop size, increase risk per trade, or trade a smaller contract (like a micro).</p>
+              </div>
+              <div class="results-item">
+                <h3>Per-Contract Risk</h3>
+                <p><strong>Ticks in stop:</strong> ${psFormat(stopTicks, 2)}</p>
+                <p><strong>Risk per contract:</strong> $${psFormat(riskPerContract, 2)}</p>
+              </div>
+              <div class="results-item">
+                <h3>Risk Budget</h3>
+                <p><strong>Risk allowed this trade:</strong> $${psFormat(riskBudget, 2)}</p>
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        psResultsBox.innerHTML = `
+          <div class="results-grid">
+            <div class="results-item">
+              <h3>Position Size</h3>
+              <p><strong>Symbol:</strong> ${symbol}</p>
+              <p><strong>Contracts:</strong> ${contracts}</p>
+              <p><strong>Raw size (before rounding):</strong> ${psFormat(rawContracts, 2)} contracts</p>
+            </div>
+            <div class="results-item">
+              <h3>Risk Per Contract</h3>
+              <p><strong>Stop in ticks:</strong> ${psFormat(stopTicks, 2)} ticks</p>
+              <p><strong>Tick value:</strong> $${psFormat(tickValue, 2)}</p>
+              <p><strong>Risk per contract:</strong> $${psFormat(riskPerContract, 2)}</p>
+            </div>
+            <div class="results-item">
+              <h3>Total Trade Risk</h3>
+              <p><strong>Risk budget:</strong> $${psFormat(riskBudget, 2)}</p>
+              <p><strong>Risk used at ${contracts} contract(s):</strong> $${psFormat(usedRisk, 2)}</p>
+              <p><strong>Unused risk (headroom):</strong> $${psFormat(leftoverRisk, 2)}</p>
+            </div>
+          </div>
+        `;
+      });
+    </script>
+
+    <!-- SERVICE WORKER -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js").catch(function () {});
+        });
+      }
+    </script>
+</body>
+</html>
