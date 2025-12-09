@@ -233,7 +233,7 @@
 
       function parseTrades(raw) {
         return raw
-          .split(/\\r?\\n/)
+          .split(/\r?\n/)
           .map(line => line.trim())
           .filter(line => line.length > 0)
           .map(line => {
