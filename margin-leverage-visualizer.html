@@ -23,7 +23,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Futures Margin & Leverage Visualizer | Grizzly Parrot Trading">
-    <meta property="og:description" content="Interactive futures margin and leverage tool with live P/L, leverage, and margin-usage charts.">
+    <meta property="og:description" content="Interactive futures margin and leverage tool with live P/L chart and risk stats.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://grizzlyparrottrading.com/margin-leverage-visualizer.html">
     <meta property="og:site_name" content="Grizzly Parrot Trading">
@@ -73,7 +73,7 @@
                 <h1>Futures Margin &amp; Leverage Visualizer</h1>
                 <p>
                     Pick a contract, plug in your account size and margin, and drag the slider.  
-                    See how much notional you are swinging, how much margin you are tying up, and what a move in price does to your P/L.
+                    See how much notional you’re swinging, how much margin you’re tying up, and what a move in price does to your P/L.
                 </p>
             </div>
         </div>
@@ -230,22 +230,6 @@
                     Line = P/L across the slider range. Dot = your current slider move.
                 </p>
             </div>
-
-            <div class="results-chart-wrapper">
-                <h3>Contracts vs Leverage (x)</h3>
-                <canvas id="ml-chart-lev" width="700" height="260"></canvas>
-                <p class="field-help">
-                    How fast your leverage ramps as you size up, with your current position marked.
-                </p>
-            </div>
-
-            <div class="results-chart-wrapper">
-                <h3>Contracts vs Margin Usage (% of Account)</h3>
-                <canvas id="ml-chart-margin" width="700" height="260"></canvas>
-                <p class="field-help">
-                    Margin used as a percentage of your account as you add contracts.
-                </p>
-            </div>
         </div>
     </section>
 
@@ -268,10 +252,10 @@
                     </p>
                 </article>
                 <article class="card">
-                    <h3>Sizing Reality Check</h3>
+                    <h3>Damage From A Move</h3>
                     <p>
-                        P/L chart shows the damage from price.  
-                        Leverage and margin charts show how quickly you’re overexposed as you size up.
+                        The P/L line plus the percentage-of-account readout is the real point:  
+                        “If price moves X against me, I lose $Y, which is Z% of my account.”
                     </p>
                 </article>
             </div>
@@ -387,14 +371,7 @@ const mlResultsDetail = document.getElementById("ml-results-detail");
 const plCanvas = document.getElementById("ml-chart-pl");
 const plCtx = plCanvas.getContext("2d");
 
-const levCanvas = document.getElementById("ml-chart-lev");
-const levCtx = levCanvas.getContext("2d");
-
-const marginCanvas = document.getElementById("ml-chart-margin");
-const marginCtx = marginCanvas.getContext("2d");
-
-// generic chart for move vs something
-function drawMoveChart(ctx, canvas, yLabelPrefix, computeYFromMove, minMove, maxMove, currentMove) {
+function drawMoveChart(ctx, canvas, computeYFromMove, minMove, maxMove, currentMove) {
   const w = canvas.width;
   const h = canvas.height;
   ctx.clearRect(0, 0, w, h);
@@ -465,8 +442,8 @@ function drawMoveChart(ctx, canvas, yLabelPrefix, computeYFromMove, minMove, max
   ctx.fillText("0", xToPx(0) - 6, h - paddingBottom + 16);
   ctx.fillText(maxMove.toFixed(1), xToPx(maxMove) - 10, h - paddingBottom + 16);
 
-  ctx.fillText(yLabelPrefix + mlFmt(yMax, 2), 10, yToPx(yMax) - 4);
-  ctx.fillText(yLabelPrefix + mlFmt(yMin, 2), 10, yToPx(yMin) + 12);
+  ctx.fillText("$" + mlFmt(yMax, 2), 10, yToPx(yMax) - 4);
+  ctx.fillText("$" + mlFmt(yMin, 2), 10, yToPx(yMin) + 12);
 
   // line
   ctx.strokeStyle = "#0a3764";
@@ -489,129 +466,14 @@ function drawMoveChart(ctx, canvas, yLabelPrefix, computeYFromMove, minMove, max
   const currX = xToPx(currentMove);
   const currYPx = yToPx(currY);
 
-  ctx.fillStyle = currY >= (yMin + yMax) / 2 ? "#16a34a" : "#dc2626";
+  ctx.fillStyle = currY >= 0 ? "#16a34a" : "#dc2626";
   ctx.beginPath();
   ctx.arc(currX, currYPx, 5, 0, Math.PI * 2);
   ctx.fill();
 
   ctx.fillStyle = "#111";
-  const label = `${currentMove.toFixed(2)} move → ${yLabelPrefix}${mlFmt(currY, 2)}`;
+  const label = `${currentMove.toFixed(2)} move → $${mlFmt(currY, 2)}`;
   ctx.fillText(label, Math.min(currX + 8, w - paddingRight - 160), currYPx - 8);
-}
-
-// chart for contracts vs something
-function drawContractsChart(ctx, canvas, yLabelSuffix, computeYFromContracts, maxContracts, currentContracts) {
-  const w = canvas.width;
-  const h = canvas.height;
-  ctx.clearRect(0, 0, w, h);
-
-  if (!isFinite(maxContracts) || maxContracts <= 0) {
-    ctx.fillStyle = "#666";
-    ctx.font = "14px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif";
-    ctx.fillText("Enter margin and account size to see how size affects this.", 20, h / 2);
-    return;
-  }
-
-  const xMin = 0;
-  const xMax = maxContracts;
-
-  const testVals = [xMin, xMax, currentContracts];
-  const yVals = [];
-  for (let i = 0; i < testVals.length; i++) {
-    const y = computeYFromContracts(testVals[i]);
-    if (isFinite(y)) yVals.push(y);
-  }
-
-  if (!yVals.length) {
-    ctx.fillStyle = "#666";
-    ctx.font = "14px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif";
-    ctx.fillText("Enter valid inputs to see the curve.", 20, h / 2);
-    return;
-  }
-
-  let yMin = Math.min.apply(null, yVals);
-  let yMax = Math.max.apply(null, yVals);
-
-  if (yMin === yMax) {
-    yMin -= 1;
-    yMax += 1;
-  }
-
-  const paddingLeft = 60;
-  const paddingRight = 20;
-  const paddingTop = 20;
-  const paddingBottom = 40;
-
-  const xToPx = (c) => {
-    const t = (c - xMin) / (xMax - xMin || 1);
-    return paddingLeft + t * (w - paddingLeft - paddingRight);
-  };
-  const yToPx = (y) => {
-    const t = (y - yMin) / (yMax - yMin || 1);
-    return h - paddingBottom - t * (h - paddingTop - paddingBottom);
-  };
-
-  ctx.fillStyle = "#f7f9fc";
-  ctx.fillRect(0, 0, w, h);
-
-  ctx.strokeStyle = "#ccc";
-  ctx.lineWidth = 1;
-
-  // y-axis at contracts=0
-  const zeroX = xToPx(0);
-  ctx.beginPath();
-  ctx.moveTo(zeroX, paddingTop);
-  ctx.lineTo(zeroX, h - paddingBottom);
-  ctx.stroke();
-
-  // x-axis at y=0 if in range
-  if (yMin < 0 && yMax > 0) {
-    const zeroY = yToPx(0);
-    ctx.beginPath();
-    ctx.moveTo(paddingLeft, zeroY);
-    ctx.lineTo(w - paddingRight, zeroY);
-    ctx.stroke();
-  }
-
-  ctx.fillStyle = "#555";
-  ctx.font = "12px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif";
-
-  ctx.fillText("0", xToPx(0) - 4, h - paddingBottom + 16);
-  ctx.fillText(xMax.toString(), xToPx(xMax) - 8, h - paddingBottom + 16);
-
-  ctx.fillText(mlFmt(yMax, 2) + yLabelSuffix, 10, yToPx(yMax) - 4);
-  ctx.fillText(mlFmt(yMin, 2) + yLabelSuffix, 10, yToPx(yMin) + 12);
-
-  // line
-  ctx.strokeStyle = "#0a3764";
-  ctx.lineWidth = 2;
-  const steps = Math.max(5, Math.min(40, xMax * 2));
-  ctx.beginPath();
-  for (let i = 0; i <= steps; i++) {
-    const t = i / steps;
-    const c = xMin + t * (xMax - xMin);
-    const yVal = computeYFromContracts(c);
-    const xPx = xToPx(c);
-    const yPx = yToPx(yVal);
-    if (i === 0) ctx.moveTo(xPx, yPx);
-    else ctx.lineTo(xPx, yPx);
-  }
-  ctx.stroke();
-
-  // current point
-  const currC = Math.min(Math.max(currentContracts, xMin), xMax);
-  const currY = computeYFromContracts(currC);
-  const currX = xToPx(currC);
-  const currYPx = yToPx(currY);
-
-  ctx.fillStyle = "#16a34a";
-  ctx.beginPath();
-  ctx.arc(currX, currYPx, 5, 0, Math.PI * 2);
-  ctx.fill();
-
-  ctx.fillStyle = "#111";
-  const label = `${mlFmt(currC, 2)} contracts → ${mlFmt(currY, 2)}${yLabelSuffix}`;
-  ctx.fillText(label, Math.min(currX + 8, w - paddingRight - 180), currYPx - 8);
 }
 
 function mlCompute() {
@@ -629,36 +491,28 @@ function mlCompute() {
   if (!spec) {
     mlResultsSummary.innerHTML = "<p>Unknown contract spec.</p>";
     mlResultsDetail.innerHTML = "";
-    drawMoveChart(plCtx, plCanvas, "$", () => 0, -1, 1, 0);
-    drawContractsChart(levCtx, levCanvas, "x", () => 0, 0, 0);
-    drawContractsChart(marginCtx, marginCanvas, "%", () => 0, 0, 0);
+    drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
     return;
   }
 
   if (isNaN(account) || account <= 0) {
     mlResultsSummary.innerHTML = "<p>Enter a valid account size.</p>";
     mlResultsDetail.innerHTML = "";
-    drawMoveChart(plCtx, plCanvas, "$", () => 0, -1, 1, 0);
-    drawContractsChart(levCtx, levCanvas, "x", () => 0, 0, 0);
-    drawContractsChart(marginCtx, marginCanvas, "%", () => 0, 0, 0);
+    drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
     return;
   }
 
   if (isNaN(price) || price <= 0) {
     mlResultsSummary.innerHTML = "<p>Enter a valid current futures price.</p>";
     mlResultsDetail.innerHTML = "";
-    drawMoveChart(plCtx, plCanvas, "$", () => 0, -1, 1, 0);
-    drawContractsChart(levCtx, levCanvas, "x", () => 0, 0, 0);
-    drawContractsChart(marginCtx, marginCanvas, "%", () => 0, 0, 0);
+    drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
     return;
   }
 
   if (isNaN(contracts) || contracts <= 0) {
     mlResultsSummary.innerHTML = "<p>Enter a valid number of contracts.</p>";
     mlResultsDetail.innerHTML = "";
-    drawMoveChart(plCtx, plCanvas, "$", () => 0, -1, 1, 0);
-    drawContractsChart(levCtx, levCanvas, "x", () => 0, 0, 0);
-    drawContractsChart(marginCtx, marginCanvas, "%", () => 0, 0, 0);
+    drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
     return;
   }
 
@@ -667,9 +521,7 @@ function mlCompute() {
     if (isNaN(marginIntra) || marginIntra <= 0) {
       mlResultsSummary.innerHTML = "<p>Enter intraday margin per contract or switch to overnight.</p>";
       mlResultsDetail.innerHTML = "";
-      drawMoveChart(plCtx, plCanvas, "$", () => 0, -1, 1, 0);
-      drawContractsChart(levCtx, levCanvas, "x", () => 0, 0, 0);
-      drawContractsChart(marginCtx, marginCanvas, "%", () => 0, 0, 0);
+      drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
       return;
     }
     marginPer = marginIntra;
@@ -677,9 +529,7 @@ function mlCompute() {
     if (isNaN(marginOvernight) || marginOvernight <= 0) {
       mlResultsSummary.innerHTML = "<p>Enter overnight margin per contract or switch to intraday.</p>";
       mlResultsDetail.innerHTML = "";
-      drawMoveChart(plCtx, plCanvas, "$", () => 0, -1, 1, 0);
-      drawContractsChart(levCtx, levCanvas, "x", () => 0, 0, 0);
-      drawContractsChart(marginCtx, marginCanvas, "%", () => 0, 0, 0);
+      drawMoveChart(plCtx, plCanvas, () => 0, -1, 1, 0);
       return;
     }
     marginPer = marginOvernight;
@@ -737,55 +587,13 @@ function mlCompute() {
   const sliderMin = parseFloat(mlMoveSliderEl.min);
   const sliderMax = parseFloat(mlMoveSliderEl.max);
 
-  // Chart 1: Price move vs dollar P/L
   drawMoveChart(
     plCtx,
     plCanvas,
-    "$",
     function(move) { return move * plPerPointTotal; },
     sliderMin,
     sliderMax,
     movePoints
-  );
-
-  // max contracts for charts 2 and 3
-  let maxContracts;
-  if (marginPer > 0) {
-    const caps = [];
-    caps.push(account / marginPer * 2);  // "double" what your margin allows
-    caps.push(20);                       // minimum decent range
-    caps.push(1);                        // avoid zero
-    maxContracts = Math.max(5, Math.min(50, Math.floor(Math.max.apply(null, caps))));
-  } else {
-    maxContracts = 20;
-  }
-
-  // Chart 2: contracts vs leverage
-  drawContractsChart(
-    levCtx,
-    levCanvas,
-    "x",
-    function(c) {
-      if (c <= 0) return 0;
-      const notional = price * multiplier * c;
-      return notional / account;
-    },
-    maxContracts,
-    contracts
-  );
-
-  // Chart 3: contracts vs margin usage %
-  drawContractsChart(
-    marginCtx,
-    marginCanvas,
-    "%",
-    function(c) {
-      if (c <= 0) return 0;
-      const mUsed = marginPer * c;
-      return (mUsed / account) * 100;
-    },
-    maxContracts,
-    contracts
   );
 }
 
@@ -821,10 +629,8 @@ document.querySelectorAll('input[name="ml-margin-mode"]').forEach(function(r) {
   r.addEventListener("change", mlCompute);
 });
 
-// initial empty charts
-drawMoveChart(plCtx, plCanvas, "$", function(){ return 0; }, -1, 1, 0);
-drawContractsChart(levCtx, levCanvas, "x", function(){ return 0; }, 0, 0);
-drawContractsChart(marginCtx, marginCanvas, "%", function(){ return 0; }, 0, 0);
+// initial empty chart
+drawMoveChart(plCtx, plCanvas, function(){ return 0; }, -1, 1, 0);
 </script>
 
 <script>
