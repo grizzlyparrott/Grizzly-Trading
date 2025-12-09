@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- FAVICONS / MANIFEST -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>R-Multiple Calculator | Grizzly Parrot Trading</title>
+    <meta name="description" content="Calculate risk (R), reward, and R-multiple from your entry, stop, and target. Clean, blunt, simple.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrottrading.com/r-multiple-calculator.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="R-Multiple Calculator | Grizzly Parrot Trading">
+    <meta property="og:description" content="R-multiple calculator for futures traders: entry, stop, target, and clean math.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grizzlyparrottrading.com/r-multiple-calculator.html">
+    <meta property="og:site_name" content="Grizzly Parrot Trading">
+    <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta property="og:image:width" content="1792">
+    <meta property="og:image:height" content="941">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta name="twitter:title" content="R-Multiple Calculator | Grizzly Parrot Trading">
+    <meta name="twitter:description" content="Calculate R, reward, and R-multiple in seconds.">
+
+    <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JMJVR3G5YN');
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">GP</span>
+            <span class="logo-text">Grizzly Parrot Trading</span>
+        </div>
+        <nav class="main-nav">
+            <a href="/app.html" id="get-app-link">Get the App</a>
+            <a href="futures-basics/index.html">Futures Basics</a>
+            <a href="prop-firm-trading/index.html">Prop Firms</a>
+            <a href="platforms-tutorials/index.html">Platforms</a>
+            <a href="market-basics/index.html">Market Basics</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h1>R-Multiple Calculator</h1>
+                <p>
+                    If you don’t know your R, you don’t know anything.  
+                    Plug in entry, stop, and target — get your risk (R), your reward, and your R-multiple.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Inputs</h2>
+
+            <div class="tool-grid">
+                <div class="tool-block">
+                    <label for="r-entry">Entry Price</label>
+                    <input type="number" id="r-entry" step="0.01" placeholder="e.g. 5300.25">
+                </div>
+
+                <div class="tool-block">
+                    <label for="r-stop">Stop Price</label>
+                    <input type="number" id="r-stop" step="0.01" placeholder="e.g. 5295.25">
+                </div>
+
+                <div class="tool-block">
+                    <label for="r-target">Target Price</label>
+                    <input type="number" id="r-target" step="0.01" placeholder="e.g. 5312.50">
+                </div>
+
+                <div class="tool-block">
+                    <label for="r-contract-size">Dollar Value Per Point (Contract Value)</label>
+                    <input type="number" id="r-contract-size" step="0.01" placeholder="e.g. ES = $50, MES = $5">
+                </div>
+
+                <div class="tool-block">
+                    <button id="r-calc-btn" class="button-primary">Calculate R</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Results</h2>
+            <div id="r-results-box" class="results-box">
+                <p>Fill out the inputs and hit Calculate.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>What This Calculator Actually Shows You</h2>
+
+            <div class="grid grid-3">
+                <article class="card">
+                    <h3>Risk (R)</h3>
+                    <p>
+                        The dollar amount between your entry and your stop.  
+                        This is your actual risk per contract.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Reward</h3>
+                    <p>
+                        Target minus entry.  
+                        Shows your real dollar upside, not wishful thinking.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>R-Multiple</h3>
+                    <p>
+                        Reward ÷ Risk.  
+                        If you don’t know this number, you are trading blindly.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="r-year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://grizzlyparrott.github.io/Probabilistic-Execution/" style="color:#22c55e;" target="_blank">
+                Probabilistic Execution – Free 3-Phase Trading Routine
+            </a>
+        </div>
+    </div>
+    <script>
+        document.getElementById("r-year").textContent = new Date().getFullYear();
+    </script>
+</footer>
+
+<script>
+function f(num, dec = 2) {
+    return Number(num).toFixed(dec);
+}
+
+document.getElementById("r-calc-btn").addEventListener("click", function () {
+    const entry = parseFloat(document.getElementById("r-entry").value);
+    const stop = parseFloat(document.getElementById("r-stop").value);
+    const target = parseFloat(document.getElementById("r-target").value);
+    const contract = parseFloat(document.getElementById("r-contract-size").value);
+
+    const box = document.getElementById("r-results-box");
+
+    if ([entry, stop, target, contract].some(v => isNaN(v))) {
+        box.innerHTML = "<p>Enter all values correctly.</p>";
+        return;
+    }
+
+    const riskPoints = Math.abs(entry - stop);
+    const rewardPoints = Math.abs(target - entry);
+
+    const riskDollars = riskPoints * contract;
+    const rewardDollars = rewardPoints * contract;
+
+    const rMultiple = rewardDollars / riskDollars;
+
+    box.innerHTML = `
+      <div class="results-grid">
+        <div class="results-item">
+          <h3>Risk (R)</h3>
+          <p><strong>${f(riskPoints)}</strong> points</p>
+          <p><strong>$${f(riskDollars)}</strong> per contract</p>
+        </div>
+
+        <div class="results-item">
+          <h3>Reward</h3>
+          <p><strong>${f(rewardPoints)}</strong> points</p>
+          <p><strong>$${f(rewardDollars)}</strong> per contract</p>
+        </div>
+
+        <div class="results-item">
+          <h3>R-Multiple</h3>
+          <p><strong>${f(rMultiple, 2)}R</strong></p>
+        </div>
+      </div>
+    `;
+});
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/sw.js").catch(function () {});
+    });
+}
+</script>
+</body>
+</html>
