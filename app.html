@@ -2,16 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Standard Favicon -->
+
+    <!-- FAVICONS / MANIFEST -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-    <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- Web App Manifest -->
     <link rel="manifest" href="/site.webmanifest">
-
-    <!-- PNG Fallbacks -->
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
@@ -20,15 +15,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Install the Grizzly Parrot Trading App</title>
-    <meta name="description" content="Install the Grizzly Parrot Trading app on your phone or desktop for faster access to futures and prop firm trading guides in an app-style layout.">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Install the Grizzly Parrot Trading app for fast, app-style access to futures and prop firm guides.">
 
-    <!-- Canonical -->
     <link rel="canonical" href="https://grizzlyparrottrading.com/app.html">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Install the Grizzly Parrot Trading App">
-    <meta property="og:description" content="Add Grizzly Parrot Trading to your home screen or desktop for faster access to plain-English futures and prop firm education.">
+    <meta property="og:description" content="Add Grizzly Parrot Trading to your phone or desktop for fast, app-style access.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://grizzlyparrottrading.com/app.html">
     <meta property="og:site_name" content="Grizzly Parrot Trading">
@@ -36,37 +28,13 @@
     <meta property="og:image:width" content="1792">
     <meta property="og:image:height" content="941">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
-    <meta name="twitter:title" content="Install the Grizzly Parrot Trading App">
-    <meta name="twitter:description" content="Install the Grizzly Parrot Trading PWA for faster access to all futures and prop firm trading guides.">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-JMJVR3G5YN');
-    </script>
 
     <link rel="stylesheet" href="style.css">
-
-    <!-- JSON-LD: WebPage describing the app install page -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Install the Grizzly Parrot Trading App",
-      "url": "https://grizzlyparrottrading.com/app.html",
-      "description": "Instructions for installing the Grizzly Parrot Trading Progressive Web App on mobile and desktop."
-    }
-    </script>
 </head>
 
 <body>
-    <!-- Site header -->
+    <!-- HEADER -->
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">
@@ -84,205 +52,77 @@
     </header>
 
     <main>
-        <!-- Hero -->
+        <!-- HERO -->
         <section class="hero">
             <div class="container hero-inner">
                 <div class="hero-text">
                     <h1>Install the Grizzly Parrot Trading App</h1>
                     <p>
-                        Same site, cleaner access. Add Grizzly Parrot Trading to your home screen or desktop and open it like a real app, without typing the URL every time.
+                        Add this site to your phone or desktop and open it like a real app — faster access, cleaner layout, no URL typing.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- (Optional) keep global search so people can still search articles from here -->
-        <div class="search-wrapper">
-          <div id="search-container">
-            <input id="search-input" type="text" placeholder="Search all articles..." autocomplete="off">
-            <div id="search-results"></div>
-          </div>
-        </div>
-
-        <script>
-        async function loadSearchIndex() {
-          const res = await fetch('/search-index.json');
-          return await res.json();
-        }
-
-        let SEARCH_DATA = [];
-        loadSearchIndex().then(d => SEARCH_DATA = d);
-
-        const input = document.getElementById('search-input');
-        const resultsBox = document.getElementById('search-results');
-
-        input.addEventListener('input', () => {
-          const q = input.value.toLowerCase().trim();
-          if (!q) {
-            resultsBox.innerHTML = '';
-            return;
-          }
-
-          const hits = SEARCH_DATA.filter(item =>
-            item.title.toLowerCase().includes(q) ||
-            item.description.toLowerCase().includes(q)
-          ).slice(0, 20);
-
-          if (hits.length === 0) {
-            resultsBox.innerHTML = '<div class="no-results">No matches</div>';
-            return;
-          }
-
-          resultsBox.innerHTML = hits
-            .map(item => `
-              <a class="search-item" href="${item.url}">
-                <div class="search-title">${item.title}</div>
-                <div class="search-desc">${item.description}</div>
-                <div class="search-cat">${item.category}</div>
-              </a>
-            `)
-            .join('');
-        });
-        </script>
-
-        <style>
-        #search-container {
-          margin: 20px 0;
-          max-width: 700px;
-        }
-
-        #search-input {
-          width: 100%;
-          padding: 12px;
-          font-size: 17px;
-          border: 2px solid #0a3764;
-          border-radius: 6px;
-          outline: none;
-        }
-
-        #search-results {
-          background: #fff;
-          border: 1px solid #ccc;
-          max-height: 400px;
-          overflow-y: auto;
-          margin-top: 8px;
-          border-radius: 6px;
-        }
-
-        .search-item {
-          display: block;
-          padding: 10px 12px;
-          border-bottom: 1px solid #eee;
-          text-decoration: none;
-          color: #000;
-        }
-
-        .search-item:hover {
-          background: #f0f6ff;
-        }
-
-        .search-title {
-          font-weight: bold;
-        }
-
-        .search-desc {
-          font-size: 14px;
-          color: #444;
-        }
-
-        .search-cat {
-          font-size: 12px;
-          color: #0a3764;
-          margin-top: 2px;
-        }
-
-        .no-results {
-          padding: 10px;
-          color: #666;
-        }
-
-        .search-item:hover {
-          background: #f0f6ff !important;
-          color: #000 !important;
-        }
-        </style>
-
-        <!-- App explanation + instructions -->
+        <!-- APP INSTRUCTIONS -->
         <section class="section">
             <div class="container">
-                <h2>What this “app” actually is</h2>
+                <h2>What You’re Installing</h2>
                 <p>
-                    This is a <strong>Progressive Web App (PWA)</strong>. It’s the exact same Grizzly Parrot Trading content
-                    you see on the website, just packaged so your phone or desktop can install it:
+                    This is a Progressive Web App (PWA). It’s the same Grizzly Parrot Trading site, just installed so you can open it from an icon.
                 </p>
                 <ul>
-                    <li>No app store, no extra account, no separate login.</li>
-                    <li>Lives on your home screen like any other app icon.</li>
-                    <li>Opens in its own window with less browser clutter.</li>
+                    <li>No app store required</li>
+                    <li>Opens in its own window</li>
+                    <li>Loads faster after the first visit</li>
                 </ul>
             </div>
         </section>
 
         <section class="section section-alt">
             <div class="container">
-                <h2>Why bother installing it?</h2>
-                <ul>
-                    <li><strong>Speed:</strong> Core files are cached after your first visit, so it feels snappier on repeat opens.</li>
-                    <li><strong>Convenience:</strong> Tap the icon instead of typing the URL or hunting bookmarks.</li>
-                    <li><strong>Focus:</strong> App-style window keeps you on the content instead of bouncing tabs.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2>How to install on Android (Chrome)</h2>
+                <h2>How to Install on Android (Chrome)</h2>
                 <ol>
-                    <li>Open <code>https://grizzlyparrottrading.com/</code> in <strong>Chrome</strong>.</li>
-                    <li>Stay on the homepage for a few seconds. If the install banner appears, tap <strong>Install</strong>.</li>
-                    <li>If you don’t see a banner:
+                    <li>Open <code>grizzlyparrottrading.com</code> in Chrome.</li>
+                    <li>Wait a moment — if the install banner appears, tap <strong>Install</strong>.</li>
+                    <li>If no banner:
                         <ol>
-                            <li>Tap the <strong>⋮</strong> menu (top-right in Chrome).</li>
-                            <li>Tap <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>
-                            <li>Confirm the name <strong>Grizzly Parrot Trading</strong> and tap <strong>Install</strong>.</li>
+                            <li>Tap the <strong>⋮</strong> menu.</li>
+                            <li>Select <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>
+                            <li>Confirm the name <strong>Grizzly Parrot Trading</strong>.</li>
                         </ol>
                     </li>
-                    <li>Find the new icon on your home screen or app drawer and open it like any normal app.</li>
-                </ol>
-            </div>
-        </section>
-
-        <section class="section section-alt">
-            <div class="container">
-                <h2>How to install on desktop (Chrome / Edge)</h2>
-                <ol>
-                    <li>Open <code>https://grizzlyparrottrading.com/</code> in <strong>Chrome</strong> or <strong>Edge</strong>.</li>
-                    <li>Look for the install icon in the address bar, or:
-                        <ul>
-                            <li><strong>Chrome:</strong> menu <strong>⋮</strong> → <strong>Install Grizzly Parrot Trading</strong>.</li>
-                            <li><strong>Edge:</strong> menu <strong>⋯</strong> → <strong>Apps</strong> → <strong>Install this site as an app</strong>.</li>
-                        </ul>
-                    </li>
-                    <li>Click <strong>Install</strong>. Launch it from your app list like any other program.</li>
                 </ol>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <h2>Offline behavior and ads</h2>
+                <h2>How to Install on Desktop (Chrome or Edge)</h2>
+                <ol>
+                    <li>Open the site in Chrome or Edge.</li>
+                    <li>Look for the install icon in the address bar.</li>
+                    <li>If you don't see it:
+                        <ul>
+                            <li><strong>Chrome:</strong> Menu → Install Grizzly Parrot Trading</li>
+                            <li><strong>Edge:</strong> Menu → Apps → Install this site as an app</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <h2>Already Installed?</h2>
                 <p>
-                    After your first visit, some core files are cached so the homepage can still open with a weak or dead connection.
-                    Deep pages that haven’t been cached yet may not load offline—that’s normal for now.
-                </p>
-                <p>
-                    Ads only load when you have an internet connection. No connection means no ad requests. When you’re online,
-                    the app uses the same ads and analytics as the regular website.
+                    If the icon is already on your home screen or app list, you're done — open it from there anytime.
                 </p>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-inner">
             <p>&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
@@ -291,9 +131,8 @@
                 <a href="disclaimer.html">Disclaimer</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="contact.html">Contact</a>
-                <a href="https://grizzlyparrott.github.io/Probabilistic-Execution/" style="color:#22c55e;" target="_blank">
-                    Probabilistic Execution – Free 3-Phase Trading Routine
-                </a>
+                <a href="https://grizzlyparrott.github.io/Probabilistic-Execution/" style="color:#22c55e;" 
+                   target="_blank">Probabilistic Execution – Free 3-Phase Trading Routine</a>
             </div>
         </div>
         <script>
@@ -304,9 +143,7 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/sw.js").catch(function (err) {
-            console.error("Service worker registration failed:", err);
-          });
+          navigator.serviceWorker.register("/sw.js").catch(() => {});
         });
       }
     </script>
