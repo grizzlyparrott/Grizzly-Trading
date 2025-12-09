@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Trailing Drawdown Simulator | Grizzly Parrot Trading</title>
-    <meta name="description" content="Simulate trailing drawdown rules on a sequence of trades. See exactly when a prop firm account would have blown up.">
+    <meta name="description" content="Simulate trailing drawdown rules on a sequence of trades. See exactly when a prop firm account would have blown up, with a visual equity vs. trail chart.">
     <meta name="robots" content="index, follow">
 
     <!-- Canonical -->
@@ -23,7 +23,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Trailing Drawdown Simulator | Grizzly Parrot Trading">
-    <meta property="og:description" content="Plug in a trade sequence and trailing amount to see when a prop firm trailing drawdown would tag you out.">
+    <meta property="og:description" content="Plug in a trade sequence and trailing amount to see when a prop firm trailing drawdown would tag you out, with a clear chart.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://grizzlyparrottrading.com/trailing-drawdown-simulator.html">
     <meta property="og:site_name" content="Grizzly Parrot Trading">
@@ -35,7 +35,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
     <meta name="twitter:title" content="Trailing Drawdown Simulator | Grizzly Parrot Trading">
-    <meta name="twitter:description" content="Trailing drawdown simulator for futures prop firm style accounts.">
+    <meta name="twitter:description" content="Trailing drawdown simulator for futures prop firm style accounts, with a visual equity vs. trail graph.">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
@@ -146,6 +146,17 @@
                 <div id="td-results-summary" class="results-box">
                     <p>Enter inputs and click Run Simulation.</p>
                 </div>
+
+                <div id="td-chart-container" class="results-box td-chart-container">
+                    <h3>Equity Vs Trailing Drawdown</h3>
+                    <canvas id="td-chart" height="260"></canvas>
+                    <p class="chart-legend">
+                        <span class="legend-item legend-equity">Equity</span>
+                        <span class="legend-item legend-trail">Trailing Line</span>
+                        <span class="legend-item legend-breach">Breach Point</span>
+                    </p>
+                </div>
+
                 <div id="td-results-table-wrapper" class="results-box" style="margin-top: 20px; overflow-x:auto;">
                     <!-- Table gets injected here -->
                 </div>
@@ -213,6 +224,8 @@
       const tdResultsSummary = document.getElementById("td-results-summary");
       const tdResultsTableWrapper = document.getElementById("td-results-table-wrapper");
       const tdCalcButton = document.getElementById("td-calc-button");
+      const tdChartCanvas = document.getElementById("td-chart");
+      const tdChartContainer = document.getElementById("td-chart-container");
 
       function tdFormat(num, decimals) {
         return Number(num).toFixed(decimals);
@@ -220,16 +233,141 @@
 
       function parseTrades(raw) {
         return raw
-          .split(/\r?\n/)
+          .split(/\\r?\\n/)
           .map(line => line.trim())
           .filter(line => line.length > 0)
           .map(line => {
-            // allow leading + or -, and commas
             const cleaned = line.replace(/,/g, "");
             const value = parseFloat(cleaned);
             return isNaN(value) ? null : value;
           })
           .filter(v => v !== null);
+      }
+
+      function drawTdChart(rows, startBalance, initialTrail, blownTradeIndex) {
+        const canvas = tdChartCanvas;
+        const container = tdChartContainer;
+        const ctx = canvas.getContext("2d");
+
+        if (!rows || rows.length === 0) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          return;
+        }
+
+        // Responsive width
+        const rect = container.getBoundingClientRect();
+        canvas.width = Math.max(320, rect.width - 40);
+
+        const width = canvas.width;
+        const height = canvas.height;
+
+        ctx.clearRect(0, 0, width, height);
+
+        // Collect Y values
+        let minY = startBalance;
+        let maxY = startBalance;
+
+        rows.forEach(r => {
+          if (r.equityAfter < minY) minY = r.equityAfter;
+          if (r.trailLine < minY) minY = r.trailLine;
+          if (r.equityAfter > maxY) maxY = r.equityAfter;
+          if (r.trailLine > maxY) maxY = r.trailLine;
+        });
+
+        if (initialTrail < minY) minY = initialTrail;
+        if (initialTrail > maxY) maxY = initialTrail;
+
+        // Avoid zero-range
+        if (maxY === minY) {
+          maxY += 1;
+          minY -= 1;
+        }
+
+        const paddingLeft = 40;
+        const paddingRight = 10;
+        const paddingTop = 10;
+        const paddingBottom = 30;
+
+        const plotWidth = width - paddingLeft - paddingRight;
+        const plotHeight = height - paddingTop - paddingBottom;
+
+        function yToPx(value) {
+          const ratio = (value - minY) / (maxY - minY);
+          return paddingTop + (1 - ratio) * plotHeight;
+        }
+
+        function xToPx(index) {
+          if (rows.length === 1) return paddingLeft + plotWidth / 2;
+          const ratio = index / (rows.length - 1);
+          return paddingLeft + ratio * plotWidth;
+        }
+
+        // Gridlines (simple)
+        ctx.strokeStyle = "#e2e8f0";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        // horizontal mid-line
+        const midYVal = (minY + maxY) / 2;
+        const midY = yToPx(midYVal);
+        ctx.moveTo(paddingLeft, midY);
+        ctx.lineTo(width - paddingRight, midY);
+        ctx.stroke();
+
+        // Y-axis labels
+        ctx.fillStyle = "#1a202c";
+        ctx.font = "11px system-ui, -apple-system, BlinkMacSystemFont, sans-serif";
+        ctx.textAlign = "right";
+        ctx.textBaseline = "middle";
+        ctx.fillText("$" + tdFormat(maxY, 0), paddingLeft - 4, yToPx(maxY));
+        ctx.fillText("$" + tdFormat(midYVal, 0), paddingLeft - 4, midY);
+        ctx.fillText("$" + tdFormat(minY, 0), paddingLeft - 4, yToPx(minY));
+
+        // X-axis labels (first, last)
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        const xFirst = xToPx(0);
+        const xLast = xToPx(rows.length - 1);
+        ctx.fillText("1", xFirst, height - paddingBottom + 4);
+        ctx.fillText(String(rows.length), xLast, height - paddingBottom + 4);
+
+        // Draw equity line
+        ctx.strokeStyle = "#0a7cff"; // blue-ish
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        rows.forEach((r, idx) => {
+          const x = xToPx(idx);
+          const y = yToPx(r.equityAfter);
+          if (idx === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // Draw trail line
+        ctx.strokeStyle = "#e53e3e"; // red-ish
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        rows.forEach((r, idx) => {
+          const x = xToPx(idx);
+          const y = yToPx(r.trailLine);
+          if (idx === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // Mark breach point if any
+        if (blownTradeIndex !== null) {
+          const breachIdx = blownTradeIndex - 1;
+          if (breachIdx >= 0 && breachIdx < rows.length) {
+            const breachRow = rows[breachIdx];
+            const x = xToPx(breachIdx);
+            const y = yToPx(breachRow.equityAfter);
+
+            ctx.fillStyle = "#c53030";
+            ctx.beginPath();
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
       }
 
       tdCalcButton.addEventListener("click", function () {
@@ -241,25 +379,28 @@
         if (isNaN(startBalance) || startBalance <= 0) {
           tdResultsSummary.innerHTML = "<p>Enter a valid starting balance above 0.</p>";
           tdResultsTableWrapper.innerHTML = "";
+          drawTdChart([], 0, 0, null);
           return;
         }
 
         if (isNaN(trailAmount) || trailAmount <= 0) {
           tdResultsSummary.innerHTML = "<p>Enter a valid trailing drawdown amount above 0.</p>";
           tdResultsTableWrapper.innerHTML = "";
+          drawTdChart([], 0, 0, null);
           return;
         }
 
         if (trades.length === 0) {
           tdResultsSummary.innerHTML = "<p>Enter at least one trade P/L.</p>";
           tdResultsTableWrapper.innerHTML = "";
+          drawTdChart([], 0, 0, null);
           return;
         }
 
-        // Simulation state
         let equity = startBalance;
         let highWater = startBalance;
         let trailLine = startBalance - trailAmount;
+        const initialTrail = trailLine;
         let blown = false;
         let blownTradeIndex = null;
 
@@ -277,7 +418,6 @@
           let newTrail = highWater - trailAmount;
 
           if (style === "apex") {
-            // In Apex-style, liquidation line does not move above starting balance
             newTrail = Math.min(newTrail, startBalance);
           }
 
@@ -301,7 +441,6 @@
           });
         });
 
-        // Summary
         if (blown) {
           tdResultsSummary.innerHTML = `
             <p>
@@ -364,6 +503,9 @@
         `;
 
         tdResultsTableWrapper.innerHTML = html;
+
+        // Draw chart
+        drawTdChart(rows, startBalance, initialTrail, blownTradeIndex);
       });
     </script>
 
@@ -400,6 +542,47 @@
         font-family: monospace;
         padding: 8px;
         resize: vertical;
+      }
+      .td-chart-container {
+        margin-top: 20px;
+      }
+      #td-chart {
+        width: 100%;
+        max-width: 100%;
+        border: 1px solid #e2e8f0;
+        background: #ffffff;
+        display: block;
+      }
+      .chart-legend {
+        margin-top: 8px;
+        font-size: 12px;
+      }
+      .legend-item {
+        display: inline-block;
+        margin-right: 12px;
+        padding-left: 16px;
+        position: relative;
+      }
+      .legend-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 10px;
+        height: 2px;
+        transform: translateY(-50%);
+      }
+      .legend-equity::before {
+        background: #0a7cff;
+      }
+      .legend-trail::before {
+        background: #e53e3e;
+      }
+      .legend-breach::before {
+        background: #c53030;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
       }
     </style>
 
