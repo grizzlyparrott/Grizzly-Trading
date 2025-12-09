@@ -73,7 +73,7 @@
                 <h1>Futures Margin &amp; Leverage Visualizer</h1>
                 <p>
                     Pick a contract, plug in your account size and margin, and drag the slider.  
-                    See exactly how much leverage you are actually running and what a move in points does to your account.
+                    See exactly how much leverage you are actually running and what a move in price does to your account.
                 </p>
             </div>
         </div>
@@ -94,6 +94,9 @@
                         <option value="MNQ">MNQ (Micro E-mini Nasdaq-100)</option>
                         <option value="YM">YM (E-mini Dow)</option>
                         <option value="MYM">MYM (Micro E-mini Dow)</option>
+                        <option value="RTY">RTY (E-mini Russell 2000)</option>
+                        <option value="M2K">M2K (Micro E-mini Russell 2000)</option>
+
                         <!-- FX majors -->
                         <option value="6E">6E (Euro FX)</option>
                         <option value="6B">6B (British Pound)</option>
@@ -103,6 +106,7 @@
                         <option value="6S">6S (Swiss Franc)</option>
                         <option value="6N">6N (New Zealand Dollar)</option>
                         <option value="6M">6M (Mexican Peso)</option>
+
                         <!-- Metals -->
                         <option value="GC">GC (Gold)</option>
                         <option value="MGC">MGC (Micro Gold)</option>
@@ -110,16 +114,44 @@
                         <option value="HG">HG (Copper)</option>
                         <option value="PL">PL (Platinum)</option>
                         <option value="PA">PA (Palladium)</option>
+
                         <!-- Energies -->
                         <option value="CL">CL (Crude Oil)</option>
                         <option value="MCL">MCL (Micro Crude Oil)</option>
+                        <option value="QM">QM (E-mini Crude Oil)</option>
                         <option value="NG">NG (Natural Gas)</option>
+                        <option value="QG">QG (E-mini Natural Gas)</option>
                         <option value="RB">RB (RBOB Gasoline)</option>
                         <option value="HO">HO (Heating Oil)</option>
-                        <!-- Grains -->
+
+                        <!-- Grains / oilseeds -->
                         <option value="ZC">ZC (Corn)</option>
                         <option value="ZS">ZS (Soybeans)</option>
                         <option value="ZW">ZW (Wheat)</option>
+                        <option value="ZL">ZL (Soybean Oil)</option>
+                        <option value="ZM">ZM (Soybean Meal)</option>
+                        <option value="KE">KE (KC Wheat)</option>
+                        <option value="O">O (Oats)</option>
+
+                        <!-- Softs -->
+                        <option value="KC">KC (Coffee)</option>
+                        <option value="SB">SB (Sugar No. 11)</option>
+                        <option value="CT">CT (Cotton)</option>
+                        <option value="CC">CC (Cocoa)</option>
+                        <option value="OJ">OJ (Orange Juice)</option>
+
+                        <!-- Livestock -->
+                        <option value="LE">LE (Live Cattle)</option>
+                        <option value="HE">HE (Lean Hogs)</option>
+                        <option value="GF">GF (Feeder Cattle)</option>
+
+                        <!-- Rates -->
+                        <option value="ZT">ZT (2-Year T-Note)</option>
+                        <option value="ZF">ZF (5-Year T-Note)</option>
+                        <option value="ZN">ZN (10-Year T-Note)</option>
+                        <option value="ZB">ZB (30-Year T-Bond)</option>
+                        <option value="UB">UB (Ultra T-Bond)</option>
+                        <option value="SR3">SR3 (3-Month SOFR)</option>
                     </select>
                 </div>
 
@@ -132,10 +164,10 @@
                     <label for="ml-price">Current Futures Price</label>
                     <input type="number" id="ml-price" min="0" step="0.0001" placeholder="e.g. 5300.00 or 1.1050 or 5.25">
                     <p class="field-help">
-                        Enter price exactly how your platform shows it:<br>
-                        ES/CL/GC etc: normal price (e.g. 5300.00, 78.25).<br>
-                        FX (6E, 6B, etc.): decimal (e.g. 1.1050).<br>
-                        Grains (ZC, ZS, ZW): dollars per bushel (e.g. 5.25).
+                        Enter price exactly how your platform shows it.<br>
+                        Index / metals / energies: normal price (e.g. 5300.00, 78.25, 2450.4).<br>
+                        FX (6E, 6B, etc.): decimal (e.g. 1.1050, 0.7500).<br>
+                        Grains / softs: dollars per unit (e.g. 5.25 for ZC, 0.85 for ZL, 190.00 for KC).
                     </p>
                 </div>
 
@@ -170,7 +202,7 @@
                     </div>
                     <p class="field-help">
                         Positive = move in your favor. Negative = move against you.<br>
-                        For FX/grains, think in price units (e.g. 0.0100 on 6E, 0.25 on ZC).
+                        This is in <strong>price units</strong>, not ticks. For example: 0.0100 on 6E, 0.25 on ZC, 5.00 on CL.
                     </p>
                 </div>
 
@@ -212,9 +244,9 @@
                     </p>
                 </article>
                 <article class="card">
-                    <h3>P/L Per Point</h3>
+                    <h3>P/L Per 1.00 Move</h3>
                     <p>
-                        Every 1.00 price unit is a fixed dollar amount per contract.  
+                        Every 1.00 move in price is a fixed dollar amount per contract for that product.  
                         The slider shows what a move of X units does in real dollars and % of your account.
                     </p>
                 </article>
@@ -252,6 +284,8 @@ const ML_CONTRACTS = {
   MNQ: { name: "MNQ (Micro E-mini Nasdaq-100)",     dollarPerPoint: 2,        multiplier: 2 },
   YM:  { name: "YM (E-mini Dow)",                   dollarPerPoint: 5,        multiplier: 5 },
   MYM: { name: "MYM (Micro E-mini Dow)",            dollarPerPoint: 0.5,      multiplier: 0.5 },
+  RTY: { name: "RTY (E-mini Russell 2000)",         dollarPerPoint: 50,       multiplier: 50 },
+  M2K: { name: "M2K (Micro E-mini Russell 2000)",   dollarPerPoint: 5,        multiplier: 5 },
 
   // FX MAJORS (contract size in base currency)
   "6E": { name: "6E (Euro FX)",                     dollarPerPoint: 125000,   multiplier: 125000 },
@@ -274,14 +308,40 @@ const ML_CONTRACTS = {
   // ENERGIES
   CL:  { name: "CL (Crude Oil)",                    dollarPerPoint: 1000,     multiplier: 1000 },
   MCL: { name: "MCL (Micro Crude Oil)",             dollarPerPoint: 100,      multiplier: 100 },
+  QM:  { name: "QM (E-mini Crude Oil)",             dollarPerPoint: 500,      multiplier: 500 },
   NG:  { name: "NG (Natural Gas)",                  dollarPerPoint: 10000,    multiplier: 10000 },
+  QG:  { name: "QG (E-mini Natural Gas)",           dollarPerPoint: 2500,     multiplier: 2500 },
   RB:  { name: "RB (RBOB Gasoline)",                dollarPerPoint: 42000,    multiplier: 42000 },
   HO:  { name: "HO (Heating Oil)",                  dollarPerPoint: 42000,    multiplier: 42000 },
 
-  // GRAINS (price in $/bushel)
+  // GRAINS / OILSEEDS (price in $/unit)
   ZC:  { name: "ZC (Corn)",                         dollarPerPoint: 5000,     multiplier: 5000 },
   ZS:  { name: "ZS (Soybeans)",                     dollarPerPoint: 5000,     multiplier: 5000 },
-  ZW:  { name: "ZW (Wheat)",                        dollarPerPoint: 5000,     multiplier: 5000 }
+  ZW:  { name: "ZW (Wheat)",                        dollarPerPoint: 5000,     multiplier: 5000 },
+  ZL:  { name: "ZL (Soybean Oil)",                  dollarPerPoint: 60000,    multiplier: 60000 },
+  ZM:  { name: "ZM (Soybean Meal)",                 dollarPerPoint: 100,      multiplier: 100 },
+  KE:  { name: "KE (KC Wheat)",                     dollarPerPoint: 5000,     multiplier: 5000 },
+  O:   { name: "O (Oats)",                          dollarPerPoint: 5000,     multiplier: 5000 },
+
+  // SOFTS
+  KC:  { name: "KC (Coffee)",                       dollarPerPoint: 37500,    multiplier: 37500 },
+  SB:  { name: "SB (Sugar No. 11)",                 dollarPerPoint: 112000,   multiplier: 112000 },
+  CT:  { name: "CT (Cotton)",                       dollarPerPoint: 50000,    multiplier: 50000 },
+  CC:  { name: "CC (Cocoa)",                        dollarPerPoint: 10,       multiplier: 10 },
+  OJ:  { name: "OJ (Orange Juice)",                 dollarPerPoint: 15000,    multiplier: 15000 },
+
+  // LIVESTOCK
+  LE:  { name: "LE (Live Cattle)",                  dollarPerPoint: 40000,    multiplier: 40000 },
+  HE:  { name: "HE (Lean Hogs)",                    dollarPerPoint: 40000,    multiplier: 40000 },
+  GF:  { name: "GF (Feeder Cattle)",                dollarPerPoint: 50000,    multiplier: 50000 },
+
+  // RATES
+  ZT:  { name: "ZT (2-Year T-Note)",                dollarPerPoint: 2000,     multiplier: 2000 },
+  ZF:  { name: "ZF (5-Year T-Note)",                dollarPerPoint: 1000,     multiplier: 1000 },
+  ZN:  { name: "ZN (10-Year T-Note)",               dollarPerPoint: 1000,     multiplier: 1000 },
+  ZB:  { name: "ZB (30-Year T-Bond)",               dollarPerPoint: 1000,     multiplier: 1000 },
+  UB:  { name: "UB (Ultra T-Bond)",                 dollarPerPoint: 1000,     multiplier: 1000 },
+  SR3: { name: "SR3 (3-Month SOFR)",                dollarPerPoint: 2500,     multiplier: 2500 }
 };
 
 function mlFmt(num, dec) {
@@ -396,7 +456,7 @@ mlCalcBtn.addEventListener("click", function () {
     <div class="results-grid">
       <div class="results-item">
         <h3>Contract Specs</h3>
-        <p><strong>Dollar per 1.00 price move:</strong> $${mlFmt(dollarPerPoint, 2)} per contract</p>
+        <p><strong>Dollar per 1.00 move in price:</strong> $${mlFmt(dollarPerPoint, 2)} per contract</p>
         <p><strong>Notional per contract:</strong> $${mlFmt(notionalPer, 2)}</p>
         <p><strong>Total notional:</strong> $${mlFmt(totalNotional, 2)}</p>
       </div>
