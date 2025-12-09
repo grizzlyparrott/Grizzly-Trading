@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>True Position Size Risk Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Check your futures position size, dollar risk, and risk percentage before you click buy. Get blunt feedback on whether the trade size is sane or suicidal.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
+    }
+
+    .tool-wrapper {
+      width: 100%;
+      max-width: 900px;
+      background: radial-gradient(circle at top, #0f172a, #020617 55%);
+      border-radius: 18px;
+      border: 1px solid #1f2937;
+      padding: 24px 20px 28px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .tool-header {
+      margin-bottom: 20px;
+    }
+
+    .tool-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+    }
+
+    .tool-subtitle {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: #9ca3af;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .content-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 14px;
+      border: 1px solid #1f2937;
+      padding: 16px 14px 18px;
+    }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #9ca3af;
+    }
+
+    .card-hint {
+      font-size: 0.75rem;
+      color: #6b7280;
+      text-align: right;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 12px;
+    }
+
+    @media (max-width: 640px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #d1d5db;
+    }
+
+    .label-note {
+      font-size: 0.7rem;
+      color: #6b7280;
+    }
+
+    input {
+      background: #020617;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      padding: 7px 9px;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    input::placeholder {
+      color: #4b5563;
+    }
+
+    input:focus {
+      border-color: #22c55e;
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4);
+      background: #020617;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    button {
+      border-radius: 9999px;
+      border: none;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.08s ease, box-shadow 0.12s ease, background 0.12s ease, color 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .primary-btn {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #020617;
+      box-shadow: 0 8px 20px rgba(34, 197, 94, 0.35);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(34, 197, 94, 0.45);
+    }
+
+    .ghost-btn {
+      background: transparent;
+      color: #9ca3af;
+      border: 1px solid #374151;
+    }
+
+    .ghost-btn:hover {
+      background: rgba(31, 41, 55, 0.85);
+      color: #e5e7eb;
+    }
+
+    .error-text {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: #f97373;
+      min-height: 16px;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 640px) {
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .result-pill {
+      background: #020617;
+      border-radius: 11px;
+      border: 1px solid #111827;
+      padding: 8px 9px;
+    }
+
+    .result-label {
+      font-size: 0.72rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
+    }
+
+    .result-value {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .result-value.highlight {
+      color: #22c55e;
+    }
+
+    .risk-meter {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed #1f2937;
+    }
+
+    .risk-meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .risk-meter-label {
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .risk-percent-display {
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .meter-track {
+      width: 100%;
+      height: 10px;
+      border-radius: 9999px;
+      background: #020617;
+      border: 1px solid #111827;
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #22c55e, #eab308, #ef4444);
+      transition: width 0.18s ease-out;
+    }
+
+    .quote-block {
+      margin-top: 12px;
+      padding: 10px 11px;
+      border-radius: 12px;
+      border: 1px solid #1f2937;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .quote-label {
+      font-size: 0.72rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .quote-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .quote-tagline {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 3px;
+    }
+
+    .helper-text {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="tool-wrapper">
+    <header class="tool-header">
+      <h1 class="tool-title">True Position Size Risk Checker</h1>
+      <p class="tool-subtitle">
+        Plug in the trade you are about to take and see, in plain English,
+        how much of your account you are actually lighting on fire.
+      </p>
+    </header>
+
+    <div class="content-grid">
+      <!-- LEFT: INPUTS -->
+      <section class="card">
+        <div class="card-title-row">
+          <h2 class="card-title">Trade Inputs</h2>
+          <p class="card-hint">Use futures point value, not ticks.</p>
+        </div>
+
+        <form id="risk-form">
+          <div class="field">
+            <label for="accountSize">
+              Account size ($)
+            </label>
+            <input
+              type="number"
+              id="accountSize"
+              inputmode="decimal"
+              step="0.01"
+              placeholder="25000"
+              value="25000"
+              min="0"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="contracts">
+              Number of contracts
+            </label>
+            <input
+              type="number"
+              id="contracts"
+              inputmode="decimal"
+              step="1"
+              placeholder="2"
+              value="2"
+              min="0"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="entryPrice">
+              Entry price
+            </label>
+            <input
+              type="number"
+              id="entryPrice"
+              inputmode="decimal"
+              step="0.01"
+              placeholder="5000.0"
+              value="5000"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="stopPrice">
+              Stop price
+              <span class="label-note">(where you are actually out)</span>
+            </label>
+            <input
+              type="number"
+              id="stopPrice"
+              inputmode="decimal"
+              step="0.01"
+              placeholder="4990.0"
+              value="4990"
+              required
+            >
+          </div>
+
+          <div class="field full-width">
+            <label for="pointValue">
+              Dollar value per full point ($ / point)
+              <span class="label-note">
+                ES = 50, NQ = 20, CL = 1000 (per $10), GC = 100, etc.
+              </span>
+            </label>
+            <input
+              type="number"
+              id="pointValue"
+              inputmode="decimal"
+              step="0.01"
+              placeholder="50"
+              value="50"
+              min="0"
+              required
+            >
+          </div>
+
+          <div class="field full-width">
+            <div class="button-row">
+              <button type="submit" class="primary-btn">Check risk</button>
+              <button type="button" class="ghost-btn" id="resetBtn">Reset</button>
+            </div>
+            <div id="error" class="error-text"></div>
+          </div>
+        </form>
+      </section>
+
+      <!-- RIGHT: RESULTS -->
+      <section class="card">
+        <div class="card-title-row">
+          <h2 class="card-title">Risk Output</h2>
+          <p class="card-hint">Numbers first, shame second.</p>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-pill">
+            <div class="result-label">Stop distance</div>
+            <div id="stopDistanceOut" class="result-value">0.00 pts</div>
+          </div>
+
+          <div class="result-pill">
+            <div class="result-label">Risk per contract</div>
+            <div id="riskPerContractOut" class="result-value">$0.00</div>
+          </div>
+
+          <div class="result-pill">
+            <div class="result-label">Total dollar risk</div>
+            <div id="totalRiskOut" class="result-value highlight">$0.00</div>
+          </div>
+
+          <div class="result-pill">
+            <div class="result-label">% of account at risk</div>
+            <div id="riskPercentOut" class="result-value">0.00%</div>
+          </div>
+        </div>
+
+        <div class="risk-meter">
+          <div class="risk-meter-label-row">
+            <span class="risk-meter-label">Risk meter (capped at 5%)</span>
+            <span id="riskPercentSmall" class="risk-percent-display">0.00%</span>
+          </div>
+          <div class="meter-track">
+            <div id="meterFill" class="meter-fill"></div>
+          </div>
+        </div>
+
+        <div class="quote-block">
+          <div class="quote-label">Sanity check</div>
+          <div id="quoteText" class="quote-text">
+            Fill out the form and hit "Check risk" to see how bad this idea is.
+          </div>
+          <div id="quoteTagline" class="quote-tagline">
+            This is not trading advice. This is you arguing with math.
+          </div>
+        </div>
+
+        <p class="helper-text">
+          Reminder: if you are regularly above 1% per trade, you are not "aggressive."
+          You are just betting your future self can dig you out of a hole.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById("risk-form");
+      var resetBtn = document.getElementById("resetBtn");
+      var errorBox = document.getElementById("error");
+
+      var stopDistanceOut = document.getElementById("stopDistanceOut");
+      var riskPerContractOut = document.getElementById("riskPerContractOut");
+      var totalRiskOut = document.getElementById("totalRiskOut");
+      var riskPercentOut = document.getElementById("riskPercentOut");
+      var riskPercentSmall = document.getElementById("riskPercentSmall");
+      var meterFill = document.getElementById("meterFill");
+      var quoteText = document.getElementById("quoteText");
+      var quoteTagline = document.getElementById("quoteTagline");
+
+      function formatMoney(value) {
+        if (!isFinite(value)) return "$0.00";
+        var rounded = Math.round(value * 100) / 100;
+        return "$" + rounded.toLocaleString("en-US", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        });
+      }
+
+      function formatPercent(value) {
+        if (!isFinite(value)) return "0.00%";
+        var rounded = Math.round(value * 100) / 100;
+        return rounded.toFixed(2) + "%";
+      }
+
+      function updateQuote(riskPercent) {
+        var msg;
+        var tag;
+
+        if (!isFinite(riskPercent) || riskPercent <= 0) {
+          msg = "No risk, no opinion. Put some numbers in first.";
+          tag = "The only free trade is the one you never place.";
+        } else if (riskPercent < 0.25) {
+          msg = "This is a paper cut. You are basically napping.";
+          tag = "Size is fine. The real risk is you revenge-trading later.";
+        } else if (riskPercent < 0.75) {
+          msg = "Reasonable risk. Grizzly mildly approves.";
+          tag = "This is the range where compounding actually works.";
+        } else if (riskPercent < 1.5) {
+          msg = "Getting spicy. Double-check the trade, not your courage.";
+          tag = "One trade will not make you rich, but a few like this can make you stupid.";
+        } else if (riskPercent < 3) {
+          msg = "Try again and this time think first.";
+          tag = "If this stops out, you will feel it. A lot. Plan for a losing streak, not just one loss.";
+        } else {
+          msg = "You are fucked. This is account suicide territory.";
+          tag = "If this works, you got lucky. If it does not, you got exactly what you asked for.";
+        }
+
+        quoteText.textContent = msg;
+        quoteTagline.textContent = tag;
+      }
+
+      function updateMeter(riskPercent) {
+        var capped = Math.max(0, Math.min(riskPercent, 5));
+        var width = (capped / 5) * 100;
+        meterFill.style.width = width + "%";
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        errorBox.textContent = "";
+
+        var accountSize = parseFloat(document.getElementById("accountSize").value);
+        var contracts = parseFloat(document.getElementById("contracts").value);
+        var entryPrice = parseFloat(document.getElementById("entryPrice").value);
+        var stopPrice = parseFloat(document.getElementById("stopPrice").value);
+        var pointValue = parseFloat(document.getElementById("pointValue").value);
+
+        if (
+          !isFinite(accountSize) || accountSize <= 0 ||
+          !isFinite(contracts) || contracts <= 0 ||
+          !isFinite(entryPrice) ||
+          !isFinite(stopPrice) ||
+          !isFinite(pointValue) || pointValue <= 0
+        ) {
+          errorBox.textContent = "Check your inputs. Account, contracts, and point value must be positive numbers.";
+          return;
+        }
+
+        var stopDistance = Math.abs(entryPrice - stopPrice);
+
+        if (stopDistance === 0) {
+          errorBox.textContent = "Your entry and stop are the same. That is not a stop, that is denial.";
+          return;
+        }
+
+        var riskPerContract = stopDistance * pointValue;
+        var totalRisk = riskPerContract * contracts;
+        var riskPercent = (totalRisk / accountSize) * 100;
+
+        stopDistanceOut.textContent = stopDistance.toFixed(2) + " pts";
+        riskPerContractOut.textContent = formatMoney(riskPerContract);
+        totalRiskOut.textContent = formatMoney(totalRisk);
+        riskPercentOut.textContent = formatPercent(riskPercent);
+        riskPercentSmall.textContent = formatPercent(riskPercent);
+
+        updateMeter(riskPercent);
+        updateQuote(riskPercent);
+      });
+
+      resetBtn.addEventListener("click", function () {
+        form.reset();
+        errorBox.textContent = "";
+        stopDistanceOut.textContent = "0.00 pts";
+        riskPerContractOut.textContent = "$0.00";
+        totalRiskOut.textContent = "$0.00";
+        riskPercentOut.textContent = "0.00%";
+        riskPercentSmall.textContent = "0.00%";
+        meterFill.style.width = "0%";
+        quoteText.textContent = 'Fill out the form and hit "Check risk" to see how bad this idea is.';
+        quoteTagline.textContent = "This is not trading advice. This is you arguing with math.";
+      });
+    })();
+  </script>
+</body>
+</html>
