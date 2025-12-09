@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Futures Margin & Leverage Visualizer | Grizzly Parrot Trading</title>
-    <meta name="description" content="See real futures leverage, margin usage, and dollar P/L for a move in points. Pick a contract, set account size and margin, and drag the slider.">
+    <meta name="description" content="See real futures leverage, margin usage, and dollar and percent P/L for a move in price. Pick a contract, set account size and margin, and drag the slider.">
     <meta name="robots" content="index, follow">
 
     <!-- Canonical -->
@@ -23,7 +23,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Futures Margin & Leverage Visualizer | Grizzly Parrot Trading">
-    <meta property="og:description" content="Interactive futures margin and leverage tool with point-move P/L. No fluff, just the real numbers.">
+    <meta property="og:description" content="Interactive futures margin and leverage tool with live P/L charts in dollars, percent, and equity.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://grizzlyparrottrading.com/margin-leverage-visualizer.html">
     <meta property="og:site_name" content="Grizzly Parrot Trading">
@@ -73,7 +73,7 @@
                 <h1>Futures Margin &amp; Leverage Visualizer</h1>
                 <p>
                     Pick a contract, plug in your account size and margin, and drag the slider.  
-                    See exactly how much leverage you are actually running and what a move in price does to your account.
+                    See how much notional you are swinging, how much margin you are tying up, and what a move in price does to your P/L and account equity.
                 </p>
             </div>
         </div>
@@ -207,7 +207,7 @@
                 </div>
 
                 <div class="tool-block">
-                    <button id="ml-calc-btn" class="button-primary">Calculate</button>
+                    <button id="ml-calc-btn" class="button-primary">Recalculate</button>
                 </div>
             </div>
         </div>
@@ -217,10 +217,35 @@
         <div class="container">
             <h2>Results</h2>
             <div id="ml-results-summary" class="results-box">
-                <p>Fill out the inputs and hit Calculate.</p>
+                <p>Fill out the inputs and move the slider.</p>
             </div>
             <div id="ml-results-detail" class="results-box" style="margin-top: 20px;">
                 <!-- details injected here -->
+            </div>
+
+            <div class="results-chart-wrapper">
+                <h3>Price Move vs P/L (Dollars)</h3>
+                <canvas id="ml-chart" width="700" height="260"></canvas>
+                <p class="field-help">
+                    Line = dollar P/L for the full slider range.  
+                    Dot = your current slider move.
+                </p>
+            </div>
+
+            <div class="results-chart-wrapper">
+                <h3>Price Move vs P/L (% of Account)</h3>
+                <canvas id="ml-chart-pct" width="700" height="260"></canvas>
+                <p class="field-help">
+                    Same idea, but scaled as percent of your account.
+                </p>
+            </div>
+
+            <div class="results-chart-wrapper">
+                <h3>Price Move vs Account Equity</h3>
+                <canvas id="ml-chart-equity" width="700" height="260"></canvas>
+                <p class="field-help">
+                    Shows what your account balance would be after the move, across the full slider range.
+                </p>
             </div>
         </div>
     </section>
@@ -233,7 +258,7 @@
                     <h3>Notional &amp; Leverage</h3>
                     <p>
                         Notional = price × contract multiplier × contracts.  
-                        Leverage = total notional ÷ your account. If you are running 30x leverage on a tiny account, you know how that ends.
+                        Leverage = total notional ÷ your account.
                     </p>
                 </article>
                 <article class="card">
@@ -244,10 +269,11 @@
                     </p>
                 </article>
                 <article class="card">
-                    <h3>P/L Per 1.00 Move</h3>
+                    <h3>Dollars vs Percent vs Equity</h3>
                     <p>
-                        Every 1.00 move in price is a fixed dollar amount per contract for that product.  
-                        The slider shows what a move of X units does in real dollars and % of your account.
+                        Dollar P/L is what hits your account.  
+                        Percent P/L shows how hard that hits your balance.  
+                        Equity curve shows where your account ends up after the move.
                     </p>
                 </article>
             </div>
@@ -307,7 +333,7 @@ const ML_CONTRACTS = {
 
   // ENERGIES
   CL:  { name: "CL (Crude Oil)",                    dollarPerPoint: 1000,     multiplier: 1000 },
-  MCL: { name: "MCL (Micro Crude Oil)",             dollarPerPoint: 100,      multiplier: 100 },
+  MCL:{ name: "MCL (Micro Crude Oil)",              dollarPerPoint: 100,      multiplier: 100 },
   QM:  { name: "QM (E-mini Crude Oil)",             dollarPerPoint: 500,      multiplier: 500 },
   NG:  { name: "NG (Natural Gas)",                  dollarPerPoint: 10000,    multiplier: 10000 },
   QG:  { name: "QG (E-mini Natural Gas)",           dollarPerPoint: 2500,     multiplier: 2500 },
@@ -341,7 +367,7 @@ const ML_CONTRACTS = {
   ZN:  { name: "ZN (10-Year T-Note)",               dollarPerPoint: 1000,     multiplier: 1000 },
   ZB:  { name: "ZB (30-Year T-Bond)",               dollarPerPoint: 1000,     multiplier: 1000 },
   UB:  { name: "UB (Ultra T-Bond)",                 dollarPerPoint: 1000,     multiplier: 1000 },
-  SR3: { name: "SR3 (3-Month SOFR)",                dollarPerPoint: 2500,     multiplier: 2500 }
+  SR3:{ name: "SR3 (3-Month SOFR)",                 dollarPerPoint: 2500,     multiplier: 2500 }
 };
 
 function mlFmt(num, dec) {
@@ -360,19 +386,127 @@ const mlCalcBtn = document.getElementById("ml-calc-btn");
 const mlResultsSummary = document.getElementById("ml-results-summary");
 const mlResultsDetail = document.getElementById("ml-results-detail");
 
-// sync slider and numeric input
-mlMoveSliderEl.addEventListener("input", function () {
-  mlMoveNumberEl.value = mlMoveSliderEl.value;
-});
+const mlChartCanvas = document.getElementById("ml-chart");
+const mlChartCtx = mlChartCanvas.getContext("2d");
+const mlChartPctCanvas = document.getElementById("ml-chart-pct");
+const mlChartPctCtx = mlChartPctCanvas.getContext("2d");
+const mlChartEqCanvas = document.getElementById("ml-chart-equity");
+const mlChartEqCtx = mlChartEqCanvas.getContext("2d");
 
-mlMoveNumberEl.addEventListener("input", function () {
-  const v = parseFloat(mlMoveNumberEl.value);
-  if (!isNaN(v) && v >= parseFloat(mlMoveSliderEl.min) && v <= parseFloat(mlMoveSliderEl.max)) {
-    mlMoveSliderEl.value = v;
+function drawLineChart(ctx, canvas, yLabelPrefix, computeYFromMove, minMove, maxMove, currentMove) {
+  const w = canvas.width;
+  const h = canvas.height;
+
+  ctx.clearRect(0, 0, w, h);
+
+  const yValues = [];
+  const moves = [minMove, maxMove, 0, currentMove];
+  for (let i = 0; i < moves.length; i++) {
+    const y = computeYFromMove(moves[i]);
+    if (isFinite(y)) yValues.push(y);
   }
-});
 
-mlCalcBtn.addEventListener("click", function () {
+  if (!yValues.length) {
+    ctx.fillStyle = "#666";
+    ctx.font = "14px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif";
+    ctx.fillText("Enter valid inputs to see the curve.", 20, h / 2);
+    return;
+  }
+
+  let yMin = Math.min.apply(null, yValues);
+  let yMax = Math.max.apply(null, yValues);
+
+  if (yMin === yMax) {
+    yMin -= 1;
+    yMax += 1;
+  }
+
+  const paddingLeft = 50;
+  const paddingRight = 20;
+  const paddingTop = 20;
+  const paddingBottom = 40;
+
+  const xToPx = (move) => {
+    const t = (move - minMove) / (maxMove - minMove || 1);
+    return paddingLeft + t * (w - paddingLeft - paddingRight);
+  };
+
+  const yToPx = (y) => {
+    const t = (y - yMin) / (yMax - yMin || 1);
+    return h - paddingBottom - t * (h - paddingTop - paddingBottom);
+  };
+
+  ctx.fillStyle = "#f7f9fc";
+  ctx.fillRect(0, 0, w, h);
+
+  ctx.strokeStyle = "#ccc";
+  ctx.lineWidth = 1;
+
+  // x-axis at y=0 if in range
+  if (yMin < 0 && yMax > 0) {
+    const zeroY = yToPx(0);
+    ctx.beginPath();
+    ctx.moveTo(paddingLeft, zeroY);
+    ctx.lineTo(w - paddingRight, zeroY);
+    ctx.stroke();
+  }
+
+  // y-axis at move=0
+  if (minMove < 0 && maxMove > 0) {
+    const zeroX = xToPx(0);
+    ctx.beginPath();
+    ctx.moveTo(zeroX, paddingTop);
+    ctx.lineTo(zeroX, h - paddingBottom);
+    ctx.stroke();
+  }
+
+  ctx.fillStyle = "#555";
+  ctx.font = "12px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif";
+
+  ctx.fillText(minMove.toFixed(1), xToPx(minMove) - 10, h - paddingBottom + 16);
+  ctx.fillText("0", xToPx(0) - 6, h - paddingBottom + 16);
+  ctx.fillText(maxMove.toFixed(1), xToPx(maxMove) - 10, h - paddingBottom + 16);
+
+  ctx.fillText(yLabelPrefix + mlFmt(yMax, 2), 10, yToPx(yMax) - 4);
+  ctx.fillText(yLabelPrefix + mlFmt(yMin, 2), 10, yToPx(yMin) + 12);
+
+  // line
+  ctx.strokeStyle = "#0a3764";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+
+  const steps = 60;
+  for (let i = 0; i <= steps; i++) {
+    const t = i / steps;
+    const move = minMove + t * (maxMove - minMove);
+    const yVal = computeYFromMove(move);
+    const xPx = xToPx(move);
+    const yPx = yToPx(yVal);
+    if (i === 0) ctx.moveTo(xPx, yPx);
+    else ctx.lineTo(xPx, yPx);
+  }
+  ctx.stroke();
+
+  // current point
+  const currY = computeYFromMove(currentMove);
+  const currXpx = xToPx(currentMove);
+  const currYpx = yToPx(currY);
+
+  ctx.fillStyle = currY >= (yMin + yMax) / 2 ? "#16a34a" : "#dc2626";
+  ctx.beginPath();
+  ctx.arc(currXpx, currYpx, 5, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.fillStyle = "#111";
+  const label = `${currentMove.toFixed(2)} move → ${yLabelPrefix}${mlFmt(currY, 2)}`;
+  ctx.fillText(label, Math.min(currXpx + 8, w - paddingRight - 140), currYpx - 8);
+}
+
+function mlFmtPct(num) {
+  return mlFmt(num, 2) + "%";
+}
+
+function mlCompute() {
   const symbol = mlSymbolEl.value;
   const spec = ML_CONTRACTS[symbol];
 
@@ -387,24 +521,36 @@ mlCalcBtn.addEventListener("click", function () {
   if (!spec) {
     mlResultsSummary.innerHTML = "<p>Unknown contract spec.</p>";
     mlResultsDetail.innerHTML = "";
+    drawLineChart(mlChartCtx, mlChartCanvas, "$", () => 0, -1, 1, 0);
+    drawLineChart(mlChartPctCtx, mlChartPctCanvas, "", () => 0, -1, 1, 0);
+    drawLineChart(mlChartEqCtx, mlChartEqCanvas, "$", () => 0, -1, 1, 0);
     return;
   }
 
   if (isNaN(account) || account <= 0) {
     mlResultsSummary.innerHTML = "<p>Enter a valid account size.</p>";
     mlResultsDetail.innerHTML = "";
+    drawLineChart(mlChartCtx, mlChartCanvas, "$", () => 0, -1, 1, 0);
+    drawLineChart(mlChartPctCtx, mlChartPctCanvas, "", () => 0, -1, 1, 0);
+    drawLineChart(mlChartEqCtx, mlChartEqCanvas, "$", () => 0, -1, 1, 0);
     return;
   }
 
   if (isNaN(price) || price <= 0) {
     mlResultsSummary.innerHTML = "<p>Enter a valid current futures price.</p>";
     mlResultsDetail.innerHTML = "";
+    drawLineChart(mlChartCtx, mlChartCanvas, "$", () => 0, -1, 1, 0);
+    drawLineChart(mlChartPctCtx, mlChartPctCanvas, "", () => 0, -1, 1, 0);
+    drawLineChart(mlChartEqCtx, mlChartEqCanvas, "$", () => 0, -1, 1, 0);
     return;
   }
 
   if (isNaN(contracts) || contracts <= 0) {
     mlResultsSummary.innerHTML = "<p>Enter a valid number of contracts.</p>";
     mlResultsDetail.innerHTML = "";
+    drawLineChart(mlChartCtx, mlChartCanvas, "$", () => 0, -1, 1, 0);
+    drawLineChart(mlChartPctCtx, mlChartPctCanvas, "", () => 0, -1, 1, 0);
+    drawLineChart(mlChartEqCtx, mlChartEqCanvas, "$", () => 0, -1, 1, 0);
     return;
   }
 
@@ -413,6 +559,9 @@ mlCalcBtn.addEventListener("click", function () {
     if (isNaN(marginIntra) || marginIntra <= 0) {
       mlResultsSummary.innerHTML = "<p>Enter intraday margin per contract or switch to overnight.</p>";
       mlResultsDetail.innerHTML = "";
+      drawLineChart(mlChartCtx, mlChartCanvas, "$", () => 0, -1, 1, 0);
+      drawLineChart(mlChartPctCtx, mlChartPctCanvas, "", () => 0, -1, 1, 0);
+      drawLineChart(mlChartEqCtx, mlChartEqCanvas, "$", () => 0, -1, 1, 0);
       return;
     }
     marginPer = marginIntra;
@@ -420,6 +569,9 @@ mlCalcBtn.addEventListener("click", function () {
     if (isNaN(marginOvernight) || marginOvernight <= 0) {
       mlResultsSummary.innerHTML = "<p>Enter overnight margin per contract or switch to intraday.</p>";
       mlResultsDetail.innerHTML = "";
+      drawLineChart(mlChartCtx, mlChartCanvas, "$", () => 0, -1, 1, 0);
+      drawLineChart(mlChartPctCtx, mlChartPctCanvas, "", () => 0, -1, 1, 0);
+      drawLineChart(mlChartEqCtx, mlChartEqCanvas, "$", () => 0, -1, 1, 0);
       return;
     }
     marginPer = marginOvernight;
@@ -440,6 +592,7 @@ mlCalcBtn.addEventListener("click", function () {
 
   const movePL = movePoints * plPerPointTotal;
   const movePLPct = (movePL / account) * 100;
+  const equityAfterMove = account + movePL;
 
   mlResultsSummary.innerHTML = `
     <p>
@@ -470,13 +623,95 @@ mlCalcBtn.addEventListener("click", function () {
         <h3>P/L From Price Moves</h3>
         <p><strong>1.00 move in price:</strong> $${mlFmt(plPerPointTotal, 2)} (${mlFmt((plPerPointTotal / account) * 100, 2)}% of account)</p>
         <p><strong>${mlFmt(movePoints, 2)} move in price:</strong> $${mlFmt(movePL, 2)} (${mlFmt(movePLPct, 2)}% of account)</p>
+        <p><strong>Equity after this move:</strong> $${mlFmt(equityAfterMove, 2)}</p>
         <p class="field-help">
           Positive = in your favor, negative = against you.
         </p>
       </div>
     </div>
   `;
+
+  const sliderMin = parseFloat(mlMoveSliderEl.min);
+  const sliderMax = parseFloat(mlMoveSliderEl.max);
+
+  // Dollars chart
+  drawLineChart(
+    mlChartCtx,
+    mlChartCanvas,
+    "$",
+    function(move) { return move * plPerPointTotal; },
+    sliderMin,
+    sliderMax,
+    movePoints
+  );
+
+  // Percent chart
+  drawLineChart(
+    mlChartPctCtx,
+    mlChartPctCanvas,
+    "",
+    function(move) {
+      const pl = move * plPerPointTotal;
+      return (pl / account) * 100;
+    },
+    sliderMin,
+    sliderMax,
+    movePoints
+  );
+
+  // Equity chart
+  drawLineChart(
+    mlChartEqCtx,
+    mlChartEqCanvas,
+    "$",
+    function(move) {
+      const pl = move * plPerPointTotal;
+      return account + pl;
+    },
+    sliderMin,
+    sliderMax,
+    movePoints
+  );
+}
+
+// sync slider + live compute
+mlMoveSliderEl.addEventListener("input", function () {
+  mlMoveNumberEl.value = mlMoveSliderEl.value;
+  mlCompute();
 });
+
+mlMoveNumberEl.addEventListener("input", function () {
+  const v = parseFloat(mlMoveNumberEl.value);
+  if (!isNaN(v) &&
+      v >= parseFloat(mlMoveSliderEl.min) &&
+      v <= parseFloat(mlMoveSliderEl.max)) {
+    mlMoveSliderEl.value = v;
+    mlCompute();
+  }
+});
+
+// button also just forces a recompute with current values
+mlCalcBtn.addEventListener("click", function () {
+  mlCompute();
+});
+
+// recompute when key inputs change (so user does not have to hit the button)
+["change", "blur"].forEach(function(evt) {
+  mlSymbolEl.addEventListener(evt, mlCompute);
+  mlAccountEl.addEventListener(evt, mlCompute);
+  mlPriceEl.addEventListener(evt, mlCompute);
+  mlContractsEl.addEventListener(evt, mlCompute);
+  mlMarginIntraEl.addEventListener(evt, mlCompute);
+  mlMarginOvernightEl.addEventListener(evt, mlCompute);
+});
+document.querySelectorAll('input[name="ml-margin-mode"]').forEach(function(r) {
+  r.addEventListener("change", mlCompute);
+});
+
+// initial blank charts
+drawLineChart(mlChartCtx, mlChartCanvas, "$", function() { return 0; }, -1, 1, 0);
+drawLineChart(mlChartPctCtx, mlChartPctCanvas, "", function() { return 0; }, -1, 1, 0);
+drawLineChart(mlChartEqCtx, mlChartEqCanvas, "$", function() { return 0; }, -1, 1, 0);
 </script>
 
 <script>
@@ -498,6 +733,17 @@ if ("serviceWorker" in navigator) {
 }
 .ml-slider-row input[type="number"] {
   width: 90px;
+}
+.results-chart-wrapper {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f5f7fb;
+  border-radius: 8px;
+  border: 1px solid #dde3f0;
+}
+.results-chart-wrapper h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 </style>
 
