@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "GrizzlyParrottTrading",
+  "short_name": "GP",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
