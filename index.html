@@ -430,7 +430,16 @@ input.addEventListener('input', () => {
             document.getElementById("year").textContent = new Date().getFullYear();
         </script>
     </footer>
-    <!--<script src="search.js"></script>-->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js").catch(function (err) {
+            console.error("Service worker registration failed:", err);
+          });
+        });
+      }
+    </script>
+
  
 
 </body>
