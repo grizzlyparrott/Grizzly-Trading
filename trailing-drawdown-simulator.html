@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- FAVICONS / MANIFEST -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trailing Drawdown Simulator | Grizzly Parrot Trading</title>
+    <meta name="description" content="Simulate trailing drawdown rules on a sequence of trades. See exactly when a prop firm account would have blown up.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrottrading.com/trailing-drawdown-simulator.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Trailing Drawdown Simulator | Grizzly Parrot Trading">
+    <meta property="og:description" content="Plug in a trade sequence and trailing amount to see when a prop firm trailing drawdown would tag you out.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grizzlyparrottrading.com/trailing-drawdown-simulator.html">
+    <meta property="og:site_name" content="Grizzly Parrot Trading">
+    <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta property="og:image:width" content="1792">
+    <meta property="og:image:height" content="941">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta name="twitter:title" content="Trailing Drawdown Simulator | Grizzly Parrot Trading">
+    <meta name="twitter:description" content="Trailing drawdown simulator for futures prop firm style accounts.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JMJVR3G5YN');
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-mark">GP</span>
+                <span class="logo-text">Grizzly Parrot Trading</span>
+            </div>
+            <nav class="main-nav">
+                <a href="/app.html" id="get-app-link">Get the App</a>
+                <a href="futures-basics/index.html">Futures Basics</a>
+                <a href="prop-firm-trading/index.html">Prop Firms</a>
+                <a href="platforms-tutorials/index.html">Platforms</a>
+                <a href="market-basics/index.html">Market Basics</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>Trailing Drawdown Simulator</h1>
+                    <p>
+                        Drop in a sequence of trades and a trailing drawdown amount. This shows you exactly where a 
+                        prop-style trailing drawdown would have blown the account, instead of guessing.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOL SECTION -->
+        <section class="section">
+            <div class="container">
+                <h2>Inputs</h2>
+
+                <!-- OPTIONAL AD SLOT ABOVE TOOL -->
+                <!-- <div class="ad-slot ad-top">Your ad code here</div> -->
+
+                <div class="tool-grid">
+                    <div class="tool-block">
+                        <label for="td-start-balance">Starting Balance ($)</label>
+                        <input type="number" id="td-start-balance" step="1" min="0" placeholder="e.g. 50000">
+                    </div>
+
+                    <div class="tool-block">
+                        <label for="td-trail-amount">Trailing Drawdown Amount ($)</label>
+                        <input type="number" id="td-trail-amount" step="1" min="0" placeholder="e.g. 2500">
+                    </div>
+
+                    <div class="tool-block">
+                        <label>Trailing Style</label>
+                        <div class="tool-inline">
+                            <label>
+                                <input type="radio" name="td-style" value="full" checked>
+                                Always trails equity (classic trailing)
+                            </label>
+                        </div>
+                        <div class="tool-inline">
+                            <label>
+                                <input type="radio" name="td-style" value="apex">
+                                Trails equity but stops at starting balance (Apex-style cap)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="tool-block">
+                        <label for="td-trades">Trade P/L Sequence ($ per trade)</label>
+                        <p class="field-help">
+                            One trade per line. Use signed dollar values, e.g.:
+                            <br>
+                            <code>+250</code><br>
+                            <code>-125</code><br>
+                            <code>+400</code>
+                        </p>
+                        <textarea id="td-trades" rows="10" placeholder="+250
+-125
++400
+-300
++150"></textarea>
+                    </div>
+
+                    <div class="tool-block">
+                        <button id="td-calc-button" class="button-primary">Run Simulation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTS SECTION -->
+        <section class="section section-alt">
+            <div class="container">
+                <h2>Results</h2>
+                <div id="td-results-summary" class="results-box">
+                    <p>Enter inputs and click Run Simulation.</p>
+                </div>
+                <div id="td-results-table-wrapper" class="results-box" style="margin-top: 20px; overflow-x:auto;">
+                    <!-- Table gets injected here -->
+                </div>
+
+                <!-- OPTIONAL AD SLOT BELOW TOOL -->
+                <!-- <div class="ad-slot ad-bottom">Your ad code here</div> -->
+            </div>
+        </section>
+
+        <!-- EXPLANATION -->
+        <section class="section">
+            <div class="container">
+                <h2>How This Simulator Treats Trailing Drawdown</h2>
+                <div class="grid grid-3">
+                    <article class="card">
+                        <h3>Starting Line</h3>
+                        <p>
+                            The liquidation line starts at <strong>starting balance - trailing amount</strong>.
+                            If your equity ever drops below that line, the account is considered blown.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>Trailing Logic</h3>
+                        <p>
+                            After each trade, the high-water mark (max equity) is updated. The trailing line is set to
+                            <strong>high-water mark - trailing amount</strong>, subject to the cap rule you choose.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>Apex-Style Cap</h3>
+                        <p>
+                            In Apex mode, the trailing line never moves above the starting balance. Once your high-water
+                            mark is high enough, the line stops climbing and effectively becomes a fixed max drawdown.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="td-year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="contact.html">Contact</a>
+                <a href="https://grizzlyparrott.github.io/Probabilistic-Execution/" style="color:#22c55e;" target="_blank">
+                    Probabilistic Execution – Free 3-Phase Trading Routine
+                </a>
+            </div>
+        </div>
+        <script>
+            document.getElementById("td-year").textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+    <!-- TOOL SCRIPT -->
+    <script>
+      const tdStartBalanceEl = document.getElementById("td-start-balance");
+      const tdTrailAmountEl = document.getElementById("td-trail-amount");
+      const tdTradesEl = document.getElementById("td-trades");
+      const tdResultsSummary = document.getElementById("td-results-summary");
+      const tdResultsTableWrapper = document.getElementById("td-results-table-wrapper");
+      const tdCalcButton = document.getElementById("td-calc-button");
+
+      function tdFormat(num, decimals) {
+        return Number(num).toFixed(decimals);
+      }
+
+      function parseTrades(raw) {
+        return raw
+          .split(/\r?\n/)
+          .map(line => line.trim())
+          .filter(line => line.length > 0)
+          .map(line => {
+            // allow leading + or -, and commas
+            const cleaned = line.replace(/,/g, "");
+            const value = parseFloat(cleaned);
+            return isNaN(value) ? null : value;
+          })
+          .filter(v => v !== null);
+      }
+
+      tdCalcButton.addEventListener("click", function () {
+        const startBalance = parseFloat(tdStartBalanceEl.value);
+        const trailAmount = parseFloat(tdTrailAmountEl.value);
+        const trades = parseTrades(tdTradesEl.value);
+        const style = document.querySelector('input[name="td-style"]:checked').value;
+
+        if (isNaN(startBalance) || startBalance <= 0) {
+          tdResultsSummary.innerHTML = "<p>Enter a valid starting balance above 0.</p>";
+          tdResultsTableWrapper.innerHTML = "";
+          return;
+        }
+
+        if (isNaN(trailAmount) || trailAmount <= 0) {
+          tdResultsSummary.innerHTML = "<p>Enter a valid trailing drawdown amount above 0.</p>";
+          tdResultsTableWrapper.innerHTML = "";
+          return;
+        }
+
+        if (trades.length === 0) {
+          tdResultsSummary.innerHTML = "<p>Enter at least one trade P/L.</p>";
+          tdResultsTableWrapper.innerHTML = "";
+          return;
+        }
+
+        // Simulation state
+        let equity = startBalance;
+        let highWater = startBalance;
+        let trailLine = startBalance - trailAmount;
+        let blown = false;
+        let blownTradeIndex = null;
+
+        const rows = [];
+
+        trades.forEach((pl, idx) => {
+          const tradeNum = idx + 1;
+          const equityBefore = equity;
+
+          equity += pl;
+          if (equity > highWater) {
+            highWater = equity;
+          }
+
+          let newTrail = highWater - trailAmount;
+
+          if (style === "apex") {
+            // In Apex-style, liquidation line does not move above starting balance
+            newTrail = Math.min(newTrail, startBalance);
+          }
+
+          trailLine = newTrail;
+
+          const breach = equity < trailLine;
+
+          if (!blown && breach) {
+            blown = true;
+            blownTradeIndex = tradeNum;
+          }
+
+          rows.push({
+            tradeNum,
+            pl,
+            equityBefore,
+            equityAfter: equity,
+            highWater,
+            trailLine,
+            breach
+          });
+        });
+
+        // Summary
+        if (blown) {
+          tdResultsSummary.innerHTML = `
+            <p>
+              Account <strong>would have violated trailing drawdown</strong> on trade 
+              <strong>#${blownTradeIndex}</strong>.
+            </p>
+            <p>
+              Final equity: <strong>$${tdFormat(equity, 2)}</strong> |
+              Final trail line: <strong>$${tdFormat(trailLine, 2)}</strong>
+            </p>
+          `;
+        } else {
+          tdResultsSummary.innerHTML = `
+            <p>
+              Account <strong>does not violate trailing drawdown</strong> on this trade sequence.
+            </p>
+            <p>
+              Final equity: <strong>$${tdFormat(equity, 2)}</strong> |
+              Final trail line: <strong>$${tdFormat(trailLine, 2)}</strong>
+            </p>
+          `;
+        }
+
+        // Build table
+        let html = `
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Trade P/L ($)</th>
+                <th>Equity Before ($)</th>
+                <th>Equity After ($)</th>
+                <th>High-Water ($)</th>
+                <th>Trail Line ($)</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
+
+        rows.forEach(row => {
+          const status = row.breach ? "BREACH" : "OK";
+          const rowClass = row.breach ? "breach-row" : "";
+          html += `
+            <tr class="${rowClass}">
+              <td>${row.tradeNum}</td>
+              <td>${tdFormat(row.pl, 2)}</td>
+              <td>${tdFormat(row.equityBefore, 2)}</td>
+              <td>${tdFormat(row.equityAfter, 2)}</td>
+              <td>${tdFormat(row.highWater, 2)}</td>
+              <td>${tdFormat(row.trailLine, 2)}</td>
+              <td>${status}</td>
+            </tr>
+          `;
+        });
+
+        html += `
+            </tbody>
+          </table>
+        `;
+
+        tdResultsTableWrapper.innerHTML = html;
+      });
+    </script>
+
+    <style>
+      .results-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+      .results-table th,
+      .results-table td {
+        border: 1px solid #e2e8f0;
+        padding: 6px 8px;
+        text-align: right;
+      }
+      .results-table th:first-child,
+      .results-table td:first-child {
+        text-align: center;
+      }
+      .results-table th {
+        background: #0a3764;
+        color: #ffffff;
+      }
+      .breach-row {
+        background: #ffe5e5;
+      }
+      .field-help {
+        font-size: 13px;
+        color: #4a5568;
+        margin-bottom: 6px;
+      }
+      textarea#td-trades {
+        width: 100%;
+        font-family: monospace;
+        padding: 8px;
+        resize: vertical;
+      }
+    </style>
+
+    <!-- SERVICE WORKER -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js").catch(function () {});
+        });
+      }
+    </script>
+</body>
+</html>
