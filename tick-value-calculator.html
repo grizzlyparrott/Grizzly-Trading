@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- FAVICONS / MANIFEST -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tick Value & P/L Calculator | Grizzly Parrot Trading</title>
+    <meta name="description" content="Quick futures tick and P/L calculator. Pick a contract, enter entry and exit, see ticks, points, and dollar profit or loss immediately.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrottrading.com/tick-value-calculator.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tick Value & P/L Calculator | Grizzly Parrot Trading">
+    <meta property="og:description" content="Fast tick and dollar P/L calculator for ES, NQ, CL, GC, FX futures and more. No fluff, just the numbers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grizzlyparrottrading.com/tick-value-calculator.html">
+    <meta property="og:site_name" content="Grizzly Parrot Trading">
+    <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta property="og:image:width" content="1792">
+    <meta property="og:image:height" content="941">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta name="twitter:title" content="Tick Value & P/L Calculator | Grizzly Parrot Trading">
+    <meta name="twitter:description" content="Tick and P/L calculator for common futures contracts in plain English.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JMJVR3G5YN');
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-mark">GP</span>
+                <span class="logo-text">Grizzly Parrot Trading</span>
+            </div>
+            <nav class="main-nav">
+                <a href="/app.html" id="get-app-link">Get the App</a>
+                <a href="futures-basics/index.html">Futures Basics</a>
+                <a href="prop-firm-trading/index.html">Prop Firms</a>
+                <a href="platforms-tutorials/index.html">Platforms</a>
+                <a href="market-basics/index.html">Market Basics</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>Tick Value And P/L Calculator</h1>
+                    <p>
+                        Pick a futures contract, plug in entry, exit, and size, and see the ticks, points, and dollar
+                        profit or loss without doing math in your head.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOL SECTION -->
+        <section class="section">
+            <div class="container">
+                <h2>Calculation Inputs</h2>
+                <!-- OPTIONAL AD SLOT ABOVE TOOL -->
+                <!-- <div class="ad-slot ad-top">Your ad code here</div> -->
+
+                <div class="tool-grid">
+                    <div class="tool-block">
+                        <label for="symbol">Contract</label>
+                        <select id="symbol">
+                            <option value="ES">ES (E-mini S&P 500)</option>
+                            <option value="MES">MES (Micro E-mini S&P 500)</option>
+                            <option value="NQ">NQ (E-mini Nasdaq-100)</option>
+                            <option value="MNQ">MNQ (Micro E-mini Nasdaq-100)</option>
+                            <option value="YM">YM (E-mini Dow)</option>
+                            <option value="MYM">MYM (Micro E-mini Dow)</option>
+                            <option value="CL">CL (Crude Oil)</option>
+                            <option value="MCL">MCL (Micro Crude Oil)</option>
+                            <option value="GC">GC (Gold)</option>
+                            <option value="MGC">MGC (Micro Gold)</option>
+                            <option value="SI">SI (Silver)</option>
+                            <option value="6E">6E (Euro FX)</option>
+                            <option value="M6E">M6E (Micro Euro FX)</option>
+                            <option value="6J">6J (Japanese Yen)</option>
+                            <option value="CUSTOM">Custom (manual tick size/value)</option>
+                        </select>
+                    </div>
+
+                    <div class="tool-block" id="custom-row" style="display:none;">
+                        <div class="tool-inline">
+                            <div>
+                                <label for="custom-tick-size">Custom Tick Size</label>
+                                <input type="number" id="custom-tick-size" step="0.00001" placeholder="e.g. 0.25">
+                            </div>
+                            <div>
+                                <label for="custom-tick-value">Custom Tick Value ($)</label>
+                                <input type="number" id="custom-tick-value" step="0.01" placeholder="e.g. 12.50">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-block">
+                        <label>Direction</label>
+                        <div class="tool-inline">
+                            <label><input type="radio" name="direction" value="long" checked> Long</label>
+                            <label><input type="radio" name="direction" value="short"> Short</label>
+                        </div>
+                    </div>
+
+                    <div class="tool-block">
+                        <label for="entry-price">Entry Price</label>
+                        <input type="number" id="entry-price" step="0.00001" placeholder="e.g. 5300.25">
+                    </div>
+
+                    <div class="tool-block">
+                        <label for="exit-price">Exit Price</label>
+                        <input type="number" id="exit-price" step="0.00001" placeholder="e.g. 5305.75">
+                    </div>
+
+                    <div class="tool-block">
+                        <label for="contracts">Number Of Contracts</label>
+                        <input type="number" id="contracts" step="1" min="1" value="1">
+                    </div>
+
+                    <div class="tool-block">
+                        <button id="calc-button" class="button-primary">Calculate</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTS SECTION -->
+        <section class="section section-alt">
+            <div class="container">
+                <h2>Results</h2>
+                <div id="results-box" class="results-box">
+                    <p>Fill out the inputs above and hit Calculate.</p>
+                </div>
+
+                <!-- OPTIONAL AD SLOT BELOW TOOL -->
+                <!-- <div class="ad-slot ad-bottom">Your ad code here</div> -->
+            </div>
+        </section>
+
+        <!-- QUICK REFERENCE -->
+        <section class="section">
+            <div class="container">
+                <h2>Common Tick Sizes And Values</h2>
+                <p class="section-intro">
+                    This is what the calculator uses behind the scenes. Good to know even if you never touch the custom settings.
+                </p>
+                <div class="grid grid-3">
+                    <article class="card">
+                        <h3>Equity Index Futures</h3>
+                        <ul>
+                            <li>ES: 0.25 tick, $12.50 per tick</li>
+                            <li>MES: 0.25 tick, $1.25 per tick</li>
+                            <li>NQ: 0.25 tick, $5.00 per tick</li>
+                            <li>MNQ: 0.25 tick, $0.50 per tick</li>
+                            <li>YM: 1 point tick, $5.00 per tick</li>
+                            <li>MYM: 1 point tick, $0.50 per tick</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Energy & Metals</h3>
+                        <ul>
+                            <li>CL: 0.01 tick, $10.00 per tick</li>
+                            <li>MCL: 0.01 tick, $1.00 per tick</li>
+                            <li>GC: 0.10 tick, $10.00 per tick</li>
+                            <li>MGC: 0.10 tick, $1.00 per tick</li>
+                            <li>SI: 0.005 tick, $25.00 per tick</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>FX Futures</h3>
+                        <ul>
+                            <li>6E: 0.00005 tick, $6.25 per tick</li>
+                            <li>M6E: 0.00005 tick, $1.25 per tick</li>
+                            <li>6J: 0.0000005 tick, $6.25 per tick</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="contact.html">Contact</a>
+                <a href="https://grizzlyparrott.github.io/Probabilistic-Execution/" style="color:#22c55e;" target="_blank">
+                    Probabilistic Execution – Free 3-Phase Trading Routine
+                </a>
+            </div>
+        </div>
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+    <!-- TOOL SCRIPT -->
+    <script>
+      // Contract specs: tickSize and tickValue in USD
+      const CONTRACT_SPECS = {
+        ES:  { tickSize: 0.25,    tickValue: 12.5 },
+        MES: { tickSize: 0.25,    tickValue: 1.25 },
+        NQ:  { tickSize: 0.25,    tickValue: 5.0 },
+        MNQ: { tickSize: 0.25,    tickValue: 0.5 },
+        YM:  { tickSize: 1.0,     tickValue: 5.0 },
+        MYM: { tickSize: 1.0,     tickValue: 0.5 },
+        CL:  { tickSize: 0.01,    tickValue: 10.0 },
+        MCL: { tickSize: 0.01,    tickValue: 1.0 },
+        GC:  { tickSize: 0.1,     tickValue: 10.0 },
+        MGC: { tickSize: 0.1,     tickValue: 1.0 },
+        SI:  { tickSize: 0.005,   tickValue: 25.0 },
+        "6E": { tickSize: 0.00005, tickValue: 6.25 },
+        M6E: { tickSize: 0.00005, tickValue: 1.25 },
+        "6J": { tickSize: 0.0000005, tickValue: 6.25 }
+      };
+
+      const symbolEl = document.getElementById("symbol");
+      const customRow = document.getElementById("custom-row");
+      const entryEl = document.getElementById("entry-price");
+      const exitEl = document.getElementById("exit-price");
+      const contractsEl = document.getElementById("contracts");
+      const resultsBox = document.getElementById("results-box");
+      const calcButton = document.getElementById("calc-button");
+
+      symbolEl.addEventListener("change", function () {
+        if (symbolEl.value === "CUSTOM") {
+          customRow.style.display = "block";
+        } else {
+          customRow.style.display = "none";
+        }
+      });
+
+      function formatNumber(num, decimals) {
+        return Number(num).toFixed(decimals);
+      }
+
+      calcButton.addEventListener("click", function () {
+        const symbol = symbolEl.value;
+        const entry = parseFloat(entryEl.value);
+        const exit = parseFloat(exitEl.value);
+        const contracts = parseInt(contractsEl.value, 10);
+        const direction = document.querySelector('input[name="direction"]:checked').value;
+
+        if (isNaN(entry) || isNaN(exit) || isNaN(contracts) || contracts <= 0) {
+          resultsBox.innerHTML = "<p>Please enter a valid entry, exit, and contract size.</p>";
+          return;
+        }
+
+        let tickSize, tickValue;
+
+        if (symbol === "CUSTOM") {
+          const customTickSize = parseFloat(document.getElementById("custom-tick-size").value);
+          const customTickValue = parseFloat(document.getElementById("custom-tick-value").value);
+          if (isNaN(customTickSize) || isNaN(customTickValue) || customTickSize <= 0 || customTickValue <= 0) {
+            resultsBox.innerHTML = "<p>Please enter a valid custom tick size and tick value.</p>";
+            return;
+          }
+          tickSize = customTickSize;
+          tickValue = customTickValue;
+        } else {
+          const spec = CONTRACT_SPECS[symbol];
+          if (!spec) {
+            resultsBox.innerHTML = "<p>Unknown contract spec. Try CUSTOM and enter values manually.</p>";
+            return;
+          }
+          tickSize = spec.tickSize;
+          tickValue = spec.tickValue;
+        }
+
+        let priceDiff = exit - entry;
+        if (direction === "short") {
+          priceDiff = entry - exit;
+        }
+
+        const rawTicks = priceDiff / tickSize;
+        const ticks = Math.round(rawTicks * 100) / 100;
+
+        const ticksPerPoint = 1 / tickSize;
+        const points = Math.round((ticks / ticksPerPoint) * 1000) / 1000;
+
+        const plPerContract = ticks * tickValue;
+        const totalPL = plPerContract * contracts;
+
+        const dirLabel = direction === "long" ? "Long" : "Short";
+        const winLoss = totalPL > 0 ? "Profit" : (totalPL < 0 ? "Loss" : "Flat");
+
+        resultsBox.innerHTML = `
+          <div class="results-grid">
+            <div class="results-item">
+              <h3>Basic Move</h3>
+              <p><strong>Direction:</strong> ${dirLabel}</p>
+              <p><strong>Entry:</strong> ${formatNumber(entry, 5)}</p>
+              <p><strong>Exit:</strong> ${formatNumber(exit, 5)}</p>
+              <p><strong>Price Difference:</strong> ${formatNumber(priceDiff, 5)}</p>
+            </div>
+            <div class="results-item">
+              <h3>Ticks And Points</h3>
+              <p><strong>Ticks:</strong> ${formatNumber(ticks, 2)}</p>
+              <p><strong>Approx. Points:</strong> ${formatNumber(points, 3)}</p>
+              <p><strong>Tick Size Used:</strong> ${tickSize}</p>
+              <p><strong>Tick Value Used:</strong> $${formatNumber(tickValue, 2)}</p>
+            </div>
+            <div class="results-item">
+              <h3>P/L</h3>
+              <p><strong>Contracts:</strong> ${contracts}</p>
+              <p><strong>P/L Per Contract:</strong> $${formatNumber(plPerContract, 2)}</p>
+              <p><strong>Total P/L:</strong> $${formatNumber(totalPL, 2)} (${winLoss})</p>
+            </div>
+          </div>
+        `;
+      });
+    </script>
+
+    <!-- SERVICE WORKER -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js").catch(function () {});
+        });
+      }
+    </script>
+</body>
+</html>
