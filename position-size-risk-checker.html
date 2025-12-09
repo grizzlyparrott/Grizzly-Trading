@@ -466,8 +466,8 @@
         </div>
 
         <p class="helper-text">
-          Reminder: if you are regularly above 1% per trade, you are not "aggressive."
-          You are just betting your future self can dig you out of a hole.
+          Reminder: around 1% per trade is where grown-ups live. Below 0.5% is practice.
+          Above 2–3% is where accounts go to die.
         </p>
       </section>
     </div>
@@ -510,21 +510,54 @@
         if (!isFinite(riskPercent) || riskPercent <= 0) {
           msg = "No risk, no opinion. Put some numbers in first.";
           tag = "The only free trade is the one you never place.";
-        } else if (riskPercent < 0.25) {
-          msg = "This is a paper cut. You are basically napping.";
-          tag = "Size is fine. The real risk is you revenge-trading later.";
-        } else if (riskPercent < 0.75) {
-          msg = "Reasonable risk. Grizzly mildly approves.";
-          tag = "This is the range where compounding actually works.";
-        } else if (riskPercent < 1.5) {
-          msg = "Getting spicy. Double-check the trade, not your courage.";
-          tag = "One trade will not make you rich, but a few like this can make you stupid.";
-        } else if (riskPercent < 3) {
+        } else if (riskPercent <= 0.10) {
+          // Level 1
+          msg = "This isn’t a trade, it’s a rounding error.";
+          tag = "You’re risking less than you waste on slippage every week.";
+        } else if (riskPercent <= 0.25) {
+          // Level 2
+          msg = "That’s adorable. Truly.";
+          tag = "If this stops out, your heart rate won’t even move.";
+        } else if (riskPercent <= 0.50) {
+          // Level 3
+          msg = "Size is still training wheels.";
+          tag = "Nothing wrong with surviving, but don’t pretend this is high conviction.";
+        } else if (riskPercent <= 0.75) {
+          // Level 4
+          msg = "Now it actually matters a little.";
+          tag = "Small, controlled, and finally worth tracking in your journal.";
+        } else if (riskPercent <= 1.00) {
+          // Level 5
+          msg = "This is the sweet spot. Grizzly approves.";
+          tag = "You can lose a streak of these and still come back swinging.";
+        } else if (riskPercent <= 1.25) {
+          // Level 6
+          msg = "Prime risk territory. Respect it.";
+          tag = "Good risk if the setup is real. Pure ego if it is not.";
+        } else if (riskPercent <= 1.75) {
+          // Level 7
+          msg = "Borderline spicy.";
+          tag = "One or two of these in a row is fine. Ten in a row is delusion.";
+        } else if (riskPercent <= 2.50) {
+          // Level 8
           msg = "Try again and this time think first.";
-          tag = "If this stops out, you will feel it. A lot. Plan for a losing streak, not just one loss.";
-        } else {
+          tag = "You are sizing like the win is guaranteed. Hint: it is not.";
+        } else if (riskPercent <= 3.50) {
+          // Level 9
+          msg = "You are one loss away from a mood swing.";
+          tag = "At this level, your trading plan is now emotionally funded.";
+        } else if (riskPercent <= 5.00) {
+          // Level 10
           msg = "You are fucked. This is account suicide territory.";
-          tag = "If this works, you got lucky. If it does not, you got exactly what you asked for.";
+          tag = "You are not scaling up. You are speeding up the liquidation.";
+        } else if (riskPercent <= 7.00) {
+          // Level 11
+          msg = "Full-send clown mode.";
+          tag = "If this works, you will call it skill. If not, you will call it unlucky. Both are lies.";
+        } else {
+          // Level 12
+          msg = "Congratulations, you have entered casino mode.";
+          tag = "The house edge in futures is bad enough. No need to help it.";
         }
 
         quoteText.textContent = msg;
