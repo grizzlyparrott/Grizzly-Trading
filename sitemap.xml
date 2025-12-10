@@ -7,13 +7,13 @@
     <loc>https://grizzlyparrottrading.com/about.html</loc>
   </url>
   <url>
+    <loc>https://grizzlyparrottrading.com/app.html</loc>
+  </url>
+  <url>
     <loc>https://grizzlyparrottrading.com/contact.html</loc>
   </url>
   <url>
     <loc>https://grizzlyparrottrading.com/disclaimer.html</loc>
-  </url>
-  <url>
-    <loc>https://grizzlyparrottrading.com/futures-basics/-best-times.html</loc>
   </url>
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/6a-asian-session-behavior.html</loc>
@@ -203,6 +203,9 @@
   </url>
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/6m-best-indicators.html</loc>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/futures-basics/6m-best-times.html</loc>
   </url>
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/6m-carry-trade.html</loc>
@@ -2282,5 +2285,26 @@
   </url>
   <url>
     <loc>https://grizzlyparrottrading.com/prop-firm-trading/withdrawal-thresholds-and-requirements.html</loc>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/tools/index.html</loc>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/tools/margin-leverage-visualizer.html</loc>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/tools/position-size-calculator.html</loc>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/tools/position-size-risk-checker.html</loc>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/tools/r-multiple-calculator.html</loc>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/tools/tick-value-calculator.html</loc>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/tools/trailing-drawdown-simulator.html</loc>
   </url>
 </urlset>
