@@ -1,142 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <!-- Standard Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta charset="UTF-8">
+  <title>Trading Tools | Grizzly Parrot Trading</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free trading tools for futures traders — position size calculators, risk checkers, leverage visualizers, trailing drawdown simulators, and more.">
 
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/site.webmanifest">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://grizzlyparrottrading.com/tools/index.html">
 
-    <!-- PNG Fallbacks -->
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Trading Tools | Grizzly Parrot Trading">
+  <meta property="og:description" content="Free futures trading calculators and tools to instantly check risk, position size, leverage, trailing drawdown, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/tools/index.html">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta property="og:image:width" content="1792">
+  <meta property="og:image:height" content="941">
 
-    <title>Trading Tools | Grizzly Parrot Trading</title>
-    <meta name="description" content="Interactive trading tools to calculate position size, visualize margin and leverage, and simulate prop-style trailing drawdowns. Built for real traders, not theory.">
-    <meta name="robots" content="index, follow">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta name="twitter:title" content="Trading Tools | Grizzly Parrot Trading">
+  <meta name="twitter:description" content="Free futures trading calculators and tools to instantly check risk, position size, leverage, trailing drawdown, and more.">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://grizzlyparrottrading.com/tools/index.html">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JM0VR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JM0VR3G5YN');
+  </script>
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Trading Tools | Grizzly Parrot Trading">
-    <meta property="og:description" content="Blunt, practical trading tools for position sizing, margin and leverage, and trailing drawdown simulations.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://grizzlyparrottrading.com/tools/index.html">
-    <meta property="og:site_name" content="Grizzly Parrot Trading">
-    <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
-    <meta property="og:image:width" content="1792">
-    <meta property="og:image:height" content="941">
+  <link rel="stylesheet" href="../style.css">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
-    <meta name="twitter:title" content="Trading Tools | Grizzly Parrot Trading">
-    <meta name="twitter:description" content="Interactive trading tools for sizing, margin, and trailing drawdowns. No fluff.">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JM0VR3G5YN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-JMJVR3G5YN');
-    </script>
-
-    <link rel="stylesheet" href="../style.css">
-
-    <!-- JSON-LD: Breadcrumbs -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://grizzlyparrottrading.com/index.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Trading Tools",
-          "item": "https://grizzlyparrottrading.com/tools/index.html"
-        }
-      ]
-    }
-    </script>
+  <!-- JSON-LD Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://grizzlyparrottrading.com/tools/index.html"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="logo">
-                <span class="logo-mark">GP</span>
-                <span class="logo-text"><a href="/index.html">Grizzly Parrot Trading</a></span>
-            </div>
-            <nav class="main-nav">
-                <a href="/app.html" id="get-app-link">Get the App</a>
-                <a href="/futures-basics/index.html">Futures Basics</a>
-                <a href="/prop-firm-trading/index.html">Prop Firms</a>
-                <a href="/platforms-tutorials/index.html">Platforms</a>
-                <a href="/market-basics/index.html">Market Basics</a>
-            </nav>
-        </div>
-    </header>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <span class="logo-mark">GP</span>
+      <span class="logo-text"><a href="/index.html">Grizzly Parrot Trading</a></span>
+    </div>
 
-    <main>
-        <!-- Hero -->
-        <section class="hero">
-            <div class="container hero-inner">
-                <div class="hero-text">
-                    <h1>Trading Tools</h1>
-                    <p>
-                        Fast, blunt tools for sizing, risk, and prop-style constraints so you stop guessing and
-                        start executing with numbers that actually make sense.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <nav class="main-nav">
+      <a href="/app.html" id="get-app-link">Get the App</a>
+      <a href="/futures-basics/index.html">Futures Basics</a>
+      <a href="/prop-firm-trading/index.html">Prop Firms</a>
+      <a href="/platforms-tutorials/index.html">Platforms</a>
+      <a href="/market-basics/index.html">Market Basics</a>
+      <a href="/tools/index.html">Tools</a>
+    </nav>
+  </div>
+</header>
 
-        <!-- Tools list -->
-        <section id="articles" class="section">
-            <div class="container">
-                <div class="site-search">
-                  <label for="site-search-input">Search Trading Tools</label>
-                  <input type="text" id="site-search-input" placeholder="Search tools...">
-                  <p id="no-results-message" style="display:none;">No tools match your search.</p>
-                </div>
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Trading Tools</h1>
+        <p>Fast, blunt, trader-built tools to check your risk, size your trades, and stop blowing accounts.</p>
+      </div>
+    </div>
+  </section>
 
-                <h2>Available Tools</h2>
+  <!-- Search -->
+  <section class="section">
+    <div class="container">
+      <div class="site-search">
+        <label for="site-search-input">Search Trading Tools</label>
+        <input id="site-search-input" type="text" placeholder="Search tools...">
+        <p id="no-results-message" style="display:none;">No tools match your search.</p>
+      </div>
 
-                <div class="grid grid-3">
-                    <article class="card">
-                      <h3><a href="position-size-risk-checker.html">Position Size &amp; Risk Checker</a></h3>
-                      <p>Calculate position size, account risk, and sanity-check your trade before you click buy or sell.</p>
-                    </article>
+      <h2>Available Tools</h2>
 
-                    <article class="card">
-                      <h3><a href="margin-leverage-visualizer.html">Margin &amp; Leverage Visualizer</a></h3>
-                      <p>See how margin and leverage change your real exposure so you stop trading blind on “buying power.”</p>
-                    </article>
+      <div class="grid grid-3">
 
-                    <article class="card">
-                      <h3><a href="trailing-drawdown-simulator.html">Trailing Drawdown Simulator</a></h3>
-                      <p>Simulate prop-firm style trailing drawdowns and see exactly how fast bad sequencing kills an eval.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
+        <!-- 1 -->
+        <article class="card">
+          <h3><a href="position-size-risk-checker.html">Position Size & Risk Checker</a></h3>
+          <p>Calculate position size, account risk, and sanity-check your trade before you click buy or sell.</p>
+        </article>
 
-    <script src="../search.js"></script>
+        <!-- 2 -->
+        <article class="card">
+          <h3><a href="margin-leverage-visualizer.html">Margin & Leverage Visualizer</a></h3>
+          <p>See how margin and leverage change your real exposure so you stop trading blind on “buying power.”</p>
+        </article>
+
+        <!-- 3 -->
+        <article class="card">
+          <h3><a href="trailing-drawdown-simulator.html">Trailing Drawdown Simulator</a></h3>
+          <p>Simulate prop-firm style trailing drawdowns and see exactly how fast bad sequencing kills an eval.</p>
+        </article>
+
+        <!-- 4 -->
+        <article class="card">
+          <h3><a href="position-size-calculator.html">Position Size Calculator</a></h3>
+          <p>Quickly size trades based on account balance and risk-per-trade without mental math.</p>
+        </article>
+
+        <!-- 5 -->
+        <article class="card">
+          <h3><a href="r-multiple-calculator.html">R-Multiple Calculator</a></h3>
+          <p>Instantly calculate R-multiples for your trade to measure risk/reward with actual numbers.</p>
+        </article>
+
+        <!-- 6 -->
+        <article class="card">
+          <h3><a href="tick-value-calculator.html">Tick Value Calculator</a></h3>
+          <p>See the exact dollar value per tick for any futures product so you stop misjudging risk.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-section">
+      <h4>Navigation</h4>
+      <a href="/index.html">Home</a>
+      <a href="/futures-basics/index.html">Futures Basics</a>
+      <a href="/prop-firm-trading/index.html">Prop Firms</a>
+      <a href="/platforms-tutorials/index.html">Platforms</a>
+      <a href="/market-basics/index.html">Market Basics</a>
+      <a href="/tools/index.html">Tools</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Legal</h4>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+
+    <div class="footer-section">
+      <p>© 2025 Grizzly Parrot Trading. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../search.js"></script>
 </body>
 </html>
