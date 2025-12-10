@@ -1,86 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+    <meta charset="UTF-8">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-  <title>Trading Tools | Grizzly Parrott Trading</title>
-  <meta name="description" content="Interactive trading tools to calculate position size, visualize margin and leverage, and simulate trailing drawdowns. Built for fast, practical use.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/tools/">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Trading Tools | Grizzly Parrott Trading">
-  <meta property="og:description" content="Interactive trading calculators and simulations for practical execution.">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/tools/">
-  <meta property="og:type" content="website">
+    <!-- PNG Fallbacks -->
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Twitter -->
-  <meta name="twitter:title" content="Trading Tools | Grizzly Parrott Trading">
-  <meta name="twitter:description" content="Interactive trading calculators and simulations for practical execution.">
+    <title>Trading Tools | Grizzly Parrot Trading</title>
+    <meta name="description" content="Interactive trading tools to calculate position size, visualize margin and leverage, and simulate prop-style trailing drawdowns. Built for real traders, not theory.">
+    <meta name="robots" content="index, follow">
 
-  <link rel="stylesheet" href="../style.css">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrottrading.com/tools/index.html">
 
-  <!-- JSON-LD Breadcrumbs -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://grizzlyparrottrading.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Trading Tools",
-        "item": "https://grizzlyparrottrading.com/tools/"
-      }
-    ]
-  }
-  </script>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Trading Tools | Grizzly Parrot Trading">
+    <meta property="og:description" content="Blunt, practical trading tools for position sizing, margin and leverage, and trailing drawdown simulations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grizzlyparrottrading.com/tools/index.html">
+    <meta property="og:site_name" content="Grizzly Parrot Trading">
+    <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta property="og:image:width" content="1792">
+    <meta property="og:image:height" content="941">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta name="twitter:title" content="Trading Tools | Grizzly Parrot Trading">
+    <meta name="twitter:description" content="Interactive trading tools for sizing, margin, and trailing drawdowns. No fluff.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JM0VR3G5YN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JMJVR3G5YN');
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- JSON-LD: Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://grizzlyparrottrading.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trading Tools",
+          "item": "https://grizzlyparrottrading.com/tools/index.html"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-mark">GP</span>
+                <span class="logo-text"><a href="/index.html">Grizzly Parrot Trading</a></span>
+            </div>
+            <nav class="main-nav">
+                <a href="/app.html" id="get-app-link">Get the App</a>
+                <a href="/futures-basics/index.html">Futures Basics</a>
+                <a href="/prop-firm-trading/index.html">Prop Firms</a>
+                <a href="/platforms-tutorials/index.html">Platforms</a>
+                <a href="/market-basics/index.html">Market Basics</a>
+            </nav>
+        </div>
+    </header>
 
-  <header>
-    <h1>Trading Tools</h1>
-    <p>Fast, blunt, practical tools built for real traders.</p>
-  </header>
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>Trading Tools</h1>
+                    <p>
+                        Fast, blunt tools for sizing, risk, and prop-style constraints so you stop guessing and
+                        start executing with numbers that actually make sense.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-  <main class="category-grid">
+        <!-- Tools list -->
+        <section id="articles" class="section">
+            <div class="container">
+                <div class="site-search">
+                  <label for="site-search-input">Search Trading Tools</label>
+                  <input type="text" id="site-search-input" placeholder="Search tools...">
+                  <p id="no-results-message" style="display:none;">No tools match your search.</p>
+                </div>
 
-    <a class="category-card" href="/tools/position-size-risk-checker.html">
-      <h2>Position Size & Risk Checker</h2>
-      <p>Calculate true position size and risk levels instantly.</p>
-    </a>
+                <h2>Available Tools</h2>
 
-    <a class="category-card" href="/tools/margin-leverage-visualizer.html">
-      <h2>Margin & Leverage Visualizer</h2>
-      <p>See how margin and leverage actually move your exposure.</p>
-    </a>
+                <div class="grid grid-3">
+                    <article class="card">
+                      <h3><a href="position-size-risk-checker.html">Position Size &amp; Risk Checker</a></h3>
+                      <p>Calculate position size, account risk, and sanity-check your trade before you click buy or sell.</p>
+                    </article>
 
-    <a class="category-card" href="/tools/trailing-drawdown-simulator.html">
-      <h2>Trailing Drawdown Simulator</h2>
-      <p>Simulate prop-firm trailing drawdowns before you blow them.</p>
-    </a>
+                    <article class="card">
+                      <h3><a href="margin-leverage-visualizer.html">Margin &amp; Leverage Visualizer</a></h3>
+                      <p>See how margin and leverage change your real exposure so you stop trading blind on “buying power.”</p>
+                    </article>
 
-  </main>
+                    <article class="card">
+                      <h3><a href="trailing-drawdown-simulator.html">Trailing Drawdown Simulator</a></h3>
+                      <p>Simulate prop-firm style trailing drawdowns and see exactly how fast bad sequencing kills an eval.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <footer>
-    <p><a href="/index.html">Back to Home</a></p>
-  </footer>
-
+    <script src="../search.js"></script>
 </body>
 </html>
