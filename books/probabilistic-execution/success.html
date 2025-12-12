@@ -148,26 +148,33 @@
     }
   </style>
 
-  <!-- GA4 + Google Ads (same as main page) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <!-- GA4 + Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    // GA4
-    gtag('config', 'G-JMJVR3G5YN');
+  // GA4 property
+  gtag('config', 'G-JMJVR3G5YN');
 
-    // Google Ads account
-    gtag('config', 'AW-17793230727');
+  // Google Ads account
+  gtag('config', 'AW-17793230727');
 
-    // Fire purchase conversion on success page
-    gtag('event', 'conversion', {
-      send_to: 'AW-17793230727/cO1aCN3Jh88bEIfPvKRC',
-      value: 49.0,
-      currency: 'USD'
-    });
-  </script>
+  // GA4 purchase event (this is what we will import into Google Ads)
+  gtag('event', 'purchase_pe', {
+    value: 49.0,
+    currency: 'USD'
+  });
+
+  // Existing Google Ads conversion tag (fine to keep for now)
+  gtag('event', 'conversion', {
+    send_to: 'AW-17793230727/cO1aCN3Jh88bEIfPvKRC',
+    value: 49.0,
+    currency: 'USD'
+  });
+</script>
+
 </head>
 <body>
   <div class="wrap">
