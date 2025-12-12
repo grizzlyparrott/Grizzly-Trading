@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Probabilistic Execution: Tactics to Avoid the Guillotine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Probabilistic Execution: Tactics to Avoid the Guillotine is a futures trading book about risk, sizing, and execution so you stop bleeding out from avoidable mistakes.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Probabilistic Execution: Tactics to Avoid the Guillotine">
+  <meta property="og:description" content="A blunt, practical trading book about risk, position sizing, and execution so you stop dying by a thousand small mistakes.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="probabilistic-execution-cover.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Probabilistic Execution: Tactics to Avoid the Guillotine">
+  <meta name="twitter:description" content="Execute like probability actually matters. A futures trading book focused on risk, sizing, and survival.">
+  <meta name="twitter:image" content="probabilistic-execution-cover.png">
+
+  <style>
+    :root {
+      --bg: #050608;
+      --bg-elevated: #0c0f14;
+      --accent: #22ff88;
+      --accent-soft: rgba(34,255,136,0.12);
+      --text-main: #f5f5f5;
+      --text-muted: #a0a4b0;
+      --danger: #ff3355;
+      --border-subtle: #20242f;
+      --shadow-soft: 0 24px 60px rgba(0,0,0,0.7);
+      --radius-lg: 18px;
+      --radius-xl: 22px;
+      --radius-pill: 999px;
+      --max-width: 1100px;
+      --transition-fast: 0.16s ease-out;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-serif: "Georgia", "Times New Roman", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #111320 0, #050608 40%);
+      color: var(--text-main);
+      font-family: var(--font-main);
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+
+    /* Header */
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: radial-gradient(circle at 20% 0%, #22ff88, #0b1b13 55%, #050608);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      box-shadow: 0 0 18px rgba(34,255,136,0.5);
+    }
+
+    .brand-text-main {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+
+    .top-cta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .top-cta a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(34,255,136,0.5);
+      background: rgba(34,255,136,0.1);
+      color: var(--accent);
+      font-weight: 600;
+      transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      box-shadow: 0 12px 30px rgba(34,255,136,0.3);
+    }
+
+    .top-cta a:hover {
+      background: var(--accent);
+      color: #021005;
+      transform: translateY(-1px);
+      box-shadow: 0 18px 48px rgba(34,255,136,0.55);
+    }
+
+    .top-cta a span.icon {
+      font-size: 15px;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-copy {
+      padding: 22px 22px 24px;
+      background: linear-gradient(135deg, rgba(34,255,136,0.07), rgba(5,6,8,0.92));
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(34,255,136,0.35);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at -10% -10%, rgba(34,255,136,0.45), transparent 50%);
+      opacity: 0.42;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 11px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(34,255,136,0.6);
+      background: rgba(5,6,8,0.9);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(34,255,136,0.9);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      line-height: 1.1;
+      margin: 0 0 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin: 0 0 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-highlight {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(5,6,8,0.9);
+      border: 1px solid rgba(255,51,85,0.8);
+      color: var(--danger);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+      font-size: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+
+    .hero-bullets li span.bullet {
+      width: 6px;
+      height: 6px;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .hero-bullets strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 6px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: var(--accent);
+      color: #021005;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 16px 40px rgba(34,255,136,0.4);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 18px 48px rgba(34,255,136,0.55);
+      filter: brightness(1.03);
+    }
+
+    .btn-primary span.icon {
+      font-size: 16px;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: rgba(5,6,8,0.9);
+      color: var(--text-muted);
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.02);
+      border-color: rgba(34,255,136,0.5);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-meta span {
+      margin-right: 16px;
+    }
+
+    .hero-meta strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    /* Cover card */
+
+    .hero-cover {
+      padding: 14px;
+      background: radial-gradient(circle at top, #181b26 0, #050608 60%);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cover-frame {
+      border-radius: 14px;
+      padding: 10px;
+      background: radial-gradient(circle at top, rgba(34,255,136,0.32), rgba(5,6,8,0.96));
+      border: 1px solid rgba(34,255,136,0.5);
+      box-shadow: 0 12px 34px rgba(0,0,0,0.9);
+    }
+
+    .cover-inner {
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 3 / 4;
+      display: flex;
+    }
+
+    .cover-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cover-caption {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cover-caption strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .price-tag {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* Sections */
+
+    .section {
+      margin-bottom: 28px;
+      padding: 20px 18px 22px;
+      border-radius: var(--radius-lg);
+      background: rgba(7,9,13,0.96);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .section h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .section p {
+      margin: 4px 0 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .pill-row span {
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.01);
+      color: var(--text-muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .two-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .two-col li {
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+
+    .two-col li strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .note-box {
+      margin-top: 10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(17,20,30,0.9);
+      border: 1px dashed rgba(255,255,255,0.15);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+
+    .site-footer {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.18);
+      text-underline-offset: 3px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-cover {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-copy {
+        padding: 18px 16px 20px;
+      }
+      .hero-title {
+        font-size: 26px;
+      }
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQ2E9C6P54"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QQ2E9C6P54');
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Track clicks on the Free Chapter link
+    const freeChapterLink = document.querySelector('a[href="https://grizzlyparrott.gumroad.com/l/routine"]');
+    if (freeChapterLink) {
+      freeChapterLink.addEventListener('click', function () {
+        gtag('event', 'free_chapter_click', {
+          event_category: 'engagement',
+          event_label: 'Free Chapter Button'
+        });
+      });
+    }
+
+    // Track clicks on the Buy Book link
+    const buyBookLink = document.querySelector('a[href="https://grizzlyparrott.gumroad.com/l/lwxcf"]');
+    if (buyBookLink) {
+      buyBookLink.addEventListener('click', function () {
+        gtag('event', 'buy_book_click', {
+          event_category: 'conversion',
+          event_label: 'Buy Book Button'
+        });
+      });
+    }
+  });
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17793230727"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17793230727');
+</script>
+<!-- Event snippet for Page view conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17793230727/cO1aCN3Jh88bEIfPvKRC',
+      'value': 1.0,
+      'currency': 'USD'
+  });
+</script>
+
+
+<body>
+  <main class="page">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark">GP</div>
+        <div>
+          <div class="brand-text-main">Grizzly Parrot Trading </div>
+          <div class="brand-text-sub">Futures · Risk · Execution</div>
+        </div>
+      </div>
+      <div class="top-cta">
+        <a href="https://grizzlyparrott.gumroad.com/l/lwxcf" target="_blank" rel="noopener">
+          <span class="icon">↗</span>
+          <span>Buy the PDF on Gumroad</span>
+        </a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          <span>Trading book · PDF download</span>
+        </div>
+        <h1 class="hero-title">Probabilistic Execution</h1>
+        <p class="hero-subtitle">
+          Tactics to Avoid the Guillotine: a blunt futures trading manual about risk, position sizing, and execution so you stop trading like the rules do not apply to you.
+        </p>
+
+        <div class="hero-highlight">
+          You are not blown up by black swans. You are bled out by bad execution.
+        </div>
+
+        <ul class="hero-bullets">
+          <li>
+            <span class="bullet"></span>
+            <div><strong>Risk first, setups second.</strong> Every trade starts from "how much can this hurt me if I am wrong?"</div>
+          </li>
+          <li>
+            <span class="bullet"></span>
+            <div><strong>Execution over prediction.</strong> Clear rules from idea to exit so you are not improvising with size on.</div>
+          </li>
+          <li>
+            <span class="bullet"></span>
+            <div><strong>Probability-aware behavior.</strong> Trade like the odds are real numbers, not background noise.</div>
+          </li>
+        </ul>
+
+        <div class="hero-ctas">
+          <a class="btn-primary" href="https://grizzlyparrott.gumroad.com/l/lwxcf" target="_blank" rel="noopener">
+            <span class="icon">↗</span>
+            <span>Get the PDF on Gumroad</span>
+          </a>
+          <a class="btn-outline" href="https://grizzlyparrott.gumroad.com/l/routine" target="_blank" rel="noopener">
+            <span>Read a free sample routine</span>
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span><strong>Format:</strong> PDF (instant download)</span>
+          <span><strong>Price:</strong> $49</span>
+          <span><strong>Author:</strong> Kyle Parrott · Grizzly Parrot Trading </span>
+        </div>
+      </div>
+
+      <aside class="hero-cover" aria-label="Book cover preview">
+        <div class="cover-frame">
+          <div class="cover-inner">
+            <img src="probabilistic-execution-cover.png" alt="Book cover: Probabilistic Execution: Tactics to Avoid the Guillotine">
+          </div>
+        </div>
+        <div class="cover-caption">
+          <div>
+            <strong>Probabilistic Execution</strong><br>
+            <span>Digital edition · Lifetime access</span>
+          </div>
+          <div class="price-tag">
+            $49 PDF
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <h2>Who this is for</h2>
+      <p>
+        This is not a beginner "what is a candlestick" book. It is for traders who already know how markets move but cannot stop sabotaging themselves with position size, risk, and execution.
+      </p>
+      <div class="two-col">
+        <div>
+          <ul>
+            <li><strong>Futures traders</strong> who size off vibes and then wonder why every swing feels like a heart attack.</li>
+            <li><strong>Prop traders</strong> who keep failing evaluations on a handful of preventable decisions.</li>
+            <li><strong>Discretionary day traders</strong> who have decent ideas and terrible risk discipline.</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><strong>System traders</strong> who want their execution to match their stats instead of their emotions.</li>
+            <li><strong>Recovering gamblers</strong> trying to treat trading like a business with rules and limits.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pill-row">
+        <span>Futures-focused</span>
+        <span>Prop firm friendly</span>
+        <span>Risk-first approach</span>
+        <span>Blunt, zero-hype tone</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What you will actually get</h2>
+      <p>
+        No theory dump. No "just control your emotions" pep talks. You get concrete rules and structures you can bolt directly onto your trading.
+      </p>
+      <div class="two-col">
+        <div>
+          <ul>
+            <li><strong>Risk and sizing framework.</strong> How to define account risk, per-trade risk, and daily pain limits that you can actually stick to.</li>
+            <li><strong>Volatility-based sizing.</strong> Why the same contract size is not the same risk every day, and how to normalize it.</li>
+            <li><strong>Scaling rules.</strong> When to add, when to cut, and when to flatten so you are not winging it mid-trade.</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><strong>Execution playbooks.</strong> Step-by-step flows from "idea" to "flattened" so you stop improvising with real money.</li>
+            <li><strong>Risk limits with teeth.</strong> Daily and weekly rules that shut you down before you spiral, not after.</li>
+            <li><strong>Post-trade review templates.</strong> Simple ways to track behavior and tighten up without drowning in spreadsheets.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note-box">
+        You will not find magic indicators, secret entries, or "100% win rate" garbage. This book assumes the edge you need is fixing how you execute, not adding more signals.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>About the author</h2>
+      <p>
+        I am Kyle Parrott. I run Grizzly Parrot Trading , a futures-focused site built around blunt, practical education instead of hype. No rented cars, no signals group, no Discord cult.
+      </p>
+      <p>
+        Probabilistic Execution comes out of watching traders, including myself, ignore probability, size like degenerates, and then act surprised when the math catches up. This book is the answer to the question:
+        "How do I run this like a professional operation instead of a slightly more sophisticated casino?"
+      </p>
+      <div class="pill-row">
+        <span>Built from live trading</span>
+        <span>Process over prediction</span>
+        <span>Execution-heavy</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Ready to stop trading like the odds are fake?</h2>
+      <p>
+        If you are tired of good ideas dying under bad execution, this is the part where you either keep doing what you are doing, or you pay a real price and get a real rule set.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="https://grizzlyparrott.gumroad.com/l/lwxcf" target="_blank" rel="noopener">
+          <span class="icon">↗</span>
+          <span>Buy Probabilistic Execution (PDF)</span>
+        </a>
+        <a class="btn-outline" href="https://grizzlyparrott.gumroad.com/l/routine" target="_blank" rel="noopener">
+          <span>Grab the free routine chapter</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div>
+        © <span id="year"></span> Grizzly Parrot Trading . All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="https://grizzlyparrottrading.com/" target="_blank" rel="noopener">Visit Grizzly Parrot Trading </a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var el = document.getElementById("year");
+      if (el) {
+        el.textContent = new Date().getFullYear();
+      }
+    })();
+  </script>
+</body>
+</html>

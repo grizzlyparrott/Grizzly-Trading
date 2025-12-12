@@ -1,0 +1,202 @@
+/* Base layout */
+
+:root {
+  --bg: #050816;
+  --bg-elevated: #0b1020;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --accent: #22c55e;      /* green like your main site's button */
+  --accent-soft: #16a34a;
+  --border-subtle: #1f2933;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+  color: var(--text-main);
+}
+
+/* Header */
+
+.pe-header {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pe-logo {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.pe-nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.pe-nav-link:hover {
+  color: var(--text-main);
+}
+
+/* Main container */
+
+.pe-main {
+  max-width: 960px;
+  margin: 0 auto 3rem;
+  padding: 0 1.25rem 3rem;
+}
+
+/* Hero */
+
+.pe-hero {
+  background: linear-gradient(145deg, #020617, #0b1020);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 2.5rem;
+}
+
+.pe-hero h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.4rem;
+}
+
+.pe-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+}
+
+.pe-hook {
+  font-size: 1rem;
+  color: var(--text-main);
+  max-width: 620px;
+}
+
+.pe-cta-row {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pe-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.pe-btn-primary {
+  background-color: var(--accent);
+  color: #020617;
+}
+
+.pe-btn-primary:hover {
+  background-color: var(--accent-soft);
+}
+
+.pe-btn-ghost {
+  background-color: transparent;
+  color: var(--text-main);
+  border-color: #374151;
+}
+
+.pe-btn-ghost:hover {
+  background-color: #111827;
+}
+
+.pe-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Sections */
+
+.pe-section {
+  background-color: var(--bg-elevated);
+  border-radius: 1rem;
+  padding: 1.75rem 1.75rem 1.5rem;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 1.5rem;
+}
+
+.pe-section h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.pe-section p {
+  font-size: 0.98rem;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
+
+.pe-list {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0.25rem 0 0.25rem;
+}
+
+.pe-list li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+/* Footer */
+
+.pe-footer {
+  max-width: 960px;
+  margin: 0 auto 2rem;
+  padding: 0 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+  
+/* Mobile tweaks */
+
+@media (max-width: 640px) {
+  .pe-hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .pe-hero h1 {
+    font-size: 2rem;
+  }
+
+  .pe-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .pe-cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pe-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
