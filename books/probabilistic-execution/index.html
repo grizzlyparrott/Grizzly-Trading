@@ -541,10 +541,10 @@
     gtag('config', 'AW-17793230727');
   </script>
 
-  <!-- Custom click tracking for Gumroad links -->
+  <!-- Custom click tracking for purchase + free chapter links -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Track clicks on the Free Chapter link
+      // Track clicks on the Free Chapter link (still on Gumroad)
       var freeChapterLink = document.querySelector('a[href="https://grizzlyparrott.gumroad.com/l/routine"]');
       if (freeChapterLink) {
         freeChapterLink.addEventListener('click', function () {
@@ -555,13 +555,13 @@
         });
       }
 
-      // Track clicks on the Buy Book link
-      var buyBookLink = document.querySelector('a[href="https://grizzlyparrott.gumroad.com/l/lwxcf"]');
+      // Track clicks on the Buy Book link (Stripe Checkout)
+      var buyBookLink = document.querySelector('a[href="https://buy.stripe.com/00w00kbKd8oucxO46Q2Nq00"]');
       if (buyBookLink) {
         buyBookLink.addEventListener('click', function () {
           gtag('event', 'buy_book_click', {
             event_category: 'conversion',
-            event_label: 'Buy Book Button'
+            event_label: 'Buy Book Button (Stripe)'
           });
         });
       }
@@ -589,9 +589,9 @@
         </div>
       </div>
       <div class="top-cta">
-        <a href="https://grizzlyparrott.gumroad.com/l/lwxcf" target="_blank" rel="noopener">
+        <a href="https://buy.stripe.com/00w00kbKd8oucxO46Q2Nq00" target="_blank" rel="noopener">
           <span class="icon">↗</span>
-          <span>Buy the PDF on Gumroad</span>
+          <span>Buy the PDF</span>
         </a>
       </div>
     </header>
@@ -627,9 +627,9 @@
         </ul>
 
         <div class="hero-ctas">
-          <a class="btn-primary" href="https://grizzlyparrott.gumroad.com/l/lwxcf" target="_blank" rel="noopener">
+          <a class="btn-primary" href="https://buy.stripe.com/00w00kbKd8oucxO46Q2Nq00" target="_blank" rel="noopener">
             <span class="icon">↗</span>
-            <span>Get the PDF on Gumroad</span>
+            <span>Get the PDF</span>
           </a>
           <a class="btn-outline" href="https://grizzlyparrott.gumroad.com/l/routine" target="_blank" rel="noopener">
             <span>Read a free sample routine</span>
@@ -737,7 +737,7 @@
         If you are tired of good ideas dying under bad execution, this is the part where you either keep doing what you are doing, or you pay a real price and get a real rule set.
       </p>
       <div class="hero-ctas">
-        <a class="btn-primary" href="https://grizzlyparrott.gumroad.com/l/lwxcf" target="_blank" rel="noopener">
+        <a class="btn-primary" href="https://buy.stripe.com/00w00kbKd8oucxO46Q2Nq00" target="_blank" rel="noopener">
           <span class="icon">↗</span>
           <span>Buy Probabilistic Execution (PDF)</span>
         </a>
