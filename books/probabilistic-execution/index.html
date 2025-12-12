@@ -6,18 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Probabilistic Execution: Tactics to Avoid the Guillotine is a futures trading book about risk, sizing, and execution so you stop bleeding out from avoidable mistakes.">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://grizzlyparrottrading.com/books/probabilistic-execution/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Probabilistic Execution: Tactics to Avoid the Guillotine">
   <meta property="og:description" content="A blunt, practical trading book about risk, position sizing, and execution so you stop dying by a thousand small mistakes.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="probabilistic-execution-cover.png">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/books/probabilistic-execution/">
+  <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/books/probabilistic-execution/probabilistic-execution-cover.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Probabilistic Execution: Tactics to Avoid the Guillotine">
   <meta name="twitter:description" content="Execute like probability actually matters. A futures trading book focused on risk, sizing, and survival.">
-  <meta name="twitter:image" content="probabilistic-execution-cover.png">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/books/probabilistic-execution/probabilistic-execution-cover.png">
+  <meta name="twitter:url" content="https://grizzlyparrottrading.com/books/probabilistic-execution/">
 
   <style>
     :root {
@@ -522,59 +526,57 @@
       }
     }
   </style>
+
+  <!-- Google tag (gtag.js) for GA4 + Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQ2E9C6P54"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // GA4 property for this landing page
+    gtag('config', 'G-QQ2E9C6P54');
+
+    // Google Ads account
+    gtag('config', 'AW-17793230727');
+  </script>
+
+  <!-- Custom click tracking for Gumroad links -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Track clicks on the Free Chapter link
+      var freeChapterLink = document.querySelector('a[href="https://grizzlyparrott.gumroad.com/l/routine"]');
+      if (freeChapterLink) {
+        freeChapterLink.addEventListener('click', function () {
+          gtag('event', 'free_chapter_click', {
+            event_category: 'engagement',
+            event_label: 'Free Chapter Button'
+          });
+        });
+      }
+
+      // Track clicks on the Buy Book link
+      var buyBookLink = document.querySelector('a[href="https://grizzlyparrott.gumroad.com/l/lwxcf"]');
+      if (buyBookLink) {
+        buyBookLink.addEventListener('click', function () {
+          gtag('event', 'buy_book_click', {
+            event_category: 'conversion',
+            event_label: 'Buy Book Button'
+          });
+        });
+      }
+    });
+  </script>
+
+  <!-- Existing Google Ads conversion (page view) -->
+  <script>
+    gtag('event', 'conversion', {
+      send_to: 'AW-17793230727/cO1aCN3Jh88bEIfPvKRC',
+      value: 1.0,
+      currency: 'USD'
+    });
+  </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQ2E9C6P54"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QQ2E9C6P54');
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Track clicks on the Free Chapter link
-    const freeChapterLink = document.querySelector('a[href="https://grizzlyparrott.gumroad.com/l/routine"]');
-    if (freeChapterLink) {
-      freeChapterLink.addEventListener('click', function () {
-        gtag('event', 'free_chapter_click', {
-          event_category: 'engagement',
-          event_label: 'Free Chapter Button'
-        });
-      });
-    }
-
-    // Track clicks on the Buy Book link
-    const buyBookLink = document.querySelector('a[href="https://grizzlyparrott.gumroad.com/l/lwxcf"]');
-    if (buyBookLink) {
-      buyBookLink.addEventListener('click', function () {
-        gtag('event', 'buy_book_click', {
-          event_category: 'conversion',
-          event_label: 'Buy Book Button'
-        });
-      });
-    }
-  });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17793230727"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17793230727');
-</script>
-<!-- Event snippet for Page view conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17793230727/cO1aCN3Jh88bEIfPvKRC',
-      'value': 1.0,
-      'currency': 'USD'
-  });
-</script>
-
 
 <body>
   <main class="page">
@@ -582,7 +584,7 @@
       <div class="brand">
         <div class="brand-mark">GP</div>
         <div>
-          <div class="brand-text-main">Grizzly Parrot Trading </div>
+          <div class="brand-text-main">Grizzly Parrot Trading</div>
           <div class="brand-text-sub">Futures · Risk · Execution</div>
         </div>
       </div>
@@ -637,7 +639,7 @@
         <div class="hero-meta">
           <span><strong>Format:</strong> PDF (instant download)</span>
           <span><strong>Price:</strong> $49</span>
-          <span><strong>Author:</strong> Kyle Parrott · Grizzly Parrot Trading </span>
+          <span><strong>Author:</strong> Kyle Parrott · Grizzly Parrot Trading</span>
         </div>
       </div>
 
@@ -716,7 +718,7 @@
     <section class="section">
       <h2>About the author</h2>
       <p>
-        I am Kyle Parrott. I run Grizzly Parrot Trading , a futures-focused site built around blunt, practical education instead of hype. No rented cars, no signals group, no Discord cult.
+        I am Kyle Parrott. I run Grizzly Parrot Trading, a futures-focused site built around blunt, practical education instead of hype. No rented cars, no signals group, no Discord cult.
       </p>
       <p>
         Probabilistic Execution comes out of watching traders, including myself, ignore probability, size like degenerates, and then act surprised when the math catches up. This book is the answer to the question:
@@ -747,10 +749,10 @@
 
     <footer class="site-footer">
       <div>
-        © <span id="year"></span> Grizzly Parrot Trading . All rights reserved.
+        © <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
       </div>
       <div class="footer-links">
-        <a href="https://grizzlyparrottrading.com/" target="_blank" rel="noopener">Visit Grizzly Parrot Trading </a>
+        <a href="https://grizzlyparrottrading.com/" target="_blank" rel="noopener">Visit Grizzly Parrot Trading</a>
       </div>
     </footer>
   </main>
