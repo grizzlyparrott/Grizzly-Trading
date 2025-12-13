@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- PNG Fallbacks -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NQ Tick Size, Tick Value, and Dollar Risk Explained</title>
+  <meta name="description" content="A precise breakdown of NQ tick size, tick value, and how dollar risk expands faster on NQ than most index futures.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NQ Tick Size, Tick Value, and Dollar Risk Explained">
+  <meta property="og:description" content="How NQ ticks work, what each tick is worth, and why identical stops produce different risk than ES.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html">
+  <meta property="og:site_name" content="Grizzly Parrot Trading">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta property="og:image:width" content="1792">
+  <meta property="og:image:height" content="941">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta name="twitter:title" content="NQ Tick Size, Tick Value, and Dollar Risk Explained">
+  <meta name="twitter:description" content="A technical explanation of NQ tick mechanics and dollar exposure.">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JMJVR3G5YN');
+  </script>
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "NQ Tick Size, Tick Value, and Dollar Risk Explained",
+    "description": "A precise breakdown of NQ tick size, tick value, and how dollar risk expands faster on NQ than most index futures.",
+    "author": { "@type": "Person", "name": "Grizzly Parrott" },
+    "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html",
+    "datePublished": "2025-12-12",
+    "dateModified": "2025-12-12"
+  }
+  </script>
+
+  <!-- JSON-LD: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grizzlyparrottrading.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Futures Basics", "item": "https://grizzlyparrottrading.com/futures-basics/index.html" },
+      { "@type": "ListItem", "position": 3, "name": "NQ Tick Size, Tick Value, and Dollar Risk Explained", "item": "https://grizzlyparrottrading.com/futures-basics/nq-tick-value.html" }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="/index.html">Grizzly Parrot Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>NQ Tick Size, Tick Value, and Dollar Risk Explained</h1>
+
+<p>
+The E-mini Nasdaq-100 (NQ) moves in fixed increments called ticks. Understanding tick size and tick value is not optional. These mechanics define how fast dollar risk expands and explain why NQ feels disproportionately aggressive compared to other index futures.
+</p>
+
+<h2>NQ tick size and tick value</h2>
+
+<p>
+NQ has a minimum price fluctuation of <strong>0.25 index points</strong>. Each 0.25-point move is worth <strong>$5 per contract</strong>.
+</p>
+
+<ul>
+  <li>1.00 index point = $20 per contract</li>
+  <li>5.00 index points = $100 per contract</li>
+  <li>10.00 index points = $200 per contract</li>
+</ul>
+
+<p>
+These numbers look tame in isolation. The problem appears when price covers multiple points in seconds during active sessions.
+</p>
+
+<h2>Why NQ risk expands faster than expected</h2>
+
+<p>
+NQ routinely prints larger intraday ranges than broader index futures. The combination of fast movement and tight tick spacing causes dollar exposure to compound rapidly. Identical stop distances applied across contracts do not create equivalent outcomes.
+</p>
+
+<p>
+This behavior is structural, not emotional, and is tied directly to how the Nasdaq-100 is constructed and traded. That structure is covered in <a href="nq-what-is-nq.html">What Is the E-mini Nasdaq-100 (NQ) Futures Contract?</a>.
+</p>
+
+<h2>Comparing NQ to ES in dollar terms</h2>
+
+<p>
+ES ticks are larger in dollar value but typically move more slowly. NQ ticks are smaller but print more frequently and travel further per session. Over time, NQ produces larger realized dollar swings per contract despite the lower tick value.
+</p>
+
+<p>
+A side-by-side volatility and liquidity comparison is outlined in <a href="nq-vs-es.html">NQ vs ES: Volatility, Liquidity, and Trader Fit</a>.
+</p>
+
+<h2>MNQ tick values</h2>
+
+<p>
+MNQ, the Micro E-mini Nasdaq-100, mirrors NQ’s price behavior at one-tenth the contract size:
+</p>
+
+<ul>
+  <li>MNQ tick size: 0.25 points</li>
+  <li>MNQ tick value: $0.50</li>
+  <li>1.00 index point = $2.00</li>
+</ul>
+
+<p>
+The micro contract preserves identical chart structure while reducing capital exposure.
+</p>
+
+<h2>Dollar risk is defined by range, not ticks</h2>
+
+<p>
+Tick math alone does not define risk. Risk is determined by how many ticks price is likely to travel before invalidation. NQ’s volatility profile makes wide stops common, which multiplies dollar exposure even when tick value appears small.
+</p>
+
+<h2>Bottom line</h2>
+
+<p>
+NQ’s tick size and tick value are simple. The danger comes from how quickly ticks accumulate during real movement. Dollar risk on NQ expands faster than most traders expect because the contract moves further, not because ticks are expensive.
+</p>
+
+<!-- ARTICLE BODY END -->
+
+<hr>
+<h2>Internal Links</h2>
+<ul>
+  <li><a href="index.html">Futures Basics</a></li>
+  <li><a href="nq-what-is-nq.html">What Is the E-mini Nasdaq-100 (NQ)</a></li>
+  <li><a href="nq-vs-es.html">NQ vs ES</a></li>
+  <li><a href="../index.html">Home</a></li>
+</ul>
+
+<div class="back-home">
+  <a href="../futures-basics/index.html" class="button">Back to Futures Basics</a>
+</div>
+
+</div>
+</section>
+</main>
+</body>
+</html>
