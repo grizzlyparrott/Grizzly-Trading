@@ -1,42 +1,182 @@
+#!/usr/bin/env python3
+# build_sitemap.py
+# Generates sitemap.xml using each HTML file's canonical URL.
+# Safe defaults: ignores common build/cache folders, dedupes URLs, skips canonicals ending in /index.html.
+
+from __future__ import annotations
+
 import os
+import re
+import sys
+import time
+from pathlib import Path
+from urllib.parse import urlparse, urlunparse
 
-# Your live domain
 BASE_URL = "https://grizzlyparrottrading.com"
+OUTPUT_FILE = "sitemap.xml"
 
-# Automatically use the folder this script is in as the site root
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+# Folders to skip while walking the repo
+SKIP_DIRS = {
+    ".git",
+    ".github",
+    ".vscode",
+    "__pycache__",
+    "node_modules",
+    "dist",
+    "build",
+    "site",
+    ".jekyll-cache",
+    ".sass-cache",
+    ".cache",
+    ".idea",
+}
 
-urls = set()
+# Files to skip explicitly
+SKIP_FILES = {
+    "404.html",
+}
 
-for root, dirs, files in os.walk(ROOT_DIR):
-    for filename in files:
-        # Skip non-HTML and the 404 page
-        if not filename.lower().endswith(".html"):
-            continue
-        if filename.lower() == "404.html":
-            continue
+CANONICAL_RE = re.compile(
+    r'<link\s+[^>]*rel=["\']canonical["\'][^>]*href=["\']([^"\']+)["\'][^>]*>',
+    re.IGNORECASE,
+)
 
-        full_path = os.path.join(root, filename)
-        rel_path = os.path.relpath(full_path, ROOT_DIR)
-        rel_url = rel_path.replace(os.sep, "/")
+def norm_url(url: str) -> str:
+    url = url.strip()
+    p = urlparse(url)
 
-        # Root index.html -> "/"
-        if rel_url.lower() == "index.html":
-            loc = BASE_URL + "/"
-        else:
-            loc = BASE_URL + "/" + rel_url
+    # If canonical is relative, resolve against BASE_URL
+    if not p.scheme:
+        # Ensure it starts with /
+        path = url if url.startswith("/") else f"/{url}"
+        p = urlparse(BASE_URL)
+        url = urlunparse((p.scheme, p.netloc, path, "", "", ""))
+        p = urlparse(url)
 
-        urls.add(loc)
+    # Force https and exact host from BASE_URL
+    base = urlparse(BASE_URL)
+    scheme = "https"
+    netloc = base.netloc
 
-sitemap_path = os.path.join(ROOT_DIR, "sitemap.xml")
+    # Normalize path
+    path = p.path or "/"
+    # Collapse multiple slashes
+    path = re.sub(r"/{2,}", "/", path)
 
-with open(sitemap_path, "w", encoding="utf-8") as f:
-    f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-    f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-    for loc in sorted(urls):
-        f.write("  <url>\n")
-        f.write("    <loc>{}</loc>\n".format(loc))
-        f.write("  </url>\n")
-    f.write("</urlset>\n")
+    # Drop fragments/query for sitemap
+    return urlunparse((scheme, netloc, path, "", "", ""))
 
-print("Written sitemap with {} URLs to {}".format(len(urls), sitemap_path))
+def fallback_canonical_for_file(html_path: Path, repo_root: Path) -> str:
+    rel = html_path.relative_to(repo_root).as_posix()
+
+    # Root index.html => /
+    if rel == "index.html":
+        return f"{BASE_URL}/"
+
+    # Hub index.html => /hub/
+    if rel.endswith("/index.html"):
+        hub = rel[: -len("/index.html")]
+        return f"{BASE_URL}/{hub}/"
+
+    # Regular html page => /path/file.html
+    return f"{BASE_URL}/{rel}"
+
+def find_canonical_in_html(text: str) -> str | None:
+    m = CANONICAL_RE.search(text)
+    if not m:
+        return None
+    return m.group(1).strip()
+
+def iso_date_from_mtime(path: Path) -> str:
+    # Google accepts date or datetime; keep it simple and stable (UTC date)
+    ts = path.stat().st_mtime
+    return time.strftime("%Y-%m-%d", time.gmtime(ts))
+
+def should_skip_dir(dirname: str) -> bool:
+    return dirname in SKIP_DIRS or dirname.startswith(".")
+
+def main() -> int:
+    repo_root = Path(__file__).resolve().parent
+
+    urls: dict[str, str] = {}  # url -> lastmod
+    scanned = 0
+    used_fallback = 0
+    missing_canonical = 0
+    skipped_index_canonicals = 0
+
+    for root, dirs, files in os.walk(repo_root):
+        # prune dirs
+        dirs[:] = [d for d in dirs if not should_skip_dir(d)]
+        root_path = Path(root)
+
+        for fname in files:
+            if not fname.lower().endswith(".html"):
+                continue
+            if fname in SKIP_FILES:
+                continue
+
+            html_path = root_path / fname
+
+            # Skip files in hidden directories even if os.walk didn't prune (extra safety)
+            if any(part.startswith(".") for part in html_path.relative_to(repo_root).parts):
+                continue
+
+            scanned += 1
+            try:
+                text = html_path.read_text(encoding="utf-8", errors="ignore")
+            except Exception:
+                continue
+
+            canonical = find_canonical_in_html(text)
+            if canonical is None:
+                missing_canonical += 1
+                canonical = fallback_canonical_for_file(html_path, repo_root)
+                used_fallback += 1
+
+            canonical = norm_url(canonical)
+
+            # If a page declares /index.html as canonical, that is not sitemap-worthy
+            if canonical.endswith("/index.html"):
+                skipped_index_canonicals += 1
+                continue
+
+            lastmod = iso_date_from_mtime(html_path)
+
+            # Keep newest lastmod if duplicates happen
+            if canonical in urls:
+                if lastmod > urls[canonical]:
+                    urls[canonical] = lastmod
+            else:
+                urls[canonical] = lastmod
+
+    # Always ensure homepage exists in sitemap
+    home = norm_url(f"{BASE_URL}/")
+    if home not in urls:
+        # best effort lastmod from root index.html if it exists
+        idx = repo_root / "index.html"
+        urls[home] = iso_date_from_mtime(idx) if idx.exists() else time.strftime("%Y-%m-%d", time.gmtime())
+
+    out_path = repo_root / OUTPUT_FILE
+    sorted_items = sorted(urls.items(), key=lambda x: x[0])
+
+    xml_lines = []
+    xml_lines.append('<?xml version="1.0" encoding="UTF-8"?>')
+    xml_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+
+    for url, lastmod in sorted_items:
+        xml_lines.append("  <url>")
+        xml_lines.append(f"    <loc>{url}</loc>")
+        xml_lines.append(f"    <lastmod>{lastmod}</lastmod>")
+        xml_lines.append("  </url>")
+
+    xml_lines.append("</urlset>")
+    out_path.write_text("\n".join(xml_lines) + "\n", encoding="utf-8")
+
+    print(f"Wrote {OUTPUT_FILE} with {len(sorted_items)} URLs.")
+    print(f"Scanned HTML files: {scanned}")
+    print(f"Missing canonical tags: {missing_canonical} (fallback used: {used_fallback})")
+    print(f"Skipped canonicals ending in /index.html: {skipped_index_canonicals}")
+    return 0
+
+if __name__ == "__main__":
+    raise SystemExit(main())
