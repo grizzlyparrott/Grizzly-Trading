@@ -105,6 +105,21 @@ Lean hog traders obsess over charts and reports, but the contract itself quietly
 If you don’t understand the mechanics, hog volatility feels unfair. If you do, it looks mechanical.
 </p>
 
+<h2>The handful of specs that actually change your risk</h2>
+
+<p>
+Most spec sheets are ignored because traders don’t think the details matter. In lean hogs, they matter because they directly affect dollar exposure, fill quality, and “can I even get out” behavior.
+</p>
+<h3>Key Lean Hog Contract Specs That Affect Traders</h3>
+
+<ul>
+  <li>contract size and how fast P&amp;L swings</li>
+  <li>tick size and what slippage really costs</li>
+  <li>daily price limits and exit risk</li>
+  <li>expiration and settlement mechanics</li>
+  <li>delivery months and liquidity differences</li>
+</ul>
+
 <h2>Contract size magnifies small moves</h2>
 
 <p>
@@ -122,7 +137,7 @@ Hog ticks are small, but slippage isn’t.
 </p>
 
 <p>
-During fast markets, price often skips ticks instead of trading through them. The contract spec doesn’t change, but realized risk does when liquidity thins.
+During fast markets, price often skips ticks instead of trading through them. The spec doesn’t change, but realized risk does when liquidity thins.
 </p>
 
 <h2>Daily limits matter more than traders expect</h2>
@@ -153,16 +168,6 @@ Lean hogs are cash-settled against an index.
 
 <p>
 That means pricing behavior near expiration reflects index expectations, not physical delivery pressure. Futures can move sharply without any last-minute scramble for hogs.
-</p>
-
-<h2>Why specs matter most during stress</h2>
-
-<p>
-In calm markets, contract specs fade into the background.
-</p>
-
-<p>
-During volatility, they step forward and dictate how price moves, how fills occur, and how risk behaves. Traders who ignore them are surprised when hogs stop acting “normal.”
 </p>
 
 <p>
