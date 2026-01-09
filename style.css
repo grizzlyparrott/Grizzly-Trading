@@ -380,3 +380,16 @@ a:hover {
   margin: 20px auto;
 }
 
+.highlight-box {
+  background-color: #1f2937; /* Dark slate (or choose lighter if needed) */
+  border-left: 4px solid #22c55e; /* Green accent (tailwind's green-500) */
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+}
+
+.highlight-box h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #f9fafb; /* Almost white */
+}
