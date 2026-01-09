@@ -21,14 +21,6 @@
     <lastmod>2025-12-11T22:21:02Z</lastmod>
   </url>
   <url>
-    <loc>https://grizzlyparrottrading.com/futures-basics/breakeven-futures.html</loc>
-    <lastmod>2025-11-20T01:46:15Z</lastmod>
-  </url>
-  <url>
-    <loc>https://grizzlyparrottrading.com/futures-basics/contract-specs-explained.html</loc>
-    <lastmod>2025-11-20T02:49:19Z</lastmod>
-  </url>
-  <url>
     <loc>https://grizzlyparrottrading.com/contact.html</loc>
     <lastmod>2025-11-24T00:27:30Z</lastmod>
   </url>
@@ -501,6 +493,10 @@
     <lastmod>2025-11-28T16:01:26Z</lastmod>
   </url>
   <url>
+    <loc>https://grizzlyparrottrading.com/futures-basics/breakeven-futures.html</loc>
+    <lastmod>2025-11-20T01:46:15Z</lastmod>
+  </url>
+  <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/british-pound-volatility-drivers-in-6b.html</loc>
     <lastmod>2025-11-24T23:30:02Z</lastmod>
   </url>
@@ -547,6 +543,10 @@
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/contract-size-risk-impact.html</loc>
     <lastmod>2025-11-23T21:05:04Z</lastmod>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/futures-basics/contract-specs-explained.html</loc>
+    <lastmod>2025-11-20T02:49:19Z</lastmod>
   </url>
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/copper-emerging-markets-hg.html</loc>
@@ -611,6 +611,10 @@
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/different-volatility-profiles-across-futures-contracts.html</loc>
     <lastmod>2025-11-23T23:03:34Z</lastmod>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/futures-basics/disease-risk-and-tail-events-in-lean-hogs.html</loc>
+    <lastmod>2026-01-09T13:07:56Z</lastmod>
   </url>
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/dxy-impact-on-gc.html</loc>
@@ -701,8 +705,16 @@
     <lastmod>2025-11-17T02:04:40Z</lastmod>
   </url>
   <url>
+    <loc>https://grizzlyparrottrading.com/futures-basics/execution-vs-idea-why-being-right-still-loses-money.html</loc>
+    <lastmod>2025-11-17T03:41:01Z</lastmod>
+  </url>
+  <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/expiration-risk-physical-vs-cash-settled.html</loc>
     <lastmod>2025-11-23T21:05:04Z</lastmod>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/futures-basics/export-demand-and-its-outsized-impact-on-hogs.html</loc>
+    <lastmod>2026-01-09T13:07:56Z</lastmod>
   </url>
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/fair-value-in-futures-explained.html</loc>
@@ -853,6 +865,10 @@
     <lastmod>2025-12-02T22:11:08Z</lastmod>
   </url>
   <url>
+    <loc>https://grizzlyparrottrading.com/futures-basics/hog-supply-cycles-and-biological-lag.html</loc>
+    <lastmod>2026-01-09T12:54:12Z</lastmod>
+  </url>
+  <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/how-6b-reacts-to-boe-rate-decisions.html</loc>
     <lastmod>2025-11-24T23:30:02Z</lastmod>
   </url>
@@ -895,6 +911,10 @@
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/how-exports-drive-6n-trends.html</loc>
     <lastmod>2025-11-28T04:44:01Z</lastmod>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/futures-basics/how-feed-costs-transmit-into-hog-prices.html</loc>
+    <lastmod>2026-01-09T12:54:12Z</lastmod>
   </url>
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/how-futures-circuit-breakers-trigger.html</loc>
@@ -1433,6 +1453,10 @@
     <lastmod>2025-11-17T03:51:44Z</lastmod>
   </url>
   <url>
+    <loc>https://grizzlyparrottrading.com/futures-basics/what-lean-hog-futures-actually-price.html</loc>
+    <lastmod>2026-01-09T12:23:13Z</lastmod>
+  </url>
+  <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/what-makes-futures-move.html</loc>
     <lastmod>2025-11-17T03:47:12Z</lastmod>
   </url>
@@ -1499,6 +1523,10 @@
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/why-gc-trends-differ.html</loc>
     <lastmod>2025-11-30T16:54:51Z</lastmod>
+  </url>
+  <url>
+    <loc>https://grizzlyparrottrading.com/futures-basics/why-lean-hogs-are-structurally-volatile.html</loc>
+    <lastmod>2026-01-09T12:54:12Z</lastmod>
   </url>
   <url>
     <loc>https://grizzlyparrottrading.com/futures-basics/why-open-interest-matters-more-than-volume-for-trend-quality.html</loc>
@@ -1707,10 +1735,6 @@
   <url>
     <loc>https://grizzlyparrottrading.com/market-basics/excess-at-extremes-auction-termination.html</loc>
     <lastmod>2025-11-24T02:28:28Z</lastmod>
-  </url>
-  <url>
-    <loc>https://grizzlyparrottrading.com/market-basics/execution-vs-idea.html</loc>
-    <lastmod>2025-11-17T03:41:01Z</lastmod>
   </url>
   <url>
     <loc>https://grizzlyparrottrading.com/market-basics/exhaustion-gaps-explained.html</loc>
