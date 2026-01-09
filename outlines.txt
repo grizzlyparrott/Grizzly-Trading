@@ -1,0 +1,105 @@
+Lean Hogs (20 articles)
+
+What Lean Hog Futures Actually Price
+
+Why Lean Hogs Are Structurally Volatile
+
+Hog Supply Cycles and Biological Lag
+
+How Feed Costs Transmit Into Hog Prices
+
+Export Demand and Its Outsized Impact on Hogs
+
+Disease Risk and Tail Events in Lean Hogs
+
+Why Lean Hogs React Violently to Small Data Changes
+
+Seasonal Patterns Unique to Lean Hogs
+
+Cash Market vs Futures Divergence in Hogs
+
+Contract Specs That Matter in Lean Hog Trading
+
+Lean Hog Spreads and Curve Instability
+
+Why Lean Hogs Decouple From Other Commodities
+
+Margin Risk and Position Sizing in Hog Futures
+
+Limit Moves and Liquidity Gaps in Lean Hogs
+
+How Slaughter Capacity Distorts Hog Pricing
+
+Why Lean Hogs Are Trader-Hostile Markets
+
+Roll Yield and Front-Month Risk in Hogs
+
+Lean Hogs vs Feed Grains Correlation Breakdown
+
+Speculator Positioning Effects in Lean Hogs
+
+Why Lean Hogs Don’t Behave Like Financial Futures
+
+
+
+
+
+
+Live Cattle (20 articles)
+
+What Live Cattle Futures Actually Represent
+
+Structural Differences Between Live Cattle and Hogs
+
+Why Live Cattle Trends Persist Longer
+
+Feedlot Dynamics and Futures Pricing
+
+The Role of Feeder Placement in Live Cattle
+
+Seasonality in Live Cattle Markets
+
+Cash-Futures Basis Behavior in Live Cattle
+
+Contract Specs That Matter in Live Cattle Trading
+
+Why Live Cattle Are Slower but Heavier Markets
+
+Export Demand Sensitivity in Beef Futures
+
+How Drought and Weather Impact Live Cattle
+
+Slaughter Rates and Price Lag Effects
+
+Live Cattle Curve Structure and Carry
+
+Why Live Cattle React Differently to Feed Prices
+
+Limit Risk and Liquidity in Live Cattle
+
+Spread Trading Live Cattle Contracts
+
+Live Cattle vs Equity and Macro Correlations
+
+Positioning and Commercial Hedging in Cattle
+
+Roll Mechanics in Live Cattle Futures
+
+Why Live Cattle Punish Impatient Traders
+
+
+
+
+Rounding Out the Rest (6 articles)
+
+Feeder Cattle Futures as an Input Market
+
+Feeder Cattle vs Live Cattle Pricing Mechanics
+
+Why Feeder Cattle Trade Like a Hybrid Contract
+
+Hog–Cattle Relative Value and Intermarket Spreads
+
+Corn and Soymeal Pass-Through Into Livestock Futures
+
+Why Livestock Futures Are a Separate Risk Class
