@@ -12,11 +12,11 @@ Export Demand and Its Outsized Impact on Hogs+
 
 Disease Risk and Tail Events in Lean Hogs+
 
-Why Lean Hogs React Violently to Small Data Changes
+Why Lean Hogs React Violently to Small Data Changes+
 
-Seasonal Patterns Unique to Lean Hogs
+Seasonal Patterns Unique to Lean Hogs+
 
-Cash Market vs Futures Divergence in Hogs
+Cash Market vs Futures Divergence in Hogs+
 
 Contract Specs That Matter in Lean Hog Trading
 
