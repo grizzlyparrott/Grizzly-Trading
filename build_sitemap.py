@@ -2,12 +2,12 @@
 # build_sitemap.py
 # Generates sitemap.xml using each HTML file's canonical URL.
 # Safe defaults: ignores common build/cache folders, dedupes URLs, skips canonicals ending in /index.html.
+# lastmod uses the MOST RECENT Git commit date for each file (fallback to filesystem mtime).
 
 from __future__ import annotations
 
 import os
 import re
-import sys
 import subprocess
 from pathlib import Path
 from datetime import datetime, timezone
@@ -48,10 +48,9 @@ def norm_url(url: str) -> str:
 
     # If canonical is relative, resolve against BASE_URL
     if not p.scheme:
-        # Ensure it starts with /
         path = url if url.startswith("/") else f"/{url}"
-        p = urlparse(BASE_URL)
-        url = urlunparse((p.scheme, p.netloc, path, "", "", ""))
+        base = urlparse(BASE_URL)
+        url = urlunparse((base.scheme, base.netloc, path, "", "", ""))
         p = urlparse(url)
 
     # Force https and exact host from BASE_URL
@@ -61,7 +60,6 @@ def norm_url(url: str) -> str:
 
     # Normalize path
     path = p.path or "/"
-    # Collapse multiple slashes
     path = re.sub(r"/{2,}", "/", path)
 
     # Drop fragments/query for sitemap
@@ -88,42 +86,35 @@ def find_canonical_in_html(text: str) -> str | None:
         return None
     return m.group(1).strip()
 
-def get_git_first_commit(file_path: Path, repo_root: Path) -> str | None:
-    """Get the FIRST commit date for a file using Git (when it was originally added)."""
+def get_git_last_commit(file_path: Path, repo_root: Path) -> str | None:
+    """Get the MOST RECENT commit date for a file using Git."""
     try:
-        # Get the first commit date for this file using --reverse
         result = subprocess.run(
-            ["git", "log", "--reverse", "--format=%cI", "--", str(file_path)],
+            ["git", "log", "-1", "--format=%cI", "--", str(file_path)],
             cwd=repo_root,
             capture_output=True,
             text=True,
-            timeout=5
+            timeout=5,
         )
-        
         if result.returncode == 0 and result.stdout.strip():
-            # Get the first line (earliest commit)
-            first_line = result.stdout.strip().split('\n')[0]
-            # Parse the ISO format date from git and return full timestamp
-            dt = datetime.fromisoformat(first_line.replace('Z', '+00:00'))
+            line = result.stdout.strip().split("\n")[0]
+            dt = datetime.fromisoformat(line.replace("Z", "+00:00"))
             return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
-        
         return None
     except (subprocess.SubprocessError, ValueError, OSError):
         return None
 
 def get_file_modified(file_path: Path) -> str:
-    """Get the file system modification time as fallback (full timestamp)."""
+    """Get filesystem modification time as fallback (UTC)."""
     mtime = file_path.stat().st_mtime
     dt = datetime.fromtimestamp(mtime, tz=timezone.utc)
     return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 def get_lastmod(file_path: Path, repo_root: Path) -> str:
-    """Get last modification date, preferring Git history over file system."""
-    git_date = get_git_first_commit(file_path, repo_root)
+    """Get last modification date, preferring Git history over filesystem."""
+    git_date = get_git_last_commit(file_path, repo_root)
     if git_date:
         return git_date
-    
-    # Fallback to file system date if Git fails
     return get_file_modified(file_path)
 
 def should_skip_dir(dirname: str) -> bool:
@@ -132,7 +123,7 @@ def should_skip_dir(dirname: str) -> bool:
 def main() -> int:
     repo_root = Path(__file__).resolve().parent
 
-    urls: dict[str, str] = {}  # url -> lastmod
+    urls: dict[str, str] = {}  # url -> lastmod (ISO string)
     scanned = 0
     used_fallback = 0
     missing_canonical = 0
@@ -151,7 +142,7 @@ def main() -> int:
 
             html_path = root_path / fname
 
-            # Skip files in hidden directories even if os.walk didn't prune (extra safety)
+            # Extra safety: skip anything in hidden dirs
             if any(part.startswith(".") for part in html_path.relative_to(repo_root).parts):
                 continue
 
@@ -169,7 +160,7 @@ def main() -> int:
 
             canonical = norm_url(canonical)
 
-            # If a page declares /index.html as canonical, that is not sitemap-worthy
+            # If a page declares /index.html as canonical, skip it
             if canonical.endswith("/index.html"):
                 skipped_index_canonicals += 1
                 continue
@@ -183,10 +174,9 @@ def main() -> int:
             else:
                 urls[canonical] = lastmod
 
-    # Always ensure homepage exists in sitemap
+    # Ensure homepage exists in sitemap
     home = norm_url(f"{BASE_URL}/")
     if home not in urls:
-        # best effort lastmod from root index.html if it exists
         idx = repo_root / "index.html"
         urls[home] = get_lastmod(idx, repo_root) if idx.exists() else datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -204,6 +194,7 @@ def main() -> int:
         xml_lines.append("  </url>")
 
     xml_lines.append("</urlset>")
+
     out_path.write_text("\n".join(xml_lines) + "\n", encoding="utf-8")
 
     print(f"Wrote {OUTPUT_FILE} with {len(sorted_items)} URLs.")
