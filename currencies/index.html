@@ -1,0 +1,9 @@
+$id = "G-JMJVR3G5YN"
+
+Get-ChildItem -Recurse -Filter *.html |
+Where-Object {
+  $text = Get-Content -Path $_.FullName -Raw
+  $text -notlike "*$id*"
+} |
+Select-Object -ExpandProperty FullName |
+Out-File missing-gtag.txt -Encoding utf8
