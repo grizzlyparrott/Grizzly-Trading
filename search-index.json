@@ -284,7 +284,7 @@
   {
     "title": "6Z Tick Size and Tick Value Explained",
     "url": "/futures-basics/6z-tick-size-and-value.html",
-    "description": "Exact tick size, tick value, and contract specs for 6Z South African Rand futures with real numbers and.",
+    "description": "Exact tick size, tick value, and contract specs for 6Z South African Rand futures with real numbers and",
     "category": "Futures Basics"
   },
   {
@@ -471,6 +471,12 @@
     "title": "Best Time to Trade 6C Futures: When CAD/USD Actually Moves",
     "url": "/futures-basics/best-time-to-trade-6c.html",
     "description": "Learn the best times to trade 6C Canadian Dollar futures, including peak liquidity windows, volatility cycles, and when to avoid the chart.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Best Times of Day to Trade NQ Futures",
+    "url": "/futures-basics/nq-best-times.html",
+    "description": "A session-by-session breakdown of when NQ produces real opportunity and when it turns hostile.",
     "category": "Futures Basics"
   },
   {
@@ -684,6 +690,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Cash Market vs Futures Divergence in Hogs",
+    "url": "/futures-basics/cash-market-vs-futures-divergence-hogs.html",
+    "description": "Lean hog futures and the cash market frequently diverge because they price different timeframes, constraints, and risks.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "CHF/USD Spot Market vs 6S Futures: Key Differences Traders Miss",
     "url": "/futures-basics/6s-chf-usd-spot-vs-futures-differences.html",
     "description": "See the real differences between trading CHF/USD spot and 6S Swiss Franc futures so you stop mixing rules and blowing trades for no reason.",
@@ -736,6 +748,12 @@
     "url": "/prop-firm-trading/common-evaluation-mistakes.html",
     "description": "Plain-English breakdown of common mistakes traders make during futures prop firm evaluations, including rule violations, oversizing, and misunderstanding drawdown.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "Common Execution Mistakes That Blow NQ Traders Up",
+    "url": "/futures-basics/nq-execution-mistakes.html",
+    "description": "A structural breakdown of the execution errors that consistently cause losses on NQ futures.",
+    "category": "Futures Basics"
   },
   {
     "title": "Common GC Trader Mistakes and How to Fix Them",
@@ -807,6 +825,12 @@
     "title": "Contract Expiration And Roll – Grizzly Parrot Trading",
     "url": "/futures-basics/contract-expiration-and-roll.html",
     "description": "What futures contract expiration is, how rollover works, and why charts and volume shift around roll dates.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Contract Specs That Matter in Lean Hog Trading",
+    "url": "/futures-basics/lean-hog-contract-specs-that-matter.html",
+    "description": "Lean hog contract specs quietly shape risk, volatility, and execution. Understanding them matters more than most traders realize.",
     "category": "Futures Basics"
   },
   {
@@ -910,6 +934,12 @@
     "url": "/market-basics/disbelief-rallies-and-bear-market-traps.html",
     "description": "Learn why disbelief rallies and bear market traps happen, what fuels the explosive upside, and how to avoid getting caught fading the move.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Disease Risk and Tail Events in Lean Hogs",
+    "url": "/futures-basics/disease-risk-and-tail-events-in-lean-hogs.html",
+    "description": "Disease risk creates asymmetric tail events in lean hog futures. Supply shocks reprice instantly because biology and slaughter capacity can’t respond.",
+    "category": "Futures Basics"
   },
   {
     "title": "Displacement Candles and Trend Initiation: Reading Aggression Early",
@@ -1032,9 +1062,9 @@
     "category": "Market Basics"
   },
   {
-    "title": "Execution vs Idea – Why Being Right Still Loses Money",
+    "title": "Execution vs Idea: Why Being Right Still Loses Money",
     "url": "/market-basics/execution-vs-idea.html",
-    "description": "",
+    "description": "Traders lose money even when direction is right. This breaks down execution failures that destroy good ideas: entries, stops, sizing, slippage, and management.",
     "category": "Market Basics"
   },
   {
@@ -1059,6 +1089,12 @@
     "title": "Expiration Risk in Futures: Physical vs. Cash-Settled Contracts",
     "url": "/futures-basics/expiration-risk-physical-vs-cash-settled.html",
     "description": "Learn the real expiration risks in futures trading, including physical delivery rules and how cash-settled contracts avoid forced delivery exposure.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Export Demand and Its Outsized Impact on Hogs",
+    "url": "/futures-basics/export-demand-and-its-outsized-impact-on-hogs.html",
+    "description": "Export demand punches far above its weight in lean hog pricing. Small shifts in exports can force large repricing across the futures curve.",
     "category": "Futures Basics"
   },
   {
@@ -1356,6 +1392,12 @@
     "category": "Market Basics"
   },
   {
+    "title": "Hog Supply Cycles and Biological Lag",
+    "url": "/futures-basics/hog-supply-cycles-and-biological-lag.html",
+    "description": "Lean hog futures are shaped by biological lag. Supply decisions made months ago collide with current demand, creating cycles and violent repricing.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Holiday Trading Restrictions in Prop Firms",
     "url": "/prop-firm-trading/holiday-trading-restrictions.html",
     "description": "A blunt breakdown of holiday trading restrictions and modified hours in prop firms so you don’t get nailed by surprise closures and thin markets.",
@@ -1488,12 +1530,6 @@
     "category": "Futures Basics"
   },
   {
-    "title": "How COMEX Inventories Affect Silver Futures (SI)",
-    "url": "/futures-basics/how-comex-inventories-affect-si.html",
-    "description": "A detailed breakdown of COMEX silver inventories—registered vs eligible, withdrawals, and squeezes—and how they actually affect Silver futures (SI).",
-    "category": "Futures Basics"
-  },
-  {
     "title": "How Commodity Cycles Impact 6A AUD/USD Futures",
     "url": "/futures-basics/6a-commodity-cycle-impact.html",
     "description": "A blunt explanation of how global commodity cycles drive 6A AUD/USD futures through Australia",
@@ -1564,6 +1600,12 @@
     "url": "/prop-firm-trading/how-prop-firm-evaluations-work.html",
     "description": "Clear explanation of how futures prop firm evaluations work, including profit targets, minimum trading days, trailing drawdown, daily loss limits, and basic rules.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "How Feed Costs Transmit Into Hog Prices",
+    "url": "/futures-basics/how-feed-costs-transmit-into-hog-prices.html",
+    "description": "Feed costs don’t move hog prices directly. They alter producer behavior, shift supply expectations, and force futures to reprice over time.",
+    "category": "Futures Basics"
   },
   {
     "title": "How Futures Circuit Breakers Trigger: Price Bands You Must Know",
@@ -1714,6 +1756,18 @@
     "url": "/market-basics/how-market-sentiment-moves-price.html",
     "description": "A direct breakdown of how market sentiment controls price movement, why crowd expectations matter, and how sentiment shifts create tradeable moves.",
     "category": "Market Basics"
+  },
+  {
+    "title": "How News Events Impact NQ More Than Other Index Futures",
+    "url": "/futures-basics/nq-news-volatility.html",
+    "description": "A structural explanation of why NQ reacts more violently to news than other index futures and how those reactions propagate through price.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "How NQ Reacts to Tech Earnings and Index Weighting",
+    "url": "/futures-basics/nq-earnings-impact.html",
+    "description": "Why tech earnings move NQ more than other index futures and how index weighting concentrates impact into fewer names.",
+    "category": "Futures Basics"
   },
   {
     "title": "How Often Prop Firms Change Their Rules and Why It Happens",
@@ -2262,9 +2316,9 @@
     "category": "Market Basics"
   },
   {
-    "title": "Liquidity Migration: How Liquidity Shifts Through the Trading Session",
+    "title": "Liquidity Migration in Futures Trading: What It Really Means",
     "url": "/market-basics/liquidity-migration-how-liquidity-shifts-through-session.html",
-    "description": "Learn how liquidity migrates between zones during the session, how to track shifting interest, and how these migrations drive intraday behavior.",
+    "description": "Liquidity migration isn’t a trading technique — it’s a market event. This guide explains what actually causes liquidity to shift in futures markets and how traders should interpret it.",
     "category": "Market Basics"
   },
   {
@@ -2834,7 +2888,7 @@
   {
     "title": "NinjaTrader 8 Chart Settings Basics",
     "url": "/platforms-tutorials/ninjatrader-8-chart-settings-basics.html",
-    "description": "A direct guide to NinjaTrader 8 chart settings. Learn how to control data series, bars, colors, templates, and performance settings with no fluff.",
+    "description": "A direct guide to NinjaTrader 8 chart settings. Learn how to control data series, bars, colors, templates, and performance settings with",
     "category": "Platforms & Tutorials"
   },
   {
@@ -2932,6 +2986,36 @@
     "url": "/platforms-tutorials/ninjatrader-indicators-window-basics.html",
     "description": "Learn how to add, remove, customize, and manage indicators in NinjaTrader using the Indicators window the correct way.",
     "category": "Platforms & Tutorials"
+  },
+  {
+    "title": "NQ Liquidity Windows and Why Timing Matters",
+    "url": "/futures-basics/nq-liquidity-windows.html",
+    "description": "A structural breakdown of NQ liquidity windows and how participation changes execution quality and risk.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "NQ Margin Requirements and Why They’re Misleading",
+    "url": "/futures-basics/nq-margin.html",
+    "description": "Why NQ margin requirements understate real risk and how volatility, not margin, determines exposure.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "NQ Pullbacks vs Breakouts: What Actually Works",
+    "url": "/futures-basics/nq-pullbacks-vs-breakouts.html",
+    "description": "A structural comparison of pullback trading and breakout trading on NQ, and why outcomes differ by regime.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "NQ Tick Size, Tick Value, and Dollar Risk Explained",
+    "url": "/futures-basics/nq-tick-value.html",
+    "description": "A precise breakdown of NQ tick size, tick value, and how dollar risk expands faster on NQ than most index futures.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "NQ vs ES: Volatility, Liquidity, and Trader Fit",
+    "url": "/futures-basics/nq-vs-es.html",
+    "description": "A structural comparison of NQ and ES futures covering volatility, liquidity behavior, and why they produce different trading outcomes.",
+    "category": "Futures Basics"
   },
   {
     "title": "One-Contract Evaluation Strategy for Prop Firms: Simple and Safe",
@@ -3180,6 +3264,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Position Sizing for NQ Futures",
+    "url": "/futures-basics/nq-position-sizing.html",
+    "description": "A structural explanation of position sizing for NQ futures and why identical risk rules fail when applied mechanically.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Pre-Market Structure: Why the Opening Tone Is Set Before the Bell",
     "url": "/market-basics/pre-market-structure-why-the-opening-tone-is-set-before-the-bell.html",
     "description": "Learn how pre-market structure sets the tone for the trading day and why levels formed before the open often dictate the first hour of price action.",
@@ -3330,6 +3420,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Registered vs Eligible COMEX Silver Explained (And Why It Matters for SI Futures)",
+    "url": "/futures-basics/how-comex-inventories-affect-si.html",
+    "description": "Learn the difference between COMEX registered and eligible silver, how each category works, and why it matters for SI futures and delivery risk.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Relative Performance: How to Measure Strength vs. Weakness",
     "url": "/market-basics/relative-performance-how-to-measure-strength-vs-weakness.html",
     "description": "Learn how to measure relative performance across indexes and sectors so you can spot strength, weakness, and divergence before price moves.",
@@ -3435,6 +3531,12 @@
     "title": "Seasonal Patterns in 6Z Futures",
     "url": "/futures-basics/6z-seasonal-patterns.html",
     "description": "A complete, data-driven breakdown of seasonal patterns in 6Z South African Rand futures including risk cycles, commodity trends, month-end flows, and EM FX behavior.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Seasonal Patterns Unique to Lean Hogs",
+    "url": "/futures-basics/seasonal-patterns-unique-to-lean-hogs.html",
+    "description": "Lean hog futures follow seasonal patterns driven by biology, weights, slaughter flow, and demand timing rather than trader behavior.",
     "category": "Futures Basics"
   },
   {
@@ -3944,7 +4046,7 @@
   {
     "title": "U.S. Economic Data That Moves Silver Futures (SI)",
     "url": "/futures-basics/us-economic-data-that-moves-si.html",
-    "description": "The exact U.S. economic reports that move Silver futures (SI), how hard they hit, and what SI does during each release.",
+    "description": "The exact U.S. economic reports that move Silver futures (SI), how hard they hit, and what SI does during each release. Only mechanics.",
     "category": "Futures Basics"
   },
   {
@@ -4230,10 +4332,22 @@
     "category": "Market Basics"
   },
   {
+    "title": "What Is the E-mini Nasdaq-100 (NQ) Futures Contract?",
+    "url": "/futures-basics/nq-what-is-nq.html",
+    "description": "A direct explanation of the E-mini Nasdaq-100 (NQ) futures contract, what it tracks, and why it behaves differently than other index futures.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "What Is Trailing Drawdown In Prop Firms? – Grizzly Parrot Trading",
     "url": "/prop-firm-trading/trailing-drawdown-explained.html",
     "description": "Clear explanation of trailing drawdown in futures prop firm evaluations, how it is calculated, and why traders fail even when they are profitable.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "What Lean Hog Futures Actually Price",
+    "url": "/futures-basics/what-lean-hog-futures-actually-price.html",
+    "description": "Lean hog futures do not price “a hog.” They price an expected carcass-based pork value for a specific delivery month, shaped by demand, supply, and processing constraints.",
+    "category": "Futures Basics"
   },
   {
     "title": "What Makes Futures Move? – Grizzly Parrot Trading",
@@ -4262,7 +4376,7 @@
   {
     "title": "What Moves 6S? Core Fundamentals Behind Swiss Franc Futures",
     "url": "/futures-basics/6s-what-moves-swiss-franc-futures.html",
-    "description": "Learn exactly what drives 6S Swiss Franc futures: SNB policy, safe-haven flows, global risk shifts, and cross-currency correlations. Just facts.",
+    "description": "Learn exactly what drives 6S Swiss Franc futures: SNB policy, safe-haven flows, global risk shifts, and cross-currency correlations.  Just facts.",
     "category": "Futures Basics"
   },
   {
@@ -4428,6 +4542,18 @@
     "category": "Market Basics"
   },
   {
+    "title": "Why Lean Hogs Are Structurally Volatile",
+    "url": "/futures-basics/why-lean-hogs-are-structurally-volatile.html",
+    "description": "Lean hog futures are volatile by design. Biological lag, thin liquidity, slaughter constraints, and demand shocks create a market that reprices violently.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why Lean Hogs React Violently to Small Data Changes",
+    "url": "/futures-basics/why-lean-hogs-react-violently-to-small-data-changes.html",
+    "description": "Lean hog futures react violently to small data changes because supply is fixed, demand is marginal, and expectations must reprice immediately.",
+    "category": "Futures Basics"
+  },
+  {
     "title": "Why Low-Liquidity Sessions Are Dangerous for Prop Firm Traders",
     "url": "/prop-firm-trading/low-liquidity-session-risks.html",
     "description": "A blunt breakdown of why low-liquidity trading sessions are dangerous for prop firm evaluations, including slippage, fake fills, and sudden rule-triggering losses.",
@@ -4456,6 +4582,18 @@
     "url": "/market-basics/market-memory-explained.html",
     "description": "Market memory explained: why price reacts to old highs and lows, why certain levels stick, and how traders turn memory into an edge.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Why Micros (MNQ) Still Teach Bad Habits on NQ",
+    "url": "/futures-basics/mnq-bad-habits.html",
+    "description": "Why MNQ can reinforce execution mistakes that fail immediately when scaled to NQ.",
+    "category": "Futures Basics"
+  },
+  {
+    "title": "Why NQ Is More Volatile Than ES",
+    "url": "/futures-basics/nq-volatility-vs-es.html",
+    "description": "A structural explanation of why NQ produces more volatility than ES and why the difference is not psychological or random.",
+    "category": "Futures Basics"
   },
   {
     "title": "Why Open Interest Matters More Than Volume for Trend Quality",
