@@ -9,6 +9,7 @@ ROOT_DIR = Path(__file__).parent.resolve()
 # Only index HTML files inside these folders (relative to root)
 ALLOWED_DIRS = {
     "futures-basics",
+    "tools",
     "prop-firm-trading",
     "platforms-tutorials",
     "market-basics",

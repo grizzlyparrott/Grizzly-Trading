@@ -1224,6 +1224,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Futures Margin &amp; Leverage Visualizer | Grizzly Parrot Trading",
+    "url": "/tools/margin-leverage-visualizer.html",
+    "description": "See real futures leverage, margin usage, and P/L as % of your account for a move in price. Pick a contract, set account size and margin, and drag the slider.",
+    "category": "tools"
+  },
+  {
     "title": "Futures Margin Requirements Explained: Initial vs Maintenance",
     "url": "/futures-basics/futures-margin-requirements-explained.html",
     "description": "Understand futures margin requirements, the difference between initial and maintenance margin, and what happens when your account triggers a margin call.",
@@ -3264,6 +3270,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Position Size Calculator | Grizzly Parrot Trading",
+    "url": "/tools/position-size-calculator.html",
+    "description": "Position size calculator for futures. Set account size, risk, and stop distance, and see how many contracts you can actually afford to trade.",
+    "category": "tools"
+  },
+  {
     "title": "Position Sizing for NQ Futures",
     "url": "/futures-basics/nq-position-sizing.html",
     "description": "A structural explanation of position sizing for NQ futures and why identical risk rules fail when applied mechanically.",
@@ -3400,6 +3412,12 @@
     "url": "/prop-firm-trading/index.html",
     "description": "Straight talk about prop firm evaluations, trailing drawdown, scaling rules, payouts, resets, and why most traders fail these challenges.",
     "category": "Prop Firm Trading"
+  },
+  {
+    "title": "R-Multiple Calculator | Grizzly Parrot Trading",
+    "url": "/tools/r-multiple-calculator.html",
+    "description": "Calculate risk (R), reward, and R-multiple from your entry, stop, and target. Clean, blunt, simple.",
+    "category": "tools"
   },
   {
     "title": "Reaction Zones: Areas Where the Market Has to Make a Decision",
@@ -3810,6 +3828,12 @@
     "category": "Futures Basics"
   },
   {
+    "title": "Tick Value & P/L Calculator | Grizzly Parrot Trading",
+    "url": "/tools/tick-value-calculator.html",
+    "description": "Quick futures tick and P/L calculator. Pick a contract, enter entry and exit, see ticks, points, and dollar profit or loss immediately.",
+    "category": "tools"
+  },
+  {
     "title": "Tick Value vs. Tick Size: The Real Risk Beginners Ignore",
     "url": "/futures-basics/tick-value-vs-tick-size-risk.html",
     "description": "Learn the difference between tick value and tick size and why confusing them leads beginners to blow their accounts in futures trading.",
@@ -3868,6 +3892,12 @@
     "url": "/market-basics/trading-sessions-explained.html",
     "description": "A blunt breakdown of the three major trading sessions—Asia, London, and New York—and how each one affects volatility, volume, and price behavior.",
     "category": "Market Basics"
+  },
+  {
+    "title": "Trading Tools | Grizzly Parrot Trading",
+    "url": "/tools/index.html",
+    "description": "Free trading tools for futures traders — position size calculators, risk checkers, leverage visualizers, trailing drawdown simulators, and more.",
+    "category": "tools"
   },
   {
     "title": "Tradovate Alerts and Notifications Guide for Futures Traders",
@@ -4026,10 +4056,22 @@
     "category": "Platforms & Tutorials"
   },
   {
+    "title": "Trailing Drawdown Simulator | Grizzly Parrot Trading",
+    "url": "/tools/trailing-drawdown-simulator.html",
+    "description": "Simulate trailing drawdown rules on a sequence of trades. See exactly when a prop firm account would have blown up, with a visual equity vs. trail chart.",
+    "category": "tools"
+  },
+  {
     "title": "Trending vs. Choppy Markets: How to Spot the Difference Fast",
     "url": "/market-basics/trending-vs-choppy-markets-how-to-spot-the-difference.html",
     "description": "Learn the real differences between trending and choppy markets, how to identify each early, and how to avoid getting chopped to death.",
     "category": "Market Basics"
+  },
+  {
+    "title": "True Position Size Risk Checker",
+    "url": "/tools/position-size-risk-checker.html",
+    "description": "Check your futures position size, dollar risk, and risk percentage before you click buy. Get blunt feedback on whether the trade size is sane or suicidal.",
+    "category": "tools"
   },
   {
     "title": "Two-Way Auctions and Trend Failure Points: Where Markets Break Down",
