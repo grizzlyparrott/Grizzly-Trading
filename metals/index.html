@@ -1,117 +1,355 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
- 
-
-  <title>Metal Futures | Grizzly Parrot Trading</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Metal futures breakdowns — how GC, SI, HG, PL, and other metals actually behave, what moves them, and what matters when you trade them.">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/metals/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Metal Futures | Grizzly Parrot Trading">
-  <meta property="og:description" content="Metal futures breakdowns — structure, behavior, and what actually moves gold, silver, copper, and more.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/metals/index.html">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
-  <meta name="twitter:title" content="Metal Futures | Grizzly Parrot Trading">
-  <meta name="twitter:description" content="Blunt, practical metal futures breakdowns — gold, silver, copper, and more.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD Breadcrumbs -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://grizzlyparrottrading.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Metals",
-        "item": "https://grizzlyparrottrading.com/metals/index.html"
-      }
-    ]
-  }
-  </script>
-</head>
-
-<body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <span class="logo-mark">GP</span>
-      <span class="logo-text"><a href="/">
-Grizzly Parrot Trading</a></span>
-    </div>
-
-    <nav class="main-nav">
-      
-      <a href="/futures-basics/index.html">Futures Basics</a>
-      <a href="/prop-firm-trading/index.html">Prop Firms</a>
-      <a href="/platforms-tutorials/index.html">Platforms</a>
-      <a href="/market-basics/index.html">Market Basics</a>
-      <a href="/tools/index.html">Tools</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <h1>Metal Futures</h1>
-        <p>Metals trade like a mix of macro and physical reality. These pages cover the structure, the drivers, and the behavior that actually matters.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Search -->
-  <section class="section">
-    <div class="container">
-      <div class="site-search">
-        <label for="site-search-input">Search Metal Futures</label>
-        <input id="site-search-input" type="text" placeholder="Search metal futures...">
-        <p id="no-results-message" style="display:none;">No metal articles match your search.</p>
-      </div>
-
-      <h2>Metal Futures Articles</h2>
-
-      <div class="grid grid-3">
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+ 
+
+
+
+  <title>Metal Futures | Grizzly Parrot Trading</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Metal futures breakdowns — how GC, SI, HG, PL, and other metals actually behave, what moves them, and what matters when you trade them.">
+
+
+
+  <!-- Standard Favicon -->
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+
+
+
+  <!-- Canonical -->
+
+  <link rel="canonical" href="https://grizzlyparrottrading.com/metals/">
+
+
+
+  <!-- Open Graph -->
+
+  <meta property="og:title" content="Metal Futures | Grizzly Parrot Trading">
+
+  <meta property="og:description" content="Metal futures breakdowns — structure, behavior, and what actually moves gold, silver, copper, and more.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url" content="https://grizzlyparrottrading.com/metals/index.html">
+
+  <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+
+  <meta property="og:image:width" content="1792">
+
+  <meta property="og:image:height" content="941">
+
+
+
+  <!-- Twitter -->
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+
+  <meta name="twitter:title" content="Metal Futures | Grizzly Parrot Trading">
+
+  <meta name="twitter:description" content="Blunt, practical metal futures breakdowns — gold, silver, copper, and more.">
+
+
+
+  <link rel="stylesheet" href="../style.css">
+
+
+
+  <!-- Google tag (gtag.js) -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+
+  <script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-JMJVR3G5YN');
+
+  </script>
+
+
+
+  <!-- JSON-LD Breadcrumbs -->
+
+  <script type="application/ld+json">
+
+  {
+
+    "@context": "https://schema.org",
+
+    "@type": "BreadcrumbList",
+
+    "itemListElement": [
+
+      {
+
+        "@type": "ListItem",
+
+        "position": 1,
+
+        "name": "Home",
+
+        "item": "https://grizzlyparrottrading.com/"
+
+      },
+
+      {
+
+        "@type": "ListItem",
+
+        "position": 2,
+
+        "name": "Metals",
+
+        "item": "https://grizzlyparrottrading.com/metals/index.html"
+
+      }
+
+    ]
+
+  }
+
+  </script>
+
+</head>
+
+
+
+<body>
+
+<header class="site-header">
+
+  <div class="container header-inner">
+
+    <div class="logo">
+
+      <span class="logo-mark">GP</span>
+
+      <span class="logo-text"><a href="/">
+
+Grizzly Parrot Trading</a></span>
+
+    </div>
+
+
+
+    <nav class="main-nav">
+
+      
+
+      <a href="/futures-basics/index.html">Futures Basics</a>
+
+      <a href="/prop-firm-trading/index.html">Prop Firms</a>
+
+      <a href="/platforms-tutorials/index.html">Platforms</a>
+
+      <a href="/market-basics/index.html">Market Basics</a>
+
+      <a href="/tools/index.html">Tools</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+  <!-- Hero -->
+
+  <section class="hero">
+
+    <div class="container hero-inner">
+
+      <div class="hero-text">
+
+        <h1>Metal Futures</h1>
+
+        <p>Metals trade like a mix of macro and physical reality. These pages cover the structure, the drivers, and the behavior that actually matters.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- Search -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="site-search">
+
+        <label for="site-search-input">Search Metal Futures</label>
+
+        <input id="site-search-input" type="text" placeholder="Search metal futures...">
+
+        <p id="no-results-message" style="display:none;">No metal articles match your search.</p>
+
+      </div>
+
+
+
+      <h2>Metal Futures Articles</h2>
+
+
+
+      <div class="grid grid-3">
+
         <!-- CARDS:AUTOGEN:START -->
+
+        <article class="card">
+          <h3><a href="/futures-basics/6s-top-correlations-for-swiss-franc-futures.html">Top Correlations for 6S: S&P 500, Gold, and Treasury Yields</a></h3>
+          <p>Learn the strongest correlations that drive 6S Swiss Franc futures, including S&P 500 risk trends, gold, and U.S. Treasury yields.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/best-indicators-for-pa.html">Best Technical Indicators for Palladium Futures</a></h3>
+          <p>A blunt breakdown of which technical indicators actually work in Palladium futures, which fail, and how PA’s thin liquidity changes what signals matter.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/best-indicators-for-pl.html">Best Technical Indicators for Platinum Futures (PL): What Actually Works</a></h3>
+          <p>A blunt breakdown of the only technical indicators that work on Platinum futures (PL): ATR, VWAP, structure levels, and volatility tools that survive thin liquidity.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/best-technical-indicators-for-si.html">Best Technical Indicators for Trading Silver Futures (SI)</a></h3>
+          <p>A blunt, detailed breakdown of the technical indicators that actually work on Silver futures (SI) — and the ones that fall apart under real volatility.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/best-times-to-trade-gc.html">Best Times to Trade GC Futures</a></h3>
+          <p>See the exact best times of day to trade Gold futures (GC), including volatility windows, dead zones, and the sessions where GC actually trends.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/best-times-to-trade-hg.html">The Best Times to Trade Copper Futures: When HG Actually Moves</a></h3>
+          <p>Learn the real session windows when copper futures (HG) actually move, why volatility clusters form, and how to time trades without guessing.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/best-times-to-trade-pa.html">Best Times of Day to Trade Palladium Futures (PA)</a></h3>
+          <p>A blunt breakdown of the best times of day to trade Palladium futures, including RTH volatility windows, dead zones, and when PA liquidity is stable enough to avoid getting steamrolled.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/best-times-to-trade-pl.html">Best Times to Trade Platinum Futures (PL): Volume and Volatility Windows</a></h3>
+          <p>A blunt breakdown of the best times of day to trade Platinum futures (PL), when volume is real, and when liquidity thins out and tries to kill you.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/best-times-to-trade-si-futures.html">Best Times to Trade Silver Futures (SI)</a></h3>
+          <p>The exact volatility windows, volume shifts, and session behaviors that make certain hours the best times to trade Silver futures (SI).</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/china-demand-copper-hg.html">China’s Copper Demand: How the World’s Biggest Buyer Moves HG Futures</a></h3>
+          <p>China consumes over half the world’s copper. Here’s how its construction cycles, manufacturing trends, credit flows, and stockpiling behavior directly move HG futures.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/common-mistakes-in-si-trading.html">Common Mistakes in Silver Futures (SI) Trading</a></h3>
+          <p>The biggest mistakes traders make in Silver futures (SI), why they happen, and how to avoid getting shredded by SI’s volatility and liquidity.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-emerging-markets-hg.html">Emerging Market Copper Demand: The Next Growth Engine for HG</a></h3>
+          <p>Emerging markets are becoming the fastest-growing source of copper demand. Learn how infrastructure, manufacturing, and electrification in EM nations drive HG futures.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-fundamentals-hg.html">Copper Fundamentals: The Real Drivers Behind HG Futures</a></h3>
+          <p>A blunt, trader-focused breakdown of copper’s true fundamentals—mining flow, smelter activity, demand cycles, inventories, China, and what actually moves HG futures.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-inventory-reports-hg.html">Copper Inventory Reports: How LME and COMEX Levels Move HG Futures</a></h3>
+          <p>Copper inventory reports from the LME and COMEX are one of the strongest drivers of HG futures. Learn how draws, builds, and shocks shape price behavior.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-market-structure-hg.html">Copper Market Structure: How Global Supply Chains Move HG Prices</a></h3>
+          <p>Understand how global supply chains, mining flows, shipping routes, and real-world bottlenecks shape the structure and direction of copper futures (HG).</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-metal-correlations-hg.html">Copper Correlations: How HG Tracks (and Breaks From) Other Metals</a></h3>
+          <p>Copper’s correlations with gold, silver, and industrial metals aren’t stable. Here’s how HG tracks, diverges, and decouples from other metal markets.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-primary-vs-recycling-hg.html">Copper Primary vs Recycling Supply: Long-Term Balance Model for HG</a></h3>
+          <p>Copper’s long-term supply balance depends on both mining and recycling. Learn how these two streams interact and reshape HG futures trends over years.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-recycling-economics-hg.html">Copper Recycling Economics: Long-Term Supply Influence on HG</a></h3>
+          <p>Copper recycling economics shape long-term supply and HG price behavior. Learn how incentives, costs, and refining margins influence copper’s structural trend.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-renewable-demand-hg.html">Copper and Renewable Energy Demand: How Electrification Drives HG Futures</a></h3>
+          <p>Renewable energy buildouts consume massive volumes of copper. Here’s how electrification demand reshapes long-term HG futures behavior.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-scrap-market-hg.html">Copper Scrap Market: How Secondary Supply Impacts HG Futures</a></h3>
+          <p>Copper scrap supply acts as a shock absorber for the copper market. Learn how scrap flows tighten or loosen HG futures trend structure.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-seasonality-hg.html">Copper Seasonality: How Monthly Patterns Shape HG Trends</a></h3>
+          <p>A hard look at copper’s monthly seasonality. Learn when HG historically trends, stalls, and builds pressure so you can stop trading blind.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-supply-shocks-hg.html">Copper Supply Shocks: How Mines, Smelters, and Logistics Hit HG Prices</a></h3>
+          <p>Copper supply shocks from mines, smelters, and global logistics create violent HG moves. Learn how disruptions form, how they hit inventories, and how traders react.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/copper-vs-gold-price-behavior.html">Copper vs Gold: How Industrial Demand and Safe-Haven Flows Move HG and GC</a></h3>
+          <p>A blunt trader-focused breakdown of how copper (HG) and gold (GC) move differently, why their flows rarely align, and how industrial demand collides with safe-haven sentiment.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/dxy-impact-on-gc.html">How DXY Strength Impacts GC Futures</a></h3>
+          <p>A blunt explanation of how U.S. Dollar Index (DXY) strength affects Gold futures (GC), why the correlation exists, and what signals actually matter.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/fed-impact-on-gc.html">How the Fed Impacts GC Futures</a></h3>
+          <p>A blunt breakdown of how Federal Reserve policy, interest rates, and real yields move Gold futures (GC) and why traders must track Fed signals.</p>
+        </article>
 
         <article class="card">
           <h3><a href="/futures-basics/gc-best-indicators.html">Best Technical Indicators for GC Futures</a></h3>
@@ -184,11 +422,6 @@ Grizzly Parrot Trading</a></span>
         </article>
 
         <article class="card">
-          <h3><a href="/futures-basics/gc-vs-6e-6j-differences.html">GC vs 6E vs 6J: Key Differences Explained</a></h3>
-          <p>A blunt comparison of Gold futures vs Euro FX vs Yen FX: volatility, liquidity, fundamentals, and why GC behaves nothing like currency futures.</p>
-        </article>
-
-        <article class="card">
           <h3><a href="/futures-basics/hg-tick-size-tick-value-margin.html">HG Tick Size, Tick Value, and Margin: The Numbers That Actually Matter</a></h3>
           <p>A clear, trader-focused breakdown of HG tick size, tick value, and margin requirements so you can size copper futures trades without blowing your account.</p>
         </article>
@@ -199,13 +432,38 @@ Grizzly Parrot Trading</a></span>
         </article>
 
         <article class="card">
-          <h3><a href="/futures-basics/hg-vs-zn-yields-risk.html">HG vs ZN: How Copper Tracks Bond Yields and Risk Appetite</a></h3>
-          <p>Copper futures (HG) and 10-year note futures (ZN) reveal risk appetite. Learn how yields impact copper demand, growth expectations, and trend direction.</p>
+          <h3><a href="/futures-basics/how-businesses-hedge-with-si-futures.html">How Businesses Hedge With Silver Futures (SI)</a></h3>
+          <p>A deep, blunt breakdown of how manufacturers, refiners, and producers hedge with Silver futures (SI) using real commercial mechanics and spread logic.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/how-comex-inventories-affect-si.html">Registered vs Eligible COMEX Silver Explained (And Why It Matters for SI Futures)</a></h3>
+          <p>Learn the difference between COMEX registered and eligible silver, how each category works, and why it matters for SI futures and delivery risk.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/how-dollar-strength-impacts-si-price.html">How Dollar Strength Impacts SI Price Movement</a></h3>
+          <p>A deep, no-nonsense breakdown of how dollar strength drives Silver futures (SI), including correlations, volatility responses, and real trading implications.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/how-platin-rhodium-influence-pa.html">How Platinum and Rhodium Influence Palladium Futures</a></h3>
+          <p>A blunt breakdown of how platinum and rhodium prices influence Palladium futures, including substitution dynamics, industrial overlap, and cross-metal volatility transmission.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/industrial-demand-and-si-futures.html">Industrial Demand and Its Role in Silver Futures (SI)</a></h3>
+          <p>A detailed breakdown of industrial demand for silver—electronics, solar, batteries—and how these real-world flows impact Silver futures (SI).</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/macro-drivers-influence-pl.html">Macro Drivers of Platinum Futures (PL): Rates, USD Strength, and Inflation Forces</a></h3>
+          <p>A deep macro breakdown of how interest rates, USD strength, inflation, and global growth cycles drive Platinum futures (PL) volatility and long-term price direction.</p>
         </article>
 
         <article class="card">
           <h3><a href="/futures-basics/pa-atr-volatility-profile.html">Palladium ATR Behavior and Volatility Structure</a></h3>
-          <p>A blunt breakdown of Palladium futures ATR behavior, volatility structure, average swing size, and why PA's thin liquidity turns normal ranges into outsized moves.</p>
+          <p>A blunt breakdown of Palladium futures ATR behavior, volatility structure, average swing size, and why PA</p>
         </article>
 
         <article class="card">
@@ -275,7 +533,12 @@ Grizzly Parrot Trading</a></span>
 
         <article class="card">
           <h3><a href="/futures-basics/pa-vs-spot-arbitrage.html">Palladium Futures vs Spot: Price Divergences and Arbitrage Logic</a></h3>
-          <p>A blunt breakdown of Palladium futures vs spot pricing, explaining why PA diverges, how arbitrage actually works, and what traders can and can't rely on in thin markets.</p>
+          <p>A blunt breakdown of Palladium futures vs spot pricing, explaining why PA diverges, how arbitrage actually works, and what traders can and can</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/palladium-futures-overview.html">What Are Palladium Futures (PA)? Complete Contract Breakdown</a></h3>
+          <p>A direct, detailed breakdown of Palladium futures (PA), including contract size, tick value, margin, and the real liquidity behavior traders must respect.</p>
         </article>
 
         <article class="card">
@@ -349,6 +612,11 @@ Grizzly Parrot Trading</a></span>
         </article>
 
         <article class="card">
+          <h3><a href="/futures-basics/platinum-supply-chain-price-impact.html">Platinum Supply Chain: Mining Regions and Price Impact</a></h3>
+          <p>A hard-edged breakdown of the platinum supply chain, major mining regions, and how production shocks in South Africa and Russia directly hit PL futures.</p>
+        </article>
+
+        <article class="card">
           <h3><a href="/futures-basics/si-calendar-spreads-explained.html">SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior</a></h3>
           <p>A detailed breakdown of SI calendar spreads — how Silver futures months interact, what drives the curve, and how spreads affect volatility and price.</p>
         </article>
@@ -388,33 +656,118 @@ Grizzly Parrot Trading</a></span>
           <p>A blunt comparison of SI futures, SIL stocks, and the SLV ETF — liquidity, volatility, tracking quality, and which market traders should actually use.</p>
         </article>
 
-        <!-- CARDS:AUTOGEN:END -->
-      </div>
-    </div>
-  </section>
-</main>
-
-
-<script src="../search.js"></script>
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
-
-        <div class="footer-links">
-            <a href="/about.html">About</a>
-            <a href="/disclaimer.html">Disclaimer</a>
-            <a href="/privacy.html">Privacy</a>
-            <a href="/contact.html">Contact</a>
-            <a href="https://grizzlyparrottrading.com/books/probabilistic-execution/"  target="_blank">
-                Probabilistic Execution
-            </a>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-</footer>
-
-</body>
-</html>
+        <article class="card">
+          <h3><a href="/futures-basics/silver-supply-and-mining-fundamentals.html">Silver Supply and Mining Fundamentals for SI Traders</a></h3>
+          <p>A hard-edged breakdown of global silver supply, mining structure, and what actually matters for Silver futures (SI) traders watching COMEX price.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/us-economic-data-that-moves-si.html">U.S. Economic Data That Moves Silver Futures (SI)</a></h3>
+          <p>The exact U.S. economic reports that move Silver futures (SI), how hard they hit, and what SI does during each release. Only mechanics.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/usd-impact-copper-hg.html">How U.S. Dollar Strength Impacts Copper Prices: HG’s Currency Link Explained</a></h3>
+          <p>A blunt breakdown of how U.S. dollar strength pushes copper futures (HG) lower, why weak USD supports HG rallies, and how traders should read USD moves.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/what-are-copper-futures-hg.html">What Are Copper Futures (HG)? Contract Breakdown for New Traders</a></h3>
+          <p>A blunt, trader-focused breakdown of copper futures (HG), including contract specs, pricing, margin, and how the market actually moves.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/what-are-gold-futures-gc.html">What Are Gold Futures (GC)?</a></h3>
+          <p>A blunt, beginner-friendly breakdown of what Gold futures (GC) are, how the GC contract works on CME, and why traders use it instead of spot.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/what-are-platinum-futures.html">What Are Platinum Futures (PL)? Complete Contract Breakdown</a></h3>
+          <p>A straight-shot explanation of Platinum futures (PL), how the NYMEX contract works, and what beginners must understand before trading it.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/what-are-silver-futures-si.html">What Are Silver Futures (SI)? Complete Contract Breakdown</a></h3>
+          <p>A blunt beginner-friendly breakdown of Silver futures (SI), how the COMEX contract works, and why traders choose SI over spot or ETFs.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/why-gc-trends-differ.html">Why GC Trends Differ From Other Metals</a></h3>
+          <p>Learn why Gold futures (GC) trend differently than silver, copper, and other metals due to liquidity, volatility structure, and macro drivers.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/why-pa-is-more-violent.html">Industrial Demand Drivers Behind Palladium Futures</a></h3>
+          <p>A blunt breakdown of the industrial demand drivers behind Palladium futures, including catalytic converters, electronics, and chemical applications influencing PA price.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/why-pl-differs-from-gold-silver.html">Why Platinum Trades Differently Than Gold and Silver</a></h3>
+          <p>A blunt explanation of why Platinum futures (PL) behave nothing like Gold (GC) or Silver (SI), and the structural factors that drive its volatility.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/why-si-differs-from-gc-volatility-liquidity.html">Why SI Trades Differ From GC: Volatility & Liquidity Forces</a></h3>
+          <p>A detailed breakdown of why Silver futures (SI) move differently than Gold (GC) by volatility structure, liquidity depth, industrial demand, and order flow.</p>
+        </article>
+
+        <!-- CARDS:AUTOGEN:END -->
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+
+
+
+<script src="../search.js"></script>
+
+<footer class="site-footer">
+
+    <div class="container footer-inner">
+
+        <p>&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+
+
+
+        <div class="footer-links">
+
+            <a href="/about.html">About</a>
+
+            <a href="/disclaimer.html">Disclaimer</a>
+
+            <a href="/privacy.html">Privacy</a>
+
+            <a href="/contact.html">Contact</a>
+
+            <a href="https://grizzlyparrottrading.com/books/probabilistic-execution/"  target="_blank">
+
+                Probabilistic Execution
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+    </script>
+
+</footer>
+
+
+
+</body>
+
+</html>
+
