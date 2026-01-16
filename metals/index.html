@@ -1,151 +1,420 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
- 
-
-  <title>Metal Futures | Grizzly Parrot Trading</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Metal futures breakdowns — how GC, SI, HG, PL, and other metals actually behave, what moves them, and what matters when you trade them.">
-
-  <!-- Standard Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://grizzlyparrottrading.com/metals/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Metal Futures | Grizzly Parrot Trading">
-  <meta property="og:description" content="Metal futures breakdowns — structure, behavior, and what actually moves gold, silver, copper, and more.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://grizzlyparrottrading.com/metals/index.html">
-  <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
-  <meta property="og:image:width" content="1792">
-  <meta property="og:image:height" content="941">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
-  <meta name="twitter:title" content="Metal Futures | Grizzly Parrot Trading">
-  <meta name="twitter:description" content="Blunt, practical metal futures breakdowns — gold, silver, copper, and more.">
-
-  <link rel="stylesheet" href="../style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JMJVR3G5YN');
-  </script>
-
-  <!-- JSON-LD Breadcrumbs -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://grizzlyparrottrading.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Metals",
-        "item": "https://grizzlyparrottrading.com/metals/index.html"
-      }
-    ]
-  }
-  </script>
-</head>
-
-<body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <span class="logo-mark">GP</span>
-      <span class="logo-text"><a href="/">
-Grizzly Parrot Trading</a></span>
-    </div>
-
-    <nav class="main-nav">
-      
-      <a href="/futures-basics/index.html">Futures Basics</a>
-      <a href="/prop-firm-trading/index.html">Prop Firms</a>
-      <a href="/platforms-tutorials/index.html">Platforms</a>
-      <a href="/market-basics/index.html">Market Basics</a>
-      <a href="/tools/index.html">Tools</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <h1>Metal Futures</h1>
-        <p>Metals trade like a mix of macro and physical reality. These pages cover the structure, the drivers, and the behavior that actually matters.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Search -->
-  <section class="section">
-    <div class="container">
-      <div class="site-search">
-        <label for="site-search-input">Search Metal Futures</label>
-        <input id="site-search-input" type="text" placeholder="Search metal futures...">
-        <p id="no-results-message" style="display:none;">No metal articles match your search.</p>
-      </div>
-
-      <h2>Metal Futures Articles</h2>
-
-      <div class="grid grid-3">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ 
+
+  <title>Metal Futures | Grizzly Parrot Trading</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Metal futures breakdowns — how GC, SI, HG, PL, and other metals actually behave, what moves them, and what matters when you trade them.">
+
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://grizzlyparrottrading.com/metals/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Metal Futures | Grizzly Parrot Trading">
+  <meta property="og:description" content="Metal futures breakdowns — structure, behavior, and what actually moves gold, silver, copper, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://grizzlyparrottrading.com/metals/index.html">
+  <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta property="og:image:width" content="1792">
+  <meta property="og:image:height" content="941">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+  <meta name="twitter:title" content="Metal Futures | Grizzly Parrot Trading">
+  <meta name="twitter:description" content="Blunt, practical metal futures breakdowns — gold, silver, copper, and more.">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JMJVR3G5YN');
+  </script>
+
+  <!-- JSON-LD Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://grizzlyparrottrading.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Metals",
+        "item": "https://grizzlyparrottrading.com/metals/index.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <span class="logo-mark">GP</span>
+      <span class="logo-text"><a href="/">
+Grizzly Parrot Trading</a></span>
+    </div>
+
+    <nav class="main-nav">
+      
+      <a href="/futures-basics/index.html">Futures Basics</a>
+      <a href="/prop-firm-trading/index.html">Prop Firms</a>
+      <a href="/platforms-tutorials/index.html">Platforms</a>
+      <a href="/market-basics/index.html">Market Basics</a>
+      <a href="/tools/index.html">Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Metal Futures</h1>
+        <p>Metals trade like a mix of macro and physical reality. These pages cover the structure, the drivers, and the behavior that actually matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <section class="section">
+    <div class="container">
+      <div class="site-search">
+        <label for="site-search-input">Search Metal Futures</label>
+        <input id="site-search-input" type="text" placeholder="Search metal futures...">
+        <p id="no-results-message" style="display:none;">No metal articles match your search.</p>
+      </div>
+
+      <h2>Metal Futures Articles</h2>
+
+      <div class="grid grid-3">
         <!-- CARDS:AUTOGEN:START -->
 
-        <!-- Placeholder card (replace later or let your script overwrite this block) -->
         <article class="card">
-          <h3><a href="/futures-basics/gc-gold-futures.html">Gold Futures (GC)</a></h3>
-          <p>A blunt breakdown of what moves gold futures, how they trade around macro events, and where traders get fooled.</p>
+          <h3><a href="/futures-basics/gc-best-indicators.html">Best Technical Indicators for GC Futures</a></h3>
+          <p>The only technical indicators that actually work on Gold futures (GC), and the ones that waste your time. Just what GC respects.</p>
         </article>
 
-        <!-- CARDS:AUTOGEN:END -->
-      </div>
-    </div>
-  </section>
-</main>
+        <article class="card">
+          <h3><a href="/futures-basics/gc-common-trader-mistakes.html">Common GC Trader Mistakes and How to Fix Them</a></h3>
+          <p>The most common mistakes traders make on Gold futures (GC)—from sizing errors to trading the wrong sessions—and how to fix them fast.</p>
+        </article>
 
+        <article class="card">
+          <h3><a href="/futures-basics/gc-correlations-explained.html">GC Correlations: DXY, Yields, and Risk Assets</a></h3>
+          <p>A blunt breakdown of the core correlations that drive Gold futures (GC): DXY, real yields, bonds, risk assets, and macro flows.</p>
+        </article>
 
-<script src="../search.js"></script>
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <p>&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+        <article class="card">
+          <h3><a href="/futures-basics/gc-fundamental-drivers.html">Fundamental Drivers of GC Futures</a></h3>
+          <p>A direct breakdown of the real fundamental drivers behind Gold futures (GC): real yields, inflation expectations, the dollar, and global risk flows.</p>
+        </article>
 
-        <div class="footer-links">
-            <a href="/about.html">About</a>
-            <a href="/disclaimer.html">Disclaimer</a>
-            <a href="/privacy.html">Privacy</a>
-            <a href="/contact.html">Contact</a>
-            <a href="https://grizzlyparrottrading.com/books/probabilistic-execution/"  target="_blank">
-                Probabilistic Execution
-            </a>
-        </div>
-    </div>
+        <article class="card">
+          <h3><a href="/futures-basics/gc-intraday-strategies.html">GC Intraday Strategies That Actually Work</a></h3>
+          <p>Blunt, no-fluff intraday strategies for trading Gold futures (GC) including VWAP plays, liquidity sweeps, trend setups, and volatility filters.</p>
+        </article>
 
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-</footer>
+        <article class="card">
+          <h3><a href="/futures-basics/gc-liquidity-levels-structure.html">GC Liquidity Levels and Market Structure</a></h3>
+          <p>A hard-edged breakdown of how liquidity levels and market structure work on Gold futures (GC): key levels, liquidity pockets, and predictable behavior.</p>
+        </article>
 
-</body>
-</html>
+        <article class="card">
+          <h3><a href="/futures-basics/gc-margin-day-vs-overnight.html">GC Margin: Day vs Overnight Explained</a></h3>
+          <p>Understand how Gold futures (GC) margin works, the difference between exchange margin and broker day-trade margin, and why overnight risk is a different game.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/gc-market-microstructure.html">GC Market Microstructure Explained</a></h3>
+          <p>A blunt breakdown of GC market microstructure: liquidity pockets, orderflow behavior, stop runs, and why Gold futures move the way they do intraday.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/gc-news-event-reaction.html">How GC Reacts to Major News Events</a></h3>
+          <p>A blunt breakdown of how Gold futures behave during CPI, NFP, FOMC, and geopolitical shocks. Learn the exact volatility patterns GC repeats every time.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/gc-orderflow-basics.html">GC Orderflow Basics for New Traders</a></h3>
+          <p>A blunt breakdown of how orderflow actually works on Gold futures (GC): aggression, imbalance, absorption, tape speed, and liquidity behavior.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/gc-seasonality-patterns.html">GC Seasonality Patterns Explained</a></h3>
+          <p>The real seasonal tendencies in Gold futures (GC): monthly patterns, quarter shifts, and which cycles consistently impact volatility and direction.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/gc-slippage-avoidance.html">Why GC Slippage Happens and How to Avoid It</a></h3>
+          <p>A blunt breakdown of why slippage hits hard in Gold futures (GC), what causes it, and how to avoid bad fills during volatile conditions.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/gc-tick-size-tick-value-specs.html">GC Tick Size, Tick Value, and Contract Specs</a></h3>
+          <p>Understand GC tick size, tick value, and core contract specifications so you know exactly how Gold futures move and how each tick hits your account.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/gc-volatility-profile-atr.html">GC Volatility Profile and ATR Behavior</a></h3>
+          <p>Understand the volatility profile of Gold futures (GC): ATR ranges, average swing size, and how to size risk so GC volatility doesn’t blow your account up.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/gc-vs-6e-6j-differences.html">GC vs 6E vs 6J: Key Differences Explained</a></h3>
+          <p>A blunt comparison of Gold futures vs Euro FX vs Yen FX: volatility, liquidity, fundamentals, and why GC behaves nothing like currency futures.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/hg-tick-size-tick-value-margin.html">HG Tick Size, Tick Value, and Margin: The Numbers That Actually Matter</a></h3>
+          <p>A clear, trader-focused breakdown of HG tick size, tick value, and margin requirements so you can size copper futures trades without blowing your account.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/hg-volatility-profile.html">HG Volatility Profile: How Copper’s ATR and Swing Behavior Shape Real Risk</a></h3>
+          <p>Copper’s volatility profile is unique. Learn how HG’s ATR, impulse structure, compression phases, and breakout behavior affect real trading risk.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/hg-vs-zn-yields-risk.html">HG vs ZN: How Copper Tracks Bond Yields and Risk Appetite</a></h3>
+          <p>Copper futures (HG) and 10-year note futures (ZN) reveal risk appetite. Learn how yields impact copper demand, growth expectations, and trend direction.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-atr-volatility-profile.html">Palladium ATR Behavior and Volatility Structure</a></h3>
+          <p>A blunt breakdown of Palladium futures ATR behavior, volatility structure, average swing size, and why PA's thin liquidity turns normal ranges into outsized moves.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-common-mistakes.html">Common Mistakes New Palladium Traders Make</a></h3>
+          <p>A blunt breakdown of the most common mistakes new Palladium traders make, why PA punishes errors brutally, and how to avoid the traps that blow up beginners.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-geopolitical-supply-risks.html">Geopolitical Supply Risks Driving Palladium Futures</a></h3>
+          <p>A blunt breakdown of the geopolitical supply risks behind Palladium futures, focusing on Russia, South Africa, and why PA reacts violently to global disruptions.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-industrial-demand-drivers.html">Industrial Demand Drivers Behind Palladium Futures</a></h3>
+          <p>A blunt breakdown of the industrial demand drivers behind Palladium futures, including catalytic converters, electronics, and chemical applications influencing PA price.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-liquidity-vs-gc-si.html">Palladium Liquidity vs Gold and Silver</a></h3>
+          <p>A blunt comparison of Palladium liquidity vs Gold and Silver, why PA trades nothing like GC or SI, and how execution must adapt to survive PA’s thin market.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-macro-drivers.html">Macro Drivers of Palladium Futures: Rates, Inflation, and Auto Demand</a></h3>
+          <p>A blunt breakdown of the macro drivers behind Palladium futures, including interest rates, inflation trends, and global auto sales that directly shape PA demand and volatility.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-microstructure.html">Palladium Microstructure: DOM, Sweep Risk, and Tape Reading</a></h3>
+          <p>A blunt breakdown of Palladium microstructure: DOM behavior, sweep risk, tape reading signals, and why PA’s thin book creates explosive moves.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-pl-vs-pa-spread-trading.html">PA vs PL: Spread Trading the Palladium–Platinum Relationship</a></h3>
+          <p>A blunt breakdown of PA vs PL spread trading, explaining the Palladium–Platinum relationship, substitution flows, volatility edges, and when the spread actually matters.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-risk-management.html">Risk Management for Palladium Futures: Sizing and Stops</a></h3>
+          <p>A blunt guide to risk management in Palladium futures: sizing, stops, drawdown control, and how to stay alive in PA’s thin, violent market structure.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-seasonality-patterns.html">Palladium Futures Seasonality: Monthly and Quarterly Patterns</a></h3>
+          <p>A blunt breakdown of Palladium futures seasonality, showing the monthly and quarterly tendencies that actually matter in PA and why thin liquidity amplifies these cycles.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-short-squeezes-explained.html">Why Palladium Short Squeezes Happen and How They Unfold</a></h3>
+          <p>A blunt breakdown of why Palladium futures short squeezes happen, how PA’s thin structure and supply risks amplify them, and the signs that a squeeze is forming.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-slippage-problems.html">Why Slippage Hits Harder in Palladium Futures</a></h3>
+          <p>A blunt breakdown of why slippage is worse in Palladium futures, how PA’s thin liquidity magnifies every fill, and what traders can do to limit the damage.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-tick-size-and-margins.html">Palladium Futures Tick Size, Tick Value, and Margin Explained</a></h3>
+          <p>A blunt breakdown of Palladium futures tick size, tick value, and margin requirements so you understand the real risk behind every PA order you place.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-volume-profile-liquidity.html">Palladium Futures Volume Profile and Liquidity Zones</a></h3>
+          <p>A blunt breakdown of Palladium futures volume profile, how liquidity zones form, and why PA reacts violently around low-volume pockets and high-volume nodes.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pa-vs-spot-arbitrage.html">Palladium Futures vs Spot: Price Divergences and Arbitrage Logic</a></h3>
+          <p>A blunt breakdown of Palladium futures vs spot pricing, explaining why PA diverges, how arbitrage actually works, and what traders can and can't rely on in thin markets.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-automotive-demand-catalyst-cycles.html">How Automotive Demand Cycles Drive Platinum Futures (PL)</a></h3>
+          <p>A detailed breakdown of how catalytic converter demand, auto production cycles, and emission standards directly move Platinum futures (PL).</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-common-trading-mistakes.html">Common Platinum Futures (PL) Trading Mistakes: Retail Errors That Blow Accounts</a></h3>
+          <p>A blunt breakdown of the most common retail mistakes in Platinum futures (PL): oversizing, trading dead zones, tight stops, ignoring volatility, and misreading PL/PA correlation.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-geopolitical-supply-risk.html">Geopolitical Shocks in Platinum Futures (PL): South Africa, Russia, and Supply Risk</a></h3>
+          <p>A deep analysis of geopolitical risk in Platinum futures (PL): South African power issues, Russian supply disruptions, mining instability, and how shocks trigger violent PL price moves.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-gold-ratio-guide.html">Platinum to Gold Ratio: What the PL/AU Relationship Really Signals</a></h3>
+          <p>A deep, macro-heavy breakdown of the Platinum to Gold ratio (PL/AU), long-term cycles, value extremes, and how smart traders use the ratio to understand PL futures direction.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-hedging-use-cases.html">Platinum Futures (PL) Hedging Strategies: How Traders Use PL to Manage Risk</a></h3>
+          <p>A trader-focused guide to hedging with Platinum futures (PL): ETF hedges, ratio hedges, synthetic positions, PGM basket exposure, and volatility management.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-industrial-demand-factors.html">Industrial Demand Shocks and Their Impact on Platinum Futures (PL)</a></h3>
+          <p>A futures-focused breakdown of how industrial demand shocks in hydrogen, chemical, and manufacturing sectors move Platinum futures (PL) fast.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-liquidity-traps-guide.html">Liquidity Traps in Platinum Futures (PL): Avoiding Wide Spreads and Thin Books</a></h3>
+          <p>A deep microstructure breakdown of Platinum futures (PL): thin books, wide spreads, sweep behavior, air pockets, and the exact liquidity traps traders must avoid.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-margin-day-vs-overnight.html">PL Margin Requirements: Day vs Overnight Explained</a></h3>
+          <p>A hard-edged breakdown of Platinum futures (PL) margin mechanics: day margin vs overnight margin, risk modeling, and why brokers demand more during volatility.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-microstructure-algo-behavior.html">How Algorithmic Traders Exploit Platinum Futures (PL): Liquidity Sweeps, Stop Hunts, and Thin-Book Games</a></h3>
+          <p>A blunt guide showing how algorithms exploit Platinum futures (PL): stop runs, thin-book sweeps, liquidity sniping, and predictable retail traps caused by low depth.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-seasonality-patterns.html">PL Seasonality: Platinum Futures Patterns and Tendencies</a></h3>
+          <p>A direct look at Platinum futures (PL) seasonality patterns, multi-year tendencies, and how to use them without trading like a superstition-chasing clown.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-spread-strategy-overview.html">Platinum Futures (PL) Spread Strategies: Calendar, Inter-Metal, and Synthetic Plays</a></h3>
+          <p>A trader-focused breakdown of Platinum futures (PL) spread strategies: calendar spreads, PL/PA inter-metal pairs, GC and SI hedges, and synthetic PL positioning.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-tick-size-and-contract-specs.html">PL Tick Size, Tick Value, and Full Platinum Contract Specs</a></h3>
+          <p>A complete breakdown of Platinum futures (PL) tick size, tick value, and every contract spec that actually matters for real trading decisions.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-volatility-profile.html">PL Volatility Profile: ATR, Swing Size, and Platinum Risk Zones</a></h3>
+          <p>A hard-edged breakdown of Platinum futures (PL) volatility, ATR behavior, average swing size, and the real risk zones traders must respect.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/pl-vs-pa-spread-correlation.html">Platinum vs Palladium: PL/PA Spread Behavior and Correlation Shifts</a></h3>
+          <p>A hard-edged guide to the Platinum–Palladium (PL/PA) spread, correlation shifts, substitution cycles, and how real traders use the inter-metal relationship for futures edge.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/si-calendar-spreads-explained.html">SI Calendar Spreads Explained: Term Structure, Carry, and Roll Behavior</a></h3>
+          <p>A detailed breakdown of SI calendar spreads — how Silver futures months interact, what drives the curve, and how spreads affect volatility and price.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/si-dom-reading-guide.html">Reading the SI Depth of Market (DOM) Like a Pro</a></h3>
+          <p>A blunt guide to reading the SI DOM—liquidity pockets, spoofing, spreads, and how Silver futures actually trade under the surface.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/si-margin-requirements-day-vs-overnight.html">SI Margin Requirements: Day vs Overnight</a></h3>
+          <p>A deep breakdown of Silver futures (SI) margin requirements—day margin, overnight margin, leverage impact, and real risk mechanics.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/si-risk-management-framework.html">A Complete Risk Management Framework for Silver Futures (SI)</a></h3>
+          <p>A no-nonsense SI risk framework built on volatility, ATR, sizing, off-hours behavior, and the realities of trading a thin, explosive metals contract.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/si-seasonality-patterns.html">SI Seasonality Patterns in Silver Futures</a></h3>
+          <p>A blunt, data-backed breakdown of Silver futures (SI) seasonality—why certain months trend stronger, weaker, or more volatile, and how traders use it.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/si-tick-size-and-contract-specs.html">SI Tick Size, Tick Value, and Full Contract Specs</a></h3>
+          <p>Learn the exact tick size, tick value, and contract specs of Silver futures (SI) so you know your real dollar risk before you place a trade.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/si-volatility-and-atr-profile.html">SI Volatility and ATR Profile for Silver Futures</a></h3>
+          <p>A detailed breakdown of Silver futures (SI) volatility and ATR behavior so you can size trades and stops with real numbers instead of guesses.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="/futures-basics/si-vs-sil-vs-slv.html">SI vs SIL vs SLV: Complete Breakdown of Silver Markets</a></h3>
+          <p>A blunt comparison of SI futures, SIL stocks, and the SLV ETF — liquidity, volatility, tracking quality, and which market traders should actually use.</p>
+        </article>
+
+        <!-- CARDS:AUTOGEN:END -->
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<script src="../search.js"></script>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+
+        <div class="footer-links">
+            <a href="/about.html">About</a>
+            <a href="/disclaimer.html">Disclaimer</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/contact.html">Contact</a>
+            <a href="https://grizzlyparrottrading.com/books/probabilistic-execution/"  target="_blank">
+                Probabilistic Execution
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</footer>
+
+</body>
+</html>

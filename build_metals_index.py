@@ -1,10 +1,6 @@
-# build_currencies_index.py
-# Run from repo root:  python build_currencies_index.py
-# Requirements:
-# 1) currencies/index.html must contain these markers INSIDE the <div class="grid grid-3">:
-#    <!-- CARDS:AUTOGEN:START -->
-#    <!-- CARDS:AUTOGEN:END -->
-# 2) Currency articles are in /futures-basics and filenames start with 6a-, 6b-, 6c-, 6e-, 6j-, 6m-, 6n-, 6s-, 6z-.
+# build_metals_index.py
+# Run from repo root: python build_metals_index.py
+# Scans /futures-basics for metal articles and writes cards into /metals/index.html between markers.
 
 import re
 from pathlib import Path
@@ -13,13 +9,12 @@ from html import unescape
 ROOT = Path(".").resolve()
 
 FUTURES_DIR = ROOT / "futures-basics"
-CURRENCIES_INDEX = ROOT / "currencies" / "index.html"
+METALS_INDEX = ROOT / "metals" / "index.html"
 
-SITE = "https://grizzlyparrottrading.com"
 HUB_PATH = "/futures-basics"
 
-# Add/remove prefixes here if you want more/less included.
-PREFIXES = ("6a-", "6b-", "6c-", "6e-", "6j-", "6m-", "6n-", "6s-", "6z-")
+# Metal prefixes by filename
+PREFIXES = ("gc-", "si-", "hg-", "pl-", "pa-")
 
 START_MARKER = "<!-- CARDS:AUTOGEN:START -->"
 END_MARKER = "<!-- CARDS:AUTOGEN:END -->"
@@ -61,7 +56,7 @@ def extract_title_and_desc(html: str) -> tuple[str, str]:
     if not title:
         title = "Untitled"
     if not desc:
-        desc = "Currency futures breakdown and trading behavior."
+        desc = "Metal futures breakdown and trading behavior."
 
     return title, desc
 
@@ -77,10 +72,9 @@ def main() -> None:
     if not FUTURES_DIR.exists():
         raise SystemExit(f"Missing folder: {FUTURES_DIR}")
 
-    if not CURRENCIES_INDEX.exists():
-        raise SystemExit(f"Missing index file: {CURRENCIES_INDEX}")
+    if not METALS_INDEX.exists():
+        raise SystemExit(f"Missing index file: {METALS_INDEX}")
 
-    # Collect matching articles by filename prefix
     files = []
     for p in FUTURES_DIR.glob("*.html"):
         if p.name.lower().startswith(PREFIXES):
@@ -88,33 +82,24 @@ def main() -> None:
 
     if not files:
         raise SystemExit(
-            "No matching currency files found in /futures-basics.\n"
+            "No matching metal files found in /futures-basics.\n"
             f"Expected filenames starting with: {', '.join(PREFIXES)}"
         )
 
     files.sort(key=lambda x: x.name.lower())
 
-    # Build cards
     cards = []
     for p in files:
         html = read_text_auto(p)
         title, desc = extract_title_and_desc(html)
-
-        # Link is always the real served path under /futures-basics
         href = f"{HUB_PATH}/{p.name}"
-
-        # Optional sanity check: if file still references /market-basics anywhere, warn (doesn't stop build)
-        if f"{SITE}/market-basics/" in html:
-            print(f"WARNING: {p.name} still contains '{SITE}/market-basics/' somewhere (likely breadcrumbs).")
-
         cards.append(build_card(href, title, desc))
 
-    # Inject into currencies/index.html between markers
-    index_html = read_text_auto(CURRENCIES_INDEX)
+    index_html = read_text_auto(METALS_INDEX)
 
     if START_MARKER not in index_html or END_MARKER not in index_html:
         raise SystemExit(
-            "Markers not found in currencies/index.html.\n"
+            "Markers not found in metals/index.html.\n"
             "Add these inside your <div class=\"grid grid-3\">:\n"
             f"{START_MARKER}\n{END_MARKER}"
         )
@@ -123,9 +108,8 @@ def main() -> None:
     pattern = re.compile(re.escape(START_MARKER) + r".*?" + re.escape(END_MARKER), re.DOTALL)
     updated = pattern.sub(new_block, index_html, count=1)
 
-    CURRENCIES_INDEX.write_text(updated, encoding="utf-8")
-
-    print(f"Built {len(files)} currency cards into {CURRENCIES_INDEX}")
+    METALS_INDEX.write_text(updated, encoding="utf-8")
+    print(f"Built {len(files)} metal cards into {METALS_INDEX}")
 
 if __name__ == "__main__":
     main()
