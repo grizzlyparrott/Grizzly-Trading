@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- PNG Fallbacks -->
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contract Specs That Matter in Lean Hog Trading — HE Futures Explained</title>
+    <meta name="description" content="If you're trading lean hog futures (HE), these contract specs determine your position size, tick value, and expiration risk — not the theory, just what actually matters.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/lean-hog-contract-specs.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contract Specs That Matter in Lean Hog Trading — HE Futures Explained">
+    <meta property="og:description" content="Lean hog contract specs broken down to what actually affects your P&L, margin, and rollover decisions.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/lean-hog-contract-specs.html">
+    <meta property="og:site_name" content="Grizzly Parrot Trading">
+    <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta property="og:image:width" content="1792">
+    <meta property="og:image:height" content="941">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta name="twitter:title" content="Contract Specs That Matter in Lean Hog Trading — HE Futures Explained">
+    <meta name="twitter:description" content="The lean hog futures specs that determine your actual risk, not the ones you can ignore.">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JMJVR3G5YN');
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Contract Specs That Matter in Lean Hog Trading — HE Futures Explained",
+      "description": "If you're trading lean hog futures (HE), these contract specs determine your position size, tick value, and expiration risk — not the theory, just what actually matters.",
+      "author": {
+        "@type": "Person",
+        "name": "Grizzly Parrott"
+      },
+      "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/lean-hog-contract-specs.html",
+      "datePublished": "2025-01-20",
+      "dateModified": "2025-01-20"
+    }
+    </script>
+
+    <!-- JSON-LD: Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://grizzlyparrottrading.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Futures Basics",
+          "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contract Specs That Matter in Lean Hog Trading",
+          "item": "https://grizzlyparrottrading.com/futures-basics/lean-hog-contract-specs.html"
+        }
+      ]
+    }
+    </script>
+
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="/">Grizzly Parrot Trading</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+                <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+                <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+                <li><a href="../market-basics/index.html">Market Basics</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <div class="container article-content">
+
+            <!-- ARTICLE BODY START -->
+
+            <h1>Contract Specs That Matter in Lean Hog Trading</h1>
+
+            <p>
+                If you're trading lean hog futures (ticker: <strong>HE</strong>), you're dealing with a commodity contract that moves differently than equity index futures, has wildly different margin requirements, and expires with actual delivery terms you need to understand even if you never plan to take delivery. Most traders ignore contract specs until something goes wrong — a position moves harder than expected, margin gets hit, or rollover sneaks up. This page covers the specs that actually affect your trading, not the trivia that doesn't. For the broader framework on how futures contracts work, see <a href="futures-contract-specifications-explained.html">contract specifications explained</a>.
+            </p>
+
+            <div class="highlight-box green">
+                <h3>HE Quick Reference (What You Actually Need)</h3>
+                <p><strong>Symbol:</strong> HE (followed by month/year code, e.g., HEJ5 = April 2025)</p>
+                <p><strong>Contract Size:</strong> 40,000 pounds of lean hogs</p>
+                <p><strong>Tick Size:</strong> $0.00025 per pound = <strong>$10.00 per tick</strong></p>
+                <p><strong>Trading Hours:</strong> Nearly 24-hour (Sunday–Friday, with brief maintenance window)</p>
+                <p><strong>Exchange:</strong> CME (Chicago Mercantile Exchange)</p>
+            </div>
+
+            <h2>Contract Size and What It Means for Your Position</h2>
+            <p>
+                Each lean hog contract represents <strong>40,000 pounds</strong> of hogs. This isn't theoretical — it's the actual deliverable quantity if you hold to expiration. For traders, this means every cent the market moves translates to <strong>$400 per contract</strong>. A $1.00 move in lean hogs = $400. A $5.00 move = $2,000. This is where position sizing gets real fast.
+            </p>
+
+            <p>
+                Compare this to index futures like ES (S&P 500), where you're trading notional value based on a multiplier. Lean hogs are a physical commodity, so the contract size directly ties to pounds of actual product. You don't need to care about delivery mechanics unless you're holding into expiration, but you do need to understand that the contract isn't some abstract vehicle — it's sized to move real product, which is why the price action can get violent during supply shocks or disease outbreaks.
+            </p>
+
+            <h2>Tick Size and Tick Value</h2>
+            <p>
+                Lean hogs trade in increments of <strong>$0.00025 per pound</strong>. With a 40,000-pound contract, that's <strong>$10.00 per tick</strong>.
+            </p>
+
+            <p>
+                Example: If lean hogs are trading at $0.8250 per pound and move to $0.8275, that's a 10-tick move = $100 per contract. This tick structure is smaller than energy contracts like crude oil but larger than grains on a percentage basis, so scalping is possible but you're not dealing with the volatility range of /CL or /NG.
+            </p>
+
+            <p>
+                Most platforms will show you P&L in real-time, but if you're calculating manually or checking risk on a new position, just remember: 1 tick = $10, and lean hogs can move 50–100 ticks in a session during high volatility.
+            </p>
+
+            <h2>Pricing and Quotation</h2>
+            <p>
+                Lean hog futures are quoted in <strong>cents per pound</strong>. If you see HE trading at 82.50, that's $0.8250 per pound, which translates to <strong>$33,000 notional value</strong> per contract (40,000 lbs × $0.8250).
+            </p>
+
+            <p>
+                This is important because lean hog prices can range anywhere from the low 60s to over 100 depending on supply, demand, disease events (like African swine fever or Porcine Reproductive and Respiratory Syndrome), and seasonal cycles. A contract priced at $0.65 per pound has a notional value of $26,000. A contract at $1.00 per pound is worth $40,000. Your margin requirement stays relatively stable, but the dollar value of the contract itself fluctuates significantly with price.
+            </p>
+
+            <h2>Margin Requirements</h2>
+            <p>
+                Margin for lean hog futures varies by broker and whether you're trading intraday or holding overnight, but typical <strong>initial margin</strong> runs around <strong>$1,500–$2,500 per contract</strong> depending on volatility. Maintenance margin is usually slightly lower.
+            </p>
+
+            <p>
+                This is significantly lower than equity index futures (ES can require $12,000+ margin), which makes lean hogs accessible but also means you can overleverage quickly if you're not careful. A $1.00 adverse move ($400 per contract) can wipe out a quarter of your margin on a standard $1,500 requirement. Risk management isn't optional here.
+            </p>
+
+            <p>
+                Some prop firms and discount brokers offer reduced intraday margins (sometimes as low as $500 per contract), but if you hold overnight, you're back to the full initial margin requirement. Know your broker's rules.
+            </p>
+
+            <h2>Trading Hours</h2>
+            <p>
+                Lean hog futures trade nearly 24 hours on CME Globex:
+            </p>
+
+            <ul>
+                <li><strong>Sunday:</strong> 5:00 PM CT – Friday 4:00 PM CT</li>
+                <li><strong>Daily maintenance break:</strong> ~4:00 PM – 5:00 PM CT</li>
+            </ul>
+
+            <p>
+                Liquidity is heaviest during <strong>RTH (Regular Trading Hours): 9:30 AM – 1:05 PM CT</strong>, which overlaps with USDA reports, livestock auctions, and when institutional players are most active. If you're trading outside RTH, spreads widen and slippage increases. Volume dies off significantly after 2:00 PM CT and during overnight hours unless there's a major macro event or export news.
+            </p>
+
+            <h2>Contract Months and Rollover</h2>
+            <p>
+                Lean hogs have <strong>monthly expirations</strong>, but not all months trade with equal liquidity. The most active contract months are:
+            </p>
+
+            <ul>
+                <li>February (G)</li>
+                <li>April (J)</li>
+                <li>June (M)</li>
+                <li>July (N)</li>
+                <li>August (Q)</li>
+                <li>October (V)</li>
+                <li>December (Z)</li>
+            </ul>
+
+            <p>
+                Volume and open interest concentrate in the nearby months, and you'll typically see traders rolling positions about <strong>7–10 days before expiration</strong> to avoid delivery and stay in liquid contracts. Unlike equity index futures that roll quarterly (ES, NQ), lean hogs require more frequent attention. For more on how rollover works and what to watch for, see <a href="futures-rollover-explained.html">futures rollover explained</a>.
+            </p>
+
+            <p>
+                If you're holding a position into the last trading day, you're exposed to potential delivery obligations. Most retail traders have zero interest in taking or making delivery of 40,000 pounds of hogs, so close or roll before first notice day.
+            </p>
+
+            <h2>Last Trading Day and Expiration</h2>
+            <p>
+                The last trading day for lean hog futures is the <strong>10th business day of the contract month</strong>. After that, the contract settles via cash or physical delivery depending on the contract specs at the time (historically cash-settled, but confirm with CME).
+            </p>
+
+            <p>
+                First notice day is earlier than the last trading day, so if you're holding a long position into the delivery month, you need to know when you could be assigned. Most brokers will force you out before this happens, but don't rely on them to save you. Know your expiration calendar.
+            </p>
+
+            <h2>Why Lean Hogs Move the Way They Do</h2>
+            <p>
+                Lean hog futures are driven by a mix of supply fundamentals (hog inventory, disease outbreaks, feed costs) and demand factors (pork exports to China, domestic consumption, cold storage reports). USDA releases like the <strong>Hogs and Pigs Report</strong> and <strong>Cold Storage data</strong> can cause 100+ tick moves in minutes.
+            </p>
+
+            <p>
+                The market also has seasonal patterns tied to production cycles, with price strength typically appearing in spring/summer when grilling season drives demand, and weakness in fall when supply increases. These aren't guarantees, but they create structural tendencies that show up in futures curves and spreads.
+            </p>
+
+            <p>
+                Additionally, lean hogs are closely correlated with <strong>corn futures (ZC)</strong> because feed represents a massive percentage of production costs. If corn rips higher, hog producers face margin compression, which can reduce supply and push hog prices higher with a lag. If you're trading lean hogs without watching corn, you're missing a major input.
+            </p>
+
+            <h2>Common Mistakes in Lean Hog Trading</h2>
+
+            <ul>
+                <li>Ignoring USDA report schedules and getting caught in volatility spikes.</li>
+                <li>Overleveraging because margin requirements are lower than equity index futures.</li>
+                <li>Trading outside RTH without adjusting for reduced liquidity and wider spreads.</li>
+                <li>Not rolling positions in time and getting stuck in a dying contract with no volume.</li>
+                <li>Forgetting that hogs are a physical commodity — supply shocks (disease, weather) can create moves that don't make sense on a chart.</li>
+            </ul>
+
+            <div class="highlight-box green">
+                <h3>Know the Specs, or Get Surprised by Them</h3>
+                <p>
+                    Lean hog futures aren't complicated, but they're also not forgiving if you ignore the basics. Contract size, tick value, margin, and rollover schedule all determine your actual risk exposure, not just what your platform shows you in open P&L. Treat these specs like the operating manual for the product you're trading — because that's exactly what they are.
+                </p>
+            </div>
+
+            <!-- ARTICLE BODY END -->
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
+
+        <div class="footer-links">
+            <a href="/about.html">About</a>
+            <a href="/disclaimer.html">Disclaimer</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/contact.html">Contact</a>
+            <a href="https://grizzlyparrottrading.com/books/probabilistic-execution/" target="_blank">
+                Probabilistic Execution
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</footer>
+
+</body>
+</html>
