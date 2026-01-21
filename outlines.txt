@@ -18,9 +18,9 @@ Seasonal Patterns Unique to Lean Hogs+
 
 Cash Market vs Futures Divergence in Hogs+
 
-Contract Specs That Matter in Lean Hog Trading
+Contract Specs That Matter in Lean Hog Trading+
 
-Lean Hog Spreads and Curve Instability
+Lean Hog Spreads and Curve Instability+
 
 Why Lean Hogs Decouple From Other Commodities
 
