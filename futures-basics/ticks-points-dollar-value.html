@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-     <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta charset="UTF-8">
 
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
 
-<!-- Web App Manifest -->
-<link rel="manifest" href="/site.webmanifest">
-
-<!-- PNG Fallbacks -->
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticks, Points, and Dollar Value – Grizzly Parrot Trading</title>
-    <meta name="description" content="Simple breakdown of ticks, points, and dollar values for ES, MES, NQ, and MNQ futures contracts.">
-        <!-- Open Graph -->
+
+    <title>Ticks vs Points in Futures Trading (With Real Examples)</title>
+    <meta name="description" content="Ticks and points aren’t interchangeable in futures trading. This guide explains how each works, why they matter, and how they translate into real dollar risk.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/ticks-vs-points-in-futures-trading.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ticks vs Points in Futures Trading (With Real Examples)">
+    <meta property="og:description" content="Understand the difference between ticks and points in futures trading and how small price moves translate into real dollar risk.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/ticks-vs-points-in-futures-trading.html">
+    <meta property="og:site_name" content="Grizzly Parrot Trading">
     <meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
     <meta property="og:image:width" content="1792">
     <meta property="og:image:height" content="941">
@@ -27,8 +32,10 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+    <meta name="twitter:title" content="Ticks vs Points in Futures Trading">
+    <meta name="twitter:description" content="Why ticks and points matter more than indicators when it comes to real risk in futures trading.">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics (DO NOT CHANGE) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -39,122 +46,155 @@
 
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
 
 <header class="site-header">
     <div class="container header-inner">
         <div class="logo">
-            <span class="logo-mark">GP</span>
-            <span class="logo-text">Grizzly Parrot Trading</span>
+            <a href="/">Grizzly Parrot Trading</a>
         </div>
         <nav class="main-nav">
-             <a href="../index.html#articles">Articles</a>
-             <a href="../futures-basics/index.html">Futures Basics</a>
-             <a href="../prop-firm-trading/index.html">Prop Firms</a>
-             <a href="../platforms-tutorials/index.html">Platforms</a>
-             <a href="../market-basics/index.html">Market Basics</a>
-            </nav>
+            <ul>
+                <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+                <li><a href="../prop-firm-trading/index.html">Prop Firms</a></li>
+                <li><a href="../platforms-tutorials/index.html">Platforms</a></li>
+                <li><a href="../market-basics/index.html">Market Basics</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
 
-<main class="section">
-    <div class="container">
-        <h1>Ticks, Points, and Dollar Value</h1>
-        <p class="section-intro">
-            Futures contracts don’t move in pennies or percentages — they move in <strong>ticks</strong>.  
-            Every tick has a fixed dollar value, and that value is different for each contract.
-        </p>
+<main>
+<section class="section">
+<div class="container article-content">
 
-        <h2>What Is a Tick?</h2>
-        <p>
-            A tick is the smallest possible price movement for a futures contract.
-        </p>
-        <p>
-            Example:  
-            ES can only move in increments of <strong>0.25</strong>.  
-            That 0.25 is one tick.
-        </p>
+<h1>Ticks vs Points in Futures Trading</h1>
 
-        <h2>What Is a Point?</h2>
-        <p>
-            A point is simply a larger unit — usually multiple ticks.
-        </p>
+<p>
+Futures markets don’t move in dollars or percentages. They move in <strong>ticks</strong>.  
+Points are just a larger way of describing those same movements. If you don’t understand the difference, you will consistently underestimate risk — even when your entries look perfect.
+</p>
 
-        <ul>
-            <li><strong>ES:</strong> 1 point = 4 ticks</li>
-            <li><strong>MES:</strong> 1 point = 4 ticks</li>
-            <li><strong>NQ:</strong> 1 point = 4 ticks</li>
-            <li><strong>MNQ:</strong> 1 point = 4 ticks</li>
-        </ul>
+<p>
+This page explains how ticks and points actually work, how they translate into dollar exposure, and why this distinction matters far more than most traders realize.
+</p>
 
-        <p>
-            So when ES moves from 5000.00 to 5001.00, that’s 4 ticks, or 1 point.
-        </p>
+<h2>What Is a Tick?</h2>
 
-        <h2>Dollar Value Per Tick</h2>
-        <p>
-            Each contract has a fixed dollar value per tick.  
-            This is what determines how much money you make or lose on every price movement.
-        </p>
+<p>
+A tick is the <strong>smallest price movement a futures contract is allowed to make</strong>.  
+That minimum increment is fixed by the exchange and never changes.
+</p>
 
-        <ul>
-            <li><strong>ES:</strong> $12.50 per tick</li>
-            <li><strong>MES:</strong> $1.25 per tick</li>
-            <li><strong>NQ:</strong> $5.00 per tick</li>
-            <li><strong>MNQ:</strong> $0.50 per tick</li>
-        </ul>
+<p>
+For example, if a contract moves from 5000.00 to 5000.25, that is <strong>one tick</strong>.  
+It does not matter how fast or slow the move happens — the tick size defines it.
+</p>
 
-        <h2>Dollar Value Per Point</h2>
-        <p>
-            Multiply ticks × tick value:
-        </p>
+<p>
+Every futures contract has its own tick size and its own dollar value per tick. That’s why identical-looking chart moves can produce very different P&L outcomes across markets.
+</p>
 
-        <ul>
-            <li><strong>ES:</strong> 4 ticks × $12.50 = <strong>$50 per point</strong></li>
-            <li><strong>MES:</strong> 4 ticks × $1.25 = <strong>$5 per point</strong></li>
-            <li><strong>NQ:</strong> 4 ticks × $5.00 = <strong>$20 per point</strong></li>
-            <li><strong>MNQ:</strong> 4 ticks × $0.50 = <strong>$2 per point</strong></li>
-        </ul>
+<h2>What Is a Point?</h2>
 
-        <h2>Why This Matters</h2>
-        <p>
-            Tick value tells you exactly how much you’re risking per trade.  
-            A 10-tick move against you:
-        </p>
+<p>
+A point is simply a larger unit made up of multiple ticks.  
+It exists for convenience, not precision.
+</p>
 
-        <ul>
-            <li>ES = <strong>$125</strong></li>
-            <li>MES = <strong>$12.50</strong></li>
-            <li>NQ = <strong>$50</strong></li>
-            <li>MNQ = <strong>$5</strong></li>
-        </ul>
+<p>
+Most index futures use four ticks per point. When traders talk about “points,” they’re usually compressing several ticks into a single number.
+</p>
 
-        <p>
-            This is why MES and MNQ exist — they let smaller accounts survive normal volatility.
-        </p>
+<p>
+Points are useful for describing price levels and ranges. Ticks are what actually determine profit and loss.
+</p>
 
-        
-    </div>
+<h2>Real Examples (Why Traders Get This Wrong)</h2>
+
+<p>
+Let’s say a market moves 10 points.
+</p>
+
+<p>
+That sounds small — until you break it down into ticks and dollars.
+</p>
+
+<p>
+In one contract, 10 points might represent manageable risk.  
+In another, it might be a catastrophic move.
+</p>
+
+<p>
+This is why traders who size positions based on “points” instead of tick value eventually get blindsided. The market didn’t do anything unusual — the math just caught up to them.
+</p>
+
+<h2>Why Tick Value Matters More Than Entries</h2>
+
+<p>
+Tick value determines:
+</p>
+
+<ul>
+    <li>How much you make or lose per price movement</li>
+    <li>How fast drawdowns accumulate</li>
+    <li>Whether a stop loss is realistic or cosmetic</li>
+    <li>How survivable normal volatility actually is</li>
+</ul>
+
+<p>
+Two traders can take the same setup, enter at the same price, and experience wildly different outcomes — purely because of contract selection and tick value.
+</p>
+
+<h2>Where to Find Exact Dollar Values</h2>
+
+<p>
+This page explains the structure.  
+Exact dollar values depend on the specific contract.
+</p>
+
+<p>
+If you’re looking for precise tick and point values for individual markets, use the instrument-specific pages:
+</p>
+
+<ul>
+    <li>Equity index futures</li>
+    <li>Micro contracts</li>
+    <li>Commodity and metal futures</li>
+</ul>
+
+<p>
+Those pages are built to answer calculation questions directly. This page exists to explain why those calculations matter in the first place.
+</p>
+
+<div class="highlight-box yellow">
+    <h3>Ticks Control Risk — Points Just Describe It</h3>
+    <p>
+        Points are shorthand. Ticks are reality.  
+        If you size trades using points without understanding tick value, you’re guessing at risk instead of measuring it. Futures trading rewards precision — and punishes anyone who treats price movement casually.
+    </p>
+</div>
+
+</div>
+</section>
 </main>
 
 <footer class="site-footer">
     <div class="container footer-inner">
         <p>&copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.</p>
-
         <div class="footer-links">
             <a href="/about.html">About</a>
             <a href="/disclaimer.html">Disclaimer</a>
             <a href="/privacy.html">Privacy</a>
             <a href="/contact.html">Contact</a>
-            <a href="https://grizzlyparrottrading.com/books/probabilistic-execution/"  target="_blank">
-                Probabilistic Execution
-            </a>
+            <a href="https://grizzlyparrottrading.com/books/probabilistic-execution/" target="_blank">Probabilistic Execution</a>
         </div>
     </div>
-
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </footer>
+
 </body>
 </html>
