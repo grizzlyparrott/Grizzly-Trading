@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
-<script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
   <meta charset="UTF-8">
   <title>True Position Size Risk Checker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,8 +19,8 @@
       color: #e5e7eb;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       padding: 32px 16px;
     }
 
@@ -34,6 +32,7 @@
       border: 1px solid #1f2937;
       padding: 24px 20px 28px;
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      margin-bottom: 32px;
     }
 
     .tool-header {
@@ -328,12 +327,42 @@
       box-shadow: 0 8px 18px rgba(34, 197, 94, 0.4);
       transform: translateY(-1px);
     }
+
+    footer {
+      width: 100%;
+      max-width: 900px;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-top: 1px solid #1f2937;
+      color: #888;
+      margin-top: auto;
+    }
+
+    footer p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    footer strong {
+      color: #22c55e;
+    }
+
+    footer a {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background-color: #22c55e;
+      color: #020617;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 9999px;
+      transition: transform 0.08s ease, box-shadow 0.12s ease;
+    }
+
+    footer a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(34, 197, 94, 0.4);
+    }
   </style>
-<script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-<script>
-    window.ezstandalone = window.ezstandalone || {};
-    ezstandalone.cmd = ezstandalone.cmd || [];
-</script>
 </head>
 <body>
   
@@ -508,6 +537,11 @@
     </div>
   </div>
 
+  <footer>
+    <p>This tool is part of <strong>Grizzly Parrot Trading</strong>.</p>
+    <a href="/">Return to Main Site</a>
+  </footer>
+
   <script>
     (function () {
       var form = document.getElementById("risk-form");
@@ -547,51 +581,39 @@
           msg = "No risk, no opinion. Put some numbers in first.";
           tag = "The only free trade is the one you never place.";
         } else if (riskPercent <= 0.10) {
-          // Level 1
-          msg = "This isn’t a trade, it’s a rounding error.";
-          tag = "You’re risking less than you waste on slippage every week.";
+          msg = "This isn't a trade, it's a rounding error.";
+          tag = "You're risking less than you waste on slippage every week.";
         } else if (riskPercent <= 0.25) {
-          // Level 2
-          msg = "That’s adorable. Truly.";
-          tag = "If this stops out, your heart rate won’t even move.";
+          msg = "That's adorable. Truly.";
+          tag = "If this stops out, your heart rate won't even move.";
         } else if (riskPercent <= 0.50) {
-          // Level 3
           msg = "Size is still training wheels.";
-          tag = "Nothing wrong with surviving, but don’t pretend this is high conviction.";
+          tag = "Nothing wrong with surviving, but don't pretend this is high conviction.";
         } else if (riskPercent <= 0.75) {
-          // Level 4
           msg = "Now it actually matters a little.";
           tag = "Small, controlled, and finally worth tracking in your journal.";
         } else if (riskPercent <= 1.00) {
-          // Level 5
           msg = "This is the sweet spot. Grizzly approves.";
           tag = "You can lose a streak of these and still come back swinging.";
         } else if (riskPercent <= 1.25) {
-          // Level 6
           msg = "Prime risk territory. Respect it.";
           tag = "Good risk if the setup is real. Pure ego if it is not.";
         } else if (riskPercent <= 1.75) {
-          // Level 7
           msg = "Borderline spicy.";
           tag = "One or two of these in a row is fine. Ten in a row is delusion.";
         } else if (riskPercent <= 2.50) {
-          // Level 8
           msg = "Try again and this time think first.";
           tag = "You are sizing like the win is guaranteed. Hint: it is not.";
         } else if (riskPercent <= 3.50) {
-          // Level 9
           msg = "You are one loss away from a mood swing.";
           tag = "At this level, your trading plan is now emotionally funded.";
         } else if (riskPercent <= 5.00) {
-          // Level 10
           msg = "You are fucked. This is account suicide territory.";
           tag = "You are not scaling up. You are speeding up the liquidation.";
         } else if (riskPercent <= 7.00) {
-          // Level 11
           msg = "Full-send clown mode.";
           tag = "If this works, you will call it skill. If not, you will call it unlucky. Both are lies.";
         } else {
-          // Level 12
           msg = "Congratulations, you have entered casino mode.";
           tag = "The house edge in futures is bad enough. No need to help it.";
         }
@@ -687,12 +709,6 @@
       }
     })();
   </script>
-  <footer style="margin-top: 4rem; padding: 2rem 0; text-align: center; border-top: 1px solid #333; color: #888;">
-  <p style="margin-bottom: 1rem;">This tool is part of <strong style="color: #00ff99;">Grizzly Parrot Trading</strong>.</p>
-  <a href="/" style="display: inline-block; padding: 0.6rem 1.2rem; background-color: #00ff99; color: #000; text-decoration: none; font-weight: 600; border-radius: 4px;">
-    Return to Main Site
-  </a>
-</footer>
 
 </body>
 </html>
