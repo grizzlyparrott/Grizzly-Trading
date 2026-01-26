@@ -1,1 +1,2 @@
-companies
+# ads.txt placeholder for grizzlyparrottrading.com
+# Will be updated once Ezoic integration is complete
