@@ -22,9 +22,9 @@ Contract Specs That Matter in Lean Hog Trading+
 
 Lean Hog Spreads and Curve Instability+
 
-Why Lean Hogs Decouple From Other Commodities
+Why Lean Hogs Decouple From Other Commodities+
 
-Margin Risk and Position Sizing in Hog Futures
+Margin Risk and Position Sizing in Hog Futures+
 
 Limit Moves and Liquidity Gaps in Lean Hogs
 
