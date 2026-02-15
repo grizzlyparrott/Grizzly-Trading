@@ -26,9 +26,9 @@ Why Lean Hogs Decouple From Other Commodities+
 
 Margin Risk and Position Sizing in Hog Futures+
 
-Limit Moves and Liquidity Gaps in Lean Hogs
+Limit Moves and Liquidity Gaps in Lean Hogs+
 
-How Slaughter Capacity Distorts Hog Pricing
+How Slaughter Capacity Distorts Hog Pricing+
 
 Why Lean Hogs Are Trader-Hostile Markets
 
