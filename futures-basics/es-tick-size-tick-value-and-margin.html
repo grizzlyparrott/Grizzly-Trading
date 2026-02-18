@@ -166,6 +166,9 @@ Brokers play games with intraday margin. The exchange doesn’t. CME sets <stron
 <p>
 Here’s the truth: low intraday margin is bait. ES volatility doesn’t care what deal your broker gives you. If you want to survive, size positions based on drawdown tolerance, not broker marketing. I covered sizing rules in another guide: <a href="es-how-to-size-positions-by-account-balance.html">ES Position Sizing</a>.
 </p>
+<p>
+If you’re trading under evaluation or funded account rules, contract size interacts directly with trailing drawdown mechanics. A $500 ES swing is only 10 points, but under a $2,500 trailing drawdown it meaningfully shifts your liquidation line. If you want to model how a sequence of ES trades affects a trailing drawdown in real time, use the <a href="/tools/trailing-drawdown-simulator.html">Trailing Drawdown Simulator</a>.
+</p>
 
 <h2>Why Understanding Tick Mechanics Keeps You Alive</h2>
 <p>

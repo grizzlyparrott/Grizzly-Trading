@@ -131,6 +131,9 @@ Grizzly Parrot Trading</a>
 <li>Where the fast path is</li>
 <li>Where the “dead zones” are</li>
 </ul>
+<p>
+Liquidity context does not override risk constraints. In prop-style accounts with trailing drawdown rules, structurally correct trades can still fail purely because of sequencing. If you want to see how liquidity-driven trade sequences interact with a trailing liquidation line, model it in the <a href="/tools/trailing-drawdown-simulator.html">Trailing Drawdown Simulator</a>.
+</p>
 
 <h2>Common Liquidity Migration Patterns</h2>
 
@@ -183,6 +186,7 @@ Grizzly Parrot Trading</a>
 
 <h3>You Can’t “Do” Liquidity Migration — It’s a Market Event</h3>
 <p>Many traders search for “how to do liquidity migration” as if it were a strategy or technique, but liquidity migration isn’t something you execute. It’s a natural market event that reflects how liquidity providers reposition their resting orders as conditions change. You don’t cause it, trigger it, or perform it — you observe it. Your job is to read the shift, not create it, and use that information to understand where the market is gaining interest, losing interest, or preparing to move next.</p>
+
 <p>
 Understanding liquidity migration explains <em>what the market is doing</em>. Translating that information into actual entries, exits, and risk decisions is a separate problem entirely. That transition—from observed structure to probabilistic execution—is covered in detail in <a href="/books/probabilistic-execution/">Probabilistic Execution</a>, which focuses specifically on how structural information is converted into trade execution without relying on prediction or fixed setups.
 </p>
