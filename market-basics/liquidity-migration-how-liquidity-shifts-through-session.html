@@ -131,9 +131,6 @@ Grizzly Parrot Trading</a>
 <li>Where the fast path is</li>
 <li>Where the “dead zones” are</li>
 </ul>
-<p>
-Liquidity context does not override risk constraints. In prop-style accounts with trailing drawdown rules, structurally correct trades can still fail purely because of sequencing. If you want to see how liquidity-driven trade sequences interact with a trailing liquidation line, model it in the <a href="/tools/trailing-drawdown-simulator.html">Trailing Drawdown Simulator</a>.
-</p>
 
 <h2>Common Liquidity Migration Patterns</h2>
 
@@ -205,6 +202,9 @@ Understanding liquidity migration explains <em>what the market is doing</em>. Tr
 
 <h3>4. Use Migration as Early Reversal Context</h3>
 <p>If liquidity starts stacking against the trend, someone bigger is stepping in.</p>
+<p>
+Structural context does not eliminate account risk constraints. In prop-style evaluations with trailing drawdown rules, a sequence of technically valid trades can still fail due to equity pathing. If you want to see how different trade sequences interact with a trailing liquidation line, test them in the <a href="/tools/trailing-drawdown-simulator.html">Trailing Drawdown Simulator</a>.
+</p>
 
 <div class="highlight-box green">
   <h3>Liquidity Migration Reveals Market Intent</h3>
