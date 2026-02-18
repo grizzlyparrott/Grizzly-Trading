@@ -482,3 +482,20 @@ a:hover {
   transform: translateY(1px);
   box-shadow: 0 6px 18px rgba(34, 197, 94, 0.4);
 }
+.footer-book {
+  margin-bottom: 20px;
+}
+
+.footer-book h3 {
+  margin-bottom: 6px;
+}
+
+.footer-book p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.footer-book-link {
+  font-weight: 600;
+}
