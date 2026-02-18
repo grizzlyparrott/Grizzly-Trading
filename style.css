@@ -417,3 +417,43 @@ a:hover {
 .highlight-box.blue {
   border-left: 4px solid #3b82f6;
 }
+.tool-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tool-actions-secondary {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.button-secondary {
+  display: inline-block;
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  background: rgba(15, 23, 42, 0.6);
+  color: #e5e7eb;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.1s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.button-secondary:hover {
+  background: rgba(17, 24, 39, 0.9);
+  border-color: #6b7280;
+  filter: brightness(1.05);
+}
+
+.button-secondary:active {
+  transform: translateY(1px);
+}
+
+.tool-status {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
