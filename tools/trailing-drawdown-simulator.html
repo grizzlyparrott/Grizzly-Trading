@@ -136,14 +136,19 @@
                     </div>
 
                     <div class="tool-block">
-                      <button id="td-calc-button" class="button-primary">Run Simulation</button>
+                      <div class="tool-actions">
+                        <button id="td-calc-button" class="button-primary">Run Simulation</button>
 
-                      <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
-                        <button id="td-copy-link" type="button">Copy Share Link</button>
-                        <button id="td-load-example" type="button">Load Example</button>
+                        <div class="tool-actions-secondary">
+                          <button id="td-copy-link" class="button-secondary" type="button">Copy Share Link</button>
+                          <button id="td-load-example" class="button-secondary" type="button">Load Example</button>
+                          <span id="td-copy-status" class="tool-status" aria-live="polite"></span>
+                        </div>
                       </div>
+                    </div>
 
-                      <p id="td-copy-status" style="margin-top:8px; font-size:13px;"></p>
+
+                      
                     </div>
 
                 </div>
