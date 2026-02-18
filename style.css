@@ -457,3 +457,28 @@ a:hover {
   font-size: 0.85rem;
   color: #9ca3af;
 }
+.button-primary {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid #22c55e;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: #022c22;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.35);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
+}
+
+.button-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 35px rgba(34, 197, 94, 0.5);
+  filter: brightness(1.05);
+}
+
+.button-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.4);
+}
