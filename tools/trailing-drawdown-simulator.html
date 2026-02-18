@@ -237,6 +237,9 @@
       const tdCalcButton = document.getElementById("td-calc-button");
       const tdChartCanvas = document.getElementById("td-chart");
       const tdChartContainer = document.getElementById("td-chart-container");
+      const tdCopyLinkBtn = document.getElementById("td-copy-link");
+      const tdLoadExampleBtn = document.getElementById("td-load-example");
+      const tdCopyStatus = document.getElementById("td-copy-status");
 
       function tdFormat(num, decimals) {
         return Number(num).toFixed(decimals);
@@ -518,6 +521,106 @@
         // Draw chart
         drawTdChart(rows, startBalance, initialTrail, blownTradeIndex);
       });
+      function tdSetStatus(msg) {
+  tdCopyStatus.textContent = msg;
+  setTimeout(function () {
+    tdCopyStatus.textContent = "";
+  }, 3000);
+}
+
+function tdBuildShareUrl() {
+  const startBalance = tdStartBalanceEl.value.trim();
+  const trailAmount = tdTrailAmountEl.value.trim();
+  const style = document.querySelector('input[name="td-style"]:checked').value;
+  const tradesRaw = tdTradesEl.value.trim();
+
+  const params = new URLSearchParams();
+
+  if (startBalance) params.set("bal", startBalance);
+  if (trailAmount) params.set("trail", trailAmount);
+  if (style) params.set("style", style);
+
+  if (tradesRaw) {
+    const trades = parseTrades(tradesRaw);
+    if (trades.length > 0) {
+      params.set("trades", trades.join(","));
+    }
+  }
+
+  const base = window.location.origin + window.location.pathname;
+  return base + "?" + params.toString();
+}
+
+function tdApplyFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+
+  const bal = params.get("bal");
+  const trail = params.get("trail");
+  const style = params.get("style");
+  const trades = params.get("trades");
+
+  if (bal) tdStartBalanceEl.value = bal;
+  if (trail) tdTrailAmountEl.value = trail;
+
+  if (style === "full" || style === "apex") {
+    const radio = document.querySelector('input[name="td-style"][value="' + style + '"]');
+    if (radio) radio.checked = true;
+  }
+
+  if (trades) {
+    const lines = trades
+      .split(",")
+      .map(function (s) { return s.trim(); })
+      .filter(function (v) { return v.length > 0; });
+
+    tdTradesEl.value = lines.join("\n");
+  }
+}
+
+async function tdCopyToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (e) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try {
+      ok = document.execCommand("copy");
+    } catch (e2) {
+      ok = false;
+    }
+    document.body.removeChild(ta);
+    return ok;
+  }
+}
+
+if (tdCopyLinkBtn) {
+  tdCopyLinkBtn.addEventListener("click", async function () {
+    const url = tdBuildShareUrl();
+    const ok = await tdCopyToClipboard(url);
+    tdSetStatus(ok ? "Share link copied." : "Could not copy link.");
+  });
+}
+
+if (tdLoadExampleBtn) {
+  tdLoadExampleBtn.addEventListener("click", function () {
+    tdStartBalanceEl.value = "50000";
+    tdTrailAmountEl.value = "2500";
+    const apexRadio = document.querySelector('input[name="td-style"][value="apex"]');
+    if (apexRadio) apexRadio.checked = true;
+
+    tdTradesEl.value = "+500\n-600\n+700\n-900\n+400\n-1200\n+300";
+    tdSetStatus("Example loaded. Click Run Simulation.");
+  });
+}
+
+tdApplyFromUrl();
+
     </script>
 
     <style>
