@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+     <!-- Standard Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Web App Manifest -->
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- PNG Fallbacks -->
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+<link rel="icon" href="/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roll Yield and Front-Month Risk in Hogs</title>
+<meta name="description" content="Rolling lean hog futures positions creates hidden costs through roll yield that can erode profits. Here's how curve structure affects your P&L when holding positions across contract months.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://grizzlyparrottrading.com/futures-basics/roll-yield-front-month-risk-hogs.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Roll Yield and Front-Month Risk in Hogs">
+<meta property="og:description" content="Understand how lean hog futures curve structure creates roll costs that can silently drain trading profits.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://grizzlyparrottrading.com/futures-basics/roll-yield-front-month-risk-hogs.html">
+<meta property="og:site_name" content="Grizzly Parrot Trading">
+<meta property="og:image" content="https://grizzlyparrottrading.com/og-default.png">
+<meta property="og:image:width" content="1792">
+<meta property="og:image:height" content="941">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://grizzlyparrottrading.com/og-default.png">
+<meta name="twitter:title" content="Roll Yield and Front-Month Risk in Hogs">
+<meta name="twitter:description" content="Learn how roll yield silently erodes lean hog positions and why front-month contracts carry unique risks.">
+
+<link rel="stylesheet" href="../style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMJVR3G5YN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMJVR3G5YN');
+</script>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Roll Yield and Front-Month Risk in Hogs",
+  "description": "Rolling lean hog futures positions creates hidden costs through roll yield that can erode profits. Here's how curve structure affects your P&L when holding positions across contract months.",
+  "author": { "@type": "Person", "name": "Kyle Parrott" },
+  "mainEntityOfPage": "https://grizzlyparrottrading.com/futures-basics/roll-yield-front-month-risk-hogs.html",
+  "datePublished": "2025-02-26",
+  "dateModified": "2025-02-26"
+}
+</script>
+
+<!-- JSON-LD: Breadcrumbs -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://grizzlyparrottrading.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Futures Basics",
+      "item": "https://grizzlyparrottrading.com/futures-basics/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Roll Yield and Front-Month Risk in Hogs",
+      "item": "https://grizzlyparrottrading.com/futures-basics/roll-yield-front-month-risk-hogs.html"
+    }
+ ]
+}
+</script>
+
+
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="/">
+Grizzly Parrot Trading</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../futures-basics/index.html">Futures Basics</a></li>
+        <li><a href="../prop-firm-trading/index.html">Prop Firm Trading</a></li>
+        <li><a href="../platforms-tutorials/index.html">Platforms &amp; Tutorials</a></li>
+        <li><a href="../market-basics/index.html">Market Basics</a></li>
+        <li><a href="../tools/index.html">Tools</a></li>
+        <li><a href="../metals/index.html">Metals</a></li>
+        <li><a href="../currencies/index.html">Currencies</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container article-content">
+
+<!-- ARTICLE BODY START -->
+
+<h1>Roll Yield and Front-Month Risk in Hogs</h1>
+
+<p>
+Lean hog futures don't trade in perpetual contracts. Each contract has an expiration date, and traders holding positions must eventually roll to the next month. This rolling process creates roll yield — the profit or loss from the price difference between contracts. In lean hogs, curve structure can shift rapidly, turning what looks like a winning directional trade into a losing position purely from negative roll yield eating away at your gains.
+</p>
+
+<h2>What Is Roll Yield?</h2>
+<p>
+Roll yield is the P&L impact from closing an expiring contract and opening a position in the next contract month. It's determined by the futures curve structure:
+</p>
+
+<ul>
+  <li><a href="https://grizzlyparrottrading.com/futures-basics/contango-deep-dive-futures-pricing.html">contango:</a> deferred contracts trade higher than front month — rolling creates a cost</li>
+  <li><a href="https://grizzlyparrottrading.com/futures-basics/backwardation-deep-dive-futures-pricing.html">backwardation:</a> deferred contracts trade lower than front month — rolling creates a gain</li>
+</ul>
+
+<p>
+If April lean hogs trade at $80.00 and June trades at $82.00, rolling from April to June costs you $2.00 per hundredweight (200 ticks, or $2,000 per contract). That's roll yield working against you.
+</p>
+
+<h2>Lean Hog Curves Shift Between Contango and Backwardation</h2>
+<p>
+Unlike crude oil or gold, where carry costs and storage create relatively stable curve patterns, lean hog curve structure responds to biological production cycles and processing capacity expectations.
+</p>
+
+<p>Curve drivers:</p>
+
+<ul>
+  <li>seasonal slaughter patterns (lower processing in fall maintenance periods)</li>
+  <li>expected breeding cycle outcomes</li>
+  <li>forward processing capacity commitments</li>
+  <li>anticipated export demand shifts</li>
+</ul>
+
+<p>
+The curve can be in steep contango one month and flip to backwardation the next if fundamental expectations change regarding supply or processing capacity.
+</p>
+
+<h2>Negative Roll Yield Erodes Long Positions in Contango</h2>
+<p>
+If you're long lean hogs and the curve is in contango, you lose money every time you roll forward. Even if the underlying price level stays flat, your position bleeds value.
+</p>
+
+<p>Example scenario:</p>
+
+<ul>
+  <li>long April contract at $80.00</li>
+  <li>June contract trading at $82.00</li>
+  <li>roll your position: sell April at $80.00, buy June at $82.00</li>
+  <li>you just paid $2.00/cwt to maintain the same market exposure</li>
+</ul>
+
+<p>
+If you roll every two months across multiple contract cycles, negative roll yield can accumulate to substantial losses even if your directional view is eventually correct.
+</p>
+
+<h2>Positive Roll Yield Benefits Long Positions in Backwardation</h2>
+<p>
+Conversely, when the curve is in backwardation, rolling long positions generates profit:
+</p>
+
+<ul>
+  <li>long April at $80.00</li>
+  <li>June trading at $78.00</li>
+  <li>roll: sell April at $80.00, buy June at $78.00</li>
+  <li>collect $2.00/cwt just from maintaining the position</li>
+</ul>
+
+<p>
+Backwardation typically occurs when near-term supply is tight relative to expected future supply, often due to disease concerns, processing constraints, or unexpected demand surges.
+</p>
+
+<h2>Front-Month Liquidity Is Concentrated</h2>
+<p>
+Most lean hog trading volume concentrates in the front month contract. As a contract approaches expiration, liquidity migrates to the next deferred month.
+</p>
+
+<p>Typical volume distribution pattern:</p>
+
+<ul>
+  <li><strong>front month:</strong> majority of daily volume and open interest</li>
+  <li><strong>second month:</strong> moderate volume, increasing as roll period approaches</li>
+  <li><strong>third month and beyond:</strong> substantially lower volume</li>
+</ul>
+
+<p>
+This concentration means front-month contracts offer the tightest spreads and best execution, but it also means liquidity evaporates quickly as expiration approaches.
+</p>
+
+<h2>Expiration Week Liquidity Collapse</h2>
+<p>
+During the week leading up to contract expiration, front-month liquidity deteriorates rapidly as traders roll their positions. This creates:
+</p>
+
+<ul>
+  <li>widening bid-ask spreads</li>
+  <li>increased slippage on market orders</li>
+  <li>potential for erratic price movements from small orders</li>
+  <li>difficulty exiting positions at reasonable prices</li>
+</ul>
+
+<p>
+Traders who wait too long to roll risk getting trapped in an illiquid contract where exit costs can exceed the typical roll yield expense.
+</p>
+
+<h2>When to Roll Your Position</h2>
+<p>
+Commercial hedgers and institutional traders typically roll positions 5–10 days before expiration when liquidity begins migrating to the next month. Retail traders should consider rolling earlier to avoid liquidity degradation.
+</p>
+
+<p>Roll timing considerations:</p>
+
+<ul>
+  <li>monitor open interest shifts from front month to second month</li>
+  <li>track volume migration patterns</li>
+  <li>avoid rolling during the final 2–3 days before expiration</li>
+  <li>consider spreading out roll execution if holding multiple contracts</li>
+</ul>
+
+<p>
+Rolling too early means paying potential time decay in the deferred contract. Rolling too late means facing liquidity costs that can exceed normal roll yield.
+</p>
+
+<h2>Physical Delivery Risk for Front-Month Holders</h2>
+<p>
+Lean hog futures are physically settled. If you hold a contract into expiration without rolling or closing, you're obligated to either deliver (if short) or receive (if long) 40,000 pounds of hog carcasses.
+</p>
+
+<p>
+Retail traders almost never want physical delivery. Brokers typically force-liquidate positions approaching expiration to avoid delivery complications, often at unfavorable prices during the final days of thin liquidity.
+</p>
+
+<h3>First Notice Day</h3>
+<p>
+Most futures contracts have a First Notice Day (FND) — the first day a short position holder can notify intent to deliver. In lean hogs, FND varies by contract month but typically occurs several days before the official last trading day.
+</p>
+
+<p>
+Traders should exit or roll well before FND to avoid any delivery assignment risk, as brokers may liquidate positions aggressively once FND approaches.
+</p>
+
+<h2>Calendar Spreads Isolate Roll Yield</h2>
+<p>
+Instead of trading outright long or short positions, some traders specifically trade the spread between two contract months (calendar spreads). This isolates roll yield as the primary P&L driver:
+</p>
+
+<ul>
+  <li>long April / short June spread at -$2.00 (June $2 above April)</li>
+  <li>if spread narrows to -$1.00, you profit $1.00/cwt</li>
+  <li>if spread widens to -$3.00, you lose $1.00/cwt</li>
+</ul>
+
+<p>
+Calendar spreads reduce directional price risk but require understanding of what drives curve structure changes in lean hogs — seasonal patterns, processing capacity expectations, and breeding cycle forecasts.
+</p>
+
+<h2>Roll Costs Compound Over Long Holding Periods</h2>
+<p>
+Traders taking long-term directional positions in lean hogs face cumulative roll costs if the curve remains in contango:
+</p>
+
+<ul>
+  <li>roll #1: -$2.00/cwt</li>
+  <li>roll #2: -$1.50/cwt</li>
+  <li>roll #3: -$2.50/cwt</li>
+  <li>cumulative roll cost: -$6.00/cwt ($6,000 per contract)</li>
+</ul>
+
+<p>
+Even if the underlying lean hog price appreciates, significant roll costs can offset directional gains. This is a particular challenge given that lean hogs already present numerous <a href="why-lean-hogs-trader-hostile.html">structural trading difficulties</a> beyond roll yield.
+</p>
+
+<h2>Back-Month Contracts Have Lower Liquidity</h2>
+<p>
+While rolling to the second or third month is necessary to maintain positions, these deferred contracts trade with:
+</p>
+
+<ul>
+  <li>wider bid-ask spreads</li>
+  <li>lower daily volume</li>
+  <li>greater susceptibility to price gaps from single large orders</li>
+  <li>less reliable technical price levels due to reduced participation</li>
+</ul>
+
+<p>
+This creates a trade-off: roll early to avoid front-month expiration risk but accept worse execution in less liquid deferred months, or stay in the front month longer for better liquidity but face expiration pressure.
+</p>
+
+<h2>Seasonal Roll Patterns Create Predictable Spreads</h2>
+<p>
+Certain times of year see consistent curve structure patterns based on seasonal demand and processing schedules:
+</p>
+
+<ul>
+  <li>spring contracts often trade at premium to summer (anticipating grilling season demand)</li>
+  <li>fall contracts may discount to winter (reflecting processing plant maintenance periods)</li>
+  <li>winter contracts can reflect holiday ham demand expectations</li>
+</ul>
+
+<p>
+These patterns aren't guaranteed, but they provide baseline expectations for roll costs. Traders can sometimes time rolls to more favorable spread periods if they're not forced to roll on a specific schedule.
+</p>
+
+<h2>ETFs and Commodity Indexes Face Persistent Roll Drag</h2>
+<p>
+Commodity ETFs that include lean hogs must roll positions mechanically on a fixed schedule, typically during a published roll period. This creates several problems:
+</p>
+
+<ul>
+  <li>predictable roll timing allows other traders to position against the roll</li>
+  <li>forced rolling regardless of curve structure</li>
+  <li>cumulative negative roll yield in persistent contango erodes fund returns</li>
+</ul>
+
+<p>
+Long-term investors using broad commodity ETFs that include lean hogs often underperform spot price movements significantly due to accumulated roll costs over time.
+</p>
+
+<h2>Monitoring the Curve Structure</h2>
+<p>
+Before entering a lean hog position you plan to hold across multiple months, check the current curve structure:
+</p>
+
+<ul>
+  <li>calculate the spread between front month and next deferred month</li>
+  <li>estimate roll cost per contract (spread × $10 per tick)</li>
+  <li>project cumulative roll costs if you plan multiple rolls</li>
+  <li>compare against expected directional profit target</li>
+</ul>
+
+<p>
+If you expect to make $3,000 on a directional move but face $2,500 in cumulative roll costs, your actual profit potential is only $500 — and that's before accounting for commissions, slippage, and bid-ask spread costs.
+</p>
+
+<div class="highlight-box green">
+  <h3>Roll Yield Is a Hidden P&L Component</h3>
+  <p>Rolling lean hog futures positions creates profit or loss based on curve structure. Contango creates persistent costs that erode long positions, while backwardation generates gains. Front-month contracts offer the best liquidity but carry expiration risk, forcing traders to balance roll timing against liquidity degradation. For longer-term positions, cumulative roll costs can significantly impact overall profitability, making curve structure analysis as important as directional price forecasting.</p>
+</div>
+
+<!-- ARTICLE BODY END -->
+
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <div class="footer-book">
+      <h3>Probabilistic Execution</h3>
+      <p>A technical framework for converting structure into trade execution.</p>
+      <a href="/books/probabilistic-execution/" class="footer-book-link">
+        View The Book
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+
+    <p class="footer-copy">
+      &copy; <span id="year"></span> Grizzly Parrot Trading. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+</body>
+</html>
