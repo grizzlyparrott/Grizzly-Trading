@@ -30,9 +30,9 @@ Limit Moves and Liquidity Gaps in Lean Hogs+
 
 How Slaughter Capacity Distorts Hog Pricing+
 
-Why Lean Hogs Are Trader-Hostile Markets
+Why Lean Hogs Are Trader-Hostile Markets+
 
-Roll Yield and Front-Month Risk in Hogs
+Roll Yield and Front-Month Risk in Hogs+
 
 Lean Hogs vs Feed Grains Correlation Breakdown
 
