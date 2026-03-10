@@ -36,7 +36,7 @@ Roll Yield and Front-Month Risk in Hogs+
 
 Lean Hogs vs Feed Grains Correlation Breakdown+
 
-Speculator Positioning Effects in Lean Hogs
+Speculator Positioning Effects in Lean Hogs+
 
 Why Lean Hogs Don’t Behave Like Financial Futures
 
